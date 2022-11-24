@@ -1,4 +1,4 @@
-#Day_0
+# Day_0
 
 This is my first repository
 
