@@ -17,12 +17,18 @@
 (ii) QFP{Quad flat package) is a surface-mounted integrated circuit package with "gull wing" leads extending from each of the four sides.  
 <img width="301" alt="package3" src="https://user-images.githubusercontent.com/118953915/203914693-f3ca5866-f174-429c-8297-9e432c957e43.PNG">  
 
-3. Details on each structure   
+3. Details on architecture:   
 (i) Wire board- Connect chip (Wire bonding is the process of creating electrical interconnections between semiconductors (or other integrated circuits) and silicon chips)    
 (ii) I/O Pads-Intermediate structures connecting internal signals from the core of the integrated circuit to the external pins of the chip package  
 (iii) Core-All fundamental logic of the design (eg: AND gates,pnoms,...) is placed  
 (iv) Die-Consists of core, is small semiconductor material specimen on which the fundamental circuit is fabricated  
-(v) IP core {intellectual property core) is a functional block of logic or data used to make a field-programmable gate array (FPGA) or application-specific integrated circuit for a product (Eg of Foundry IPis: PLL (phase lock loop), SRAM,..)  
+(v) IP core (intellectual property core)-functional block of logic or data used to make a field-programmable gate array (FPGA) or application-specific integrated circuit for a product (Eg of Foundry IPis: PLL (phase lock loop), SRAM,..)  
+(vi) Macros-IP which is available in google that can directly use in own design (eg:memories, CBB(custom building block))
+
+**Concept of Software-->Hardware**
+1. Synthesis is process of transferring higher level of abstraction (RTL) to implementable lower level of abstraction.  
+--> It is the process of transforming RTL to gate-level netlist  
+--> High level language -> Low level language 
 
 #
 ### *__Lab Session__*
