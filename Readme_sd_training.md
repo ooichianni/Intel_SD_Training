@@ -29,6 +29,12 @@
 1. Synthesis is process of transferring higher level of abstraction (RTL) to implementable lower level of abstraction.  
 --> It is the process of transforming RTL to gate-level netlist  
 --> High level language -> Low level language 
+2. Compiler will translate a high level programming language's source code (Java/C++) into machine level language code  
+3. Assembler is a program that takes basic computer instructions and converts them into a pattern of bits that the computer's processor can use to perform its basic operations (in binary form)
+
+Here is the Overview that show by instructor:  
+![Concept](https://user-images.githubusercontent.com/118953915/203926658-55d68a6b-4f1e-4df3-9111-595c4a44e531.png)
+
 
 #
 ### *__Lab Session__*
