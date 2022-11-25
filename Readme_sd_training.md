@@ -25,7 +25,7 @@
 (v) IP core (intellectual property core)-functional block of logic or data used to make a field-programmable gate array (FPGA) or application-specific integrated circuit for a product (Eg of Foundry IPis: PLL (phase lock loop), SRAM,..)  
 (vi) Macros-IP which is available in google that can directly use in own design (eg:memories, CBB(custom building block))
 
-**Concept of Software-->Hardware**
+**Concept on communication Software & Hardware**
 1. Synthesis is process of transferring higher level of abstraction (RTL) to implementable lower level of abstraction.  
 --> It is the process of transforming RTL to gate-level netlist  
 --> High level language -> Low level language 
