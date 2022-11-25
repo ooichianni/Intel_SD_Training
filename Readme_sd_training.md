@@ -1,5 +1,5 @@
 ## Table of contents
-* [ Day_0 : System/Tool Setup Check & GitHub ID creation ](https://github.com/ChianNi/Intel_SD_Training/edit/main/Readme_sd_training.md#day_0)
+* [ Day_0 : System/Tool Setup Check & GitHub ID creation ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_0)
 
 #
 # Day_0
