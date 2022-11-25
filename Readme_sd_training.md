@@ -7,7 +7,7 @@
 
 ### *__Lecture Session__*
 
-** (A) Introduction on Package**
+**(A) Introduction on Package**
 
 1. IC packaging refers to the material that contains a semiconductor device
 2. The wafer level chip scale package (WLCSP) is a variant of the flip-chip interconnection technique where all packaging is done at the wafer level. With WLCSPs, the active side of the die is inverted and connected to the printed circuit board (PCB) using solder balls  
@@ -25,7 +25,7 @@
 (v) IP core (intellectual property core)-functional block of logic or data used to make a field-programmable gate array (FPGA) or application-specific integrated circuit for a product (Eg of Foundry IPis: PLL (phase lock loop), SRAM,..)  
 (vi) Macros-IP which is available in google that can directly use in own design (eg:memories, CBB(custom building block))
 
-** (B) Concept on communication Software & Hardware**
+**(B) Concept on communication Software & Hardware**
 1. Synthesis is process of transferring higher level of abstraction (RTL) to implementable lower level of abstraction.  
 --> It is the process of transforming RTL to gate-level netlist  
 --> High level language -> Low level language 
