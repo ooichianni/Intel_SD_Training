@@ -93,9 +93,7 @@ testbench no primary input and output, but got design instantiate- UUT (Unit und
 1. Synthesizer --> Will use Yosys for this training onwards  
 Tool used for converting the RTL to netlist (in the form of std cell)
 2. Design + .lib --> yosys --> netlist file  
-(i) Use read_verilog to read the Design  
-(ii) Use read_liberty to read .lib  
-(iii) write_verilog to write the netlist file  
+Use read_verilog to read the Design ; Use read_liberty to read .lib ; write_verilog to write the netlist file  
 3. Verify the synthesis  
 Design+Test Bench --> iverilog --> vcd file -> gtkwave  
 --> must ensure same as output observed during RTL simulation
@@ -107,6 +105,24 @@ RTL Code (Verilog HDL) --> Digital logic circuit (hardware circuit)
 -basic logix gates: AND,OR,...  
 -different floavors of same gate: 2 input AND gate, 3 input AND gate, slow/medium/fast...
 8. Combinational delay in logic path determines the max speed of operation of digital logic circuit  
+(i) Fast cell needed to meet setup:
 Tclk> TF1+Tcombi+TsetupofF2 (data must be stable before the capturing edge of clock)  
-fclkmax=1/Tclkmin (low period == high freq == fast speed == max performance, so means delay must less, must faster cell, Tcombi must less)  
-9. 
+fclkmax=1/Tclkmin (low period==high freq==fast speed==max performance, so means delay must less, must faster cell, Tcombi must less)    
+(i) Slow cell needed to meet hold
+TholdF2<TF1+Tcombi  
+so the .lib will have various collection of logical modules with difference behaviour  
+9. Load in digital logic circuit is capacitance  
+-Faster the charging/discharging of capacitance, lesser the propagation delay  
+ -so need transistors capable of sourcing more current (wider transistors==low delay==more area&power<- not good)  
+10. Need to guide the syn thesizer to select the flavour of cells that is optimum fo rthe implementation of logic circuit  
+fast cell-> comsume high power and area, causing hold violation  
+slow cell-> not meet performance  
+So constraints is needed as a guidance for the 
+   
+#
+### *__Lab Session__*
+*Lab3: good mux Part 1,2,3*  
+
+Steps:  
+Command to invoke yoysy > yosys
+(i) read_liberty -lib ../my_lib/lib/sky*.lib
