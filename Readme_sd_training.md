@@ -125,4 +125,12 @@ So constraints is needed as a guidance for the
 
 Steps:  
 Command to invoke yoysy > yosys
-(i) read_liberty -lib ../my_lib/lib/sky*.lib
+(i) Read library-> read_liberty -lib ../my_lib/lib/sky*.lib
+(ii) Read design-> read_verilog good_mux.v
+(iii) Synthesis-> synth -top good_mux
+(iv) thn can generate netlist -> abc -liberty ../lib/sky*.lib (std cell will get pick from library)  
+<img width="687" alt="lab1g" src="https://user-images.githubusercontent.com/118953915/205316337-5ccd9b3d-7cef-4cf6-81a4-b8e5953c8b86.png">
+(v) See logic realiazed in graphicel -> show  
+There is 3 input, 1 output, no internal wire, 1 mux 2to1
+<img width="960" alt="lab1h" src="https://user-images.githubusercontent.com/118953915/205317486-e3c559a1-19c9-484a-84b4-29cb7ceeeaf6.png">
+
