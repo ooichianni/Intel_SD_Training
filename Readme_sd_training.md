@@ -55,9 +55,9 @@ Here is the screenshot of lab final outputs:
 
 ### *__Lecture Session__*
 
-**Introduction to open-source simulator iverilog**
+**(A) Introduction to open-source simulator iverilog**
 >Course Website -> https://vsdiat.com/course_content?uniqueid=20220801054525  
-1. Simulator --> Will using iverilog for this training onwards  
+1. Simulator --> Will use iverilog for this training onwards  
 Tool for checking RTL design (implementation of spec) by simulating the design (looks for changes on the input signals and output is evaluated. If no changes in input then output also will not have any changes)  
 -Design: Verilog codes which has the intended functionality to meet with the required specifications  
 -TestBench (TB): setup to apply stimulus (test_vectirs) to the design to checks its functionality by observe the outputs whether obeys to the spec of the design  
@@ -81,3 +81,32 @@ Steps:
 <img width="639" alt="lab1b" src="https://user-images.githubusercontent.com/118953915/205270195-f6e6eb96-0ca4-413d-90a4-fd6cf33dd718.PNG">  
 From the waveform: When the sel is "1", the output(y) will follow the input(i1)
 
+*Lab2: Introduction iverilog gtkwave part 2*  
+Understanding the content:  
+vi tb_good_mux.v & vi good_mux.v (suppose is this command->gvim tb_good_mux.v -o good_mux.v)
+![lab1e](https://user-images.githubusercontent.com/118953915/205290366-3d96a298-204f-4172-a602-1502fe829a66.png)  
+testbench no primary input and output, but got design instantiate- UUT (Unit under test) or DUT (Design under test)
+
+### *__Lecture Session__*
+
+**(B) Introduction to Yosys and Logic synthesis**
+1. Synthesizer --> Will use Yosys for this training onwards  
+Tool used for converting the RTL to netlist (in the form of std cell)
+2. Design + .lib --> yosys --> netlist file  
+(i) Use read_verilog to read the Design  
+(ii) Use read_liberty to read .lib  
+(iii) write_verilog to write the netlist file  
+3. Verify the synthesis  
+Design+Test Bench --> iverilog --> vcd file -> gtkwave  
+--> must ensure same as output observed during RTL simulation
+4. The set of primary inputs/outputs will remain the same between the RTL design and synthesize netlist -> same test bench can be used  
+5. RTL design: Behavioral representation of the required specification  
+RTL Code (Verilog HDL) --> Digital logic circuit (hardware circuit)  
+6. RTL to gate level translation - design converted into gates and the connections are made between the gates, output file: netlist  
+7. Collection of logical modules in formal .lib  
+-basic logix gates: AND,OR,...  
+-different floavors of same gate: 2 input AND gate, 3 input AND gate, slow/medium/fast...
+8. Combinational delay in logic path determines the max speed of operation of digital logic circuit  
+Tclk> TF1+Tcombi+TsetupofF2 (data must be stable before the capturing edge of clock)  
+fclkmax=1/Tclkmin (low period == high freq == fast speed == max performance, so means delay must less, must faster cell, Tcombi must less)  
+9. 
