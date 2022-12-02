@@ -55,27 +55,29 @@ Here is the screenshot of lab final outputs:
 
 ### *__Lecture Session__*
 
-**(A) Introduction to open-source simulator iverilog**
+**Introduction to open-source simulator iverilog**
 >Course Website -> https://vsdiat.com/course_content?uniqueid=20220801054525  
 1. Simulator --> Will using iverilog for this training onwards  
 Tool for checking RTL design (implementation of spec) by simulating the design (looks for changes on the input signals and output is evaluated. If no changes in input then output also will not have any changes)  
-- Design: Verilog codes which has the intended functionality to meet with the required specifications  
-- TestBench (TB): setup to apply stimulus (test_vectirs) to the design to checks its functionality by observe the outputs whether obeys to the spec of the design  
+-Design: Verilog codes which has the intended functionality to meet with the required specifications  
+-TestBench (TB): setup to apply stimulus (test_vectirs) to the design to checks its functionality by observe the outputs whether obeys to the spec of the design  
 Design+Test Bench --> iverilog --> vcd file (value chnage dump format-looking for changes in value) -> gtkwave (this use to view output)
 
 #
 ### *__Lab Session__*
-Lab1: Introduction to lab  
+*Lab1: Introduction to lab*  
 Command to install workshop-> git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git  
-<img width="639" alt="lab1" src="https://user-images.githubusercontent.com/118953915/205265411-2feb1121-9cdd-44d7-9120-36c80d5741d9.PNG">
+<img width="639" alt="lab1" src="https://user-images.githubusercontent.com/118953915/205265411-2feb1121-9cdd-44d7-9120-36c80d5741d9.PNG">  
 In the directory consists:
 my_lib: contain library files (lib-contain std cell for synthesis in .lib and verlog_model-contain std cell verilog model in .v)
 verilog_files: contain verilog source file and testbench file
 
-Lab2: Introduction iverilog gtkwave part 1
-Command: 
-(i) Load mux to stimulator-> iverilog good_mux.v tb_good_mux.v , then new file created: a.out
-(ii) Execute this new created file from (i)-> ./a.out, then will dump out tb_good_mux.vcd
-(iii) Launch waveform-> gtkwave tb_good_mux.vcd
-(iv) Click the design and drag the signals into the window and click "Zoom Fit" on the toolbar 
-)
+*Lab2: Introduction iverilog gtkwave part 1*  
+Steps:     
+(i) Load mux to stimulator-> iverilog good_mux.v tb_good_mux.v , then new file created: a.out  
+(ii) Execute this new created file from (i)-> ./a.out, then will dump out tb_good_mux.vcd  
+(iii) Launch waveform-> gtkwave tb_good_mux.vcd  
+(iv) Click the design and drag the signals into the window and click "Zoom Fit" on the toolbar   
+<img width="639" alt="lab1b" src="https://user-images.githubusercontent.com/118953915/205270195-f6e6eb96-0ca4-413d-90a4-fd6cf33dd718.PNG">  
+From the waveform: When the sel is "1", the output(y) will follow the input(i1)
+
