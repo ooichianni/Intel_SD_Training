@@ -57,8 +57,8 @@ Here is the screenshot of lab final outputs:
 
 **(A) Introduction to open-source simulator iverilog**
 >Course Website -> https://vsdiat.com/course_content?uniqueid=20220801054525  
-1. Simulator
-Tool for checking RTL design (implementation of spec) by simulating the design
---> Will using iverilog for this training onwards
-- Design: Verilog codes which has the intended functionality to meet with the required specifications
-- TestBench: setup to apply stimulus (test_vectirs) to the design to checks its functionality by observe the outputs whether obeys to the spec of the design
+1. Simulator --> Will using iverilog for this training onwards  
+Tool for checking RTL design (implementation of spec) by simulating the design (looks for changes on the input signals and output is evaluated. If no changes in input then output also will not have any changes)  
+- Design: Verilog codes which has the intended functionality to meet with the required specifications  
+- TestBench (TB): setup to apply stimulus (test_vectirs) to the design to checks its functionality by observe the outputs whether obeys to the spec of the design  
+Design+Test Bench --> iverilog --> vcd file (value chnage dump format-looking for changes in value) -> gtkwave (this use to view output)
