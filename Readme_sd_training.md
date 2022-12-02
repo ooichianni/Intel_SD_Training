@@ -1,8 +1,9 @@
 ## Table of contents
 * [ Day_0 : System/Tool Setup Check & GitHub ID creation ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_0)
+* [ Day_1 : Introduction to Verilog RTL design and Synthesis ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_1)
 
 #
-# Day_0
+# Day_0 : System/Tool Setup Check & GitHub ID creation
 
 
 ### *__Lecture Session__*
@@ -46,3 +47,12 @@ Setup directory and invoke icc2
 Here is the screenshot of lab final outputs:
 
 ![day_0](https://user-images.githubusercontent.com/118953915/203699203-8f3cccc3-8cdc-4494-a25d-3d6e29c3d7ba.JPG)
+
+
+#
+# Day_1 : Introduction to Verilog RTL design and Synthesis
+
+
+### *__Lecture Session__*
+
+**(A) Introduction to open-source simulator iverilog**
