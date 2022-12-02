@@ -56,3 +56,5 @@ Here is the screenshot of lab final outputs:
 ### *__Lecture Session__*
 
 **(A) Introduction to open-source simulator iverilog**
+>Course Website -> https://vsdiat.com/course_content?uniqueid=20220801054525  
+1. Simulator
