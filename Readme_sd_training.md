@@ -74,10 +74,9 @@ verilog_files: contain verilog source file and testbench file
 
 *Lab2: Introduction iverilog gtkwave part 1*  
 Steps:     
-(i) Load mux to stimulator-> iverilog good_mux.v tb_good_mux.v , then new file created: a.out  
-(ii) Execute this new created file from (i)-> ./a.out, then will dump out tb_good_mux.vcd  
-(iii) Launch waveform-> gtkwave tb_good_mux.vcd  
-(iv) Click the design and drag the signals into the window and click "Zoom Fit" on the toolbar   
+(i) Load mux to stimulator-> iverilog good_mux.v tb_good_mux.v , then new file created: a.out    
+(ii) Execute this new created file from (i)-> ./a.out, then will dump out tb_good_mux.vcd     
+(iv) Click the design and drag the signals into the window and click "Zoom Fit" on the toolbar     
 <img width="639" alt="lab1b" src="https://user-images.githubusercontent.com/118953915/205270195-f6e6eb96-0ca4-413d-90a4-fd6cf33dd718.PNG">  
 From the waveform: When the sel is "1", the output(y) will follow the input(i1)
 
@@ -124,13 +123,20 @@ So constraints is needed as a guidance for the
 *Lab3: good mux Part 1,2,3*  
 
 Steps:  
-Command to invoke yoysy > yosys
-(i) Read library-> read_liberty -lib ../my_lib/lib/sky*.lib
-(ii) Read design-> read_verilog good_mux.v
-(iii) Synthesis-> synth -top good_mux
-(iv) thn can generate netlist -> abc -liberty ../lib/sky*.lib (std cell will get pick from library)  
-<img width="687" alt="lab1g" src="https://user-images.githubusercontent.com/118953915/205316337-5ccd9b3d-7cef-4cf6-81a4-b8e5953c8b86.png">
-(v) See logic realiazed in graphicel -> show  
-There is 3 input, 1 output, no internal wire, 1 mux 2to1
-<img width="960" alt="lab1h" src="https://user-images.githubusercontent.com/118953915/205317486-e3c559a1-19c9-484a-84b4-29cb7ceeeaf6.png">
+Command to invoke yoysy > yosys  
+(i) Read library-> read_liberty -lib ../my_lib/lib/sky*.lib  
+(ii) Read design-> read_verilog good_mux.v  
+(iii) Synthesis-> synth -top good_mux  
+(iv) thn can generate netlist -> abc -liberty ../lib/sky*.lib (std cell will get pick from library)    
+<img width="600" alt="lab1g" src="https://user-images.githubusercontent.com/118953915/205316337-5ccd9b3d-7cef-4cf6-81a4-b8e5953c8b86.png">  
+(v) See logic realiazed in graphicel -> show        
+There is 3 input, 1 output, no internal wire, 1 mux 2to1    
+<img width="600" alt="lab1h" src="https://user-images.githubusercontent.com/118953915/205317486-e3c559a1-19c9-484a-84b4-29cb7ceeeaf6.png">  
+-nand2_1: nand gate with 2 input, o2ai: OR+AND+INV  
+(vi) Write netlist-> write_verilog  good_mux_netlist.v / write_verilog -noattr good_mux_netlist.v <- simplified netlist    
+<img width="600" alt="lab1j" src="https://user-images.githubusercontent.com/118953915/205425197-8e128ef0-7944-4afc-b11d-f8531c5ccdd2.png">  
+
+Here is my nelist and logic diagram:  
+<img width="600" alt="lab1k" src="https://user-images.githubusercontent.com/118953915/205425631-f8eab904-fe59-4ae1-9bc7-97f259758fc6.png">
+
 
