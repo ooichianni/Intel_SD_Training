@@ -206,10 +206,12 @@ Then will display out the hierarchy design -> not showing AND and OR gate, but o
  <img width="455" alt="lab2j" src="https://user-images.githubusercontent.com/118953915/205927497-d3452277-6b91-4324-8e94-91050a9627cd.PNG">  
 (v) Reason on why the netlist construct 2INV+NAND instead of directly OR gate:
 Here is the screenshot from lecture video:  
-<img width="330" alt="lab2k" src="https://user-images.githubusercontent.com/118953915/205933439-d48489b7-8c53-4a1b-8b57-38f57bc2a987.PNG">
-From the figure: [Left] If cmos NAND, have stacked nmos, [Right] NOR follow by iNV to get OR, have staked pmos   
--Stacked pmos is bad, due to poor mobility. In order to improvce this need to make it wide cell (to get good logic effort)   
--Logical effort is defined as the ratio of the input capacitance of a gate to the input capacitance of an inverter delivering the same output current. It is defined as the number of times worse it is at delivering output current than would be an inverter with identical input capacitance        
+From the figure: [Left] If cmos NAND, have stacked nmos, [Right] NOR follow by iNV to get OR, have staked pmos
+<img width="330" alt="lab2k" src="https://user-images.githubusercontent.com/118953915/205933439-d48489b7-8c53-4a1b-8b57-38f57bc2a987.PNG">  
+-Stacked pmos is bad, due to poor mobility. In order to improvce this need to make it wide cell (to get good logic effort)
+
+-Logical effort is defined as the ratio of the input capacitance of a gate to the input capacitance of an inverter delivering the same output current. It is defined as the number of times worse it is at delivering output current than would be an inverter with identical input capacitance  
+ 
 (vi) write out flat netlist by using command flatten
 (vii)write_verilog -noattr multiple_modules_flat.v then ! vim multiple_modules_flat.v  
  Here is the comparison among multiple_modules_hier.v vs multiple_modules_flat.v
