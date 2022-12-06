@@ -143,3 +143,33 @@ Here is my nelist and logic diagram:
 <img width="600" alt="lab1k" src="https://user-images.githubusercontent.com/118953915/205425631-f8eab904-fe59-4ae1-9bc7-97f259758fc6.png">
 
 
+#
+# Day_2   
+**⭐Timing libs(QTMs/ETMs), hierarchical vs flat synthesis and efficient flop coding styles**
+
+
+### *__Lecture Session__*
+**(A) Introduction to timing.libs**  
+
+Here is the contents of .libs in this training  
+<img width="600" alt="lab2a" src="https://user-images.githubusercontent.com/118953915/205808293-af4da4c9-ed20-4912-9573-98451b599ad3.PNG">  
+Enter ":syn of" to switch off highlighted word in vim  
+(i) Name of library: sky130_fd_sc_hd_tt_025c_1v80  
+(ii) PVT (Process,Voltage,Temperature)  
+-Process variation due to fabrication (variations in the manufacturing conditions such as temperature, pressure, and dopant concentrations)  
+-Voltage will cause variation in behaviour of the circuit  
+-Semiconductor sensitive to temperature  
+In the library of sky130_fd_sc_hd_tt_025c_1v80:  
+tt-typical process (can be slow/fast/typical) ; 025c-temperature ; 1v80 -volatge  
+
+In order to make sure our silicon can be function in all possible conditions  
+we need to factor in all variation when we design circuit, so our library will be charaterize to model this variations  
+
+(iii) .lib is buckect of all std cell that avaiable  
+Containing different flavours of different cell & different flavours of same cell with different number of inputs   
+<img width="600" alt="lab2b" src="https://user-images.githubusercontent.com/118953915/205820406-e6b086cf-35ce-406f-bc61-35f58de851bb.PNG">  
+and each of them have different features, can open equivalent verilog model to see the details of gates by using command ":vsp ../my_lib/verilog_model/sky130_fd_sc_hd.v" 
+File with *.pp.v is consisting power port information 
+<img width="600" alt="lab2c" src="https://user-images.githubusercontent.com/118953915/205829566-3b17871b-3a2c-4fa4-a6ad-0141246b6c7c.PNG">  
+ we can see that there is
+The cell is having 5 inputs, so there will be 2^5=32 combinations. In the libs will state out all details for each combinations (Eg: Leakage power) 
