@@ -201,7 +201,7 @@ Each of the cell pin have its own information: capacitance, transition, power as
 (v) show multiple_modules <- key in the top modules name    
 Then will display out the hierarchy design -> not showing AND and OR gate, but only showing the u1 and u2, which is the instance of submodule 1 and 2   
  <img width="600" alt="lab2i" src="https://user-images.githubusercontent.com/118953915/205855372-92273978-5913-4f81-a92e-575f0ea3f9ff.PNG">  
-(vi) write_verilog -noattr multiple_modules.v then !vim multiple_modules_hier.v  
+(vi) write_verilog -noattr multiple_modules_hier.v then !vim multiple_modules_hier.v  
   > Refer this link for learning DeMorgan's Theorems in boolean algebra:  https://www.allaboutcircuits.com/textbook/digital/chpt-7/demorgans-theorems/  
  <img width="455" alt="lab2j" src="https://user-images.githubusercontent.com/118953915/205927497-d3452277-6b91-4324-8e94-91050a9627cd.PNG">  
 (v) Reason on why the netlist construct 2INV+NAND instead of directly OR gate:
