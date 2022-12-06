@@ -150,8 +150,9 @@ Here is my nelist and logic diagram:
 **⭐Timing libs(QTMs/ETMs), hierarchical vs flat synthesis and efficient flop coding styles**
 
 
-### *__Lecture Session__*
-**(A) Introduction to timing.libs**  
+### *__Lecture Session__ & __Lab Session__*
+
+**Lab4: Hierarchical vs Flat Synthesis**    
 
 1. Here is the contents of .libs in this training  
 <img width="600" alt="lab2a" src="https://user-images.githubusercontent.com/118953915/205808293-af4da4c9-ed20-4912-9573-98451b599ad3.PNG">  
@@ -190,8 +191,10 @@ Each of the cell pin have its own information: capacitance, transition, power as
  -Pros of Bigger cell: wider transisteor == faster/small delay  
  -Pros of Smaller cell: small area == small power comsume
 
-**(B) Hierarchical vs Flat Synthesis**  
-1. Command to setup the design:
+ 
+**Lab5: Hierarchical vs Flat Synthesis**    
+ 
+ 1. Command to setup the design:
 (i) yosys  
 (ii) read_liberty -lib ../lib/sky*.lib  
 (iii) read_verilog multiple_modules.v  
@@ -225,7 +228,15 @@ From the figure: [Right] it is a single netlist without any submodule inside the
  Only consists one sub_module1 which is AND gate:    
  <img width="649" alt="lab2n" src="https://user-images.githubusercontent.com/118953915/205947043-1c7c2b9e-42da-4bd4-840c-87762ff270fb.PNG">   
    
-💡 Modular synthesis is prefer when we have multiple instances of same module (Eg: when there is 6 x multiplier, only required to synthesize one and duplicate 6 times) or divide and conquer (Eg: when there is huge and massive design, then the tool will not run smartly. Recommend to run by portion so the netlist will get optimize, after that stick all those netlist together at the top level)
+💡 Modular synthesis is prefer when we have multiple instances of same module (Eg: when there is 6 x multiplier, only required to synthesize one and duplicate 6 times) or divide and conquer (Eg: when there is huge and massive design, then the tool will not run smartly. Recommend to run by portion so the netlist will get optimize, after that stick all those netlist together at the top level)  
+ 
+ **Lab6: Various Flop Coding Styles and optimization**  
+ 
+1. In a combinational circuit, there is multiple logic gate. Each of the logic gate will have some propagation delay, which will lead to glitch occur. (Eg: 1st gate having propagtion delay 1ns and the next gate have 2ns, so at the end the output dint have the right value which means that output will glitch due to propagation delay)  
+💡 so we need Flop to store the value (place between the gates)  
+-Output of the D-FF only will trigger during the positive edge of clocks, so the data at output is stable.  
+-The next logic gate will also receive a stable data, because the output(Q) of previous Flop have shielded the changes from its own input(D)
+ 2. We need to initialize the flops - sel/reset - syn/async
 
  
 
