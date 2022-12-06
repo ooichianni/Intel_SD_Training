@@ -156,14 +156,15 @@ Here is my nelist and logic diagram:
 
 1. Here is the contents of .libs in this training  
 <img width="600" alt="lab2a" src="https://user-images.githubusercontent.com/118953915/205808293-af4da4c9-ed20-4912-9573-98451b599ad3.PNG">  
-Enter ":syn of" to switch off highlighted word in vim  
-(i) Name of library: sky130_fd_sc_hd_tt_025c_1v80  
-(ii) PVT (Process,Voltage,Temperature)  
--Process variation due to fabrication (variations in the manufacturing conditions such as temperature, pressure, and dopant concentrations)  
--Voltage will cause variation in behaviour of the circuit  
--Semiconductor sensitive to temperature  
-In the library of sky130_fd_sc_hd_tt_025c_1v80:  
-tt-typical process (can be slow/fast/typical) ; 025c-temperature ; 1v80 -volatge  
+Enter ":syn of" to switch off highlighted word in vim
+
+(i)Name of library: sky130_fd_sc_hd_tt_025c_1v80      
+(ii)PVT (Process,Voltage,Temperature)  
+-Process variation due to fabrication (variations in the manufacturing conditions such as temperature, pressure, and dopant concentrations)    
+-Voltage will cause variation in behaviour of the circuit    
+-Semiconductor sensitive to temperature    
+In the library of sky130_fd_sc_hd_tt_025c_1v80:    
+tt-typical process (can be slow/fast/typical) ; 025c-temperature ; 1v80 -volatge    
 
 In order to make sure our silicon can be function in all possible conditions  
 we need to factor in all variation when we design circuit, so our library will be charaterize to model this variations  
