@@ -175,9 +175,18 @@ File with <file>.pp.v is consisting power port information
 <img width="600" alt="lab2c" src="https://user-images.githubusercontent.com/118953915/205829566-3b17871b-3a2c-4fa4-a6ad-0141246b6c7c.PNG">  
  we can see that there is
 The cell is having 5 inputs, so there will be 2^5=32 combinations. In the libs will state out all details for each combinations (Eg: Leakage power)   
-(iii) Inside the lib will also state out cell area, power port  
+(iv) Inside the lib will also state out cell area, power port  
 <img width="300" alt="lab2d" src="https://user-images.githubusercontent.com/118953915/205839427-24e92d8b-0eb7-4ef8-9550-a420ad39d329.PNG">  
-Each of the cell pin have its own information: capacitance, transition, power associated to the pin
+Each of the cell pin have its own information: capacitance, transition, power associated to the pin  
 <img width="300" alt="lab2e" src="https://user-images.githubusercontent.com/118953915/205839432-e3914736-c691-48d9-af9c-80976b2b849e.PNG">  
- Besides power, the lib also will contains timing information
-<img width="600" alt="lab2f" src="https://user-images.githubusercontent.com/118953915/205839439-f176fd34-4d19-479c-a2f3-c6ed72a9f1b0.PNG">
+ Besides power, the lib also will contains timing information  
+<img width="600" alt="lab2f" src="https://user-images.githubusercontent.com/118953915/205839439-f176fd34-4d19-479c-a2f3-c6ed72a9f1b0.PNG">  
+(v) Here is the comparison on different flavours of same cell with different number of inputs  
+ <img width="600" alt="lab2g" src="https://user-images.githubusercontent.com/118953915/205848330-ab153dd2-9ab3-4542-b802-6c6de19f6e45.PNG">  
+-Smaller cell: More delay, Less area, Less power  
+-Bigger cell: Less delay, More area, More power  
+💡Conclusion: 
+ - Pros of Bigger cell: wider transisteor == faster/small delay  
+ - Pros of Smaller cell: small area == small power comsume
+
+
