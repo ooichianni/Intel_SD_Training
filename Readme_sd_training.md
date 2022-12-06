@@ -191,7 +191,7 @@ Each of the cell pin have its own information: capacitance, transition, power as
  -Pros of Smaller cell: small area == small power comsume
 
 **(B) Hierarchical vs Flat Synthesis**  
-Command to setup the design:
+1. Command to setup the design:
 (i) yosys  
 (ii) read_liberty -lib ../lib/sky*.lib  
 (iii) read_verilog multiple_modules.v  
@@ -211,7 +211,20 @@ From the figure: [Left] If cmos NAND, have stacked nmos, [Right] NOR follow by i
 -Stacked pmos is bad, due to poor mobility. In order to improvce this need to make it wide cell (to get good logic effort)   
 -Logical effort is defined as the ratio of the input capacitance of a gate to the input capacitance of an inverter delivering the same output current. It is defined as the number of times worse it is at delivering output current than would be an inverter with identical input capacitance        
 (vi) write out flat netlist by using command flatten
-(vii)write_verilog -noattr multiple_modules_flat.v then ! vim multiple_modules_flat.v
+(vii)write_verilog -noattr multiple_modules_flat.v then ! vim multiple_modules_flat.v  
+ Here is the comparison among multiple_modules_hier.v vs multiple_modules_flat.v
+ <img width="900" alt="lab2l" src="https://user-images.githubusercontent.com/118953915/205939781-4c3ae3d4-cd4c-4123-8d61-db09f5b1b216.PNG">  
+From the figure: [Right] it is a single netlist without any submodule inside the flatten.v and can directly see each of the instantiation of the gate  
+(vii) Invoke show, not seing u1 and u2 anymore after flattem
+ <img width="929" alt="lab2m" src="https://user-images.githubusercontent.com/118953915/205941268-ef256f34-9b8d-4da1-a5b0-39b587688f58.PNG">  
+ 2. Now looking at sub-modules
+ (i) Need to exit and repeat the step from (i) to (iii)   
+ (ii) Then, use this command and only synthesis one of the sub_module: synth -top sub_module1  
+ Only consists one sub_module1 which is AND gate:    
+ <img width="649" alt="lab2n" src="https://user-images.githubusercontent.com/118953915/205947043-1c7c2b9e-42da-4bd4-840c-87762ff270fb.PNG">   
+   
+💡 Modular synthesis is prefer when we have multiple instances of same module (Eg: when there is 6 x multiplier, only required to synthesize one and duplicate 6 times) or divide and conquer (Eg: when there is huge and massive design, then the tool will not run smartly. Recommend to run by portion so the netlist will get optimize, after that stick all those netlist together at the top level)
+
  
 
 
