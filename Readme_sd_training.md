@@ -182,11 +182,26 @@ Each of the cell pin have its own information: capacitance, transition, power as
  Besides power, the lib also will contains timing information  
 <img width="600" alt="lab2f" src="https://user-images.githubusercontent.com/118953915/205839439-f176fd34-4d19-479c-a2f3-c6ed72a9f1b0.PNG">  
 (v) Here is the comparison on different flavours of same cell with different number of inputs  
- <img width="600" alt="lab2g" src="https://user-images.githubusercontent.com/118953915/205848330-ab153dd2-9ab3-4542-b802-6c6de19f6e45.PNG">  
+ <img width="900" alt="lab2g" src="https://user-images.githubusercontent.com/118953915/205848330-ab153dd2-9ab3-4542-b802-6c6de19f6e45.PNG">  
 -Smaller cell: More delay, Less area, Less power  
 -Bigger cell: Less delay, More area, More power  
+ 
 💡Conclusion: 
- - Pros of Bigger cell: wider transisteor == faster/small delay  
- - Pros of Smaller cell: small area == small power comsume
+ -Pros of Bigger cell: wider transisteor == faster/small delay  
+ -Pros of Smaller cell: small area == small power comsume
 
+**(B) Hierarchical vs Flat Synthesis**  
+Command to setup the design:
+(i) yosys  
+(ii) read_liberty -lib ../lib/sky*.lib  
+(iii) read_verilog multiple_modules.v  
+(iv) synth -top multiple_modules  
+(v) linking deisgn to library  
+(vi) abc -liberty ../mylib/sky*.lib  
+(v) show multiple_modules <- key in the top modules name    
+Then will display out the hierarchy design -> not showing AND and OR gate, but only showing the u1 and u2, which is the instance of submodule 1 and 2 
+ <img width="600" alt="lab2i" src="https://user-images.githubusercontent.com/118953915/205855372-92273978-5913-4f81-a92e-575f0ea3f9ff.PNG">
 
+                            
+ 
+ 
