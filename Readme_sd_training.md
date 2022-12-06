@@ -153,7 +153,7 @@ Here is my nelist and logic diagram:
 ### *__Lecture Session__*
 **(A) Introduction to timing.libs**  
 
-Here is the contents of .libs in this training  
+1. Here is the contents of .libs in this training  
 <img width="600" alt="lab2a" src="https://user-images.githubusercontent.com/118953915/205808293-af4da4c9-ed20-4912-9573-98451b599ad3.PNG">  
 Enter ":syn of" to switch off highlighted word in vim  
 (i) Name of library: sky130_fd_sc_hd_tt_025c_1v80  
@@ -167,7 +167,7 @@ tt-typical process (can be slow/fast/typical) ; 025c-temperature ; 1v80 -volatge
 In order to make sure our silicon can be function in all possible conditions  
 we need to factor in all variation when we design circuit, so our library will be charaterize to model this variations  
 
-(iii) .lib is buckect of all std cell that avaiable  
+2. .lib is buckect of all std cell that avaiable  
 Containing different flavours of different cell & different flavours of same cell with different number of inputs   
 <img width="600" alt="lab2b" src="https://user-images.githubusercontent.com/118953915/205820406-e6b086cf-35ce-406f-bc61-35f58de851bb.PNG">  
 and each of them have different features, can open equivalent verilog model to see the details of gates by using command ":vsp ../my_lib/verilog_model/sky130_fd_sc_hd.v" 
@@ -175,13 +175,13 @@ File with <file>.pp.v is consisting power port information
 <img width="600" alt="lab2c" src="https://user-images.githubusercontent.com/118953915/205829566-3b17871b-3a2c-4fa4-a6ad-0141246b6c7c.PNG">  
  we can see that there is
 The cell is having 5 inputs, so there will be 2^5=32 combinations. In the libs will state out all details for each combinations (Eg: Leakage power)   
-(iv) Inside the lib will also state out cell area, power port  
+3. Inside the lib will also state out cell area, power port  
 <img width="300" alt="lab2d" src="https://user-images.githubusercontent.com/118953915/205839427-24e92d8b-0eb7-4ef8-9550-a420ad39d329.PNG">  
 Each of the cell pin have its own information: capacitance, transition, power associated to the pin  
 <img width="300" alt="lab2e" src="https://user-images.githubusercontent.com/118953915/205839432-e3914736-c691-48d9-af9c-80976b2b849e.PNG">  
  Besides power, the lib also will contains timing information  
 <img width="600" alt="lab2f" src="https://user-images.githubusercontent.com/118953915/205839439-f176fd34-4d19-479c-a2f3-c6ed72a9f1b0.PNG">  
-(v) Here is the comparison on different flavours of same cell with different number of inputs  
+3. Here is the comparison on different flavours of same cell with different number of inputs  
  <img width="900" alt="lab2g" src="https://user-images.githubusercontent.com/118953915/205848330-ab153dd2-9ab3-4542-b802-6c6de19f6e45.PNG">  
 -Smaller cell: More delay, Less area, Less power  
 -Bigger cell: Less delay, More area, More power  
@@ -199,8 +199,11 @@ Command to setup the design:
 (v) linking deisgn to library  
 (vi) abc -liberty ../mylib/sky*.lib  
 (v) show multiple_modules <- key in the top modules name    
-Then will display out the hierarchy design -> not showing AND and OR gate, but only showing the u1 and u2, which is the instance of submodule 1 and 2 
- <img width="600" alt="lab2i" src="https://user-images.githubusercontent.com/118953915/205855372-92273978-5913-4f81-a92e-575f0ea3f9ff.PNG">
+Then will display out the hierarchy design -> not showing AND and OR gate, but only showing the u1 and u2, which is the instance of submodule 1 and 2   
+ <img width="600" alt="lab2i" src="https://user-images.githubusercontent.com/118953915/205855372-92273978-5913-4f81-a92e-575f0ea3f9ff.PNG">  
+(vi) write_verilog -noattr multiple_modules.v then !vim multiple_modules.v
+ 
+ > Refer this link for learning DeMorgan's Theorems in boolean algebra:  https://www.allaboutcircuits.com/textbook/digital/chpt-7/demorgans-theorems/
 
                             
  
