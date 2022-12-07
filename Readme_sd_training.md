@@ -152,10 +152,11 @@ Here is my nelist and logic diagram:
 
 ### *__Lecture Session__ & __Lab Session__*
 
-1. CMOS (complementary metal-oxide semiconductor) is the semiconductor technology used in most of today's integrated circuits (ICs), also known as chips or microchips  
+1. CMOS (complementary metal-oxide semiconductor) is the semiconductor technology used in most of today's integrated circuits (ICs), also known as chips or microchips 
 There are two types of MOSFETs: the NMOS and the PMOS  
-MOSFETs-specifying the circuits physically and characterizing them electricity  
-2. FF (flip flop) serves as memory element in a digital design
+MOSFETs-specifying the circuits physically and characterizing them electricity    
+2. FF (flip flop) serves as memory element in a digital design  
+3. Setup time is the time for the input data signals to remain stable before the clock edge, while hold time is the time for the input data signals to remain stable  after the clock edge
 
 **Lab4: Hierarchical vs Flat Synthesis**    
 
