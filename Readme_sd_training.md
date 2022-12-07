@@ -200,9 +200,10 @@ Each of the cell pin have its own information: capacitance, transition, power as
 (ii) read_liberty -lib ../lib/sky*.lib  
 (iii) read_verilog multiple_modules.v  
 (iv) synth -top multiple_modules  
+ <img width="159" alt="lab2h" src="https://user-images.githubusercontent.com/118953915/206076867-a565dc90-74d4-432c-ad12-c028c85c5a47.PNG">  
 (v) linking deisgn to library  
-(vi) abc -liberty ../mylib/sky*.lib  
-(v) show multiple_modules <- key in the top modules name    
+ abc -liberty ../lib/sky*.lib    
+(v) show multiple_modules <- key in the top modules name      
 Then will display out the hierarchy design -> not showing AND and OR gate, but only showing the u1 and u2, which is the instance of submodule 1 and 2   
  <img width="600" alt="lab2i" src="https://user-images.githubusercontent.com/118953915/205855372-92273978-5913-4f81-a92e-575f0ea3f9ff.PNG">  
 (vi) write_verilog -noattr multiple_modules_hier.v then !vim multiple_modules_hier.v  
@@ -231,13 +232,17 @@ From the figure: [Right] it is a single netlist without any submodule inside the
    
 💡 Modular synthesis is prefer when we have multiple instances of same module (Eg: when there is 6 x multiplier, only required to synthesize one and duplicate 6 times) or divide and conquer (Eg: when there is huge and massive design, then the tool will not run smartly. Recommend to run by portion so the netlist will get optimize, after that stick all those netlist together at the top level)  
  
- **Lab6: Various Flop Coding Styles and optimization**  
+ **Lab1: Various Flop Coding Styles and optimization**  
  
 1. In a combinational circuit, there is multiple logic gate. Each of the logic gate will have some propagation delay, which will lead to glitch occur. (Eg: 1st gate having propagtion delay 1ns and the next gate have 2ns, so at the end the output dint have the right value which means that output will glitch due to propagation delay)  
 💡 so we need Flop to store the value (place between the gates)  
 -Output of the D-FF only will trigger during the positive edge of clocks, so the data at output is stable.  
 -The next logic gate will also receive a stable data, because the output(Q) of previous Flop have shielded the changes from its own input(D)
- 2. We need to initialize the flops - sel/reset - syn/async
+ 2. We need to initialize the flops - sel/reset - syn/async   
+ 3. D FF with async reset: Output(q) will get trigger when there is positive clocck edge and positive async_reset  
+-Asynchronous happen anytime irrespective to clock edge (without dependency to clock)  
+-When there is positive async_reset, the output will have value "0", else will read in value from input(d)   
+  
 
  
 
