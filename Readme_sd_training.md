@@ -260,12 +260,25 @@ From the figure: [Right] it is a single netlist without any submodule inside the
 (ii)./a.out  
 (iii)gtkwave <>.vcd    
 <img width="600" alt="lab2r" src="https://user-images.githubusercontent.com/118953915/206105360-d43817af-6876-426b-9ba4-9542abc7ecc0.PNG">  
-(iv) Asyn reset
+(iv) Asyn reset  
 <img width="600" alt="lab2s" src="https://user-images.githubusercontent.com/118953915/206105370-b1ee39b8-fe08-4b3e-8e1c-72b83cf1113a.PNG">  
-(v) Asyn set
+ - The output(q) will get trigger for each of the posedge clock    
+ - If the async_reset is "1", the output(q) will directly change to "0" irrespective to clock edge  
+ - The output(q) will remain "0" until the async_reset is toggle back to "0", then it will read in value from input(d) during posedge clock  
+
+ (v) Asyn set  
 <img width="600" alt="lab2t" src="https://user-images.githubusercontent.com/118953915/206105378-02c19451-6487-495f-8e31-0a11ac56c102.PNG"> 
-(vi) Sync reset
+ - The output(q) will get trigger for each of the posedge clock    
+ - If the async_set is "1", the output(q) will directly change to "1" irrespective to clock edge  
+ - The output(q) will remain "1" until the async_set is toggle back to "0", then it will read in value from input(d) during posedge clock  
+
+ (vi) Sync reset  
 <img width="600" alt="lab2u" src="https://user-images.githubusercontent.com/118953915/206105390-9a0f5015-29fb-45f7-a597-e395247f2500.PNG">  
+ - The output(q) will get trigger for each of the posedge clock    
+ - If the sync_reset is "1", the output(q) will change to "0" in the next posedge clk  
+ - The output(q) will remain "0" until the sync_reset is toggle back to "0", then it will read in value from input(d) during posedge clock  
+ 
+ 💡set&reset have higher priority thn input(d) due to if(condition)...else  
 
 
                             
