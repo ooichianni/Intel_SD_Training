@@ -232,7 +232,8 @@ From the figure: [Right] it is a single netlist without any submodule inside the
  (i) Need to exit and repeat the step from (i) to (iii)   
  (ii) Then, use this command and only synthesis one of the sub_module: synth -top sub_module1  
  Only consists one sub_module1 which is AND gate:    
- <img width="649" alt="lab2n" src="https://user-images.githubusercontent.com/118953915/205947043-1c7c2b9e-42da-4bd4-840c-87762ff270fb.PNG">   
+ <img width="600" alt="lab2zsub" src="https://user-images.githubusercontent.com/118953915/206192139-d2e9e102-8d68-450a-bde7-bd6e785d4e25.PNG">  
+
    
 💡 Modular synthesis is prefer when we have multiple instances of same module (Eg: when there is 6 x multiplier, only required to synthesize one and duplicate 6 times) or divide and conquer (Eg: when there is huge and massive design, then the tool will not run smartly. Recommend to run by portion so the netlist will get optimize, after that stick all those netlist together at the top level)  
  
@@ -279,7 +280,7 @@ From the figure: [Right] it is a single netlist without any submodule inside the
  💡set&reset have higher priority thn input(d) due to if(condition)...else  
  
 2. Proceed to synthesis  
-(i) yosys ; read_liberty -lib ../lib/sky*.lib ; read_verilog dff*.v ; synth -top dff_* ; using dff, dfflibmap -liberty ../lib/sky*.lib ; abc -liberty ../lib/sky*.lib  
+(i) Steps: yosys ; read_liberty -lib ../lib/sky*.lib ; read_verilog dff*.v ; synth -top dff_* ; using dff, dfflibmap -liberty ../lib/sky*.lib ; abc -liberty ../lib/sky*.lib  
 -If use dfflimap, then the tool will only search for ff lib (and sometimes all the ff lib will keep in another folder in */lib, so need to point correctly)
 only look for dff flops (ss)  
 <img width="600" alt="lab2v" src="https://user-images.githubusercontent.com/118953915/206117867-e22b7618-1707-4379-9ebb-68a36c561b47.PNG">
@@ -295,11 +296,19 @@ syncres: no set/reset pin on ff
  
 **Interesting optimisations**
  
-If looking at multiplexer:  
- <img width="549" alt="lab2za1" src="https://user-images.githubusercontent.com/118953915/206133157-cbc9abe7-19c8-400f-86f6-83da18aade6c.PNG">  
+1. If looking at multiplexer:  
+ (i) <img width="600" alt="lab2za1" src="https://user-images.githubusercontent.com/118953915/206133157-cbc9abe7-19c8-400f-86f6-83da18aade6c.PNG">  
  Explanation from training video:   
  <img width="547" alt="lab2za" src="https://user-images.githubusercontent.com/118953915/206132337-4969c59c-0cbb-48f9-99a7-da98f1b6a6c3.PNG">  
--When the number from the truth table convert to decimal value and times 2 and convert back to digital value, the pattern of output is the same for y[3:1] and then y[0]=0
+-When the number from the truth table convert to decimal value and times 2 and convert back to digital value, the pattern of output is the same for y[3:1] and then y[0]=0  
+ (ii) Steps: yosys ; read_liberty -lib ../lib/sky*.lib ; read_verilog mult_2.v ; synth_top mul2 ; show  
+ <img width="600" alt="lab2zb" src="https://user-images.githubusercontent.com/118953915/206185966-0bbfee96-fec1-49dc-a7d6-e43af9563009.PNG">  
+ From the figure, we can see that there is no memories,no processor and no cell have been infferred. It is expected as show in (i), value y is from a and append with 1'b0.    
+ Since there is no standard cell, 
+ <img width="421" alt="lab2zc" src="https://user-images.githubusercontent.com/118953915/206187270-4f08db9e-bc3c-495c-ac67-d3746a534594.PNG">
+
+This is a special case. 
+ 
  
  
   
