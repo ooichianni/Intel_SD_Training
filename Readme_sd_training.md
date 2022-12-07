@@ -242,8 +242,9 @@ From the figure: [Right] it is a single netlist without any submodule inside the
 💡 so we need Flop to store the value (place between the gates)  
 -Output of the D-FF only will trigger during the positive edge of clocks, so the data at output is stable.  
 -The next logic gate will also receive a stable data, because the output(Q) of previous Flop have shielded the changes from its own input(D)
- 2. We need to initialize the flops - sel/reset - syn/async   
- <img width="960" alt="lab2p" src="https://user-images.githubusercontent.com/118953915/206095397-d10c7f33-79a7-475e-b744-a4126f790723.PNG"> 
+ 2. We need to initialize the flops - sel/reset/syn/async   
+ <img width="960" alt="lab2p" src="https://user-images.githubusercontent.com/118953915/206098264-9a0301ac-743d-4c7d-ba98-6bcd7fb93914.PNG">
+ 
  
  All of the output will get trigger as long as there is posedge clock -> "always@(posedge clk)"  
  (i) D FF with async reset: Output(q) will get trigger when there is positive clocck edge and positive async_reset  
