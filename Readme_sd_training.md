@@ -236,7 +236,7 @@ From the figure: [Right] it is a single netlist without any submodule inside the
    
 💡 Modular synthesis is prefer when we have multiple instances of same module (Eg: when there is 6 x multiplier, only required to synthesize one and duplicate 6 times) or divide and conquer (Eg: when there is huge and massive design, then the tool will not run smartly. Recommend to run by portion so the netlist will get optimize, after that stick all those netlist together at the top level)  
  
- **Lab1: Various Flop Coding Styles and optimization**  
+ **Various Flop Coding Styles and optimization**  
  
 1. In a combinational circuit, there is multiple logic gate. Each of the logic gate will have some propagation delay, which will lead to glitch occur. (Eg: 1st gate having propagtion delay 1ns and the next gate have 2ns, so at the end the output dint have the right value which means that output will glitch due to propagation delay)  
 💡 so we need Flop to store the value (place between the gates)  
@@ -254,8 +254,18 @@ From the figure: [Right] it is a single netlist without any submodule inside the
  -when the sync_reset is toggle to 1, it will wait for posdge of clock, then only will trigger the output    
 📖 asyn FF: always (posedge clk,posedge async reset) ; syn FF: always(posedge clk)  
   
-
- 
+**Lab flop syntheses simulation**
+ Here is all the FF, will check the behavioural simulation:  
+(i) iverilog dff_*.v tb_dff_*.v  
+(ii)./a.out  
+(iii)gtkwave <>.vcd    
+<img width="600" alt="lab2r" src="https://user-images.githubusercontent.com/118953915/206105360-d43817af-6876-426b-9ba4-9542abc7ecc0.PNG">  
+(iv) Asyn reset
+<img width="600" alt="lab2s" src="https://user-images.githubusercontent.com/118953915/206105370-b1ee39b8-fe08-4b3e-8e1c-72b83cf1113a.PNG">  
+(v) Asyn set
+<img width="600" alt="lab2t" src="https://user-images.githubusercontent.com/118953915/206105378-02c19451-6487-495f-8e31-0a11ac56c102.PNG"> 
+(vi) Sync reset
+<img width="600" alt="lab2u" src="https://user-images.githubusercontent.com/118953915/206105390-9a0f5015-29fb-45f7-a597-e395247f2500.PNG">  
 
 
                             
