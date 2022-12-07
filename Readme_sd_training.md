@@ -221,12 +221,12 @@ From the figure: [Left] If cmos NAND, have stacked nmos, [Right] NOR follow by i
 
 -Logical effort is defined as the ratio of the input capacitance of a gate to the input capacitance of an inverter delivering the same output current. It is defined as the number of times worse it is at delivering output current than would be an inverter with identical input capacitance  
  
-(vi) write out flat netlist by using command flatten
+(vi) write out flat netlist by using command flatten  
 (vii)write_verilog -noattr multiple_modules_flat.v then ! vim multiple_modules_flat.v  
  Here is the comparison among multiple_modules_hier.v vs multiple_modules_flat.v
  <img width="900" alt="lab2l" src="https://user-images.githubusercontent.com/118953915/205939781-4c3ae3d4-cd4c-4123-8d61-db09f5b1b216.PNG">  
 From the figure: [Right] it is a single netlist without any submodule inside the flatten.v and can directly see each of the instantiation of the gate  
-(vii) Invoke show, not seing u1 and u2 anymore after flattem
+(viii) Invoke show, not seing u1 and u2 anymore after flattem
  <img width="929" alt="lab2m" src="https://user-images.githubusercontent.com/118953915/205941268-ef256f34-9b8d-4da1-a5b0-39b587688f58.PNG">  
  2. Now looking at sub-modules
  (i) Need to exit and repeat the step from (i) to (iii)   
