@@ -287,9 +287,19 @@ only look for dff flops (ss)
  <img width="600" alt="lab2w" src="https://user-images.githubusercontent.com/118953915/206117885-ebbd4855-52fa-4c31-be0d-696f94c065e1.PNG">    
 async set: stated "SET", flop is active high reset so need inv (behaviour of AND gate in order to get "1") 
 <img width="600" alt="lab2x" src="https://user-images.githubusercontent.com/118953915/206117889-ee19efe6-7926-4949-ad39-747769d7ea9b.PNG"> 
-
-syncres
-no set/reset direct tie to ff
+syncres: no set/reset pin on ff  
+ Explanation from training video:
+ <img width="800" alt="lab2y" src="https://user-images.githubusercontent.com/118953915/206125946-43360ff0-9462-42b2-9df3-35a7db90d595.PNG">  
+ My run:
+<img width="600" alt="lab2z" src="https://user-images.githubusercontent.com/118953915/206125962-e5eb007c-fe5b-4996-8491-7d67c11d25f7.PNG"> 
+ 
+**Interesting optimisations**
+ 
+If looking at multiplexer:  
+ <img width="549" alt="lab2za1" src="https://user-images.githubusercontent.com/118953915/206133157-cbc9abe7-19c8-400f-86f6-83da18aade6c.PNG">  
+ Explanation from training video:   
+ <img width="547" alt="lab2za" src="https://user-images.githubusercontent.com/118953915/206132337-4969c59c-0cbb-48f9-99a7-da98f1b6a6c3.PNG">  
+-When the number from the truth table convert to decimal value and times 2 and convert back to digital value, the pattern of output is the same for y[3:1] and then y[0]=0
  
  
   
