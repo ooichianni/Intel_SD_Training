@@ -207,6 +207,7 @@ Each of the cell pin have its own information: capacitance, transition, power as
 (ii) read_liberty -lib ../lib/sky*.lib  
 (iii) read_verilog multiple_modules.v  
 (iv) synth -top multiple_modules  
+ <img width="364" alt="Capture" src="https://user-images.githubusercontent.com/118953915/206349270-59c806c7-a885-4519-8847-88b0f0a19142.PNG">  
  <img width="159" alt="lab2h" src="https://user-images.githubusercontent.com/118953915/206076867-a565dc90-74d4-432c-ad12-c028c85c5a47.PNG">  
 (v) linking deisgn to library  
  abc -liberty ../lib/sky*.lib    
