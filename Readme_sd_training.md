@@ -161,7 +161,7 @@ MOSFETs-specifying the circuits physically and characterizing them electricity
 **Lab4: Hierarchical vs Flat Synthesis**    
 
 1. Here is the contents of .libs in this training   
-<img width="532" alt="Capture" src="https://user-images.githubusercontent.com/118953915/206341918-17e165df-0d95-4605-8fec-b283f48c8481.PNG">  
+<img width="600" alt="Capture" src="https://user-images.githubusercontent.com/118953915/206341918-17e165df-0d95-4605-8fec-b283f48c8481.PNG">  
 <img width="600" alt="lab2a" src="https://user-images.githubusercontent.com/118953915/205808293-af4da4c9-ed20-4912-9573-98451b599ad3.PNG">  
 Enter ":syn of" to switch off highlighted word in vim
 
