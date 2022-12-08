@@ -207,8 +207,8 @@ Each of the cell pin have its own information: capacitance, transition, power as
 (ii) read_liberty -lib ../lib/sky*.lib  
 (iii) read_verilog multiple_modules.v  
 (iv) synth -top multiple_modules  
- <img width="364" alt="Capture" src="https://user-images.githubusercontent.com/118953915/206349270-59c806c7-a885-4519-8847-88b0f0a19142.PNG">  
- <img width="159" alt="lab2h" src="https://user-images.githubusercontent.com/118953915/206076867-a565dc90-74d4-432c-ad12-c028c85c5a47.PNG">  
+ <img width="600" alt="Capture" src="https://user-images.githubusercontent.com/118953915/206349270-59c806c7-a885-4519-8847-88b0f0a19142.PNG">  
+ <img width="600" alt="lab2h" src="https://user-images.githubusercontent.com/118953915/206076867-a565dc90-74d4-432c-ad12-c028c85c5a47.PNG">  
 (v) linking deisgn to library  
  abc -liberty ../lib/sky*.lib    
 (v) show multiple_modules <- key in the top modules name      
@@ -303,7 +303,7 @@ async set: stated "SET", flop is active high reset so need inv (behaviour of AND
 syncres: no set/reset pin on ff  
  Explanation from training video:
  <img width="800" alt="lab2y" src="https://user-images.githubusercontent.com/118953915/206125946-43360ff0-9462-42b2-9df3-35a7db90d595.PNG">  
- My run:
+ My run:  
 <img width="600" alt="lab2z" src="https://user-images.githubusercontent.com/118953915/206125962-e5eb007c-fe5b-4996-8491-7d67c11d25f7.PNG"> 
  
 **Interesting optimisations**
