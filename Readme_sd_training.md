@@ -217,7 +217,7 @@ Then will display out the hierarchy design -> not showing AND and OR gate, but o
   > Refer this link for learning DeMorgan's Theorems in boolean algebra:  https://www.allaboutcircuits.com/textbook/digital/chpt-7/demorgans-theorems/    
  
  My run:  
- <img width="600" alt="Capture" src="https://user-images.githubusercontent.com/118953915/206344644-6f9a7367-797e-471c-8f79-4659eb3feb87.PNG">
+ <img width="600" alt="Capture" src="https://user-images.githubusercontent.com/118953915/206344644-6f9a7367-797e-471c-8f79-4659eb3feb87.PNG">  
  <img width="200" alt="lab2q" src="https://user-images.githubusercontent.com/118953915/206092566-801b13b7-9422-4b92-bada-dc6b26cc4156.PNG">  
  Run from trainning video:   
  <img width="455" alt="lab2j" src="https://user-images.githubusercontent.com/118953915/205927497-d3452277-6b91-4324-8e94-91050a9627cd.PNG">  
