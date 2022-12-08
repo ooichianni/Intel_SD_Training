@@ -240,7 +240,8 @@ From the figure: [Right] it is a single netlist without any submodule inside the
  <img width="929" alt="lab2m" src="https://user-images.githubusercontent.com/118953915/205941268-ef256f34-9b8d-4da1-a5b0-39b587688f58.PNG">  
  2. Now looking at sub-modules
  (i) Need to exit and repeat the step from (i) to (iii)   
- (ii) Then, use this command and only synthesis one of the sub_module: synth -top sub_module1  
+ (ii) Then, use this command and only synthesis one of the sub_module: synth -top sub_module1 
+ <img width="600" alt="Capture" src="https://user-images.githubusercontent.com/118953915/206367130-927887da-4e04-4406-82e9-f350fcc37ba7.PNG">  
  Only consists one sub_module1 which is AND gate:    
  <img width="600" alt="lab2zsub" src="https://user-images.githubusercontent.com/118953915/206192139-d2e9e102-8d68-450a-bde7-bd6e785d4e25.PNG">  
 
