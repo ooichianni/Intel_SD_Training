@@ -266,19 +266,19 @@ From the figure: [Right] it is a single netlist without any submodule inside the
 1. Here is all the FF, will check the behavioural simulation:  
 (i) iverilog dff_*.v tb_dff_*.v  ; ./a.out ; gtkwave <>.vcd    
 <img width="1000" alt="lab2r" src="https://user-images.githubusercontent.com/118953915/206105360-d43817af-6876-426b-9ba4-9542abc7ecc0.PNG">  
-(iv) Asyn reset  
+(ii) Asyn reset  
 <img width="600" alt="lab2s" src="https://user-images.githubusercontent.com/118953915/206105370-b1ee39b8-fe08-4b3e-8e1c-72b83cf1113a.PNG">  
  - The output(q) will get trigger for each of the posedge clock    
  - If the async_reset is "1", the output(q) will directly change to "0" irrespective to clock edge  
  - The output(q) will remain "0" until the async_reset is toggle back to "0", then it will read in value from input(d) during posedge clock  
 
- (v) Asyn set  
+ (iii) Asyn set  
 <img width="600" alt="lab2t" src="https://user-images.githubusercontent.com/118953915/206105378-02c19451-6487-495f-8e31-0a11ac56c102.PNG"> 
  - The output(q) will get trigger for each of the posedge clock    
  - If the async_set is "1", the output(q) will directly change to "1" irrespective to clock edge  
  - The output(q) will remain "1" until the async_set is toggle back to "0", then it will read in value from input(d) during posedge clock  
 
- (vi) Sync reset  
+ (iv) Sync reset  
 <img width="600" alt="lab2u" src="https://user-images.githubusercontent.com/118953915/206105390-9a0f5015-29fb-45f7-a597-e395247f2500.PNG">  
  - The output(q) will get trigger for each of the posedge clock    
  - If the sync_reset is "1", the output(q) will change to "0" in the next posedge clk  
@@ -292,7 +292,7 @@ From the figure: [Right] it is a single netlist without any submodule inside the
  
 -If use dfflimap, then the tool will only search for ff lib (and sometimes all the ff lib will keep in another folder in */lib, so need to point correctly)
 only look for dff flops (ss)  
-<img width="600" alt="lab2v" src="https://user-images.githubusercontent.com/118953915/206117867-e22b7618-1707-4379-9ebb-68a36c561b47.PNG">
+<img width="600" alt="lab2v" src="https://user-images.githubusercontent.com/118953915/206117867-e22b7618-1707-4379-9ebb-68a36c561b47.PNG">  
 (ii) async res: stated "RESET", flop is active high reset so need inv (behaviour of AND gate in order to get "1")  
  <img width="600" alt="lab2w" src="https://user-images.githubusercontent.com/118953915/206117885-ebbd4855-52fa-4c31-be0d-696f94c065e1.PNG">    
 async set: stated "SET", flop is active high reset so need inv (behaviour of AND gate in order to get "1") 
