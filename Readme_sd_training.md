@@ -264,7 +264,7 @@ From the figure: [Right] it is a single netlist without any submodule inside the
 **Lab flop syntheses simulation**
 1. Here is all the FF, will check the behavioural simulation:  
 (i) iverilog dff_*.v tb_dff_*.v  ; ./a.out ; gtkwave <>.vcd    
-<img width="600" alt="lab2r" src="https://user-images.githubusercontent.com/118953915/206105360-d43817af-6876-426b-9ba4-9542abc7ecc0.PNG">  
+<img width="1000" alt="lab2r" src="https://user-images.githubusercontent.com/118953915/206105360-d43817af-6876-426b-9ba4-9542abc7ecc0.PNG">  
 (iv) Asyn reset  
 <img width="600" alt="lab2s" src="https://user-images.githubusercontent.com/118953915/206105370-b1ee39b8-fe08-4b3e-8e1c-72b83cf1113a.PNG">  
  - The output(q) will get trigger for each of the posedge clock    
@@ -287,6 +287,8 @@ From the figure: [Right] it is a single netlist without any submodule inside the
  
 2. Proceed to synthesis  
 (i) Steps: yosys ; read_liberty -lib ../lib/sky*.lib ; read_verilog dff*.v ; synth -top dff_* ; using dff, dfflibmap -liberty ../lib/sky*.lib ; abc -liberty ../lib/sky*.lib  
+ <img width="600" alt="Capture" src="https://user-images.githubusercontent.com/118953915/206341471-8c2badc7-f839-4107-abb9-73bf081cdd29.PNG">  
+ 
 -If use dfflimap, then the tool will only search for ff lib (and sometimes all the ff lib will keep in another folder in */lib, so need to point correctly)
 only look for dff flops (ss)  
 <img width="600" alt="lab2v" src="https://user-images.githubusercontent.com/118953915/206117867-e22b7618-1707-4379-9ebb-68a36c561b47.PNG">
