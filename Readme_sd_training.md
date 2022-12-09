@@ -428,9 +428,9 @@ For const1.v & Const2.v:
 Now, looking at dff_const2.v  
 Here is the explanation from training video:  
 ![Picture25](https://user-images.githubusercontent.com/118953915/206746028-0601838d-336e-41ef-8fa4-4ebdc80074e2.png)
-Here is the waveform:   
-![Picture25](https://user-images.githubusercontent.com/118953915/206746028-0601838d-336e-41ef-8fa4-4ebdc80074e2.png)   
-For dff_const3.v:  
+For dff_const3.v:     
+![Picture25](https://user-images.githubusercontent.com/118953915/206746028-0601838d-336e-41ef-8fa4-4ebdc80074e2.png)    
+Here is the waveform:
 ![Picture26](https://user-images.githubusercontent.com/118953915/206746031-a9663eeb-6635-4d40-8f0f-f2c539b08811.png)  
 For dff_const4.v  
 Here is the details:   
