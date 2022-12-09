@@ -70,7 +70,7 @@ Design+Test Bench --> iverilog --> vcd file (value chnage dump format-looking fo
 
 #
 #### *__Lab Session__*
-#####*Lab1: Introduction to lab*  
+##### *Lab1: Introduction to lab*  
 Command to install workshop-> git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git  
 <img width="600" alt="lab1" src="https://user-images.githubusercontent.com/118953915/205265411-2feb1121-9cdd-44d7-9120-36c80d5741d9.PNG">  
 In the directory consists:
@@ -383,7 +383,7 @@ Cloning-physical aware synthesis (reduce large routing delay as shown in the fig
 Retiming both of the flop by reduce the logic at  1st combi and add those into 2nd combi, which can help in increase the frequency  operation of the circuit by reduce some delay in 1st combi  
 ![Picture9](https://user-images.githubusercontent.com/118953915/206745974-5ee450f6-9ad2-40c5-9c71-f5b75c655484.png)  
 
-#**Lab6:Combinational Logic Optimisations**  
+**Lab6:Combinational Logic Optimisations**  
  
 Here is the contents of each opt_check:  
 ![Picture10](https://user-images.githubusercontent.com/118953915/206745982-59de4300-0cc6-4b0b-9aad-0b62add5ca10.png)  
