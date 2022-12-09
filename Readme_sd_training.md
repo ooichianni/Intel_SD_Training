@@ -201,7 +201,7 @@ Each of the cell pin have its own information: capacitance, transition, power as
  -Pros of Smaller cell: small area == small power comsume
 
  
-**Lab5: Hierarchical vs Flat Synthesis**    
+#**Lab5: Hierarchical vs Flat Synthesis**    
  
  1. Command to setup the design:
 (i) yosys  
@@ -383,7 +383,7 @@ Cloning-physical aware synthesis (reduce large routing delay as shown in the fig
 Retiming both of the flop by reduce the logic at  1st combi and add those into 2nd combi, which can help in increase the frequency  operation of the circuit by reduce some delay in 1st combi  
 ![Picture9](https://user-images.githubusercontent.com/118953915/206745974-5ee450f6-9ad2-40c5-9c71-f5b75c655484.png)  
 
-**Lab6:Combinational Logic Optimisations**  
+#**Lab6:Combinational Logic Optimisations**  
  
 Here is the contents of each opt_check:  
 ![Picture10](https://user-images.githubusercontent.com/118953915/206745982-59de4300-0cc6-4b0b-9aad-0b62add5ca10.png)  
@@ -413,7 +413,7 @@ After optimize:
 Previous (before optimize):   
 ![Picture20](https://user-images.githubusercontent.com/118953915/206746019-05c06841-3f11-4a9f-9e2d-2f401380271a.png)   
  
-**Lab7: Sequential Logic Optimisations**
+#**Lab7: Sequential Logic Optimisations**
 
 Explanation from training video:   
 -The output(Q) of dff_const2 will always HIGH, so the optimisation can be done on this dff  
