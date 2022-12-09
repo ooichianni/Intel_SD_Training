@@ -338,8 +338,124 @@ Here is some special case:
 
 ### *__Lecture Session__*
 
-**(A) **
+Synthesis is not a push-button solution, it is dependent on out design statement and clarity of implementation whether we want to optimize some particular places or not by setting ‘don’t touch’  
+1. Optimization-minimizing cost functions: max delay cost(important!, weight in each path group-same clock constraint), min delay cost (expected-actual delay,unaffected by path group), max power cost, max area cost  
+2. Constant propagation    
+-Due to some requirement, there is 2 AND gate with one constant input “0”, so the output of the AND gate will directly obtain “0”, and depends on the another AND gate. While the another one have one constant input “1”, so the output only depends on one of the input, can directly understand as input A being wired as the output  
+From training video:                          
+![Picture1](https://user-images.githubusercontent.com/118953915/206745943-f7d65dae-7276-45a5-bc93-f7243e69371d.png)  
+3. Combinational and sequential optimization  
+-synthesis optimization for speed can be achieved through isolating the “and” portion of the circuit by assigning internal wire  
+From training video:  
+![Picture2](https://user-images.githubusercontent.com/118953915/206745950-9f696d1d-2ccd-4881-b51a-62a53861c83b.png)  
+4. Another method: register retiming   
+![Picture3](https://user-images.githubusercontent.com/118953915/206745951-1fc0c848-a096-4951-8491-90889fdcae33.png)  
+5. Difference Among Constant propagation in :  
+combinational logic is on Boolean Algebra  
+sequential logic is on Boolean Algebra+Timing Diagram Analysis  (eg:timing in dff) 
+> Boolean algebra table: https://www.electronics-tutorials.ws/boolean/boolean-algebra-simplification.html  
+6. Additional optimization  
+Resource sharing  
+![Picture4](https://user-images.githubusercontent.com/118953915/206745954-fcf504ef-8667-40dd-8387-50d1ef777b46.png)  
+-cons: increase in fanout  
+ > Can refer this link: https://www.google.com/url?sa=i&url=https%3A%2F%2Fslideplayer.com%2Fslide%2F3480933%2F&psig=AOvVaw0SA_uGHPHqVw13ACSzU21j&ust=1670565262817000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCIjmr9qq6fsCFQAAAAAdAAAAABAJ  
+ 
+ -removal of un-connected logic across boundaries , removal of double inverting logic across boundaries, propagation of constants to reduce logic  
+ 
+**(A) Introduction to optimization**
 
-                            
+1. Combinational Logic Optimization – squeezing logic to get most optimised design -area & power saving  
+Tech: constant propagation,boolean logic optimisation  
+![Picture5](https://user-images.githubusercontent.com/118953915/206745955-a84d87f6-6b77-4353-a12f-e12a19f9b5c6.png)  
+-Reduce to 2mos transistor-> less area and less power  
+Example of sequential optimisation (boolean logic):  
+ ![Picture6](https://user-images.githubusercontent.com/118953915/206745962-9a6bbcb7-37c1-4893-b9cf-cfbb370de588.png)  
+
+2. Sequential Logic Optimization  
+Tech: Sequential constan propagation, (advance: state optimisation,retiming,sequetial logic clonning)  
+No hardware circuti required for below, since after optimization, it is getting y=1   
+![Picture7](https://user-images.githubusercontent.com/118953915/206745967-d120b09d-83d1-42f7-bf60-882fba36aea0.png)  
+However for this situation SET, the logic cannot being optimize due to Q=SET is not funtionally correct
+-This is asynchronous dff, when the SET is ‘0’, the Q will wait for posedge clock to read in D   
+![Picture8](https://user-images.githubusercontent.com/118953915/206745971-113bf5a6-34bf-41eb-83bf-ed9b8acb5ad7.png)  
+State optimisation- optimize of unuse state (condense state machine)  
+Cloning-physical aware synthesis (reduce large routing delay as shown in the figure below)  
+Retiming both of the flop by reduce the logic at  1st combi and add those into 2nd combi, which can help in increase the frequency  operation of the circuit by reduce some delay in 1st combi  
+![Picture9](https://user-images.githubusercontent.com/118953915/206745974-5ee450f6-9ad2-40c5-9c71-f5b75c655484.png)  
+
+**Lab6:Combinational Logic Optimisations**  
  
+Here is the contents of each opt_check:  
+![Picture10](https://user-images.githubusercontent.com/118953915/206745982-59de4300-0cc6-4b0b-9aad-0b62add5ca10.png)  
+For opt_check:  
+Steps: yosys ; read_liberty -lib ../lib/sky*.lib ; read_verilog opt-check.v ; synth -top opt_check ; opt_clean -purge ; abc -liberty ../lib/sky*.lib  
+![Picture11](https://user-images.githubusercontent.com/118953915/206745985-e3103002-9d2e-470b-b72c-e3a6294e7efc.png)  
+While for the opt_check2:    
+![Picture12](https://user-images.githubusercontent.com/118953915/206745987-eec5bf43-36f2-4c8e-9266-6504363c21ce.png) 
+While for the opt_check3:   
+![Picture13](https://user-images.githubusercontent.com/118953915/206745990-1ff6c1a3-3ca9-41f6-b67f-612e74b8bc96.png)  
+While for opt_check_4:      
+![Picture14](https://user-images.githubusercontent.com/118953915/206745994-ce09709f-ba4f-4189-be89-733f0c9dec3c.png)  
+For multiple_module_opt.v:  
+Before opt_clean -purge need flatten  
+Steps: yosys ; read_liberty -lib ../lib/sky*.lib ; read_verilog multiple_module_opt.v ; synth -top multiple_module_opt ; flatten ; opt_clean -purge ; abc -liberty ../lib/sky*.lib  
+![Picture15](https://user-images.githubusercontent.com/118953915/206745996-d373cc0b-782a-4f22-846f-e405e3ca537d.png)  
+Addional info:
+![Picture16](https://user-images.githubusercontent.com/118953915/206745999-34084cd2-0a79-4590-907a-a507089831ad.png)  
+Previous(before optimize):  
+<img width="570" alt="Capture" src="https://user-images.githubusercontent.com/118953915/206753157-86ceb110-234d-4be5-87dc-05084d22bde4.PNG">  
+While for multiple_module_opt2:    
+Steps: yosys ; read_liberty -lib ../lib/sky*.lib ; read_verilog multiple_module_opt2.v ; synth -top multiple_module_opt2 ; flatten ; opt_clean -purge ; abc -liberty ../lib/sky*.lib
+Here is the verilog:     
+![Picture18](https://user-images.githubusercontent.com/118953915/206746011-e8c442cc-13a9-46c0-8e3a-05a11bf37e72.png)  
+After optimize:   
+![Picture19](https://user-images.githubusercontent.com/118953915/206746015-b9403176-1496-4ed8-930d-007567abc1c1.png)  
+Previous (before optimize):   
+![Picture20](https://user-images.githubusercontent.com/118953915/206746019-05c06841-3f11-4a9f-9e2d-2f401380271a.png)   
  
+**Lab7: Sequential Logic Optimisations**
+
+Explanation from training video: 
+-The output(Q) of dff_const2 will always HIGH, so the optimisation can be done on this dff  
+![Picture21](https://user-images.githubusercontent.com/118953915/206746020-43e47618-a922-4115-b63a-bcebf485a17d.png)  
+Here is the waveform for dff_const1.v:  
+![Picture22](https://user-images.githubusercontent.com/118953915/206746024-a3782b6f-3fd0-4ec8-806e-c142dc6757af.png)  
+Here is the waveform for dff_const2.v:  
+-Output always HIGH   
+![Picture23](https://user-images.githubusercontent.com/118953915/206746025-0199c2d2-50ea-4ee5-9a22-034570a1cebc.png) 
+For const1.v & Const2.v:  
+![Picture24](https://user-images.githubusercontent.com/118953915/206746026-677d49e5-4b6e-4a29-8896-2b44eea71c0d.png) 
+Now, looking at dff_const2.v  
+Here is the explanation from training video:  
+![Picture25](https://user-images.githubusercontent.com/118953915/206746028-0601838d-336e-41ef-8fa4-4ebdc80074e2.png)
+Here is the waveform:   
+![Picture25](https://user-images.githubusercontent.com/118953915/206746028-0601838d-336e-41ef-8fa4-4ebdc80074e2.png)   
+For dff_const3.v:  
+![Picture26](https://user-images.githubusercontent.com/118953915/206746031-a9663eeb-6635-4d40-8f0f-f2c539b08811.png)  
+For dff_const4.v  
+Here is the details:   
+![Picture27](https://user-images.githubusercontent.com/118953915/206746035-500bfc65-73ea-4974-9325-d912002c73aa.png)  
+Here is the waveform: 
+![Picture28](https://user-images.githubusercontent.com/118953915/206746037-fef3eb9e-8317-4aad-ac36-cead4d573ef4.png)  
+For dff_const4.v:  
+![Picture29](https://user-images.githubusercontent.com/118953915/206746039-d0505376-74e3-4a75-91a7-4d6a2aafcc8f.png)  
+For dff_const4.v:      
+![Picture30](https://user-images.githubusercontent.com/118953915/206746042-adea7672-ea04-45a7-97af-ed6759f16253.png)  
+For dff_const5  
+Here is the details:  
+![Picture31](https://user-images.githubusercontent.com/118953915/206746046-b10f71c6-8a7d-4fef-95af-760457547ca7.png)  
+Here is the waveform:   
+![Picture32](https://user-images.githubusercontent.com/118953915/206746048-cf3cc483-65ba-4efa-9bba-c77935007821.png)
+For dff_const5.v:  
+ ![Picture33](https://user-images.githubusercontent.com/118953915/206746057-02bcf9cf-acab-4db9-a9f3-bdd6439c71b1.png) 
+
+**Unused Output Optimization**
+ 
+Here is the explanation from training video:  
+![Picture34](https://user-images.githubusercontent.com/118953915/206746059-4f022587-fb41-4eaf-9a7a-0920248bac28.png)  
+Here is the counter_opt:  
+![Picture35](https://user-images.githubusercontent.com/118953915/206746061-58a2b0a6-8fe4-47ab-9069-70b28cb3885c.png)
+Remodified the file to look for 3 dff:  
+![Picture36](https://user-images.githubusercontent.com/118953915/206746066-8c2d932b-36f2-45c7-b6d6-c086b166d449.png)
+![Picture37](https://user-images.githubusercontent.com/118953915/206746071-ab02105c-d9cb-4d5a-92a0-b2bf4fccb585.png)  
+ -In previous counter_opt, all those logic that not going having a direct role in determining the primary output of the module will optimize directly
