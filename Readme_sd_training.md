@@ -8,7 +8,7 @@
 + **[ Day_2 : Timing libs(QTMs/ETMs), hierarchical vs flat synthesis and efficient flop coding styles ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_2)**  
   * [Lab4: Hierarchical vs Flat Synthesis](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab4-hierarchical-vs-flat-synthesis) 
 + **[ Day_3 : Combinational and sequenial optimizations ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_3)** 
-  * [Lab6: Combinational Logic Optimisations]()
+  * [Lab6: Combinational Logic Optimisations](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab6-combinational-logic-optimisations)
   * [Lab7: Sequential Logic Optimisations](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab7-sequential-logic-optimisations) 
 
 
