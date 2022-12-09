@@ -77,14 +77,14 @@ Design+Test Bench --> iverilog --> vcd file (value chnage dump format-looking fo
 
 #
 ### *__Lab Session__*
-*Lab1: Introduction to lab*  
+#### *Lab1: Introduction to lab*  
 Command to install workshop-> git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git  
 <img width="600" alt="lab1" src="https://user-images.githubusercontent.com/118953915/205265411-2feb1121-9cdd-44d7-9120-36c80d5741d9.PNG">  
 In the directory consists:
 my_lib: contain library files (lib-contain std cell for synthesis in .lib and verlog_model-contain std cell verilog model in .v)
 verilog_files: contain verilog source file and testbench file
 
-*Lab2: Introduction iverilog gtkwave part 1*  
+#### *Lab2: Introduction iverilog gtkwave part 1*  
 Steps:     
 (i) Load mux to stimulator-> iverilog good_mux.v tb_good_mux.v , then new file created: a.out    
 (ii) Execute this new created file from (i)-> ./a.out, then will dump out tb_good_mux.vcd     
@@ -133,7 +133,7 @@ So constraints is needed as a guidance for the
    
 #
 ### *__Lab Session__*
-*Lab3: good mux Part 1,2,3*  
+#### *Lab3: good mux Part 1,2,3*  
 
 Steps:  
 Command to invoke yoysy > yosys  
@@ -166,7 +166,7 @@ MOSFETs-specifying the circuits physically and characterizing them electricity
 2. FF (flip flop) serves as memory element in a digital design  
 3. Setup time is the time for the input data signals to remain stable before the clock edge, while hold time is the time for the input data signals to remain stable  after the clock edge
 
-**Lab4: Hierarchical vs Flat Synthesis**    
+#### **Lab4: Hierarchical vs Flat Synthesis**    
 
 1. Here is the contents of .libs in this training   
 <img width="600" alt="Capture" src="https://user-images.githubusercontent.com/118953915/206341918-17e165df-0d95-4605-8fec-b283f48c8481.PNG">  
@@ -208,7 +208,7 @@ Each of the cell pin have its own information: capacitance, transition, power as
  -Pros of Smaller cell: small area == small power comsume
 
  
-**Lab5: Hierarchical vs Flat Synthesis**    
+#### **Lab5: Hierarchical vs Flat Synthesis**    
  
  1. Command to setup the design:
 (i) yosys  
@@ -420,7 +420,7 @@ After optimize:
 Previous (before optimize):   
 ![Picture20](https://user-images.githubusercontent.com/118953915/206746019-05c06841-3f11-4a9f-9e2d-2f401380271a.png)   
  
-**Lab7: Sequential Logic Optimisations**
+#### **Lab7: Sequential Logic Optimisations**
 
 Explanation from training video:   
 -The output(Q) of dff_const2 will always HIGH, so the optimisation can be done on this dff  
