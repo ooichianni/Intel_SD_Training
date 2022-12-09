@@ -466,4 +466,4 @@ Here is the counter_opt:
 Remodified the file to look for 3 dff:  
 ![Picture36](https://user-images.githubusercontent.com/118953915/206746066-8c2d932b-36f2-45c7-b6d6-c086b166d449.png)
 ![Picture37](https://user-images.githubusercontent.com/118953915/206746071-ab02105c-d9cb-4d5a-92a0-b2bf4fccb585.png)  
-💡In previous counter_opt, all those logic that not going having a direct role in determining the primary output of the module will optimize directly
+💡In previous counter_opt, all those logic not having a direct role in determining the primary output of the module will optimize directly
