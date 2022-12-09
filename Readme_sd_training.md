@@ -405,7 +405,7 @@ Addional info:
 Previous(before optimize):  
 <img width="570" alt="Capture" src="https://user-images.githubusercontent.com/118953915/206753157-86ceb110-234d-4be5-87dc-05084d22bde4.PNG">  
 While for multiple_module_opt2:    
-Steps: yosys ; read_liberty -lib ../lib/sky*.lib ; read_verilog multiple_module_opt2.v ; synth -top multiple_module_opt2 ; flatten ; opt_clean -purge ; abc -liberty ../lib/sky*.lib
+Steps: yosys ; read_liberty -lib ../lib/sky*.lib ; read_verilog multiple_module_opt2.v ; synth -top multiple_module_opt2 ; flatten ; opt_clean -purge ; abc -liberty ../lib/sky*.lib  
 Here is the verilog:     
 ![Picture18](https://user-images.githubusercontent.com/118953915/206746011-e8c442cc-13a9-46c0-8e3a-05a11bf37e72.png)  
 After optimize:   
@@ -415,12 +415,12 @@ Previous (before optimize):
  
 **Lab7: Sequential Logic Optimisations**
 
-Explanation from training video: 
+Explanation from training video:   
 -The output(Q) of dff_const2 will always HIGH, so the optimisation can be done on this dff  
 ![Picture21](https://user-images.githubusercontent.com/118953915/206746020-43e47618-a922-4115-b63a-bcebf485a17d.png)  
 Here is the waveform for dff_const1.v:  
 ![Picture22](https://user-images.githubusercontent.com/118953915/206746024-a3782b6f-3fd0-4ec8-806e-c142dc6757af.png)  
-Here is the waveform for dff_const2.v:  
+Here is the waveform for dff_const2.v:    
 -Output always HIGH   
 ![Picture23](https://user-images.githubusercontent.com/118953915/206746025-0199c2d2-50ea-4ee5-9a22-034570a1cebc.png) 
 For const1.v & Const2.v:  
@@ -458,4 +458,4 @@ Here is the counter_opt:
 Remodified the file to look for 3 dff:  
 ![Picture36](https://user-images.githubusercontent.com/118953915/206746066-8c2d932b-36f2-45c7-b6d6-c086b166d449.png)
 ![Picture37](https://user-images.githubusercontent.com/118953915/206746071-ab02105c-d9cb-4d5a-92a0-b2bf4fccb585.png)  
- -In previous counter_opt, all those logic that not going having a direct role in determining the primary output of the module will optimize directly
+💡In previous counter_opt, all those logic that not going having a direct role in determining the primary output of the module will optimize directly
