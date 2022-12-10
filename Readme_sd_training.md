@@ -416,7 +416,8 @@ While for multiple_module_opt2:
 Steps: yosys ; read_liberty -lib ../lib/sky*.lib ; read_verilog multiple_module_opt2.v ; synth -top multiple_module_opt2 ; flatten ; opt_clean -purge ; abc -liberty ../lib/sky*.lib  
 Here is the verilog:     
 ![Picture18](https://user-images.githubusercontent.com/118953915/206746011-e8c442cc-13a9-46c0-8e3a-05a11bf37e72.png)  
-After optimize:   
+After optimize:     
+-Direct assigned 1'b0 to y
 ![Picture19](https://user-images.githubusercontent.com/118953915/206746015-b9403176-1496-4ed8-930d-007567abc1c1.png)  
 Previous (before optimize):   
 ![Picture20](https://user-images.githubusercontent.com/118953915/206746019-05c06841-3f11-4a9f-9e2d-2f401380271a.png)   
