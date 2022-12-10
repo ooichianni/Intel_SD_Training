@@ -366,7 +366,7 @@ sequential logic is on Boolean Algebra+Timing Diagram Analysis  (eg:timing in df
 Resource sharing  
 ![Picture4](https://user-images.githubusercontent.com/118953915/206745954-fcf504ef-8667-40dd-8387-50d1ef777b46.png)  
 -cons: increase in fanout  
- > Can refer this link: https://www.google.com/url?sa=i&url=https%3A%2F%2Fslideplayer.com%2Fslide%2F3480933%2F&psig=AOvVaw0SA_uGHPHqVw13ACSzU21j&ust=1670565262817000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCIjmr9qq6fsCFQAAAAAdAAAAABAJ  
+ > Can refer this link: https://slideplayer.com/slide/3480933/ 
  
  -removal of un-connected logic across boundaries , removal of double inverting logic across boundaries, propagation of constants to reduce logic  
  
