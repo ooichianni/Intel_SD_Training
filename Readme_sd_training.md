@@ -426,7 +426,8 @@ Previous (before optimize):
 Explanation from training video:   
 -The output(Q) of dff_const2 will always HIGH, so the optimisation can be done on this dff  
 ![Picture21](https://user-images.githubusercontent.com/118953915/206746020-43e47618-a922-4115-b63a-bcebf485a17d.png)  
-Here is the waveform for dff_const1.v:  
+Here is the waveform for dff_const1.v: 
+ -Wait for next clock edge
 ![Picture22](https://user-images.githubusercontent.com/118953915/206746024-a3782b6f-3fd0-4ec8-806e-c142dc6757af.png)  
 Here is the waveform for dff_const2.v:    
 -Output always HIGH   
