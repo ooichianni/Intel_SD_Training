@@ -507,6 +507,6 @@ Another example:
 <img width="600" alt="4d6" src="https://user-images.githubusercontent.com/118953915/206909203-28836049-b5c2-4bb6-a077-2cbae8532d2a.PNG">
 (iii) non standard verilog coding   
  
- #### **Lab8: GLS Synth Sim Mismatch **
+ ####**Lab8: GLS Synth Sim Mismatch **
 
 
