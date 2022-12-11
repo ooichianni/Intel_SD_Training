@@ -509,5 +509,5 @@ so should put always(*), so when there is any signal changes, the output only wi
 will evaluated first before assign
 (iii) non standard verilog coding
 Shift register
-![image](https://user-images.githubusercontent.com/118953915/206894506-3bb48e6e-cae1-47ac-9237-04fb2dd25d6f.png)
+
 
