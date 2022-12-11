@@ -491,7 +491,7 @@ From the training video:
 Gate level verilog model can be timing aware or just functional
 if just funtion thn can validate funtionality and if timing aware thn can validate funtionality and ensure timing 
 
-2. Synthesis simulation mismatch
+2. Synthesis simulation mismatch  
 (i) Missing sensitivity list  
 -simulator works based on "activity" : output will change when there is changes in inputs, else will not change  
 -If always@(sel), only based on one input signal: sel  
@@ -499,8 +499,11 @@ if just funtion thn can validate funtionality and if timing aware thn can valida
 -so should always(*), so when there is any signal changes, the output will change    
 From training video:  
  <img width="600" alt="4d3" src="https://user-images.githubusercontent.com/118953915/206904463-73a208cb-ec90-44e0-ab02-c6ba12f92e18.PNG">    
-(ii) Blocking vs non-blocking assignments
--inside always block
+(ii) Blocking vs non-blocking statements in verilog  
+-inside always block  
+<img width="600" alt="4d5" src="https://user-images.githubusercontent.com/118953915/206908341-3b26bef2-9c69-4595-8b19-747d38f81635.PNG">  
+<img width="600" alt="4d4" src="https://user-images.githubusercontent.com/118953915/206908256-9760735a-996c-4831-a52c-333e0e4be284.PNG">  
+
 will evaluated first before assign
 (iii) non standard verilog coding
 Shift register
