@@ -473,4 +473,42 @@ Remodified the file to look for 3 dff:
 
 #
 # Day_4 
-**⭐GLS, blocking vs non-blocking and Synthesis-Simulation mismatch**
+**⭐GLS, blocking vs non-blocking and Synthesis-Simulation mismatch**  
+ 
+### *__Lecture Session__*
+
+**(A) Introduction * 
+ 
+ GLS- running the test bench with netlist as Design Under Test
+validate functionality of rtl code by gice stimulus and check specification as expectation 
+- Netlist is logically same as RTL code
+verify the logical correctness of design after synthesis
+ensuring the timing of the design is met (cell)
+- gls run with annotation
+
+netlist with all cell instantiate on it
+
+the flow is the same, only the gate level verilog model
+
+if the gate level models are delay annotated, then we can use GLS for timing validation
+
+
+the information of and on is contain in gate level verilog models
+can be timing aware or just functional
+if funtionality thn will know funtionality of netlits
+can validate funtinality and timing if timing aware
+
+synthesis simulation mismatch
+(i) missing sensitivity list
+-simulator work bask on "activity" : ouyput is changing when there is changes in input, else will not change
+-due to in always@(sel) only look at one input signal: sel
+-treat as latch
+so should put always(*), so when there is any signal changes, the output only will change when there is any input signal changes
+(ii) blocking vs non-blocking assignments
+-inside always block
+=
+will evaluated first before assign
+(iii) non standard verilog coding
+Shift register
+![image](https://user-images.githubusercontent.com/118953915/206894506-3bb48e6e-cae1-47ac-9237-04fb2dd25d6f.png)
+
