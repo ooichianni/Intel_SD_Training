@@ -10,7 +10,8 @@
   * [Lab5: Hierarchical vs Flat Synthesis](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab5-hierarchical-vs-flat-synthesis)
 + **[ Day_3 : Combinational and sequenial optimizations ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_3)** 
   * [Lab6: Combinational Logic Optimisations](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab6-combinational-logic-optimisations)
-  * [Lab7: Sequential Logic Optimisations](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab7-sequential-logic-optimisations) 
+  * [Lab7: Sequential Logic Optimisations](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab7-sequential-logic-optimisations)  
+ + **[ Day_4 : GLS, blocking vs non-blocking and Synthesis-Simulation mismatch ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_4)**) 
 
 
 #
@@ -469,3 +470,7 @@ Remodified the file to look for 3 dff:
 ![Picture36](https://user-images.githubusercontent.com/118953915/206746066-8c2d932b-36f2-45c7-b6d6-c086b166d449.png)
 ![Picture37](https://user-images.githubusercontent.com/118953915/206746071-ab02105c-d9cb-4d5a-92a0-b2bf4fccb585.png)  
 💡In previous counter_opt, all those logic not having a direct role in determining the primary output of the module will optimize directly
+
+#
+# Day_4 
+**⭐GLS, blocking vs non-blocking and Synthesis-Simulation mismatch**
