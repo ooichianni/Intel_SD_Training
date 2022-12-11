@@ -477,28 +477,26 @@ Remodified the file to look for 3 dff:
  
 ### *__Lecture Session__*
 
-**(A) Introduction * 
+**(A) Introduction Gate Level Simulation (GLS & Synthesis-Simulation Mismatches)* 
  
-GLS- running the test bench with netlist as Design Under Test
-validate functionality of rtl code by gice stimulus and check specification as expectation 
-- Netlist is logically same as RTL code
-verify the logical correctness of design after synthesis
-ensuring the timing of the design is met (cell)
-- gls run with annotation
+GLS  
+-Running the test bench with netlist as Design Under Test: validate functionality of rtl code by giving stimulus to the rtl design and check the output whether met with our specification/expectation 
+-Netlist is logically same as RTL code and same test bench will allign with the deisgn
+-Purpose:  
+(i)Verify the logical correctness of design after synthesis- might happen design not same with synthesis
+(ii)Ensuring the timing of the design is met -steup.hold (prevoius training:different flavour of cell-slow/fast)  
 
-netlist with all cell instantiate on it
+pic
 
-the flow is the same, only the gate level verilog model
+From the training video:
 
-if the gate level models are delay annotated, then we can use GLS for timing validation
+pic
+
+Gate level verilog model can be timing aware or just functional
+if just funtion thn can validate funtionality and if timing aware thn can validate funtionality and ensure timing 
 
 
-the information of and on is contain in gate level verilog models
-can be timing aware or just functional
-if funtionality thn will know funtionality of netlits
-can validate funtinality and timing if timing aware
-
-synthesis simulation mismatch
+Synthesis simulation mismatch
 (i) missing sensitivity list
 -simulator work bask on "activity" : ouyput is changing when there is changes in input, else will not change
 -due to in always@(sel) only look at one input signal: sel
