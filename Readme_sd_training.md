@@ -503,9 +503,10 @@ From training video:
 -inside always block  
 <img width="600" alt="4d5" src="https://user-images.githubusercontent.com/118953915/206908341-3b26bef2-9c69-4595-8b19-747d38f81635.PNG">  
 <img width="600" alt="4d4" src="https://user-images.githubusercontent.com/118953915/206908256-9760735a-996c-4831-a52c-333e0e4be284.PNG">  
-
-will evaluated first before assign
-(iii) non standard verilog coding
-Shift register
+Another example:  
+<img width="600" alt="4d6" src="https://user-images.githubusercontent.com/118953915/206909203-28836049-b5c2-4bb6-a077-2cbae8532d2a.PNG">
+(iii) non standard verilog coding   
+ 
+ #### **Lab8: GLS Synth Sim Mismatch **
 
 
