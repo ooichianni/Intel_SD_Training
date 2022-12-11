@@ -479,7 +479,7 @@ Remodified the file to look for 3 dff:
 
 **(A) Introduction * 
  
- GLS- running the test bench with netlist as Design Under Test
+GLS- running the test bench with netlist as Design Under Test
 validate functionality of rtl code by gice stimulus and check specification as expectation 
 - Netlist is logically same as RTL code
 verify the logical correctness of design after synthesis
@@ -506,7 +506,6 @@ synthesis simulation mismatch
 so should put always(*), so when there is any signal changes, the output only will change when there is any input signal changes
 (ii) blocking vs non-blocking assignments
 -inside always block
-=
 will evaluated first before assign
 (iii) non standard verilog coding
 Shift register
