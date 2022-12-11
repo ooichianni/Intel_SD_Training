@@ -481,9 +481,9 @@ Remodified the file to look for 3 dff:
  
 1. GLS  
 -Running the test bench with netlist as Design Under Test: validate functionality of rtl code by giving stimulus to the rtl design and check the output whether met with our specification/expectation 
--Netlist is logically same as RTL code and same test bench will allign with the deisgn
+-Netlist is logically same as RTL code and same test bench will allign with the deisgn  
 -Purpose:  
-(i)Verify the logical correctness of design after synthesis- might happen design not same with synthesis
+(i)Verify the logical correctness of design after synthesis- might happen design not same with synthesis  
 (ii)Ensuring the timing of the design is met -steup.hold (prevoius training:different flavour of cell-slow/fast)  
 <img width="600" alt="4d1" src="https://user-images.githubusercontent.com/118953915/206904531-0dcc38e7-9cc8-4209-87c5-ae34be6a94d1.PNG">  
 From the training video:  
@@ -492,14 +492,14 @@ Gate level verilog model can be timing aware or just functional
 if just funtion thn can validate funtionality and if timing aware thn can validate funtionality and ensure timing 
 
 2. Synthesis simulation mismatch
-(i) Missing sensitivity list
--simulator works based on "activity" : output will change when there is changes in inputs, else will not change
--If always@(sel), only based on one input signal: sel
--treat as latch
--so should always(*), so when there is any signal changes, the output will change  
+(i) Missing sensitivity list  
+-simulator works based on "activity" : output will change when there is changes in inputs, else will not change  
+-If always@(sel), only based on one input signal: sel  
+-treat as latch  
+-so should always(*), so when there is any signal changes, the output will change    
 From training video:  
- <img width="600" alt="4d3" src="https://user-images.githubusercontent.com/118953915/206904463-73a208cb-ec90-44e0-ab02-c6ba12f92e18.PNG">  
-(ii) blocking vs non-blocking assignments
+ <img width="600" alt="4d3" src="https://user-images.githubusercontent.com/118953915/206904463-73a208cb-ec90-44e0-ab02-c6ba12f92e18.PNG">    
+(ii) Blocking vs non-blocking assignments
 -inside always block
 will evaluated first before assign
 (iii) non standard verilog coding
