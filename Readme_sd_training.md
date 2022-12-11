@@ -12,7 +12,7 @@
   * [Lab6: Combinational Logic Optimisations](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab6-combinational-logic-optimisations)
   * [Lab7: Sequential Logic Optimisations](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab7-sequential-logic-optimisations)  
  + **[ Day_4 : GLS, blocking vs non-blocking and Synthesis-Simulation mismatch ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_4)**
-  * [Lab8: GLS Synth Sim Mismatch](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab8-sequential-logic-optimisations) 
+  * [Lab8: GLS Synth Sim Mismatch](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab8-gls-synth-sim-mismatch-) 
 
 
 #
@@ -508,6 +508,6 @@ Another example:
 <img width="600" alt="4d6" src="https://user-images.githubusercontent.com/118953915/206909203-28836049-b5c2-4bb6-a077-2cbae8532d2a.PNG">
 (iii) non standard verilog coding   
  
-#### **Lab8: GLS Synth Sim Mismatch **
+#### **Lab8: GLS Synth Sim Mismatch**
 
 
