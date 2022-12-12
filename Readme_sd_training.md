@@ -516,7 +516,10 @@ In order to run GLS, required 4 files: iverilog ../my_lib/verilog_model/primitiv
 -For GLS, in the left hand side window, under uut have further hier (4,base)    
 <img width="900" alt="42" src="https://user-images.githubusercontent.com/118953915/206972631-a006a6e4-2752-4a9c-b0ab-4f6155e551f1.PNG">  
 For bad_mux:   
-<img width="900" alt="43" src="https://user-images.githubusercontent.com/118953915/206972621-69d1cf13-3bf8-4575-ac14-76996cabaf19.PNG">  
+<img width="900" alt="43" src="https://user-images.githubusercontent.com/118953915/206972621-69d1cf13-3bf8-4575-ac14-76996cabaf19.PNG">   
+Another example, for blocking_caveat:   
+ <img width="683" alt="44" src="https://user-images.githubusercontent.com/118953915/206986825-4e92e930-1717-416f-9c80-fb57b9fe6382.PNG">   
+ 💡 Avoid using blocking statement, because high posibility will lead to synthesis simulation mismatch
 
 
 
