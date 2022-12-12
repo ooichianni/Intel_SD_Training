@@ -445,7 +445,7 @@ Here is the waveform:
 For dff_const3.v  
 Here is the details:   
 ![Picture27](https://user-images.githubusercontent.com/118953915/206746035-500bfc65-73ea-4974-9325-d912002c73aa.png)  
-Here is the details: 
+For dff_const4.v:   
 ![Picture28](https://user-images.githubusercontent.com/118953915/206746037-fef3eb9e-8317-4aad-ac36-cead4d573ef4.png)  
 Here is the waveform:   
 ![Picture29](https://user-images.githubusercontent.com/118953915/206746039-d0505376-74e3-4a75-91a7-4d6a2aafcc8f.png)  
