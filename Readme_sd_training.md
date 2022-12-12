@@ -511,7 +511,11 @@ For ternary_operator_mux:
 Here is the details and waveform:  
 <img width="900" alt="40" src="https://user-images.githubusercontent.com/118953915/206954215-44b22399-165d-4bbe-b225-c0e0de0862c2.PNG">  
 Here is the diagram:  
-<img width="900" alt="41" src="https://user-images.githubusercontent.com/118953915/206954228-686c9c47-8214-40da-b6bd-e344aad06ba8.PNG">
+<img width="900" alt="41" src="https://user-images.githubusercontent.com/118953915/206954228-686c9c47-8214-40da-b6bd-e344aad06ba8.PNG">  
+In order to run GLS, required 4 files: iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v ternary_operator_mux.v tb_ternary_operator_mux.v  
+<img width="738" alt="42" src="https://user-images.githubusercontent.com/118953915/206972631-a006a6e4-2752-4a9c-b0ab-4f6155e551f1.PNG">  
+For bad_mux:   
+<img width="726" alt="43" src="https://user-images.githubusercontent.com/118953915/206972621-69d1cf13-3bf8-4575-ac14-76996cabaf19.PNG">  
 
 
 
