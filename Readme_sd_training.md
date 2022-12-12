@@ -434,7 +434,7 @@ Here is the waveform for dff_const1.v:
 ![Picture22](https://user-images.githubusercontent.com/118953915/206746024-a3782b6f-3fd0-4ec8-806e-c142dc6757af.png)  
 Here is the waveform for dff_const2.v:    
 -Output always HIGH   
-![Picture23](https://user-images.githubusercontent.com/118953915/206746025-0199c2d2-50ea-4ee5-9a22-034570a1cebc.png) 
+![Picture23](https://user-images.githubusercontent.com/118953915/206746025-0199c2d2-50ea-4ee5-9a22-034570a1cebc.png)   
 For const1.v & Const2.v:  
 ![Picture24](https://user-images.githubusercontent.com/118953915/206746026-677d49e5-4b6e-4a29-8896-2b44eea71c0d.png) 
 Now, looking at dff_const2.v  
