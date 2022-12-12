@@ -487,10 +487,9 @@ Remodified the file to look for 3 dff:
 <img width="900" alt="4d1" src="https://user-images.githubusercontent.com/118953915/206904531-0dcc38e7-9cc8-4209-87c5-ae34be6a94d1.PNG">  
 From the training video:  
 <img width="900" alt="4d2" src="https://user-images.githubusercontent.com/118953915/206904466-8063e648-a45f-4871-b784-f15d74ef3fd9.PNG">  
-Gate level verilog model can be timing aware or just functional
-if just funtion thn can validate funtionality and if timing aware thn can validate funtionality and ensure timing 
-Here is the notes from lecture session:  
-![image](https://user-images.githubusercontent.com/118953915/207019822-ad77542e-e5da-4f71-9b10-9f6792ba595f.png)  
+Gate level verilog model can be timing aware or just functional, if just funtion thn can validate funtionality and if timing aware thn can validate funtionality and ensure timing   
+Here is the notes from lecture session:    
+<img width="900" alt="47" src="https://user-images.githubusercontent.com/118953915/207021148-a0581cb9-aeb1-4f12-9635-41422678572d.PNG">     
 
 2. Synthesis simulation mismatch  
 (i) Missing sensitivity list  
@@ -507,7 +506,7 @@ From training video:
 Another example:  
 <img width="900" alt="4d6" src="https://user-images.githubusercontent.com/118953915/206909203-28836049-b5c2-4bb6-a077-2cbae8532d2a.PNG">  
 Here is the additional notes from lecture session:  
-<img width="600" alt="46" src="https://user-images.githubusercontent.com/118953915/207019050-8dca9480-2b22-4fbf-ab73-eddad60bcb60.PNG">   
+<img width="900" alt="46" src="https://user-images.githubusercontent.com/118953915/207019050-8dca9480-2b22-4fbf-ab73-eddad60bcb60.PNG">   
 (iii) non standard verilog coding   
  
 #### **Lab8: GLS Synth Sim Mismatch**  
