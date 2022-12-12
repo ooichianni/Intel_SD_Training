@@ -497,21 +497,21 @@ if just funtion thn can validate funtionality and if timing aware thn can valida
 -treat as latch  
 -so should always(*), so when there is any signal changes, the output will change    
 From training video:  
- <img width="600" alt="4d3" src="https://user-images.githubusercontent.com/118953915/206904463-73a208cb-ec90-44e0-ab02-c6ba12f92e18.PNG">    
+ <img width="900" alt="4d3" src="https://user-images.githubusercontent.com/118953915/206904463-73a208cb-ec90-44e0-ab02-c6ba12f92e18.PNG">    
 (ii) Blocking vs non-blocking statements in verilog  
 -inside always block  
-<img width="600" alt="4d5" src="https://user-images.githubusercontent.com/118953915/206908341-3b26bef2-9c69-4595-8b19-747d38f81635.PNG">  
-<img width="600" alt="4d4" src="https://user-images.githubusercontent.com/118953915/206908256-9760735a-996c-4831-a52c-333e0e4be284.PNG">  
+<img width="900" alt="4d5" src="https://user-images.githubusercontent.com/118953915/206908341-3b26bef2-9c69-4595-8b19-747d38f81635.PNG">  
+<img width="900" alt="4d4" src="https://user-images.githubusercontent.com/118953915/206908256-9760735a-996c-4831-a52c-333e0e4be284.PNG">  
 Another example:  
-<img width="600" alt="4d6" src="https://user-images.githubusercontent.com/118953915/206909203-28836049-b5c2-4bb6-a077-2cbae8532d2a.PNG">
+<img width="900" alt="4d6" src="https://user-images.githubusercontent.com/118953915/206909203-28836049-b5c2-4bb6-a077-2cbae8532d2a.PNG">
 (iii) non standard verilog coding   
  
 #### **Lab8: GLS Synth Sim Mismatch**  
 For ternary_operator_mux:
 Here is the details and waveform:  
-<img width="635" alt="40" src="https://user-images.githubusercontent.com/118953915/206954215-44b22399-165d-4bbe-b225-c0e0de0862c2.PNG">  
+<img width="900" alt="40" src="https://user-images.githubusercontent.com/118953915/206954215-44b22399-165d-4bbe-b225-c0e0de0862c2.PNG">  
 Here is the diagram:  
-<img width="717" alt="41" src="https://user-images.githubusercontent.com/118953915/206954228-686c9c47-8214-40da-b6bd-e344aad06ba8.PNG">
+<img width="900" alt="41" src="https://user-images.githubusercontent.com/118953915/206954228-686c9c47-8214-40da-b6bd-e344aad06ba8.PNG">
 
 
 
