@@ -437,14 +437,12 @@ Here is the waveform for dff_const2.v:
 ![Picture23](https://user-images.githubusercontent.com/118953915/206746025-0199c2d2-50ea-4ee5-9a22-034570a1cebc.png)   
 For const1.v & Const2.v:  
 ![Picture24](https://user-images.githubusercontent.com/118953915/206746026-677d49e5-4b6e-4a29-8896-2b44eea71c0d.png) 
-Now, looking at dff_const2.v  
+Now, looking at dff_const3.v  
 Here is the explanation from training video:  
-![Picture25](https://user-images.githubusercontent.com/118953915/206746028-0601838d-336e-41ef-8fa4-4ebdc80074e2.png)
-For dff_const3.v:     
-![Picture25](https://user-images.githubusercontent.com/118953915/206746028-0601838d-336e-41ef-8fa4-4ebdc80074e2.png)    
+![Picture25](https://user-images.githubusercontent.com/118953915/206746028-0601838d-336e-41ef-8fa4-4ebdc80074e2.png)     
 Here is the waveform:
 ![Picture26](https://user-images.githubusercontent.com/118953915/206746031-a9663eeb-6635-4d40-8f0f-f2c539b08811.png)  
-For dff_const4.v  
+For dff_const3.v  
 Here is the details:   
 ![Picture27](https://user-images.githubusercontent.com/118953915/206746035-500bfc65-73ea-4974-9325-d912002c73aa.png)  
 Here is the details: 
