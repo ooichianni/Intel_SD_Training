@@ -489,6 +489,8 @@ From the training video:
 <img width="900" alt="4d2" src="https://user-images.githubusercontent.com/118953915/206904466-8063e648-a45f-4871-b784-f15d74ef3fd9.PNG">  
 Gate level verilog model can be timing aware or just functional
 if just funtion thn can validate funtionality and if timing aware thn can validate funtionality and ensure timing 
+Here is the notes from lecture session:  
+![image](https://user-images.githubusercontent.com/118953915/207019822-ad77542e-e5da-4f71-9b10-9f6792ba595f.png)  
 
 2. Synthesis simulation mismatch  
 (i) Missing sensitivity list  
@@ -505,6 +507,9 @@ From training video:
 Another example:  
 <img width="900" alt="4d6" src="https://user-images.githubusercontent.com/118953915/206909203-28836049-b5c2-4bb6-a077-2cbae8532d2a.PNG">
 (iii) non standard verilog coding   
+  
+ Here is notes from lecture session:  
+<img width="600" alt="46" src="https://user-images.githubusercontent.com/118953915/207019050-8dca9480-2b22-4fbf-ab73-eddad60bcb60.PNG">  
  
 #### **Lab8: GLS Synth Sim Mismatch**  
 For ternary_operator_mux:
@@ -519,7 +524,5 @@ For bad_mux:
 <img width="900" alt="43" src="https://user-images.githubusercontent.com/118953915/206972621-69d1cf13-3bf8-4575-ac14-76996cabaf19.PNG">   
 Another example, for blocking_caveat:   
  <img width="683" alt="44" src="https://user-images.githubusercontent.com/118953915/206986825-4e92e930-1717-416f-9c80-fb57b9fe6382.PNG">   
- 💡 Avoid using blocking statement, because high posibility will lead to synthesis simulation mismatch
-
-
+ 💡 Avoid using blocking statement, because high posibility will lead to synthesis simulation mismatch  
 
