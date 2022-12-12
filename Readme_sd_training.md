@@ -508,6 +508,12 @@ Another example:
 <img width="600" alt="4d6" src="https://user-images.githubusercontent.com/118953915/206909203-28836049-b5c2-4bb6-a077-2cbae8532d2a.PNG">
 (iii) non standard verilog coding   
  
-#### **Lab8: GLS Synth Sim Mismatch**
+#### **Lab8: GLS Synth Sim Mismatch**  
+For ternary_operator_mux:
+Here is the details and waveform:  
+<img width="635" alt="40" src="https://user-images.githubusercontent.com/118953915/206954215-44b22399-165d-4bbe-b225-c0e0de0862c2.PNG">  
+Here is the diagram:  
+<img width="717" alt="41" src="https://user-images.githubusercontent.com/118953915/206954228-686c9c47-8214-40da-b6bd-e344aad06ba8.PNG">
+
 
 
