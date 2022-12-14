@@ -523,6 +523,7 @@ Here is the notes from lecture session:
 -so should always(*), so when there is any signal changes, the output will change    
 From training video:  
  <img width="900" alt="4d3" src="https://user-images.githubusercontent.com/118953915/206904463-73a208cb-ec90-44e0-ab02-c6ba12f92e18.PNG">    
+ 
 (ii) Blocking vs non-blocking statements in verilog  
 -inside always block  
 <img width="900" alt="4d5" src="https://user-images.githubusercontent.com/118953915/206908341-3b26bef2-9c69-4595-8b19-747d38f81635.PNG">  
