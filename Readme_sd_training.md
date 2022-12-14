@@ -19,6 +19,7 @@
 # Day_0 
 **⭐System/Tool Setup Check & GitHub ID creation**
 
+<details><summary> Lecture </summary>
 
 ### *__Lecture Session__*
 
@@ -50,7 +51,8 @@
 Here is the Overview that show by instructor:  
 ![Concept](https://user-images.githubusercontent.com/118953915/203926658-55d68a6b-4f1e-4df3-9111-595c4a44e531.png)
 
-
+</details>
+ 
 #
 ### *__Lab Session__*
 
