@@ -563,7 +563,7 @@ Another example, for blocking_caveat:
 **(A) Introduction on DFT (Design for testability)** 
  
 1.	$\textcolor{blue}{\text{Testability}}$-ability to run an experiment to test a hypothesis or theory  
-In VLSI term: If a design is well-controllable and well-observable, it is said to easily testable  
+In VLSI term: If a design is $\textcolor{yellow}{\text{well-controllable}}$ and $\textcolor{yellow}{\text{well-observable}}$, it is said to easily testable  
 2.	$\textcolor{green}{\text{What}}$ is DFT?  
 DFT is a technique which facilitates a design to become testable after production  
 or adding an extra design for an existing design to make sure it can be tested after being fabricated  
@@ -585,7 +585,14 @@ $\textcolor{green}{\text{Where}}$ to implement DFT? -> During the synthesis
 -make sure is synthesizable/manufacturable  
 >Can refer here for details on ASIC design flow : https://www.allaboutvlsi.in/2020/12/asic-design-flow.html   
 5.	Here is the Pro’s and Con’s of DFT:  
- <img width="900" alt="d5" src="https://user-images.githubusercontent.com/118953915/207634053-7c272823-85a0-4541-94a3-53bb2010bdb4.PNG">
+ <img width="900" alt="d5" src="https://user-images.githubusercontent.com/118953915/207634053-7c272823-85a0-4541-94a3-53bb2010bdb4.PNG">  
+6.	Here is the basic terminologies on DFT:  
+$\textcolor{blue}{\text{Controllability}}$: ability to establish a specific signal value at each node in a circuit from setting values at the circuit’s inputs  
+-Can adding multiplexer
+$\textcolor{blue}{\text{Observability}}$: ability to determine the signal value at any node in a circuit by controlling the circuit’s inputs and observing its outputs
+-Can observe the node by adding flip flop
+
+
 
 
  
