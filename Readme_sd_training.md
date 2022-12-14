@@ -4,8 +4,8 @@
 + **[ Day_1 : Introduction to Verilog RTL design and Synthesis ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_1)**
 + **[ Day_2 : Timing libs(QTMs/ETMs), hierarchical vs flat synthesis and efficient flop coding styles ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_2)**  
 + **[ Day_3 : Combinational and sequenial optimizations ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_3)** 
-+ **[ Day_4 : GLS, blocking vs non-blocking and Synthesis-Simulation mismatch ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_4)**
-
++ **[ Day_4 : GLS, blocking vs non-blocking and Synthesis-Simulation mismatch ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_4)**  
++ **[ Day_5 : DFT ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_5)**
 
 #
 # Day_0 
@@ -552,3 +552,40 @@ Another example, for blocking_caveat:
  <img width="683" alt="44" src="https://user-images.githubusercontent.com/118953915/206986825-4e92e930-1717-416f-9c80-fb57b9fe6382.PNG">   
  💡 Avoid using blocking statement, because high posibility will lead to synthesis simulation mismatch  
 </details>
+
+#
+# Day_5 
+**⭐DFT**  
+<details><summary> ⚡Lecture Session </summary> 
+ 
+### *__Lecture Session__*
+
+**(A) Introduction on DFT (Design for testability)** 
+ 
+1.	$\textcolor{blue}{\text{Testability}}$-ability to run an experiment to test a hypothesis or theory  
+In VLSI term: If a design is well-controllable and well-observable, it is said to easily testable  
+2.	$\textcolor{green}{\text{What}}$ is DFT?  
+DFT is a technique which facilitates a design to become testable after production  
+or adding an extra design for an existing design to make sure it can be tested after being fabricated  
+Eg of designs included for making the whole chip testable:  
+(i) For macro(ip), including MBist(memory built in seld test) logic  
+(ii) For flops(sequential logic), using scan chains  
+(iii) For combination circuit, generating test patterns (3 bits input will need generate 2^3=8 patterns)  
+3.	$\textcolor{green}{\text{Why}}$ need DFT?  
+-It makes the testing easy at the post-production process  
+-Have 3 main levels of testing after a chip being fabricated:  
+(i)	Chip-level: when chips are manufactured  
+(ii)	Board-level: when chips are integrated on boards/packages (eg:raspberry pi)  
+(iii)	System-level: when several boards are assembled together (laptops) 
+DFT is also done due to economical and market needs (Eg: if test at chip-level can reduce lost compare to test at system-level)  
+4.	When or where implement DFT (in basic ASIC design flow)  
+$\textcolor{green}{\text{When}}$ implemet DFT? -> At the beginning of design flow  
+$\textcolor{green}{\text{Where}}$ to implement DFT? -> During the synthesis   
+-including a design per an existing design to make sure that it is testable after post and route
+-make sure is synthesizable/manufacturable  
+>Can refer here for details on ASIC design flow : https://www.allaboutvlsi.in/2020/12/asic-design-flow.html   
+5.	Here is the Pro’s and Con’s of DFT:  
+ <img width="900" alt="d5" src="https://user-images.githubusercontent.com/118953915/207634053-7c272823-85a0-4541-94a3-53bb2010bdb4.PNG">
+
+
+ 
