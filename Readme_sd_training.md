@@ -19,7 +19,7 @@
 # Day_0 
 **⭐System/Tool Setup Check & GitHub ID creation**
 
-<details><summary> Lecture </summary>
+<details><summary> Lecture Session </summary>
 
 ### *__Lecture Session__*
 
@@ -52,7 +52,8 @@ Here is the Overview that show by instructor:
 ![Concept](https://user-images.githubusercontent.com/118953915/203926658-55d68a6b-4f1e-4df3-9111-595c4a44e531.png)
 
 </details>
- 
+
+<details><summary> Lab Session </summary>
 #
 ### *__Lab Session__*
 
@@ -156,7 +157,7 @@ There is 3 input, 1 output, no internal wire, 1 mux 2to1
 
 Here is my nelist and logic diagram:  
 <img width="600" alt="lab1k" src="https://user-images.githubusercontent.com/118953915/205425631-f8eab904-fe59-4ae1-9bc7-97f259758fc6.png">
-
+</details>
 
 #
 # Day_2   
