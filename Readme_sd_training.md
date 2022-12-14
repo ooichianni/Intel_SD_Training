@@ -63,7 +63,7 @@ Here is the screenshot of lab final outputs:
 # Day_1   
 **⭐Introduction to Verilog RTL design and Synthesis**
 
-<details><summary> ⚡Lecture Session </summary>
+<details><summary> ⚡*Lecture Session* </summary>
  
 ### *__Lecture Session__*
 
@@ -76,7 +76,7 @@ Tool for checking RTL design (implementation of spec) by simulating the design (
 Design+Test Bench --> iverilog --> vcd file (value chnage dump format-looking for changes in value) -> gtkwave (this use to view output)
 
 </details>
-<details><summary> Lab Session -> Lab1: Introduction to lab； Lab2: Introduction iverilog gtkwave </summary>
+<details><summary> Lab Session -> Lab1: Introduction to lab </summary>
 
 ### *__Lab Session__*
 #### *Lab1: Introduction to lab*  
@@ -85,7 +85,9 @@ Command to install workshop-> git clone https://github.com/kunalg123/sky130RTLDe
 In the directory consists:
 my_lib: contain library files (lib-contain std cell for synthesis in .lib and verlog_model-contain std cell verilog model in .v)
 verilog_files: contain verilog source file and testbench file
-
+</details>
+<details><summary> Lab Session -> Lab2: Introduction iverilog gtkwave </summary>
+ 
 #### *Lab2: Introduction iverilog gtkwave part 1*  
 Steps:     
 (i) Load mux to stimulator-> iverilog good_mux.v tb_good_mux.v , then new file created: a.out    
@@ -94,7 +96,7 @@ Steps:
 (iii) Click the design and drag the signals into the window and click "Zoom Fit" on the toolbar     
 <img width="600" alt="lab1b" src="https://user-images.githubusercontent.com/118953915/205270195-f6e6eb96-0ca4-413d-90a4-fd6cf33dd718.PNG">  
 From the waveform: When the sel is "1", the output(y) will follow the input(i1)
-
+ 
 *Lab2: Introduction iverilog gtkwave part 2*  
 Understanding the content:  
 vi tb_good_mux.v & vi good_mux.v (suppose is this command->gvim tb_good_mux.v -o good_mux.v)
