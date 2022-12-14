@@ -229,7 +229,9 @@ Each of the cell pin have its own information: capacitance, transition, power as
 💡Conclusion: 
  -Pros of Bigger cell: wider transisteor == faster/small delay  
  -Pros of Smaller cell: small area == small power comsume
-</details>
+
+ </details>
+<details><summary> Lab Session </summary>  
  
 #### **Lab5: Hierarchical vs Flat Synthesis**    
  
