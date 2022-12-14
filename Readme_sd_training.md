@@ -1,10 +1,11 @@
 ## Table of contents
 
 + **[ Day_0 : System/Tool Setup Check & GitHub ID creation ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_0)**
+  * [Lab0: Setup Lab](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab-session)
 + **[ Day_1 : Introduction to Verilog RTL design and Synthesis ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_1)**
-  * [Lab1: Introduction to lab](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab1-introduction-to-lab)
-  * [Lab2: Introduction iverilog gtkwave](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab2-introduction-iverilog-gtkwave-part-1)
-  * [Lab3: yosys good mux](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab3-good-mux-part-123)
+  * [Lab1: Introduction to lab](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab-session-1)
+  * [Lab2: Introduction iverilog gtkwave](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab-session-2)
+  * [Lab3: yosys good mux](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab-session-3)
 + **[ Day_2 : Timing libs(QTMs/ETMs), hierarchical vs flat synthesis and efficient flop coding styles ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_2)**  
   * [Lab4: Introduction to dot Lib](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab4-introduction-to-dot-lib) 
   * [Lab5: Hierarchical vs Flat Synthesis](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab5-hierarchical-vs-flat-synthesis)
