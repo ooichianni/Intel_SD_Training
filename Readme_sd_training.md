@@ -65,12 +65,14 @@ Here is the screenshot of lab final outputs:
 
 ![day_0](https://user-images.githubusercontent.com/118953915/203699203-8f3cccc3-8cdc-4494-a25d-3d6e29c3d7ba.JPG)
 
+</details>
 
 #
 # Day_1   
 **⭐Introduction to Verilog RTL design and Synthesis**
 
-
+<details><summary> Lecture Session </summary>
+ 
 ### *__Lecture Session__*
 
 **(A) Introduction to open-source simulator iverilog**
@@ -80,6 +82,9 @@ Tool for checking RTL design (implementation of spec) by simulating the design (
 -Design: Verilog codes which has the intended functionality to meet with the required specifications  
 -TestBench (TB): setup to apply stimulus (test_vectirs) to the design to checks its functionality by observe the outputs whether obeys to the spec of the design  
 Design+Test Bench --> iverilog --> vcd file (value chnage dump format-looking for changes in value) -> gtkwave (this use to view output)
+
+</details>
+<details><summary> Lab Session </summary>
 
 #
 ### *__Lab Session__*
@@ -105,6 +110,9 @@ vi tb_good_mux.v & vi good_mux.v (suppose is this command->gvim tb_good_mux.v -o
 ![lab1e](https://user-images.githubusercontent.com/118953915/205290366-3d96a298-204f-4172-a602-1502fe829a66.png)  
 testbench no primary input and output, but got design instantiate- UUT (Unit under test) or DUT (Design under test)
 
+</details>
+<details><summary> Lecture Session </summary>
+ 
 ### *__Lecture Session__*
 
 **(B) Introduction to Yosys and Logic synthesis**
@@ -136,7 +144,10 @@ so the .lib will have various collection of logical modules with difference beha
 fast cell-> comsume high power and area, causing hold violation  
 slow cell-> not meet performance  
 So constraints is needed as a guidance for the 
-   
+
+</details>
+<details><summary> Lab Session </summary>
+ 
 #
 ### *__Lab Session__*
 #### *Lab3: good mux Part 1,2,3*  
@@ -163,15 +174,21 @@ Here is my nelist and logic diagram:
 # Day_2   
 **⭐Timing libs(QTMs/ETMs), hierarchical vs flat synthesis and efficient flop coding styles**
 
+<details><summary> Lecture Session </summary>
 
-### *__Lecture Session__ & __Lab Session__*
+### *__Lecture Session__*
 
 1. CMOS (complementary metal-oxide semiconductor) is the semiconductor technology used in most of today's integrated circuits (ICs), also known as chips or microchips 
 There are two types of MOSFETs: the NMOS and the PMOS  
 MOSFETs-specifying the circuits physically and characterizing them electricity    
 2. FF (flip flop) serves as memory element in a digital design  
-3. Setup time is the time for the input data signals to remain stable before the clock edge, while hold time is the time for the input data signals to remain stable  after the clock edge
-
+3. Setup time is the time for the input data signals to remain stable before the clock edge, while hold time is the time for the input data signals to remain stable  after the clock edge  
+ 
+</details>
+<details><summary> Lab Session </summary>
+ 
+### *__Lab Session__*  
+ 
 #### **Lab4: Introduction to dot Lib**    
 
 1. Here is the contents of .libs in this training   
@@ -212,7 +229,7 @@ Each of the cell pin have its own information: capacitance, transition, power as
 💡Conclusion: 
  -Pros of Bigger cell: wider transisteor == faster/small delay  
  -Pros of Smaller cell: small area == small power comsume
-
+</details>
  
 #### **Lab5: Hierarchical vs Flat Synthesis**    
  
@@ -342,12 +359,13 @@ Here is some special case:
  Similar operation for mult_8 too  
  <img width="600" alt="lab2ze" src="https://user-images.githubusercontent.com/118953915/206199435-600e2f24-6ce4-4d7b-8380-211d5c1e2b7b.PNG">  
  💡 No hardware required for the special case show above, only rewiring the signal will do. Not required any std cell to obtain the logic functionality 
- 
+</details> 
  
 #
 # Day_3 
 **⭐Combinational and sequenial optimizations**
 
+<details><summary> Lecture Session </summary>
 
 ### *__Lecture Session__*
 
@@ -396,6 +414,9 @@ Cloning-physical aware synthesis (reduce large routing delay as shown in the fig
 Retiming both of the flop by reduce the logic at  1st combi and add those into 2nd combi, which can help in increase the frequency  operation of the circuit by reduce some delay in 1st combi  
 ![Picture9](https://user-images.githubusercontent.com/118953915/206745974-5ee450f6-9ad2-40c5-9c71-f5b75c655484.png)  
 
+</details>
+<details><summary> Lab Session </summary>
+ 
 #### **Lab6: Combinational Logic Optimisations**  
  
 Here is the contents of each opt_check:  
@@ -472,11 +493,12 @@ Remodified the file to look for 3 dff:
 ![Picture36](https://user-images.githubusercontent.com/118953915/206746066-8c2d932b-36f2-45c7-b6d6-c086b166d449.png)
 ![Picture37](https://user-images.githubusercontent.com/118953915/206746071-ab02105c-d9cb-4d5a-92a0-b2bf4fccb585.png)  
 💡In previous counter_opt, all those logic not having a direct role in determining the primary output of the module will optimize directly
-
+</details>
+ 
 #
 # Day_4 
 **⭐GLS, blocking vs non-blocking and Synthesis-Simulation mismatch**  
- 
+<details><summary> Lecture Session </summary> 
 ### *__Lecture Session__*
 
 **(A) Introduction Gate Level Simulation (GLS & Synthesis-Simulation Mismatches)* 
@@ -512,7 +534,8 @@ Another example:
 Here is the additional notes from lecture session:  
 <img width="900" alt="46" src="https://user-images.githubusercontent.com/118953915/207019050-8dca9480-2b22-4fbf-ab73-eddad60bcb60.PNG">   
 (iii) non standard verilog coding   
- 
+</details>
+<details><summary> Lab Session </summary> 
 #### **Lab8: GLS Synth Sim Mismatch**  
 For ternary_operator_mux:
 Here is the details and waveform:  
@@ -527,4 +550,4 @@ For bad_mux:
 Another example, for blocking_caveat:   
  <img width="683" alt="44" src="https://user-images.githubusercontent.com/118953915/206986825-4e92e930-1717-416f-9c80-fb57b9fe6382.PNG">   
  💡 Avoid using blocking statement, because high posibility will lead to synthesis simulation mismatch  
-
+</details>
