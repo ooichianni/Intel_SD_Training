@@ -11,7 +11,7 @@
 # Day_0 
 **⭐System/Tool Setup Check & GitHub ID creation**
 
-<details><summary> Lecture Session </summary>
+<details><summary> ⚡ Lecture Session </summary>
 
 ### *__Lecture Session__*
 
@@ -63,7 +63,7 @@ Here is the screenshot of lab final outputs:
 # Day_1   
 **⭐Introduction to Verilog RTL design and Synthesis**
 
-<details><summary> Lecture Session </summary>
+<details><summary> ⚡Lecture Session </summary>
  
 ### *__Lecture Session__*
 
@@ -102,7 +102,7 @@ vi tb_good_mux.v & vi good_mux.v (suppose is this command->gvim tb_good_mux.v -o
 testbench no primary input and output, but got design instantiate- UUT (Unit under test) or DUT (Design under test)
 
 </details>
-<details><summary> Lecture Session </summary>
+<details><summary> ⚡Lecture Session </summary>
  
 ### *__Lecture Session__*
 
@@ -165,7 +165,7 @@ Here is my nelist and logic diagram:
 # Day_2   
 **⭐Timing libs(QTMs/ETMs), hierarchical vs flat synthesis and efficient flop coding styles**
 
-<details><summary> Lecture Session </summary>
+<details><summary> ⚡Lecture Session </summary>
 
 ### *__Lecture Session__*
 
@@ -176,7 +176,7 @@ MOSFETs-specifying the circuits physically and characterizing them electricity
 3. Setup time is the time for the input data signals to remain stable before the clock edge, while hold time is the time for the input data signals to remain stable  after the clock edge  
  
 </details>
-<details><summary> Lab Session -> Lab4: Introduction to dot Lib; Lab5: Hierarchical vs Flat Synthesis  </summary>
+<details><summary> Lab Session -> Lab4: Introduction to dot Lib  </summary>
  
 ### *__Lab Session__*  
  
@@ -220,6 +220,8 @@ Each of the cell pin have its own information: capacitance, transition, power as
 💡Conclusion: 
  -Pros of Bigger cell: wider transisteor == faster/small delay  
  -Pros of Smaller cell: small area == small power comsume
+</details>
+<details><summary> Lab Session -> Lab5: Hierarchical vs Flat Synthesis  </summary>
  
 #### **Lab5: Hierarchical vs Flat Synthesis**    
  
@@ -355,7 +357,7 @@ Here is some special case:
 # Day_3 
 **⭐Combinational and sequenial optimizations**
 
-<details><summary> Lecture Session </summary>
+<details><summary> ⚡Lecture Session </summary>
 
 ### *__Lecture Session__*
 
@@ -405,7 +407,7 @@ Retiming both of the flop by reduce the logic at  1st combi and add those into 2
 ![Picture9](https://user-images.githubusercontent.com/118953915/206745974-5ee450f6-9ad2-40c5-9c71-f5b75c655484.png)  
 
 </details>
-<details><summary> Lab Session -> Lab6: Combinational Logic Optimisations; Lab7: Sequential Logic Optimisations </summary>
+<details><summary> Lab Session -> Lab6: Combinational Logic Optimisations </summary>
 
 ### *__Lab Session__* 
 #### **Lab6: Combinational Logic Optimisations**  
@@ -437,6 +439,8 @@ After optimize:
 ![Picture19](https://user-images.githubusercontent.com/118953915/206746015-b9403176-1496-4ed8-930d-007567abc1c1.png)  
 Previous (before optimize):   
 ![Picture20](https://user-images.githubusercontent.com/118953915/206746019-05c06841-3f11-4a9f-9e2d-2f401380271a.png)   
+</details>
+<details><summary> Lab Session -> Lab7: Sequential Logic Optimisations </summary>
  
 #### **Lab7: Sequential Logic Optimisations**
 
@@ -488,7 +492,7 @@ Remodified the file to look for 3 dff:
 #
 # Day_4 
 **⭐GLS, blocking vs non-blocking and Synthesis-Simulation mismatch**  
-<details><summary> Lecture Session </summary> 
+<details><summary> ⚡Lecture Session </summary> 
  
 ### *__Lecture Session__*
 
