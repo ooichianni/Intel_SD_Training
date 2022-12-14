@@ -229,9 +229,6 @@ Each of the cell pin have its own information: capacitance, transition, power as
 💡Conclusion: 
  -Pros of Bigger cell: wider transisteor == faster/small delay  
  -Pros of Smaller cell: small area == small power comsume
-
- </details>
-<details><summary> Lab Session </summary>  
  
 #### **Lab5: Hierarchical vs Flat Synthesis**    
  
@@ -501,6 +498,7 @@ Remodified the file to look for 3 dff:
 # Day_4 
 **⭐GLS, blocking vs non-blocking and Synthesis-Simulation mismatch**  
 <details><summary> Lecture Session </summary> 
+ 
 ### *__Lecture Session__*
 
 **(A) Introduction Gate Level Simulation (GLS & Synthesis-Simulation Mismatches)* 
@@ -538,6 +536,7 @@ Here is the additional notes from lecture session:
 (iii) non standard verilog coding   
 </details>
 <details><summary> Lab Session </summary> 
+ 
 #### **Lab8: GLS Synth Sim Mismatch**  
 For ternary_operator_mux:
 Here is the details and waveform:  
