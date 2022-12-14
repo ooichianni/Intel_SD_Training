@@ -84,7 +84,7 @@ Tool for checking RTL design (implementation of spec) by simulating the design (
 Design+Test Bench --> iverilog --> vcd file (value chnage dump format-looking for changes in value) -> gtkwave (this use to view output)
 
 </details>
-<details><summary> Lab Session </summary>
+<details><summary> Lab Session(Lab1&2) </summary>
 
 ### *__Lab Session__*
 #### *Lab1: Introduction to lab*  
@@ -145,7 +145,7 @@ slow cell-> not meet performance
 So constraints is needed as a guidance for the 
 
 </details>
-<details><summary> Lab Session </summary>
+<details><summary> Lab Session(Lab3) </summary>
  
 #
 ### *__Lab Session__*
