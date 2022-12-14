@@ -417,7 +417,7 @@ Retiming both of the flop by reduce the logic at  1st combi and add those into 2
 <details><summary> Lab Session </summary>
  
 #### **Lab6: Combinational Logic Optimisations**  
- 
+### *__Lab Session__* 
 Here is the contents of each opt_check:  
 ![Picture10](https://user-images.githubusercontent.com/118953915/206745982-59de4300-0cc6-4b0b-9aad-0b62add5ca10.png)  
 For opt_check:  
@@ -501,7 +501,7 @@ Remodified the file to look for 3 dff:
  
 ### *__Lecture Session__*
 
-**(A) Introduction Gate Level Simulation (GLS & Synthesis-Simulation Mismatches)* 
+**(A) Introduction Gate Level Simulation (GLS & Synthesis-Simulation Mismatches)** 
  
 1. GLS  
 -Running the test bench with netlist as Design Under Test: validate functionality of rtl code by giving stimulus to the rtl design and check the output whether met with our specification/expectation 
@@ -538,6 +538,7 @@ Here is the additional notes from lecture session:
 <details><summary> Lab Session </summary> 
  
 #### **Lab8: GLS Synth Sim Mismatch**  
+### *__Lab Session__*
 For ternary_operator_mux:
 Here is the details and waveform:  
 <img width="900" alt="40" src="https://user-images.githubusercontent.com/118953915/206954215-44b22399-165d-4bbe-b225-c0e0de0862c2.PNG">  
