@@ -54,7 +54,7 @@ Here is the Overview that show by instructor:
 </details>
 
 <details><summary> Lab Session </summary>
-#
+
 ### *__Lab Session__*
 
 Setup directory and invoke icc2
@@ -86,7 +86,6 @@ Design+Test Bench --> iverilog --> vcd file (value chnage dump format-looking fo
 </details>
 <details><summary> Lab Session </summary>
 
-#
 ### *__Lab Session__*
 #### *Lab1: Introduction to lab*  
 Command to install workshop-> git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git  
@@ -415,9 +414,9 @@ Retiming both of the flop by reduce the logic at  1st combi and add those into 2
 
 </details>
 <details><summary> Lab Session </summary>
- 
-#### **Lab6: Combinational Logic Optimisations**  
+
 ### *__Lab Session__* 
+#### **Lab6: Combinational Logic Optimisations**  
 Here is the contents of each opt_check:  
 ![Picture10](https://user-images.githubusercontent.com/118953915/206745982-59de4300-0cc6-4b0b-9aad-0b62add5ca10.png)  
 For opt_check:  
@@ -536,9 +535,9 @@ Here is the additional notes from lecture session:
 (iii) non standard verilog coding   
 </details>
 <details><summary> Lab Session </summary> 
- 
-#### **Lab8: GLS Synth Sim Mismatch**  
+
 ### *__Lab Session__*
+#### **Lab8: GLS Synth Sim Mismatch**  
 For ternary_operator_mux:
 Here is the details and waveform:  
 <img width="900" alt="40" src="https://user-images.githubusercontent.com/118953915/206954215-44b22399-165d-4bbe-b225-c0e0de0862c2.PNG">  
