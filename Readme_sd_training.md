@@ -588,10 +588,42 @@ $\textcolor{green}{\text{Where}}$ to implement DFT? -> During the synthesis
  <img width="900" alt="d5" src="https://user-images.githubusercontent.com/118953915/207634053-7c272823-85a0-4541-94a3-53bb2010bdb4.PNG">  
  
 6.	Here is the basic terminologies on DFT:  
-$\textcolor{blue}{\text{Controllability}}$: ability to establish a specific signal value at each node in a circuit from setting values at the circuit’s inputs  
+(i) $\textcolor{blue}{\text{Controllability}}$: ability to establish a specific signal value at each node in a circuit from setting values at the circuit’s inputs  
 -Can adding multiplexer  
-$\textcolor{blue}{\text{Observability}}$: ability to determine the signal value at any node in a circuit by controlling the circuit’s inputs and observing its outputs
--Can observe the node by adding flip flop  
+(ii) $\textcolor{blue}{\text{Observability}}$: ability to determine the signal value at any node in a circuit by controlling the circuit’s inputs and observing its outputs  
+-Can observe the node by adding flip flop   
+(iii) Fault: There is a physical damage/defect compared to the good system, which may or may not cause system failure (eg: might cause by fabrication wire-connection problem)   
+(iv) Error: An error is caused by a fault because of which system went to erroneous state (eg: there is x/z(high impedance)–might cause by connection cutoff)  
+(v) Failure: System is not providing the expected service (eg: design not meeting specification)  
+:bulb A fault causes an error when leads to the system failure  
+(vi) Fault Coverage: Percentage of the total number of logical faults that can be tested using a given test set T  
+-After post production, have a testing list (eg: make sure all wire connected, data transfer properly, no crosstalk)  
+(vii) Defect level: Refers to the fraction of shipped parts that are defective. Or, the proportion of the faulty chip in which fault isn’t detected and has been classified as good (eg: out of 100 chips, 10 chips are faulty chips)  
+7. DFT techniques  
+There are mainly categorized 2 main ones:  
+(i)	Ad-hoc technique/steps (following basic step by designing it self)  
+- Can refer here for details on race condition: Avoid combinational feedback (race condition)    
+https://learn.microsoft.com/en-us/troubleshoot/developer/visualstudio/visual-basic/language-compilers/race-conditions-deadlocks  
+-All flip flops must be initializable (if ff get into unknown state x/z, then need reset to set to initial state)  
+-Partition a large circuit into small blocks  
+-Provide test control for the signals which are not controllable (controllability-give test case)  
+-While designing test logic we have consider the ATE requirement  
+(ii) Structured technique (Ad-hoc have some limitation, so introduced this technique)  
+-Scan: in the design all the flip flops are converted into scan flip flops  
+-Boundary scan (partition-which small group causing issue)  
+-Built-in self-test   
+  ->MBist (Memory built-in self-test) -all condition put in memory, thn check output expected or not, check in all corner –(Eg: macros-IP: pll)  
+  ->LBist (Logic built-in self-test)- Eg: AND gate (input ‘0’ & ‘1’, output ‘0’)  
+8. Scan-chain technique  
+(i) Specifying the scan constraint  
+(ii) Specifying scan ports and scan enables  
+(iii) compiling the dft  
+(iv) Identifying the number of scan chains  
+9. Scan based technique/Scan-chains
+-scan chains are the elements in scan-based designs that are used shift-in and shift-out test data
+-A scan chain is formed by a number of flops connected back-to-back in a chain with the output of one flop connected to another  
+ ->The input of first flop is connected to the input pin of the chip (called $\textcolor{orange}{\text{scan-in}}$) from where scan data is fed. The output of the last flop is connected to the output pin of the chip (called $\textcolor{orange}{\text{scan-out}}$) which is used to take the shifted data out. There is another one is scan selection (called $\textcolor{orange}{\text{scan-enable}}$)
+
 
 
 
