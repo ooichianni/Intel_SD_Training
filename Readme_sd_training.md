@@ -506,8 +506,8 @@ Remodified the file to look for 3 dff:
 -Purpose:  
 (i)Verify the logical correctness of design after synthesis- might happen design not same with synthesis  
 (ii)Ensuring the timing of the design is met -steup.hold (prevoius training:different flavour of cell-slow/fast)  
-<img width="900" alt="4d1" src="https://user-images.githubusercontent.com/118953915/206904531-0dcc38e7-9cc8-4209-87c5-ae34be6a94d1.PNG">  
-From the training video:  
+<img width="900" alt="4d1" src="https://user-images.githubusercontent.com/118953915/206904531-0dcc38e7-9cc8-4209-87c5-ae34be6a94d1.PNG">   
+From the training video:    
 <img width="900" alt="4d2" src="https://user-images.githubusercontent.com/118953915/206904466-8063e648-a45f-4871-b784-f15d74ef3fd9.PNG">  
 Gate level verilog model can be timing aware or just functional, if just funtion thn can validate funtionality and if timing aware thn can validate funtionality and ensure timing   
  
