@@ -1,19 +1,10 @@
 ## Table of contents
 
 + **[ Day_0 : System/Tool Setup Check & GitHub ID creation ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_0)**
-  * [Lab0: Setup Lab](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab-session)
 + **[ Day_1 : Introduction to Verilog RTL design and Synthesis ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_1)**
-  * [Lab1: Introduction to lab](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab1-introduction-to-lab)
-  * [Lab2: Introduction iverilog gtkwave](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab-session-2)
-  * [Lab3: yosys good mux](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab-session-3)
 + **[ Day_2 : Timing libs(QTMs/ETMs), hierarchical vs flat synthesis and efficient flop coding styles ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_2)**  
-  * [Lab4: Introduction to dot Lib](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab4-introduction-to-dot-lib) 
-  * [Lab5: Hierarchical vs Flat Synthesis](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab5-hierarchical-vs-flat-synthesis)
 + **[ Day_3 : Combinational and sequenial optimizations ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_3)** 
-  * [Lab6: Combinational Logic Optimisations](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab6-combinational-logic-optimisations)
-  * [Lab7: Sequential Logic Optimisations](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab7-sequential-logic-optimisations)  
 + **[ Day_4 : GLS, blocking vs non-blocking and Synthesis-Simulation mismatch ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_4)**
-  * [Lab8: GLS Synth Sim Mismatch](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#lab8-gls-synth-sim-mismatch) 
 
 
 #
@@ -54,7 +45,7 @@ Here is the Overview that show by instructor:
 
 </details>
 
-<details><summary> Lab Session </summary>
+<details><summary> Lab Session -> Lab0: Setup Lab </summary>
 
 ### *__Lab Session__*
 
@@ -85,7 +76,7 @@ Tool for checking RTL design (implementation of spec) by simulating the design (
 Design+Test Bench --> iverilog --> vcd file (value chnage dump format-looking for changes in value) -> gtkwave (this use to view output)
 
 </details>
-<details><summary> Lab Session(Lab1&2) </summary>
+<details><summary> Lab Session -> Lab1: Introduction to lab； Lab2: Introduction iverilog gtkwave </summary>
 
 ### *__Lab Session__*
 #### *Lab1: Introduction to lab*  
@@ -146,7 +137,7 @@ slow cell-> not meet performance
 So constraints is needed as a guidance for the 
 
 </details>
-<details><summary> Lab Session(Lab3) </summary>
+<details><summary> Lab Session -> Lab3: yosys good mux </summary>
  
 #
 ### *__Lab Session__*
@@ -185,7 +176,7 @@ MOSFETs-specifying the circuits physically and characterizing them electricity
 3. Setup time is the time for the input data signals to remain stable before the clock edge, while hold time is the time for the input data signals to remain stable  after the clock edge  
  
 </details>
-<details><summary> Lab Session </summary>
+<details><summary> Lab Session -> Lab4: Introduction to dot Lib; Lab5: Hierarchical vs Flat Synthesis  </summary>
  
 ### *__Lab Session__*  
  
@@ -414,7 +405,7 @@ Retiming both of the flop by reduce the logic at  1st combi and add those into 2
 ![Picture9](https://user-images.githubusercontent.com/118953915/206745974-5ee450f6-9ad2-40c5-9c71-f5b75c655484.png)  
 
 </details>
-<details><summary> Lab Session </summary>
+<details><summary> Lab Session -> Lab6: Combinational Logic Optimisations; Lab7: Sequential Logic Optimisations </summary>
 
 ### *__Lab Session__* 
 #### **Lab6: Combinational Logic Optimisations**  
@@ -535,7 +526,7 @@ Here is the additional notes from lecture session:
 <img width="900" alt="46" src="https://user-images.githubusercontent.com/118953915/207019050-8dca9480-2b22-4fbf-ab73-eddad60bcb60.PNG">   
 (iii) non standard verilog coding   
 </details>
-<details><summary> Lab Session </summary> 
+<details><summary> Lab Session -> Lab8: GLS Synth Sim Mismatch </summary> 
 
 ### *__Lab Session__*
 #### **Lab8: GLS Synth Sim Mismatch**  
