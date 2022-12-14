@@ -586,11 +586,12 @@ $\textcolor{green}{\text{Where}}$ to implement DFT? -> During the synthesis
 >Can refer here for details on ASIC design flow : https://www.allaboutvlsi.in/2020/12/asic-design-flow.html   
 5.	Here is the Pro’s and Con’s of DFT:  
  <img width="900" alt="d5" src="https://user-images.githubusercontent.com/118953915/207634053-7c272823-85a0-4541-94a3-53bb2010bdb4.PNG">  
+ 
 6.	Here is the basic terminologies on DFT:  
 $\textcolor{blue}{\text{Controllability}}$: ability to establish a specific signal value at each node in a circuit from setting values at the circuit’s inputs  
--Can adding multiplexer
+-Can adding multiplexer  
 $\textcolor{blue}{\text{Observability}}$: ability to determine the signal value at any node in a circuit by controlling the circuit’s inputs and observing its outputs
--Can observe the node by adding flip flop
+-Can observe the node by adding flip flop  
 
 
 
