@@ -641,7 +641,7 @@ There are mainly categorized 2 main ones:
  ->The input of first flop is connected to the input pin of the chip (called $\textcolor{orange}{\text{scan-in}}$) from where scan data is fed. The output of the last   flop is connected to the output pin of the chip (called $\textcolor{orange}{\text{scan-out}}$) which is used to take the shifted data out. There is another one is scan selection (called $\textcolor{orange}{\text{scan-enable}}$)  
  ->use multiplexer to select test data(test data input-scan-in) or actual data(normal input)  
 -There are 3 types of scan flip-flops configurations namely-multiplexed,clocked,lssd (level sensitive deisgn)   
-<img width="400" alt="ff" src="https://user-images.githubusercontent.com/118953915/207799191-a2ffefcb-c038-4f2e-97a4-ac8ae5271cce.png">  
+<img width="300" alt="ff" src="https://user-images.githubusercontent.com/118953915/207799191-a2ffefcb-c038-4f2e-97a4-ac8ae5271cce.png">  
  
 10. What is the purpose of this scan flops?  
 -To test stuck-at faults in manufactured devices  
@@ -651,10 +651,10 @@ There are mainly categorized 2 main ones:
 💡 Goal : is to make each node in the circuit controllable and observable  
  
 **$\textcolor{purple}{\text{Steps to do basic scan-in and scan-out:}}$**   
-(i) Assert scan_enable (make it high) so as to enable (SI -> Q) path for each flop   
-(ii) Keep shifting in the scan data until the intended values at intended nodes are reached   
-(iii) De-assert scan_enable (for one pulse of clock in case of stuck-at testing and two or more cycles in case of transition testing) to enable D->Q path so that the combinational cloud output can be captured at the next clock edge   
-(iv) Again assert scan_enable and shift out the data through scan_out  
+1. Assert scan_enable (make it high) so as to enable (SI -> Q) path for each flop   
+2. Keep shifting in the scan data until the intended values at intended nodes are reached   
+3. De-assert scan_enable (for one pulse of clock in case of stuck-at testing and two or more cycles in case of transition testing) to enable D->Q path so that the combinational cloud output can be captured at the next clock edge   
+4. Again assert scan_enable and shift out the data through scan_out  
 <img width="1000" alt="step" src="https://user-images.githubusercontent.com/118953915/207799292-2d0e2da2-815f-4fb8-942f-2f9590135bda.PNG">  
  
 12. How long one single scan-chain is?   
@@ -679,12 +679,14 @@ Also, Since for each scan chain, scan_in and scan_out port is needed
 -using automation to quickly perform measurements and evaluate the test results   
 -it can be a simple computer-controlled digital multimeter, or a complicated system containing dozens of complex test instruments (real or simulated electronic test equipment) capable of automatically testing and diagnosing faults in sophisticated electronic packaged parts or on wafer testing, including system on chips and integrated circuits  
 
-Basic ATE functionality: -building awhole clk for automating whole design  
-(i) Scan-In Phase   
-(ii) Parallel Measure   
-(iii) Parallel Capture   
-(iv) First Scan-Out Phase   
-(v) Scan-Out Phase  
+14. Basic ATE functionality: -building a whole clk for automating whole design
+Total 5 phase:
+1. Scan-In Phase – each clock edge, data propagate into scan chain
+2. Parallel Measure – each clock cycle, data taken out at parallel output port to perform check
+3. Parallel Capture – capture data to perform check
+4. First Scan-Out Phase – if there is 100 ff, at 101 cycles will get 1st scan-in data out
+5. Scan-Out Phase- all data obtained at scan-out and there is comparator in ATE to compare the data among scan-in and scan-out 
+
 
 
 
