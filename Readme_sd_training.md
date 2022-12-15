@@ -693,7 +693,8 @@ Total 5 phase:
 <img width="600" alt="3" src="https://user-images.githubusercontent.com/118953915/207886176-cd936ecb-a0ae-4e12-8a40-22f54a5414a2.PNG">      
  
 Flow of Synopsys DFT Compiler:  
-<img width="600" alt="4" src="https://user-images.githubusercontent.com/118953915/207886192-2a083f44-c521-4ecb-beaf-d4072c57180c.PNG">    
+<img width="600" alt="4" src="https://user-images.githubusercontent.com/118953915/207886192-2a083f44-c521-4ecb-beaf-d4072c57180c.PNG">     
+-Design Rule Checking (DRC): Verifies as to whether a specific design meets the constraints imposed by the process technology to be used for its manufacturing
  
 >Some sample commands are:   
 >set_scan_configuration   
@@ -705,14 +706,24 @@ Flow of Synopsys DFT Compiler:
 $\textcolor{green}{\text{Additonal Repo:}}$  
 1. Other configurations of scan chains:  
 -Test power is a serious problem in the scan-based testing. DFT-based techniques and X-filling are two effective ways to reduce both shift power and capture power   
--In order to reduce test power and keep the defect coverage, there is a paper on <Scan chain configuration based X-filling for low power and high quality testing>  
+-In order to reduce test power and keep the defect coverage, there is a paper on "Scan chain configuration based X-filling for low power and high quality testing"  
 -In this paper mentioned that the scan chain configuration tries to cluster the scan flip-flops with common successors into one scan chain, in order to distribute the specified bits per pattern over a minimum number of chains.       
 > Can refer part of the details on the paper: https://digital-library.theiet.org/content/journals/10.1049/iet-cdt.2008.0163
 
-2. Take a sample circuit and explain with waveforms (take one faulty circuit and one non faulty)  
+2. Sample circuit and explain with waveforms (take one faulty circuit and one non faulty)  
+
+Design without faulty:  
+<img width="900" alt="5" src="https://user-images.githubusercontent.com/118953915/207904857-d00ece9b-15e9-4fa7-8494-5f132d8bd398.PNG">  
  
-3. Your view on how DFT can be game changer for VLSI engineers
-- In digitak 0,1 single problem , huge circuit
+Design with faulty:  
+-Metastability is a phenomenon of unstable equilibrium in digital electronics in which the sequential element is not able to resolve the state of the input signal; hence, the output goes into unresolved state for an unbounded interval of time  
+-If the setup check is violated, data will not be captured properly at the next clock edge. Similarly, if hold check is violated, data intended to get captured at the next edge will get captured at the same edge  
+<img width="900" alt="fa" src="https://user-images.githubusercontent.com/118953915/207904879-26edb3f8-4586-41c9-89a5-daca3b704fb3.PNG">   
+ 
+3. My view on how DFT can be game changer for VLSI engineers:  
+- From quality aspect: In a design is having huge amount of logic gates, so if there is one faulty logic in one of a circuit, will lead to big issue especially if the logic have multiple connection on it. The higher the test coverage, the higher the quality of design   
+- From timing aspect: The ealier the engineer found out where is the issue occur, the earlier the design can be fixed and launch to market    
+- From cost aspect: If the test coverage is high and engineer can found out the issue before the chip is fabricated, then this can reduce the lost   
  
 4. ATE(Automatic Test equipment)  
 (i) When the chip is digital, the stimuli are called test patterns or test vectors  
@@ -738,7 +749,8 @@ Test instruments | Such as a digital storage oscilloscope (DSO), digital multime
 Signal sources | Such as an arbitrary waveform generator (AWG), function generator, pulse generator, or radio frequency (RF) generator |
 Test probes or handlers | Which establish a connection between a test instrument and a DUT, UUT, or EUT |  
 
->Can refer details on ATE:Advantest Model T6682: http://ece-research.unm.edu/jimp/vlsi_test/slides/html/overview1.htm
+>Can refer details on ATE:Advantest Model T6682: http://ece-research.unm.edu/jimp/vlsi_test/slides/html/overview1.htm  
+>Can refer details on ATPG flow: http://razzkamal.blogspot.com/2016/05/what-is-dft-closure-why-is-it-important.html
 
 
 
