@@ -669,11 +669,12 @@ Also, Since for each scan chain, scan_in and scan_out port is needed
 💡 Number of cycles required to run a pattern = Length of largest scan chain in design   
 
 >QnA: Suppose, there are 10k flops in the design and there are 6 ports available as input/output, wcich means that there is 3 scan chains (6/2=3)  
->The idea scan chain distribution is [3300,3400,3300], not ideal [9000,100,900]  
+>The idea scan chain distribution is [3300,3400,3300], not ideal [9000,100,900], then the maximum number of cycles required will be 3400  
 > If there is 9k FFs in one scan chain, then it will causing number of cycles required to shift the data in and out increase   
 > 💡 The concept is related to scan chain balancing.  
 >if there is 100’s of flip-flops, then the test pattern will up to 2^100= 1.2676506e+30, we can’t put that up manually. So we need using ATPG(Automatic Test Pattern Generator) or ATE(Automatic Test Equipment)  
-
+> Can refer here for details on scan chain: https://vlsiuniverse.blogspot.com/2013/07/scan-chains-backbone-of-dft.html
+ 
 13. ATE (Automatic Test Equipment) <- mentioned at Ad-hoc technique section, but more prefer to use structured technique  
 -is any apparatus that performs tests on a device, known as the device under test (DUT), equipment under test (EUT) or unit under test (UUT)   
 -using automation to quickly perform measurements and evaluate the test results   
@@ -681,11 +682,11 @@ Also, Since for each scan chain, scan_in and scan_out port is needed
 
 14. Basic ATE functionality: -building a whole clk for automating whole design
 Total 5 phase:
-1. Scan-In Phase – each clock edge, data propagate into scan chain
-2. Parallel Measure – each clock cycle, data taken out at parallel output port to perform check
-3. Parallel Capture – capture data to perform check
-4. First Scan-Out Phase – if there is 100 ff, at 101 cycles will get 1st scan-in data out
-5. Scan-Out Phase- all data obtained at scan-out and there is comparator in ATE to compare the data among scan-in and scan-out 
+1.Scan-In Phase – each clock edge, data propagate into scan chain
+2.Parallel Measure – each clock cycle, data taken out at parallel output port to perform check
+3.Parallel Capture – capture data to perform check
+4.First Scan-Out Phase – if there is 100 ff, at 101 cycles will get 1st scan-in data out
+5.Scan-Out Phase- all data obtained at scan-out and there is comparator in ATE to compare the data among scan-in and scan-out 
 
 
 
