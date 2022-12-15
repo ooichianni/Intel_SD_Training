@@ -753,7 +753,15 @@ Test probes or handlers | Which establish a connection between a test instrument
 
 
 (iv) Flow of ATE- As mentioned above previous session [No.14]:  
-<img width="900" alt="ss" src="https://user-images.githubusercontent.com/118953915/207914210-5092d2a8-e74e-46df-9408-723ccb5e9ee1.PNG">
+<img width="900" alt="ss" src="https://user-images.githubusercontent.com/118953915/207914210-5092d2a8-e74e-46df-9408-723ccb5e9ee1.PNG">  
+
+-The scan cells are linked together into “scan chains” that operate like big shift registers when the circuit is put into test mode   
+-The scan chains are used by external automatic test equipment (ATE) to deliver test pattern data from its memory into the device   
+Here is the flow:  
+1.After the test pattern is loaded, the design is placed back into functional mode and the test response is captured in one or more clock cycles   
+2.The design is again put in test mode and the captured test response is shifted out, while the next test pattern is simultaneously shifted into the scan cells   
+3.The ATE then compares the captured test response with the expected response data stored in its memory   
+4.Any mismatches are likely defects and are logged for further evaluation  
 
 >Can refer details on ATE:Advantest Model T6682: http://ece-research.unm.edu/jimp/vlsi_test/slides/html/overview1.htm  
 >Can refer details on ATPG flow: http://razzkamal.blogspot.com/2016/05/what-is-dft-closure-why-is-it-important.html
