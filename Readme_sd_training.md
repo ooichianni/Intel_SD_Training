@@ -563,7 +563,7 @@ Another example, for blocking_caveat:
 **(A) Introduction on DFT (Design for testability)** 
  
 1.	$\textcolor{blue}{\text{Testability}}$-ability to run an experiment to test a hypothesis or theory  
-In VLSI term: If a design is $\textcolor{yellow}{\text{well-controllable}}$ and $\textcolor{yellow}{\text{well-observable}}$, it is said to easily testable  
+In VLSI term: If a design is $\textcolor{coral}{\text{well-controllable}}$ and $\textcolor{coral}{\text{well-observable}}$, it is said to easily testable  
 2.	$\textcolor{green}{\text{What}}$ is DFT?  
 DFT is a technique which facilitates a design to become testable after production  
 or adding an extra design for an existing design to make sure it can be tested after being fabricated  
@@ -595,15 +595,16 @@ $\textcolor{green}{\text{Where}}$ to implement DFT? -> During the synthesis
 (iii) Fault: There is a physical damage/defect compared to the good system, which may or may not cause system failure (eg: might cause by fabrication wire-connection problem)   
 (iv) Error: An error is caused by a fault because of which system went to erroneous state (eg: there is x/z(high impedance)–might cause by connection cutoff)  
 (v) Failure: System is not providing the expected service (eg: design not meeting specification)  
-:bulb A fault causes an error when leads to the system failure  
+💡 A fault causes an error when leads to the system failure  
 (vi) Fault Coverage: Percentage of the total number of logical faults that can be tested using a given test set T  
 -After post production, have a testing list (eg: make sure all wire connected, data transfer properly, no crosstalk)  
 (vii) Defect level: Refers to the fraction of shipped parts that are defective. Or, the proportion of the faulty chip in which fault isn’t detected and has been classified as good (eg: out of 100 chips, 10 chips are faulty chips)  
 7. DFT techniques  
 There are mainly categorized 2 main ones:  
 (i)	Ad-hoc technique/steps (following basic step by designing it self)  
-- Can refer here for details on race condition: Avoid combinational feedback (race condition)    
+> Can refer here for details on race condition: Avoid combinational feedback (race condition)    
 https://learn.microsoft.com/en-us/troubleshoot/developer/visualstudio/visual-basic/language-compilers/race-conditions-deadlocks  
+ 
 -All flip flops must be initializable (if ff get into unknown state x/z, then need reset to set to initial state)  
 -Partition a large circuit into small blocks  
 -Provide test control for the signals which are not controllable (controllability-give test case)  
