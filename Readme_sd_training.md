@@ -587,6 +587,9 @@ $\textcolor{green}{\text{Where}}$ to implement DFT? -> During the synthesis
 -including a design per an existing design to make sure that it is testable after post and route
 -make sure is synthesizable/manufacturable  
 >Can refer here for details on ASIC design flow : https://www.allaboutvlsi.in/2020/12/asic-design-flow.html   
+
+ ![sch](https://user-images.githubusercontent.com/118953915/207799275-3e5ea1c8-6e9a-4fe3-a4ce-2af9fd3399fc.png)  
+
 5.	Here is the Pro’s and Con’s of DFT:  
  <img width="900" alt="d5" src="https://user-images.githubusercontent.com/118953915/207634053-7c272823-85a0-4541-94a3-53bb2010bdb4.PNG">  
  
@@ -602,13 +605,15 @@ Failure| System is not providing the expected service (eg: design not meeting sp
 💡 A fault causes an error when leads to the system failure 
 Fault Coverage| Percentage of the total number of logical faults that can be tested using a given test set T -After post production, have a testing list (eg: make sure all wire connected, data transfer properly, no crosstalk) |
 Defect level| Refers to the fraction of shipped parts that are defective. Or, the proportion of the faulty chip in which fault isn’t detected and has been classified as good (eg: out of 100 chips, 10 chips are faulty chips) |  
+
+Adding multiplexer for controllability:  
+<img width="600" alt="addmux" src="https://user-images.githubusercontent.com/118953915/207799184-1bdc171f-052e-48e1-b3bc-3903ada61005.PNG">   
+Adding FF for observability:   
+<img width="600" alt="addff" src="https://user-images.githubusercontent.com/118953915/207799176-04f0f79e-7d02-4cfc-949f-089233a49f41.PNG">  
  
 7. DFT techniques  
 There are mainly categorized 2 main ones:  
-(i)	Ad-hoc technique/steps (following basic step by designing it self)  
-> Can refer here for details on race condition: Avoid combinational feedback (race condition)    
-https://learn.microsoft.com/en-us/troubleshoot/developer/visualstudio/visual-basic/language-compilers/race-conditions-deadlocks  
- 
+(i)	Ad-hoc technique/steps (following basic step by designing it self)   
  -All flip flops must be initializable (if ff get into unknown state x/z, then need reset to set to initial state)  
  -Partition a large circuit into small blocks  
  -Provide test control for the signals which are not controllable (controllability-give test case)  
@@ -619,6 +624,10 @@ https://learn.microsoft.com/en-us/troubleshoot/developer/visualstudio/visual-bas
  -Built-in self-test   
    ->MBist (Memory built-in self-test) -all condition put in memory, thn check output expected or not, check in all corner –(Eg: macros-IP: pll)  
    ->LBist (Logic built-in self-test)- Eg: AND gate (input ‘0’ & ‘1’, output ‘0’)  
+> Can refer here for details on race condition: Avoid combinational feedback (race condition)    
+ https://learn.microsoft.com/en-us/troubleshoot/developer/visualstudio/visual-basic/language-compilers/race-conditions-deadlocks
+ 
+![rc](https://user-images.githubusercontent.com/118953915/207799261-07ad1683-138c-4075-aba0-d0401637e238.png)  
  
 8. Scan-chain technique  
 (i) Specifying the scan constraint  
@@ -632,7 +641,8 @@ https://learn.microsoft.com/en-us/troubleshoot/developer/visualstudio/visual-bas
  ->The input of first flop is connected to the input pin of the chip (called $\textcolor{orange}{\text{scan-in}}$) from where scan data is fed. The output of the last   flop is connected to the output pin of the chip (called $\textcolor{orange}{\text{scan-out}}$) which is used to take the shifted data out. There is another one is scan selection (called $\textcolor{orange}{\text{scan-enable}}$)  
  ->use multiplexer to select test data(test data input-scan-in) or actual data(normal input)  
 -There are 3 types of scan flip-flops configurations namely-multiplexed,clocked,lssd (level sensitive deisgn)   
-
+<img width="400" alt="ff" src="https://user-images.githubusercontent.com/118953915/207799191-a2ffefcb-c038-4f2e-97a4-ac8ae5271cce.png">  
+ 
 10. What is the purpose of this scan flops?  
 -To test stuck-at faults in manufactured devices  
 -To test the paths in the manufactured devices for delay (eg: to test whether each path is working at functional frequency or not, any failure)  
@@ -645,6 +655,7 @@ https://learn.microsoft.com/en-us/troubleshoot/developer/visualstudio/visual-bas
 (ii) Keep shifting in the scan data until the intended values at intended nodes are reached   
 (iii) De-assert scan_enable (for one pulse of clock in case of stuck-at testing and two or more cycles in case of transition testing) to enable D->Q path so that the combinational cloud output can be captured at the next clock edge   
 (iv) Again assert scan_enable and shift out the data through scan_out  
+<img width="1000" alt="step" src="https://user-images.githubusercontent.com/118953915/207799292-2d0e2da2-815f-4fb8-942f-2f9590135bda.PNG">  
  
 12. How long one single scan-chain is?   
 By chain length, it means the number of flip-flops in a single scan chain  
