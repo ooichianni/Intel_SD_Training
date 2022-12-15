@@ -680,14 +680,48 @@ Also, Since for each scan chain, scan_in and scan_out port is needed
 -using automation to quickly perform measurements and evaluate the test results   
 -it can be a simple computer-controlled digital multimeter, or a complicated system containing dozens of complex test instruments (real or simulated electronic test equipment) capable of automatically testing and diagnosing faults in sophisticated electronic packaged parts or on wafer testing, including system on chips and integrated circuits  
 
-14. Basic ATE functionality: -building a whole clk for automating whole design
-Total 5 phase:
-1.Scan-In Phase – each clock edge, data propagate into scan chain
-2.Parallel Measure – each clock cycle, data taken out at parallel output port to perform check
-3.Parallel Capture – capture data to perform check
-4.First Scan-Out Phase – if there is 100 ff, at 101 cycles will get 1st scan-in data out
-5.Scan-Out Phase- all data obtained at scan-out and there is comparator in ATE to compare the data among scan-in and scan-out 
+14. Basic ATE functionality: -building a whole clk for automating whole design  
+Total 5 phase:    
+1.Scan-In Phase – each clock edge, data propagate into scan chain  
+2.Parallel Measure – each clock cycle, data taken out at parallel output port to perform check  
+3.Parallel Capture – capture data to perform check  
+4.First Scan-Out Phase – if there is 100 ff, at 101 cycles will get 1st scan-in data out  
+5.Scan-Out Phase- all data obtained at scan-out and there is comparator in ATE to compare the data among scan-in and scan-out   
+                                      
+$\textcolor{green}{\text{Additonal Repo:}}$ 
+1.Other configurations of scan chains:
+-Test power is a serious problem in the scan-based testing. DFT-based techniques and X-filling are two effective ways to reduce both shift power and capture power  
+-In order to reduce test power and keep the defect coverage, there is a paper on <Scan chain configuration based X-filling for low power and high quality testing>  
+-In this paper mentioned that the scan chain configuration tries to cluster the scan flip-flops with common successors into one scan chain, in order to distribute the specified bits per pattern over a minimum number of chains.       
+> Can refer part of the details on the paper: https://digital-library.theiet.org/content/journals/10.1049/iet-cdt.2008.0163
 
+2. Take a sample circuit and explain with waveforms (take one faulty circuit and one non faulty)  
+ 
+3. Your view on how DFT can be game changer for VLSI engineers
+- In digitak 0,1 single problem , huge circuit
+ 
+4. ATE(Automatic Test equipment)  
+(i) When the chip is digital, the stimuli are called test patterns or test vectors  
+(ii) Types of ATE automatic test systems:  
+ 
+System | Details|
+---|---| 
+ PCB inspection systems| Key element in any production process and particularly important where pick and place machines are involved|
+ ICT In circuit test| Besides checking short circuits, open circuits, component values, but it also checks the operation of ICs|
+ JTAG Boundary scan testing| Joint Test Action Group. to overcome the problems of lack of access to boards and integrated circuits for testing. Boundary scan overcomes this by having specific boundary scan registers in large integrated circuits|
+ Functional testing|  Any form of electronics testing that exercises the function of a circuit|
+ Combinational test| Combinational testers are generally used for printed circuit board testing|
+ 
+(iii) Components of an ATE system
+ Components | Details|
+---|---|
+Hardware | Power supplies, interface modules, embedded controllers, analog inputs and outputs, digital input/output, AC/DC outlets,... |
+Software| For test development and management of data collection, storage, reporting, and analysis |
+Test instruments | Such as a digital storage oscilloscope (DSO), digital multimeter, or inductance, capacitance, and resistance (LCR) meter |
+Signal sources | Such as an arbitrary waveform generator (AWG), function generator, pulse generator, or radio frequency (RF) generator |
+Test probes or handlers | Which establish a connection between a test instrument and a DUT, UUT, or EUT |  
+
+>Can refer details on ATE:Advantest Model T6682: http://ece-research.unm.edu/jimp/vlsi_test/slides/html/overview1.htm
 
 
 
