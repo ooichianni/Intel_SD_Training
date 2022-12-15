@@ -703,8 +703,8 @@ Flow of Synopsys DFT Compiler:
 >set_scan_signal  
  
 $\textcolor{green}{\text{Additonal Repo:}}$  
-1.Other configurations of scan chains:
--Test power is a serious problem in the scan-based testing. DFT-based techniques and X-filling are two effective ways to reduce both shift power and capture power  
+1. Other configurations of scan chains:  
+-Test power is a serious problem in the scan-based testing. DFT-based techniques and X-filling are two effective ways to reduce both shift power and capture power   
 -In order to reduce test power and keep the defect coverage, there is a paper on <Scan chain configuration based X-filling for low power and high quality testing>  
 -In this paper mentioned that the scan chain configuration tries to cluster the scan flip-flops with common successors into one scan chain, in order to distribute the specified bits per pattern over a minimum number of chains.       
 > Can refer part of the details on the paper: https://digital-library.theiet.org/content/journals/10.1049/iet-cdt.2008.0163
