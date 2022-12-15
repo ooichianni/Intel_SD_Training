@@ -620,10 +620,52 @@ https://learn.microsoft.com/en-us/troubleshoot/developer/visualstudio/visual-bas
 (ii) Specifying scan ports and scan enables  
 (iii) compiling the dft  
 (iv) Identifying the number of scan chains  
-9. Scan based technique/Scan-chains
--scan chains are the elements in scan-based designs that are used shift-in and shift-out test data
--A scan chain is formed by a number of flops connected back-to-back in a chain with the output of one flop connected to another  
- ->The input of first flop is connected to the input pin of the chip (called $\textcolor{orange}{\text{scan-in}}$) from where scan data is fed. The output of the last flop is connected to the output pin of the chip (called $\textcolor{orange}{\text{scan-out}}$) which is used to take the shifted data out. There is another one is scan selection (called $\textcolor{orange}{\text{scan-enable}}$)
+9. Scan based technique/Scan-chains  
+-scan chains are the elements in scan-based designs that are used shift-in and shift-out test data  
+-A scan chain is formed by a number of flops connected back-to-back in a chain with the output of one flop connected to another    
+ ->The input of first flop is connected to the input pin of the chip (called $\textcolor{orange}{\text{scan-in}}$) from where scan data is fed. The output of the last   flop is connected to the output pin of the chip (called $\textcolor{orange}{\text{scan-out}}$) which is used to take the shifted data out. There is another one is scan selection (called $\textcolor{orange}{\text{scan-enable}}$)  
+ ->use multiplexer to select test data(test data input-scan-in) or actual data(normal input)  
+-There are 3 types of scan flip-flops configurations namely-multiplexed,clocked,lssd (level sensitive deisgn)   
+
+10. What is the purpose of this scan flops?  
+-To test stuck-at faults in manufactured devices  
+-To test the paths in the manufactured devices for delay (eg: to test whether each path is working at functional frequency or not, any failure)  
+11. Functionality of scan chain   
+💡 Goal : is to make each node in the circuit controllable and observable  
+Steps to do basic scan-in and scan-out:   
+(i) Assert scan_enable (make it high) so as to enable (SI -> Q) path for each flop   
+(ii) Keep shifting in the scan data until the intended values at intended nodes are reached   
+(iii) De-assert scan_enable (for one pulse of clock in case of stuck-at testing and two or more cycles in case of transition testing) to enable D->Q path so that the combinational cloud output can be captured at the next clock edge   
+(iv) Again assert scan_enable and shift out the data through scan_out  
+12. How long one single scan-chain is?   
+By chain length, it means the number of flip-flops in a single scan chain  
+-Larger the chain length, more the number of cycles required to shift the data in and out  
+-However, considering the number of flops remains same, smaller chain length means more number of input/output ports is needed as scan_in and scan_out ports   
+>Formula:   
+>Number of ports required = 2 X Number of scan chain   
+
+Eg: If there is 3 scan chains, then there will be 6 ports  
+Also, Since for each scan chain, scan_in and scan_out port is needed   
+💡 Number of cycles required to run a pattern = Length of largest scan chain in design   
+
+>QnA: Suppose, there are 10k flops in the design and there are 6 ports available as input/output, wcich means that there is 3 scan chains (6/2=3)  
+>The idea scan chain distribution is [3300,3400,3300], not ideal [9000,100,900]  
+> If there is 9k FFs in one scan chain, then it will causing number of cycles required to shift the data in and out increase   
+> 💡 The concept is related to scan chain balancing.  
+>if there is 100’s of flip-flops, then the test pattern will up to 2^100= 1.2676506e+30, we can’t put that up manually. So we need using ATPG(Automatic Test Pattern Generator) or ATE(Automatic Test Equipment)  
+
+13. ATE (Automatic Test Equipment) <- mentioned at Ad-hoc technique section, but more prefer to use structured technique  
+-is any apparatus that performs tests on a device, known as the device under test (DUT), equipment under test (EUT) or unit under test (UUT)   
+-using automation to quickly perform measurements and evaluate the test results   
+-it can be a simple computer-controlled digital multimeter, or a complicated system containing dozens of complex test instruments (real or simulated electronic test equipment) capable of automatically testing and diagnosing faults in sophisticated electronic packaged parts or on wafer testing, including system on chips and integrated circuits  
+
+Basic ATE functionality: -building awhole clk for automating whole design  
+(i) Scan-In Phase   
+(ii) Parallel Measure   
+(iii) Parallel Capture   
+(iv) First Scan-Out Phase   
+(v) Scan-Out Phase  
+
 
 
 
