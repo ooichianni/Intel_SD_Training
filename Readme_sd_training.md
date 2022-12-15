@@ -593,6 +593,7 @@ $\textcolor{green}{\text{Where}}$ to implement DFT? -> During the synthesis
 5.	Here is the Pro’s and Con’s of DFT:  
  <img width="900" alt="d5" src="https://user-images.githubusercontent.com/118953915/207634053-7c272823-85a0-4541-94a3-53bb2010bdb4.PNG">  
  
+ 
 6.	Here is the basic terminologies on DFT:  
  
  Terms | Defination|
@@ -655,7 +656,7 @@ There are mainly categorized 2 main ones:
 2. Keep shifting in the scan data until the intended values at intended nodes are reached   
 3. De-assert scan_enable (for one pulse of clock in case of stuck-at testing and two or more cycles in case of transition testing) to enable D->Q path so that the combinational cloud output can be captured at the next clock edge   
 4. Again assert scan_enable and shift out the data through scan_out  
-<img width="1000" alt="step" src="https://user-images.githubusercontent.com/118953915/207799292-2d0e2da2-815f-4fb8-942f-2f9590135bda.PNG">  
+<img width="1000" alt="1" src="https://user-images.githubusercontent.com/118953915/207886159-46740738-ff6b-40cd-802a-5efc50adf53e.PNG">    
  
 12. How long one single scan-chain is?   
 By chain length, it means the number of flip-flops in a single scan chain  
@@ -687,7 +688,20 @@ Total 5 phase:
 3.Parallel Capture – capture data to perform check  
 4.First Scan-Out Phase – if there is 100 ff, at 101 cycles will get 1st scan-in data out  
 5.Scan-Out Phase- all data obtained at scan-out and there is comparator in ATE to compare the data among scan-in and scan-out   
-                                      
+
+15. Overview of DFT Compiler                                      
+<img width="600" alt="3" src="https://user-images.githubusercontent.com/118953915/207886176-cd936ecb-a0ae-4e12-8a40-22f54a5414a2.PNG">      
+ 
+Flow of Synopsys DFT Compiler:  
+<img width="600" alt="4" src="https://user-images.githubusercontent.com/118953915/207886192-2a083f44-c521-4ecb-beaf-d4072c57180c.PNG">    
+ 
+>Some sample commands are:   
+>set_scan_configuration   
+>preview_scan 
+>insert_scan  
+>set_scan_path   
+>set_scan_signal  
+ 
 $\textcolor{green}{\text{Additonal Repo:}}$  
 1.Other configurations of scan chains:
 -Test power is a serious problem in the scan-based testing. DFT-based techniques and X-filling are two effective ways to reduce both shift power and capture power  
@@ -702,6 +716,8 @@ $\textcolor{green}{\text{Additonal Repo:}}$
  
 4. ATE(Automatic Test equipment)  
 (i) When the chip is digital, the stimuli are called test patterns or test vectors  
+ <img width="600" alt="2" src="https://user-images.githubusercontent.com/118953915/207886168-b3c3750b-fbf3-464a-9383-70ecbe5a3c88.PNG">  
+ 
 (ii) Types of ATE automatic test systems:  
  
 System | Details|
@@ -711,6 +727,7 @@ System | Details|
  JTAG Boundary scan testing| Joint Test Action Group. to overcome the problems of lack of access to boards and integrated circuits for testing. Boundary scan overcomes this by having specific boundary scan registers in large integrated circuits|
  Functional testing|  Any form of electronics testing that exercises the function of a circuit|
  Combinational test| Combinational testers are generally used for printed circuit board testing|
+ 
  
 (iii) Components of an ATE system
  Components | Details|
