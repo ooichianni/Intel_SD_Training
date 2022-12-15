@@ -688,7 +688,7 @@ Total 5 phase:
 4.First Scan-Out Phase – if there is 100 ff, at 101 cycles will get 1st scan-in data out  
 5.Scan-Out Phase- all data obtained at scan-out and there is comparator in ATE to compare the data among scan-in and scan-out   
                                       
-$\textcolor{green}{\text{Additonal Repo:}}$ 
+$\textcolor{green}{\text{Additonal Repo:}}$  
 1.Other configurations of scan chains:
 -Test power is a serious problem in the scan-based testing. DFT-based techniques and X-filling are two effective ways to reduce both shift power and capture power  
 -In order to reduce test power and keep the defect coverage, there is a paper on <Scan chain configuration based X-filling for low power and high quality testing>  
