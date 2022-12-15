@@ -564,6 +564,7 @@ Another example, for blocking_caveat:
  
 1.	$\textcolor{blue}{\text{Testability}}$-ability to run an experiment to test a hypothesis or theory  
 In VLSI term: If a design is $\textcolor{coral}{\text{well-controllable}}$ and $\textcolor{coral}{\text{well-observable}}$, it is said to easily testable  
+ 
 2.	$\textcolor{green}{\text{What}}$ is DFT?  
 DFT is a technique which facilitates a design to become testable after production  
 or adding an extra design for an existing design to make sure it can be tested after being fabricated  
@@ -571,6 +572,7 @@ Eg of designs included for making the whole chip testable:
 (i) For macro(ip), including MBist(memory built in seld test) logic  
 (ii) For flops(sequential logic), using scan chains  
 (iii) For combination circuit, generating test patterns (3 bits input will need generate 2^3=8 patterns)  
+ 
 3.	$\textcolor{green}{\text{Why}}$ need DFT?  
 -It makes the testing easy at the post-production process  
 -Have 3 main levels of testing after a chip being fabricated:  
@@ -578,6 +580,7 @@ Eg of designs included for making the whole chip testable:
 (ii)	Board-level: when chips are integrated on boards/packages (eg:raspberry pi)  
 (iii)	System-level: when several boards are assembled together (laptops) 
 DFT is also done due to economical and market needs (Eg: if test at chip-level can reduce lost compare to test at system-level)  
+ 
 4.	When or where implement DFT (in basic ASIC design flow)  
 $\textcolor{green}{\text{When}}$ implemet DFT? -> At the beginning of design flow  
 $\textcolor{green}{\text{Where}}$ to implement DFT? -> During the synthesis   
@@ -588,38 +591,41 @@ $\textcolor{green}{\text{Where}}$ to implement DFT? -> During the synthesis
  <img width="900" alt="d5" src="https://user-images.githubusercontent.com/118953915/207634053-7c272823-85a0-4541-94a3-53bb2010bdb4.PNG">  
  
 6.	Here is the basic terminologies on DFT:  
-(i) $\textcolor{blue}{\text{Controllability}}$: ability to establish a specific signal value at each node in a circuit from setting values at the circuit’s inputs  
--Can adding multiplexer  
-(ii) $\textcolor{blue}{\text{Observability}}$: ability to determine the signal value at any node in a circuit by controlling the circuit’s inputs and observing its outputs  
--Can observe the node by adding flip flop   
-(iii) Fault: There is a physical damage/defect compared to the good system, which may or may not cause system failure (eg: might cause by fabrication wire-connection problem)   
-(iv) Error: An error is caused by a fault because of which system went to erroneous state (eg: there is x/z(high impedance)–might cause by connection cutoff)  
-(v) Failure: System is not providing the expected service (eg: design not meeting specification)  
-💡 A fault causes an error when leads to the system failure  
-(vi) Fault Coverage: Percentage of the total number of logical faults that can be tested using a given test set T  
--After post production, have a testing list (eg: make sure all wire connected, data transfer properly, no crosstalk)  
-(vii) Defect level: Refers to the fraction of shipped parts that are defective. Or, the proportion of the faulty chip in which fault isn’t detected and has been classified as good (eg: out of 100 chips, 10 chips are faulty chips)  
+ 
+ Terms | Defination|
+---|---|
+$\textcolor{blue}{\text{Controllability}}$| Ability to establish a specific signal value at each node in a circuit from setting values at the circuit’s inputs-Can adding multiplexer |
+$\textcolor{blue}{\text{Observability}}$|Ability to determine the signal value at any node in a circuit by controlling the circuit’s inputs and observing its outputs -Can observe the node by adding flip flop |
+Fault| There is a physical damage/defect compared to the good system, which may or may not cause system failure (eg: might cause by fabrication wire-connection problem) |
+Error| An error is caused by a fault because of which system went to erroneous state (eg: there is x/z(high impedance)–might cause by connection cutoff) |
+Failure| System is not providing the expected service (eg: design not meeting specification) |
+💡 A fault causes an error when leads to the system failure 
+Fault Coverage| Percentage of the total number of logical faults that can be tested using a given test set T -After post production, have a testing list (eg: make sure all wire connected, data transfer properly, no crosstalk) |
+Defect level| Refers to the fraction of shipped parts that are defective. Or, the proportion of the faulty chip in which fault isn’t detected and has been classified as good (eg: out of 100 chips, 10 chips are faulty chips) |  
+ 
 7. DFT techniques  
 There are mainly categorized 2 main ones:  
 (i)	Ad-hoc technique/steps (following basic step by designing it self)  
 > Can refer here for details on race condition: Avoid combinational feedback (race condition)    
 https://learn.microsoft.com/en-us/troubleshoot/developer/visualstudio/visual-basic/language-compilers/race-conditions-deadlocks  
  
--All flip flops must be initializable (if ff get into unknown state x/z, then need reset to set to initial state)  
--Partition a large circuit into small blocks  
--Provide test control for the signals which are not controllable (controllability-give test case)  
--While designing test logic we have consider the ATE requirement  
+ -All flip flops must be initializable (if ff get into unknown state x/z, then need reset to set to initial state)  
+ -Partition a large circuit into small blocks  
+ -Provide test control for the signals which are not controllable (controllability-give test case)  
+ -While designing test logic we have consider the ATE requirement  
 (ii) Structured technique (Ad-hoc have some limitation, so introduced this technique)  
--Scan: in the design all the flip flops are converted into scan flip flops  
--Boundary scan (partition-which small group causing issue)  
--Built-in self-test   
-  ->MBist (Memory built-in self-test) -all condition put in memory, thn check output expected or not, check in all corner –(Eg: macros-IP: pll)  
-  ->LBist (Logic built-in self-test)- Eg: AND gate (input ‘0’ & ‘1’, output ‘0’)  
+ -Scan: in the design all the flip flops are converted into scan flip flops  
+ -Boundary scan (partition-which small group causing issue)  
+ -Built-in self-test   
+   ->MBist (Memory built-in self-test) -all condition put in memory, thn check output expected or not, check in all corner –(Eg: macros-IP: pll)  
+   ->LBist (Logic built-in self-test)- Eg: AND gate (input ‘0’ & ‘1’, output ‘0’)  
+ 
 8. Scan-chain technique  
 (i) Specifying the scan constraint  
 (ii) Specifying scan ports and scan enables  
 (iii) compiling the dft  
 (iv) Identifying the number of scan chains  
+ 
 9. Scan based technique/Scan-chains  
 -scan chains are the elements in scan-based designs that are used shift-in and shift-out test data  
 -A scan chain is formed by a number of flops connected back-to-back in a chain with the output of one flop connected to another    
@@ -630,13 +636,16 @@ https://learn.microsoft.com/en-us/troubleshoot/developer/visualstudio/visual-bas
 10. What is the purpose of this scan flops?  
 -To test stuck-at faults in manufactured devices  
 -To test the paths in the manufactured devices for delay (eg: to test whether each path is working at functional frequency or not, any failure)  
+ 
 11. Functionality of scan chain   
 💡 Goal : is to make each node in the circuit controllable and observable  
-Steps to do basic scan-in and scan-out:   
+ 
+**$\textcolor{purple}{\text{Steps to do basic scan-in and scan-out:}}$**   
 (i) Assert scan_enable (make it high) so as to enable (SI -> Q) path for each flop   
 (ii) Keep shifting in the scan data until the intended values at intended nodes are reached   
 (iii) De-assert scan_enable (for one pulse of clock in case of stuck-at testing and two or more cycles in case of transition testing) to enable D->Q path so that the combinational cloud output can be captured at the next clock edge   
 (iv) Again assert scan_enable and shift out the data through scan_out  
+ 
 12. How long one single scan-chain is?   
 By chain length, it means the number of flip-flops in a single scan chain  
 -Larger the chain length, more the number of cycles required to shift the data in and out  
