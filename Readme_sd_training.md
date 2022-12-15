@@ -753,7 +753,7 @@ Test probes or handlers | Which establish a connection between a test instrument
 
 
 (iv) Flow of ATE- As mentioned above previous session [No.14]:  
-<img width="600" alt="ss" src="https://user-images.githubusercontent.com/118953915/207914210-5092d2a8-e74e-46df-9408-723ccb5e9ee1.PNG">
+<img width="900" alt="ss" src="https://user-images.githubusercontent.com/118953915/207914210-5092d2a8-e74e-46df-9408-723ccb5e9ee1.PNG">
 
 >Can refer details on ATE:Advantest Model T6682: http://ece-research.unm.edu/jimp/vlsi_test/slides/html/overview1.htm  
 >Can refer details on ATPG flow: http://razzkamal.blogspot.com/2016/05/what-is-dft-closure-why-is-it-important.html
