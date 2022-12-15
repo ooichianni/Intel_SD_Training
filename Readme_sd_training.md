@@ -727,7 +727,9 @@ Design with faulty:
  
 4. ATE(Automatic Test equipment)  
 (i) When the chip is digital, the stimuli are called test patterns or test vectors  
- <img width="600" alt="2" src="https://user-images.githubusercontent.com/118953915/207886168-b3c3750b-fbf3-464a-9383-70ecbe5a3c88.PNG">  
+ <img width="600" alt="2" src="https://user-images.githubusercontent.com/118953915/207886168-b3c3750b-fbf3-464a-9383-70ecbe5a3c88.PNG">   
+ -An ATE is used to apply a sequence of stimuli to the die under probe DUP or device under test DUT, monitor and/or record the results of the response from
+the device, and make decision on pass/fail status according specifications of the die/device  
  
 (ii) Types of ATE automatic test systems:  
  
@@ -748,6 +750,10 @@ Software| For test development and management of data collection, storage, repor
 Test instruments | Such as a digital storage oscilloscope (DSO), digital multimeter, or inductance, capacitance, and resistance (LCR) meter |
 Signal sources | Such as an arbitrary waveform generator (AWG), function generator, pulse generator, or radio frequency (RF) generator |
 Test probes or handlers | Which establish a connection between a test instrument and a DUT, UUT, or EUT |  
+
+
+(iv) Flow of ATE- As mentioned above previous session [No.14]:  
+<img width="600" alt="ss" src="https://user-images.githubusercontent.com/118953915/207914210-5092d2a8-e74e-46df-9408-723ccb5e9ee1.PNG">
 
 >Can refer details on ATE:Advantest Model T6682: http://ece-research.unm.edu/jimp/vlsi_test/slides/html/overview1.htm  
 >Can refer details on ATPG flow: http://razzkamal.blogspot.com/2016/05/what-is-dft-closure-why-is-it-important.html
