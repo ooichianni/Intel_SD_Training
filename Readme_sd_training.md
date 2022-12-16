@@ -728,6 +728,7 @@ Design with faulty:
 4. ATE(Automatic Test equipment)  
 (i) When the chip is digital, the stimuli are called test patterns or test vectors  
  <img width="600" alt="2" src="https://user-images.githubusercontent.com/118953915/207886168-b3c3750b-fbf3-464a-9383-70ecbe5a3c88.PNG">   
+
  -An ATE is used to apply a sequence of stimuli to the die under probe DUP or device under test DUT, monitor and/or record the results of the response from
 the device, and make decision on pass/fail status according specifications of the die/device  
  
