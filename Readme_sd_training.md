@@ -4,8 +4,8 @@
 + **[ Day_1 : Introduction to Verilog RTL design and Synthesis ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_1)**
 + **[ Day_2 : Timing libs(QTMs/ETMs), hierarchical vs flat synthesis and efficient flop coding styles ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_2)**  
 + **[ Day_3 : Combinational and sequenial optimizations ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_3)** 
-+ **[ Day_4 : GLS, blocking vs non-blocking and Synthesis-Simulation mismatch ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_4)**  
-+ **[ Day_5 : DFT ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_5)**
++ **[ Day_4 : GLS, blocking vs non-blocking and Synthesis-Simulation mismatch ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_4)**  + **[ Day_5 : DFT ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_5)**
++ **[ Day_6 : Introduction to Logic Synthesis ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_6)**
 
 #
 # Day_0 
@@ -63,7 +63,7 @@ Here is the screenshot of lab final outputs:
 # Day_1   
 **⭐Introduction to Verilog RTL design and Synthesis**
 
-<details><summary> ⚡*Lecture Session* </summary>
+<details><summary> ⚡Lecture Session </summary>
  
 ### *__Lecture Session__*
 
@@ -767,8 +767,182 @@ Here is the flow:
 >Can refer details on ATE:Advantest Model T6682: http://ece-research.unm.edu/jimp/vlsi_test/slides/html/overview1.htm  
 >Can refer details on ATPG flow: http://razzkamal.blogspot.com/2016/05/what-is-dft-closure-why-is-it-important.html
 
+</details>
+ 
+#
+# Day_6   
+**⭐Introduction to Logic Synthesis**  
+
+<details><summary> ⚡ Lecture Session </summary>  
+
+### *__Lecture Session__*  
+
+**(A) Advanced Synthesis and STA with Design Compiler**    
+
+1.Basic of Digital Logic Design and Synthesis  
+-Digital Logic: Switching Function, Automation and Decision making  
+ 
+2.Why different flavours of gate  
+-combinational delay in logic path determines the maximum speed of operation of digital logic circuit  
+
+3.Faster cells vs slower cells  
+-load in digital logic circuit-> capacitance  
+-faster the charging/discharging of capacitance-> lesser the cell delay  
+ -> To charge/discharge the capacitance fast, we need transistors capable of sourcing more current  
+ -->Wider transistor-> low delay-> but more area and power!  
+ -->Narrow transistor-> more delay -> less area and power  
+>MOSFET current equation, I proportional to W/L  
+
+ 4.Selection of cells  
+-Need to guide the synthsizer(tool convert hdl->netlist) to select the flavour of cells that is optimum for the implementation of logic circuit  
+  ->guidance offered to synthesizer: Constraints  
+
+5.The circuit is created from RTL using the gates available in the .lib and given out as netlist  
+
+Can have multiple implementation  
+ 
+->Logic synthesis must achieve logically correct, electrically correct and timing of design met  
+
+**(B) Introduction to Design compiler (DC)**  
+ 
+1.DC-Synthesis tool targeted for ASIC design flow from Synopsys  
+Features of dc:   
+(i)Established a premium synthesis tool across semiconductor industry  
+(ii)Interoperability with various backend tools from Synopsys  
+(iii)Has ability to perform DFT scan stich  
+(iv)Can handle huge designs with extreme complexity and provide very good QoR(Quality of result)  
+
+ 2. Common terminologies associated with DC   
+(i)Synopsys Design Constraints (SDC): There a re the design constraints which are supplied to DV to enable appropriate optimization suitable for achieving the best implementation  
+ ->SDC is industry standard which used across Electronic Design Automation(EDA) implementation tools -Cadence,Synopsys,…  
+ ->Electronic Design Automation (EDA) refers to a category of software tools used in a workflow to design electronic systems such as semiconductors, integrated   circuits, and printed circuit boards  
+(ii).LIB: Design library which contains the std cells  
+(iii)DB: Same as .lib but in a different format. DC understand libraries in .db format  
+ ->So lib-convert to db thn source in DC  
+(iv)DDC: Synopsys proprietary format for storing the design information. DC can write out and read in DDC  
+(v)Design: RTL files which has the behavioral model of the design  
+
+3.SDC format:  
+–design intent in terms of $\textcolor{purple}{\text{timing, power(upf file) and area constraints}}$  
+-supported by different EDA tools across semiconductor industry  
+-SDC is based on Tool Command Language (TCL)  
+
+4.Here is the Implementation flow of ASIC:  
+ 
+5.Here is the DC Setup   
+ 
+6.Here is the DC synthesis flow:  
+
+</details>  
+ 
+<details><summary> ⚡ Lab Session-> Lab1: Invokinf DC basic setup</summary>  
+ 
+#### **Lab1: Invokinf DC basic setup**   
+                                                                                    
+>cd into home dir ; mkdir -p training ;  git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git   
+>cd  sky130RTLDesignAndSynthesisWorkshop ; enter UE /p/hdk/pu_tu/prd/sams/mig76_wlw/setup/enter_p31 -cfg ip76p31r08hp7rev03 -ov ./   
+
+Here is the .lib file locate at:  
+Have converted the .lib format file into .db file, for DC to read in  
+ 
+
+Details of .lib:  
+>gvim DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.lib ; switch off syntax :syn off  
+  -.lib written out for a PVT corner  
+
+To invoke dc_shell, need to enable cshell first:   
+>csh ; dc_shell  
+>echo $target_library ; echo $link_library  
+ 
+>gvim DC_WORKSHOP/verilog_files/lab1_flop_with_en.v  
+ 
+>read_verilog DC_WORKSHOP/verilog_files/lab1_flop_with_en.v  
+ 
+
+>Write Verilog format : write -f verilog -out lab1_net.v   
+>sh gvim /nfs/png/home/chiannio/training/sky130RTLDesignAndSynthesisWorkshop/lab1_net.v  
+ 
+
+If running like this , still not correct:  
+>read_db DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db  
+>write -f verilog -out lab1_net.v  
+
+Should like this:  
+There may be multiple libraries loaded in DC’s memory, so need  
+set link_library {* <path to std cell library> }  
+where * = lib already loaded in DC’s memory  
+Eg: in previous DC’s memory have flops libs, now append new libraries to it without overwrite it   
+>set target_library /nfs/png/home/chiannio/training/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db  
+>set link_library {* /nfs/png/home/chiannio/training/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db}  
+>link  
+ 
+
+Then, compile design  
+>compile  
+>write -f verilog -out lab1_net.v  
+ 
+</details>  
+ 
+<details><summary> ⚡ Lab Session-> Lab2: Intro to ddc gui with design_vision</summary>  
+ 
+#### **Lab2: Intro to ddc gui with design_vision**   
+Invoke design vision (gui format of dc)   
+>csh  
+>design_vision  
+ 
+
+Command write ddc (in dc_shell)  
+>Format in ddc: write -f ddc -out lab1.ddc  
+Command read ddc   
+>read_ddc lab1.ddc  
+-ddc (synopsys properiety  format) save all information in the tool memory in that particular session  
+-convenient when passing data from dc into icc by using .ddc  
+ 
+If read_verilog lab1_flop_with_en.v – read only Verilog file  
+Here is the schematic view of design_vision:  
+ 
 
 
+everytime invoke dc_shell need to set target_library and link_library  
+Can set like this  
+>set target_library /nfs/png/home/chiannio/training/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db  
+> set link_library { * $target_library }  
+ 
+There are multiple .db files and setting manually is error prone, so we can use .synopsys_dc.setup  
+In DC during installed will have a default one, and in out user home directory also will consists one. The DC will pick the one in our user home directory  
+all repetitive tasks which is needed for tool setup can be pointed in this file- target_library and link_library  
+Preconfigure must in home directory & the file name must .synopsys_dc.setup  
+>gvim .synopsys_dc.setup  
+>>set target_library ~/training/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db  
+>>set link_library { * $target_library }  
+After invoke dc_shell, the target_library and link_library have been set automatically  
+> csh   
+> dc_shell  
+ 
+</details>  
+ 
+<details><summary> ⚡ Lecture session</summary>  
+ 
+TCL quick refresher  
+-all dc internal command based on tcl only  
+ 
+
+Here is example:  
+ 
+
+Another example on DC proprietary command:  
+>foreach_in_collection my_var [get_lib_cells */*and*] {  
+>set my_var_name [get_object_name $my_var]   
+>echo $my_var_name;  
+>}  
+ 
+
+Can save all the commands in a file and the source the file  
+>sh gvim myscript.tcl  
+>source myscript.tcl  
+ 
+Further try on:  
+ 
 
 
 
