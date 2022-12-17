@@ -836,7 +836,7 @@ Features of dc:
 
 </details>  
  
-<details><summary> ⚡ Lab Session-> Lab1: Invokinf DC basic setup</summary>  
+<details><summary> Lab Session-> Lab1: Invokinf DC basic setup</summary>  
  
 #### **Lab1: Invokinf DC basic setup**   
                                                                                     
@@ -884,7 +884,7 @@ Then, compile design
  
 </details>  
  
-<details><summary> ⚡ Lab Session-> Lab2: Intro to ddc gui with design_vision</summary>  
+<details><summary> Lab Session-> Lab2: Intro to ddc gui with design_vision</summary>  
  
 #### **Lab2: Intro to ddc gui with design_vision**   
 Invoke design vision (gui format of dc)   
@@ -946,8 +946,7 @@ Another example on DC proprietary command:
 Can save all the commands in a file and the source the file  
 >sh gvim myscript.tcl  
 >source myscript.tcl  
- 
-Further try on:  
+  
  
 </details>
 
