@@ -812,7 +812,7 @@ Features of dc:
 (iii)Has ability to perform DFT scan stich  
 (iv)Can handle huge designs with extreme complexity and provide very good QoR(Quality of result)  
 
-2. Common terminologies associated with DC   
+2.Common terminologies associated with DC   
 (i)Synopsys Design Constraints (SDC): There a re the design constraints which are supplied to DV to enable appropriate optimization suitable for achieving the best implementation  
  ->SDC is industry standard which used across Electronic Design Automation(EDA) implementation tools -Cadence,Synopsys,…  
  ->Electronic Design Automation (EDA) refers to a category of software tools used in a workflow to design electronic systems such as semiconductors, integrated   circuits, and printed circuit boards  
