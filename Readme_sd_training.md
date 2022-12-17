@@ -902,9 +902,11 @@ Command read ddc
 If read_verilog lab1_flop_with_en.v – read only Verilog file  
 Here is the schematic view of design_vision:  
  
+</details>
+ 
+<details><summary> Lab Session -> Lab3: DC synopsys DC setup </summary>
 
-
-everytime invoke dc_shell need to set target_library and link_library  
+Everytime invoke dc_shell need to set target_library and link_library  
 Can set like this  
 >set target_library /nfs/png/home/chiannio/training/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db  
 > set link_library { * $target_library }  
@@ -927,7 +929,10 @@ After invoke dc_shell, the target_library and link_library have been set automat
 TCL quick refresher  
 -all dc internal command based on tcl only  
  
-
+</details>
+ 
+<details><summary> Lab Session -> Lab4: TCL scripting </summary>
+ 
 Here is example:  
  
 
@@ -944,7 +949,7 @@ Can save all the commands in a file and the source the file
  
 Further try on:  
  
-
+</details>
 
 
  
