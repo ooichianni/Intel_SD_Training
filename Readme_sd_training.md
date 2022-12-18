@@ -910,8 +910,10 @@ Command read ddc
 -convenient when passing data from dc into icc by using .ddc  
 <img width="900" alt="Picture1" src="https://user-images.githubusercontent.com/118953915/208290131-291eb76e-1761-4fa4-b54d-fd04ee42c6a2.png">
  
-If read_verilog lab1_flop_with_en.v – read only Verilog file  
-Here is the schematic view of design_vision:  
+If read_verilog lab1_flop_with_en.v – read only Verilog file   
+<img width="900" alt="Picture1" src="https://user-images.githubusercontent.com/118953915/208301495-a7f6b32a-1e16-49ab-ab62-11756b36b5cf.png">
+
+ Here is the schematic view of design_vision:  
 <img width="900" alt="Picture18" src="https://user-images.githubusercontent.com/118953915/208289666-d5d832d6-8ead-4b62-b878-748077fa79c8.png">
  
 </details>
