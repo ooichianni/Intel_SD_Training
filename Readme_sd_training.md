@@ -782,10 +782,12 @@ Here is the flow:
 
 1.Basic of Digital Logic Design and Synthesis  
 -Digital Logic: Switching Function, Automation and Decision making  
+![1](https://user-images.githubusercontent.com/118953915/208279707-0254aec1-5dc9-4fdf-958a-3e0465a51250.png)  
  
 2.Why different flavours of gate  
 -combinational delay in logic path determines the maximum speed of operation of digital logic circuit  
-
+![2](https://user-images.githubusercontent.com/118953915/208279712-f323389c-886d-4e4c-9af7-10fc95e295e1.png)
+ 
 3.Faster cells vs slower cells  
 -load in digital logic circuit-> capacitance  
 -faster the charging/discharging of capacitance-> lesser the cell delay  
@@ -799,8 +801,10 @@ Here is the flow:
   ->guidance offered to synthesizer: Constraints  
 
 5.The circuit is created from RTL using the gates available in the .lib and given out as netlist  
-
+![Picture4](https://user-images.githubusercontent.com/118953915/208279715-345f19a3-95fc-4559-a46c-41bf853cb9b2.png)
+ 
 Can have multiple implementation  
+![Picture5](https://user-images.githubusercontent.com/118953915/208279716-22bc6fc2-d156-4a07-89b3-936d4019c96e.png)
  
 ->Logic synthesis must achieve logically correct, electrically correct and timing of design met  
 
@@ -829,11 +833,14 @@ Features of dc:
 -SDC is based on Tool Command Language (TCL)  
 
 4.Here is the Implementation flow of ASIC:  
+![Picture6](https://user-images.githubusercontent.com/118953915/208279717-614c5061-d4cc-40f5-9546-6dc80ad15b23.png)
  
 5.Here is the DC Setup   
+![Picture7](https://user-images.githubusercontent.com/118953915/208279718-d7d02ea0-ff87-46d1-9017-849b9cf8215f.png)
  
 6.Here is the DC synthesis flow:  
-
+![Picture8](https://user-images.githubusercontent.com/118953915/208279723-e021b4a3-c13d-4517-896f-2cb31b38bcc2.png)
+ 
 </details>  
  
 <details><summary> Lab Session-> Lab1: Invokinf DC basic setup</summary>  
@@ -845,12 +852,13 @@ Features of dc:
 
 Here is the .lib file locate at:  
 Have converted the .lib format file into .db file, for DC to read in  
+<img width="900" alt="Picture9" src="https://user-images.githubusercontent.com/118953915/208279726-9fc38c43-3ae8-4280-a46d-cfc9b57555c9.png">
  
-
 Details of .lib:  
 >gvim DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.lib ; switch off syntax :syn off  
   -.lib written out for a PVT corner  
-
+<img width="900" alt="Picture10" src="https://user-images.githubusercontent.com/118953915/208279739-6eb98903-c2ac-46ea-a19e-44101d06bd29.png">
+ 
 To invoke dc_shell, need to enable cshell first:   
 >csh ; dc_shell  
 >echo $target_library ; echo $link_library  
