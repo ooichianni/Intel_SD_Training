@@ -862,16 +862,17 @@ Details of .lib:
 To invoke dc_shell, need to enable cshell first:   
 >csh ; dc_shell  
 >echo $target_library ; echo $link_library  
+<img width="900" alt="Picture11" src="https://user-images.githubusercontent.com/118953915/208289654-d2ef9bdd-8724-4f0b-8de9-63cde17f74a8.png">  
  
 >gvim DC_WORKSHOP/verilog_files/lab1_flop_with_en.v  
+<img width="900" alt="Picture12" src="https://user-images.githubusercontent.com/118953915/208289656-388a7fcc-5bc1-4194-b2f6-808ba08f0ccd.png">  
  
 >read_verilog DC_WORKSHOP/verilog_files/lab1_flop_with_en.v  
- 
+<img width="900" alt="Picture13" src="https://user-images.githubusercontent.com/118953915/208289657-cea07206-299c-4aef-b8b5-7804fd5fd497.png">  
 
 >Write Verilog format : write -f verilog -out lab1_net.v   
->sh gvim /nfs/png/home/chiannio/training/sky130RTLDesignAndSynthesisWorkshop/lab1_net.v  
+>sh gvim /nfs/png/home/chiannio/training/sky130RTLDesignAndSynthesisWorkshop/lab1_net.v <img width="900" alt="Picture14" src="https://user-images.githubusercontent.com/118953915/208289658-38da9dfb-2a62-4bbd-95ed-19d154464e92.png"> 
  
-
 If running like this , still not correct:  
 >read_db DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db  
 >write -f verilog -out lab1_net.v  
@@ -884,11 +885,12 @@ Eg: in previous DC’s memory have flops libs, now append new libraries to it wi
 >set target_library /nfs/png/home/chiannio/training/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db  
 >set link_library {* /nfs/png/home/chiannio/training/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db}  
 >link  
- 
+<img width="900" alt="Picture15" src="https://user-images.githubusercontent.com/118953915/208289650-d8f42e52-e691-4b38-8da3-04c550d14652.png"> 
 
 Then, compile design  
 >compile  
 >write -f verilog -out lab1_net.v  
+<img width="900" alt="Picture16" src="https://user-images.githubusercontent.com/118953915/208289652-232375c1-4479-4bd9-8c5c-2e24765801e7.png">
  
 </details>  
  
@@ -898,7 +900,7 @@ Then, compile design
 Invoke design vision (gui format of dc)   
 >csh  
 >design_vision  
- 
+<img width="900" alt="Picture17" src="https://user-images.githubusercontent.com/118953915/208289663-266bc31b-61b5-49dd-ae14-8d4899ed3312.png"> 
 
 Command write ddc (in dc_shell)  
 >Format in ddc: write -f ddc -out lab1.ddc  
@@ -906,9 +908,11 @@ Command read ddc
 >read_ddc lab1.ddc  
 -ddc (synopsys properiety  format) save all information in the tool memory in that particular session  
 -convenient when passing data from dc into icc by using .ddc  
+<img width="900" alt="Picture1" src="https://user-images.githubusercontent.com/118953915/208290131-291eb76e-1761-4fa4-b54d-fd04ee42c6a2.png">
  
 If read_verilog lab1_flop_with_en.v – read only Verilog file  
 Here is the schematic view of design_vision:  
+<img width="900" alt="Picture18" src="https://user-images.githubusercontent.com/118953915/208289666-d5d832d6-8ead-4b62-b878-748077fa79c8.png">
  
 </details>
  
@@ -918,6 +922,7 @@ Everytime invoke dc_shell need to set target_library and link_library
 Can set like this  
 >set target_library /nfs/png/home/chiannio/training/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db  
 > set link_library { * $target_library }  
+<img width="900" alt="Picture19" src="https://user-images.githubusercontent.com/118953915/208289667-70bd1e08-76f0-49b6-ace8-b15805bf669c.png">
  
 There are multiple .db files and setting manually is error prone, so we can use .synopsys_dc.setup  
 In DC during installed will have a default one, and in out user home directory also will consists one. The DC will pick the one in our user home directory  
@@ -929,6 +934,7 @@ Preconfigure must in home directory & the file name must .synopsys_dc.setup
 After invoke dc_shell, the target_library and link_library have been set automatically  
 > csh   
 > dc_shell  
+ <img width="900" alt="Picture20" src="https://user-images.githubusercontent.com/118953915/208289668-5f18ef08-65c8-484a-a37a-32bbce6afa56.png">
  
 </details>  
  
@@ -936,25 +942,31 @@ After invoke dc_shell, the target_library and link_library have been set automat
  
 TCL quick refresher  
 -all dc internal command based on tcl only  
+ <img width="900" alt="Picture21" src="https://user-images.githubusercontent.com/118953915/208289670-1ea638e6-0a3e-4dd1-b999-e106030224d5.png">
  
 </details>
  
 <details><summary> Lab Session -> Lab4: TCL scripting </summary>
  
 Here is example:  
+ <img width="900" alt="Picture22" src="https://user-images.githubusercontent.com/118953915/208289673-1a27b356-d318-4daf-afeb-9bd3ca958fda.png">
  
-
 Another example on DC proprietary command:  
 >foreach_in_collection my_var [get_lib_cells */*and*] {  
 >set my_var_name [get_object_name $my_var]   
 >echo $my_var_name;  
 >}  
- 
+ <img width="900" alt="Picture23" src="https://user-images.githubusercontent.com/118953915/208289674-192b3bfb-e572-4fd0-9883-38930df1f2db.png"> 
 
 Can save all the commands in a file and the source the file  
 >sh gvim myscript.tcl  
 >source myscript.tcl  
-  
+ <img width="900" alt="Picture24" src="https://user-images.githubusercontent.com/118953915/208289675-81a0329d-02ba-428e-97f3-a32ddb19778d.png">
+ 
+ Further try on:
+ <img width="900" alt="Picture25" src="https://user-images.githubusercontent.com/118953915/208289678-115075a2-ef74-4b8c-baf2-062515f554df.png">  
+ 
+ 💡Must always aware of syntax and spacing in tcl scripting
  
 </details>
 
