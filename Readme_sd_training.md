@@ -852,7 +852,7 @@ Features of dc:
 
 Here is the .lib file locate at:  
 Have converted the .lib format file into .db file, for DC to read in  
-<img width="900" alt="Picture9" src="https://user-images.githubusercontent.com/118953915/208279726-9fc38c43-3ae8-4280-a46d-cfc9b57555c9.png">
+<img width="400" alt="Picture9" src="https://user-images.githubusercontent.com/118953915/208279726-9fc38c43-3ae8-4280-a46d-cfc9b57555c9.png">
  
 Details of .lib:  
 >gvim DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.lib ; switch off syntax :syn off  
