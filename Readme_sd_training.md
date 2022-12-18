@@ -921,7 +921,7 @@ Here is the schematic view of design_vision:
 Everytime invoke dc_shell need to set target_library and link_library  
 Can set like this  
 >set target_library /nfs/png/home/chiannio/training/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db  
-> set link_library { * $target_library }  
+>set link_library { * $target_library }  
 <img width="900" alt="Picture19" src="https://user-images.githubusercontent.com/118953915/208289667-70bd1e08-76f0-49b6-ace8-b15805bf669c.png">
  
 There are multiple .db files and setting manually is error prone, so we can use .synopsys_dc.setup  
@@ -929,8 +929,8 @@ In DC during installed will have a default one, and in out user home directory a
 all repetitive tasks which is needed for tool setup can be pointed in this file- target_library and link_library  
 Preconfigure must in home directory & the file name must .synopsys_dc.setup  
 >gvim .synopsys_dc.setup  
->>set target_library ~/training/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db  
->>set link_library { * $target_library }  
+>-set target_library ~/training/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db  
+>-set link_library { * $target_library }  
 After invoke dc_shell, the target_library and link_library have been set automatically  
 > csh   
 > dc_shell  
@@ -942,6 +942,7 @@ After invoke dc_shell, the target_library and link_library have been set automat
  
 TCL quick refresher  
 -all dc internal command based on tcl only  
+ Here is some details on tcl scripting:  
  <img width="900" alt="Picture21" src="https://user-images.githubusercontent.com/118953915/208289670-1ea638e6-0a3e-4dd1-b999-e106030224d5.png">
  
 </details>
@@ -963,10 +964,11 @@ Can save all the commands in a file and the source the file
 >source myscript.tcl  
  <img width="900" alt="Picture24" src="https://user-images.githubusercontent.com/118953915/208289675-81a0329d-02ba-428e-97f3-a32ddb19778d.png">
  
- Further try on:
+ Further try on:  
  <img width="900" alt="Picture25" src="https://user-images.githubusercontent.com/118953915/208289678-115075a2-ef74-4b8c-baf2-062515f554df.png">  
  
- 💡Must always aware of syntax and spacing in tcl scripting
+ 
+ 💡Must always becareful of syntax and spacing in tcl scripting
  
 </details>
 
