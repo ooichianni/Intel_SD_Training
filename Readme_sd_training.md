@@ -843,7 +843,7 @@ Features of dc:
  
 </details>  
  
-<details><summary> Lab Session-> Lab1: Invokinf DC basic setup</summary>  
+<details><summary> Lab Session-> Lab1: Invoking DC basic setup</summary>  
  
 #### **Lab1: Invoking DC basic setup**   
                                                                                     
