@@ -952,7 +952,7 @@ TCL quick refresher
  
 <details><summary> Lab Session -> Lab4: TCL scripting </summary>
  
-Here is example:  
+Here is example of TCL scripting:  
  <img width="900" alt="Picture22" src="https://user-images.githubusercontent.com/118953915/208289673-1a27b356-d318-4daf-afeb-9bd3ca958fda.png">
  
 Another example on DC proprietary command:  
