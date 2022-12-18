@@ -931,6 +931,7 @@ Preconfigure must in home directory & the file name must .synopsys_dc.setup
 >gvim .synopsys_dc.setup  
 >-set target_library ~/training/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db  
 >-set link_library { * $target_library }  
+ 
 After invoke dc_shell, the target_library and link_library have been set automatically  
 > csh   
 > dc_shell  
@@ -962,10 +963,11 @@ Another example on DC proprietary command:
 Can save all the commands in a file and the source the file  
 >sh gvim myscript.tcl  
 >source myscript.tcl  
- <img width="900" alt="Picture24" src="https://user-images.githubusercontent.com/118953915/208289675-81a0329d-02ba-428e-97f3-a32ddb19778d.png">
+ <img width="900" alt="Picture24" src="https://user-images.githubusercontent.com/118953915/208289675-81a0329d-02ba-428e-97f3-a32ddb19778d.png">  
+
  
- Further try on:  
- <img width="900" alt="Picture25" src="https://user-images.githubusercontent.com/118953915/208289678-115075a2-ef74-4b8c-baf2-062515f554df.png">  
+Further try on:  
+<img width="900" alt="Picture25" src="https://user-images.githubusercontent.com/118953915/208289678-115075a2-ef74-4b8c-baf2-062515f554df.png">  
  
  
  💡Must always becareful of syntax and spacing in tcl scripting
