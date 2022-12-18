@@ -845,14 +845,14 @@ Features of dc:
  
 <details><summary> Lab Session-> Lab1: Invokinf DC basic setup</summary>  
  
-#### **Lab1: Invokinf DC basic setup**   
+#### **Lab1: Invoking DC basic setup**   
                                                                                     
 >cd into home dir ; mkdir -p training ;  git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git   
 >cd  sky130RTLDesignAndSynthesisWorkshop ; enter UE /p/hdk/pu_tu/prd/sams/mig76_wlw/setup/enter_p31 -cfg ip76p31r08hp7rev03 -ov ./   
 
 Here is the .lib file locate at:  
 Have converted the .lib format file into .db file, for DC to read in  
-<img width="400" alt="Picture9" src="https://user-images.githubusercontent.com/118953915/208279726-9fc38c43-3ae8-4280-a46d-cfc9b57555c9.png">
+<img width="600" alt="Picture9" src="https://user-images.githubusercontent.com/118953915/208279726-9fc38c43-3ae8-4280-a46d-cfc9b57555c9.png">
  
 Details of .lib:  
 >gvim DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.lib ; switch off syntax :syn off  
