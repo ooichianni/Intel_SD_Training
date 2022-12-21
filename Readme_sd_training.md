@@ -1011,8 +1011,8 @@ Timing Arcs:
 
 <details><summary> ⚡ Lecture session</summary> 
 
-Introduction to STA  
-(A) STA Basic-Static Timing Analysis  
+*(A)Introduction to STA*  
+STA Basic-Static Timing Analysis  
 1.Min and Max constraints delay  
 <img width="900" alt="Picture8" src="https://user-images.githubusercontent.com/118953915/208874119-554b6ea0-4acd-431e-98e3-8cdfc9c553c2.png">  
 
@@ -1032,7 +1032,7 @@ Timing Arcs for combination cell:
 Timing Arcs for sequential cell:  
 <img width="900" alt="Picture11" src="https://user-images.githubusercontent.com/118953915/208874097-1842c09b-c89b-4495-94e7-a1c05effa5e5.png">  
 
-What are constraint?  
+(B) What are constraints?  
 <img width="800" alt="Picture12" src="https://user-images.githubusercontent.com/118953915/208874108-32f57b7b-6514-467c-9aec-d1657f186241.png">  
 
 Here is all the possible combination of timing paths:  
@@ -1047,3 +1047,73 @@ In real design, we will based on frequency/Tclk to decide the delay/Tcombi
 
 Here is delay modelling:  
 <img width="800" alt="Picture14" src="https://user-images.githubusercontent.com/118953915/208874116-c23c141d-515e-4ed3-9c7d-8fa87971c523.png">  
+
+IO delay modelling is not sufficient, because:  
+<img width="900" alt="Picture15" src="https://user-images.githubusercontent.com/118953915/208881153-a43f95c2-f229-4a05-9c4a-b68b6be4e119.png">
+
+IO constraints- input transition and output load  
+<img width="900" alt="Picture16" src="https://user-images.githubusercontent.com/118953915/208881157-9d67fb3d-9854-4c7f-9f0e-773b7919110e.png">
+
+Summary on delay constraints:  
+<img width="900" alt="Picture17" src="https://user-images.githubusercontent.com/118953915/208881161-72c75d2a-e6fe-48cb-93d0-8faccd51f414.png"> 
+ 
+</details> 
+
+<details><summary> ⚡Lab session->Lab5: Timing Dot Libs</summary>
+
+This is the details in .lib:  
+> gvim /nfs/png/home/chiannio/training/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+1.For max_transition:  
+<img width="900" alt="Picture18" src="https://user-images.githubusercontent.com/118953915/208881164-5107f673-e052-44e5-a9da-ac1f5dc2e311.png">
+
+Capacitance:  
+-input logic gate will fed to the gate terminal of MOSFET which have capacitance, so -there is input pin capacitance  
+-net also have capacitance  
+-output also have pin capacitance  
+Here is the details:  
+<img width="900" alt="Picture19" src="https://user-images.githubusercontent.com/118953915/208881171-14d3abd0-2bcc-4e4f-a26b-7a5308817be5.png">   
+
+2. For delay model lookup table  
+<img width="900" alt="Picture20" src="https://user-images.githubusercontent.com/118953915/208881176-a8554d3f-d04b-41b7-8f7d-bcbc3fa0d64c.png">
+
+Here is the details:  
+<img width="900" alt="Picture21" src="https://user-images.githubusercontent.com/118953915/208881179-e82653a7-5161-4cac-9fc4-f89c3a080dd4.png">  
+ 
+
+Comparison among 2 AND gates:
+(i) Area an power
+ 
+(ii) max_transition, clock attribute and direction of both same, but difference in capacitance
+ 
+(iii) value in timing lookup table difference
+ 
+cell_rise and cell_fall have separate LUT
+ 
+(iv) unateness
+ 
+
+Lab6: Exploring dotLib 
+Here is the detail on unate and timing_type: 
+> get_lib_cells */* -filter "is_sequential==true"
+ 
+Select latch from list:
+
+ 
+
+Lab7: Exploring dot.lib part2
+Show loaded library
+>list lib
+ 
+
+Trace all the AND cell libs
+> get_lib_cell */*and*
+ 
+
+
+Trace all the AND cell libs and list out one by one
+>foreach_in_collection my_lib_cell [get_lib_cells */*and*] {
+>set my_lib_cell_name [get_object_name $my_lib_cell];
+>echo $my_lib_cell_name;
+>}
+
+ 
