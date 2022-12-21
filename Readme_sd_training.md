@@ -1064,33 +1064,36 @@ Summary on delay constraints:
 This is the details in .lib:  
 > gvim /nfs/png/home/chiannio/training/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
 1.For max_transition:  
-<img width="900" alt="Picture18" src="https://user-images.githubusercontent.com/118953915/208881164-5107f673-e052-44e5-a9da-ac1f5dc2e311.png">
+<img width="600" alt="Picture18" src="https://user-images.githubusercontent.com/118953915/208881164-5107f673-e052-44e5-a9da-ac1f5dc2e311.png">
 
 Capacitance:  
 -input logic gate will fed to the gate terminal of MOSFET which have capacitance, so -there is input pin capacitance  
 -net also have capacitance  
 -output also have pin capacitance  
 Here is the details:  
-<img width="900" alt="Picture19" src="https://user-images.githubusercontent.com/118953915/208881171-14d3abd0-2bcc-4e4f-a26b-7a5308817be5.png">   
+<img width="800" alt="Picture19" src="https://user-images.githubusercontent.com/118953915/208881171-14d3abd0-2bcc-4e4f-a26b-7a5308817be5.png">   
 
 2. For delay model lookup table  
-<img width="900" alt="Picture20" src="https://user-images.githubusercontent.com/118953915/208881176-a8554d3f-d04b-41b7-8f7d-bcbc3fa0d64c.png">
+<img width="600" alt="Picture20" src="https://user-images.githubusercontent.com/118953915/208881176-a8554d3f-d04b-41b7-8f7d-bcbc3fa0d64c.png">
 
 Here is the details:  
-<img width="900" alt="Picture21" src="https://user-images.githubusercontent.com/118953915/208881179-e82653a7-5161-4cac-9fc4-f89c3a080dd4.png">  
+<img width="600" alt="Picture21" src="https://user-images.githubusercontent.com/118953915/208881179-e82653a7-5161-4cac-9fc4-f89c3a080dd4.png">  
  
 
-Comparison among 2 AND gates:
-(i) Area an power
+Comparison among 2 AND gates:  
+(i) Area an power  
+<img width="900" alt="Picture22" src="https://user-images.githubusercontent.com/118953915/208881127-4eeee43b-52f2-48e7-9aa9-56b593177bf8.png">  
+(ii) max_transition, clock attribute and direction of both same, but difference in capacitance  
+<img width="900" alt="Picture23" src="https://user-images.githubusercontent.com/118953915/208881136-779556ba-3aa8-46b4-a4b6-9b6fa5666139.png">  
  
-(ii) max_transition, clock attribute and direction of both same, but difference in capacitance
- 
-(iii) value in timing lookup table difference
- 
-cell_rise and cell_fall have separate LUT
- 
-(iv) unateness
- 
+(iii) value in timing lookup table difference  
+<img width="900" alt="Picture24" src="https://user-images.githubusercontent.com/118953915/208881138-52ef20cf-c929-4ed7-8493-708c8531a830.png">  
+
+cell_rise and cell_fall have separate LUT  
+<img width="900" alt="Picture25" src="https://user-images.githubusercontent.com/118953915/208881141-fb9d70ba-b760-4892-8f70-fcd94f9caf57.png">
+  
+(iv) unateness  
+<img width="900" alt="Picture26" src="https://user-images.githubusercontent.com/118953915/208881142-5f1a9448-2826-41e6-ab20-02e271cab333.png"> 
 
 Lab6: Exploring dotLib 
 Here is the detail on unate and timing_type: 
