@@ -1120,11 +1120,47 @@ Trace all the AND cell libs
 >get_lib_cell */*and*
 <img width="900" alt="Picture31" src="https://user-images.githubusercontent.com/118953915/208890407-413f2314-3404-4f27-b222-e74c0d3ab83a.png">
  
-Trace all the AND cell libs and list out one by one
->foreach_in_collection my_lib_cell [get_lib_cells */*and*] {
->set my_lib_cell_name [get_object_name $my_lib_cell];
->echo $my_lib_cell_name;
->}  
+Trace all the AND cell libs and list out one by one  
+>foreach_in_collection my_lib_cell [get_lib_cells */*and*] {  
+>set my_lib_cell_name [get_object_name $my_lib_cell];  
+>echo $my_lib_cell_name;  
+>}    
+
+Different flavours of AND and NAND gates  
 <img width="900" alt="Picture32" src="https://user-images.githubusercontent.com/118953915/208890397-3267b604-6517-49e4-b117-b9efc0391f28.png">
+
+Here is some example for tracing attribute:  
+> get_lib_pins sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__and2_0/*
+
+>foreach_in_collection my_pins [get_lib_pins sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__and2_0/*] {  
+>set my_pin_name [get_object_name $my_pins];  
+>set pin_dir [get_lib_attribute $my_pin_name direction];  
+>echo $my_pin_name $pin_dir ;  
+>}  
+
+>get_lib_attribute sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__and2_0/A direction  
+
+>get_lib_attribute sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__and2_0/X function  
+<img width="900" alt="Picture33" src="https://user-images.githubusercontent.com/118953915/208932144-3c5d8cbf-449e-49d3-ac1a-01272a475567.png">  
+
+Another example on NAND gate:  
+<img width="900" alt="Picture34" src="https://user-images.githubusercontent.com/118953915/208932149-7934baf7-668c-4b36-bc69-5da48529f197.png">  
+ 
+Another example:   
+<img width="900" alt="Picture35" src="https://user-images.githubusercontent.com/118953915/208932112-fcd69910-7bb4-4f94-ab0f-a647733f4765.png">  
+
+Another example:  
+<img width="900" alt="Picture36" src="https://user-images.githubusercontent.com/118953915/208932120-6db8c462-c847-412d-b543-6d19703b01bf.png">  
+
+Example on create a list to trace the functionality of multiple cells:  
+<img width="900" alt="Picture37" src="https://user-images.githubusercontent.com/118953915/208932126-26fc637b-9ca4-427d-9798-7ca1eb9e3894.png">  
+ 
+There is more attributes can be trace:  
+<img width="900" alt="Picture38" src="https://user-images.githubusercontent.com/118953915/208932138-8f4a1da0-d748-4389-a54d-4e24a4eb5fb3.png">  
+
+Can use this command to check the attribute is define on lib_cell/cell/pin  
+>list_attribute -app  
+<img width="600" alt="Picture39" src="https://user-images.githubusercontent.com/118953915/208932142-511112b0-3b52-423f-9882-42e5084fc515.png">    
+
 
  
