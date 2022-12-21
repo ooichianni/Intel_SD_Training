@@ -1049,17 +1049,17 @@ Here is delay modelling:
 <img width="800" alt="Picture14" src="https://user-images.githubusercontent.com/118953915/208874116-c23c141d-515e-4ed3-9c7d-8fa87971c523.png">  
 
 IO delay modelling is not sufficient, because:  
-<img width="900" alt="Picture15" src="https://user-images.githubusercontent.com/118953915/208881153-a43f95c2-f229-4a05-9c4a-b68b6be4e119.png">
+<img width="800" alt="Picture15" src="https://user-images.githubusercontent.com/118953915/208881153-a43f95c2-f229-4a05-9c4a-b68b6be4e119.png">
 
 IO constraints- input transition and output load  
-<img width="900" alt="Picture16" src="https://user-images.githubusercontent.com/118953915/208881157-9d67fb3d-9854-4c7f-9f0e-773b7919110e.png">
+<img width="800" alt="Picture16" src="https://user-images.githubusercontent.com/118953915/208881157-9d67fb3d-9854-4c7f-9f0e-773b7919110e.png">
 
 Summary on delay constraints:  
-<img width="900" alt="Picture17" src="https://user-images.githubusercontent.com/118953915/208881161-72c75d2a-e6fe-48cb-93d0-8faccd51f414.png"> 
+<img width="800" alt="Picture17" src="https://user-images.githubusercontent.com/118953915/208881161-72c75d2a-e6fe-48cb-93d0-8faccd51f414.png"> 
  
 </details> 
 
-<details><summary> ⚡Lab session->Lab5: Timing Dot Libs</summary>
+<details><summary> ⚡Lab session-> Lab5: Timing Dot Libs</summary>
 
 This is the details in .lib:  
 > gvim /nfs/png/home/chiannio/training/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
@@ -1073,7 +1073,7 @@ Capacitance:
 Here is the details:  
 <img width="800" alt="Picture19" src="https://user-images.githubusercontent.com/118953915/208881171-14d3abd0-2bcc-4e4f-a26b-7a5308817be5.png">   
 
-2. For delay model lookup table  
+2.For delay model lookup table  
 <img width="600" alt="Picture20" src="https://user-images.githubusercontent.com/118953915/208881176-a8554d3f-d04b-41b7-8f7d-bcbc3fa0d64c.png">
 
 Here is the details:  
@@ -1095,28 +1095,36 @@ cell_rise and cell_fall have separate LUT
 (iv) unateness  
 <img width="900" alt="Picture26" src="https://user-images.githubusercontent.com/118953915/208881142-5f1a9448-2826-41e6-ab20-02e271cab333.png"> 
 
-Lab6: Exploring dotLib 
+</details> 
+
+<details><summary> ⚡Lab session-> Lab6: Exploring dotLib</summary>
+ 
 Here is the detail on unate and timing_type: 
-> get_lib_cells */* -filter "is_sequential==true"
+<img width="900" alt="Picture27" src="https://user-images.githubusercontent.com/118953915/208881145-87a4f08f-e105-40fe-a885-e70ba7d9f5f6.png">
+
+>get_lib_cells */* -filter "is_sequential==true"
+<img width="900" alt="Picture28" src="https://user-images.githubusercontent.com/118953915/208881149-45d57fdb-97e1-4314-bb2b-b5e6da0e2975.png">
  
 Select latch from list:
+<img width="900" alt="Picture29" src="https://user-images.githubusercontent.com/118953915/208881151-a19401fb-b8db-46a6-a9b0-17abf0c44cb5.png"> 
 
+ </details> 
+
+<details><summary> ⚡Lab session-> Lab7: Exploring dot.lib part2</summary>
  
-
-Lab7: Exploring dot.lib part2
 Show loaded library
 >list lib
- 
+<img width="900" alt="Picture30" src="https://user-images.githubusercontent.com/118953915/208890405-356ed055-c0a1-4b93-be70-edb0e10cc4d8.png">
 
 Trace all the AND cell libs
-> get_lib_cell */*and*
+>get_lib_cell */*and*
+<img width="900" alt="Picture31" src="https://user-images.githubusercontent.com/118953915/208890407-413f2314-3404-4f27-b222-e74c0d3ab83a.png">
  
-
-
 Trace all the AND cell libs and list out one by one
 >foreach_in_collection my_lib_cell [get_lib_cells */*and*] {
 >set my_lib_cell_name [get_object_name $my_lib_cell];
 >echo $my_lib_cell_name;
->}
+>}  
+<img width="900" alt="Picture32" src="https://user-images.githubusercontent.com/118953915/208890397-3267b604-6517-49e4-b117-b9efc0391f28.png">
 
  
