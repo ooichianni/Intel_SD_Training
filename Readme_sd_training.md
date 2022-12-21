@@ -998,13 +998,52 @@ Delay:
 Timing Arcs:  
 <img width="900" alt="Picture5" src="https://user-images.githubusercontent.com/118953915/208871488-233cfc80-0245-4cce-b160-f774f3c84676.png">  
  
-Timing path:  
+3.Timing path:  
 <img width="900" alt="Picture6" src="https://user-images.githubusercontent.com/118953915/208871491-02e8928e-dd26-49e9-b2ee-5ede932ef25c.png">
  
-Constraining the design  
+4.Constraining the design  
 <img width="900" alt="Picture7" src="https://user-images.githubusercontent.com/118953915/208871497-c910b8f7-f069-4ce9-97a0-a0ca45596074.png">
 
- 
 💡 SDC-Inportant on thse 3 metrics: Power,Performance,Area
 >Can refer details on PPA card: https://www.vlsisystemdesign.com/ppa-power-performance-area-card
+
+</details> 
+
+<details><summary> ⚡ Lecture session</summary> 
+
+Introduction to STA  
+(A) STA Basic-Static Timing Analysis  
+1.Min and Max constraints delay  
+<img width="900" alt="Picture8" src="https://user-images.githubusercontent.com/118953915/208874119-554b6ea0-4acd-431e-98e3-8cdfc9c553c2.png">  
+
+If two same bucket size with difference inflow speed->Delay is function of inflow  
+->More inflow, less delay == Fast current sourcing, less delay == Fast rise, less delay  
+If two bucket with difference size but same inflow speed->Delay is function of bucket size to be filled  
+->High load capacitance, more delay  
  
+💡 Delay of a cell will be a function of input transition and output load 
+ 
+Here is the example:  
+<img width="900" alt="Picture9" src="https://user-images.githubusercontent.com/118953915/208874123-96e7f9e6-0900-48cc-b89b-4bb1438feaf9.png">  
+
+Timing Arcs for combination cell:  
+<img width="900" alt="Picture10" src="https://user-images.githubusercontent.com/118953915/208874126-2146e99e-b65d-4125-a662-6fb9fd208892.png">  
+
+Timing Arcs for sequential cell:  
+<img width="900" alt="Picture11" src="https://user-images.githubusercontent.com/118953915/208874097-1842c09b-c89b-4495-94e7-a1c05effa5e5.png">  
+
+What are constraint?  
+<img width="800" alt="Picture12" src="https://user-images.githubusercontent.com/118953915/208874108-32f57b7b-6514-467c-9aec-d1657f186241.png">  
+
+Here is all the possible combination of timing paths:  
+<img width="800" alt="Picture13" src="https://user-images.githubusercontent.com/118953915/208874112-67a2c33f-9724-4e78-968d-390481f5da97.png">  
+ 
+In real design, we will based on frequency/Tclk to decide the delay/Tcombi  
+-if design is 500Mhz=2ns, then after deduct the Tsetup=0.5ns and Tcq=0.5ns, we will have Tcombi=1ns  
+-so clock period limit the combi  
+-clock period will limit the delays in all reg2reg paths  
+-synthesis tool will optimize logic based on the clock period (we provide to tool)  
+-thn the tool will pick the appropriate cell from .lib to meet the delay  
+
+Here is delay modelling:  
+<img width="800" alt="Picture14" src="https://user-images.githubusercontent.com/118953915/208874116-c23c141d-515e-4ed3-9c7d-8fa87971c523.png">  
