@@ -7,6 +7,7 @@
 + **[ Day_4 : GLS, blocking vs non-blocking and Synthesis-Simulation mismatch ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_4)** 
 + **[ Day_5 : DFT ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_5)**
 + **[ Day_6 : Introduction to Logic Synthesis ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_6)**
++ **[ Day_7 : Basics of STA ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_7)**
 
 #
 # Day_0 
@@ -974,7 +975,36 @@ Further try on:
  
  💡Must always becareful of syntax and spacing in tcl scripting
  
-</details>
+</details> 
 
+#
+# Day_7 
+**⭐Basics of STA**
+ 
+<details><summary> ⚡ Lecture session</summary>  
 
+SDC Constraints  
+Recap on Setup and Hold violations:  
+<img width="900" alt="Picture1" src="https://user-images.githubusercontent.com/118953915/208871506-acd43498-eebe-45d9-a104-d95be05b2884.png">
+ 
+1.Basics of STA  
+<img width="900" alt="Picture2" src="https://user-images.githubusercontent.com/118953915/208871509-db0d89f5-74fe-477d-97a4-ea989ec70790.png">  
+<img width="900" alt="Picture3" src="https://user-images.githubusercontent.com/118953915/208871468-3e1e1a8f-5ffd-4384-98fa-7063bffe6399.png">  
+ 
+2.Basic terminology:  
+Delay:  
+<img width="900" alt="Picture4" src="https://user-images.githubusercontent.com/118953915/208871478-c68a70d8-6826-4cdf-9b66-ceddfc135fd3.png">  
+ 
+Timing Arcs:  
+<img width="900" alt="Picture5" src="https://user-images.githubusercontent.com/118953915/208871488-233cfc80-0245-4cce-b160-f774f3c84676.png">  
+ 
+Timing path:  
+<img width="900" alt="Picture6" src="https://user-images.githubusercontent.com/118953915/208871491-02e8928e-dd26-49e9-b2ee-5ede932ef25c.png">
+ 
+Constraining the design  
+<img width="900" alt="Picture7" src="https://user-images.githubusercontent.com/118953915/208871497-c910b8f7-f069-4ce9-97a0-a0ca45596074.png">
+
+ 
+💡 SDC-Inportant on thse 3 metrics: Power,Performance,Area
+>Can refer details on PPA card: https://www.vlsisystemdesign.com/ppa-power-performance-area-card
  
