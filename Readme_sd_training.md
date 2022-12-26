@@ -1276,13 +1276,37 @@ Comparison:
  
 </details> 
  
-<details><summary> ⚡Lab Session->Lab 11: IO Delays</summary>  
+<details><summary> ⚡Lab Session->Lab 12: IO Delays</summary>  
 Set input delay:  
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209572739-951b9405-4c60-4bdc-958e-008ecf9a4c85.png">
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209572775-e43d43e8-5540-49ae-9f86-c1cae3601217.png">
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209572786-40d550b1-1c6c-41c8-8a60-78919b8e308e.png">
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209572802-09f3d90b-8ca0-4dfa-bbc0-56a0126c853c.png">  
-Set output delay:  
-<img width="797" alt="image" src="https://user-images.githubusercontent.com/118953915/209572920-2a3f9479-19d6-42bf-9fc6-703da411061f.png">
-<img width="704" alt="image" src="https://user-images.githubusercontent.com/118953915/209573024-904ae536-addf-4736-896a-62dde04e746b.png">
 
+Set output delay:  
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209573377-48eb7f80-7faf-4428-80c0-b6e4067a2571.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209573397-fefd62d3-7ce2-484b-a1f9-2ac037b98385.png">
+
+</details> 
+
+<details><summary> ⚡Lecture Session</summary>
+ 
+### *__Lecture Session: SDC Part3 generated_clk__*
+ 
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209573559-d81ec488-ecca-44d9-8ddf-c3bdb77af7fc.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209573596-b22bde60-1e23-48c2-95d3-0f66581ad8ad.png">
+
+</details> 
+ 
+<details><summary> ⚡Lab Session->Lab13: Generated_clocks</summary>  
+Create generated clock:   
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209573793-b2b9ca82-29f1-46d2-82d8-88536b58732e.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209573810-82fcd486-5625-43e1-898f-191941db3408.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209573824-95d5e8cf-1eb2-45b7-88c2-4c2cc61233a1.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209573856-e6cb8268-cc6c-4609-bb55-173eec0b8d8e.png">
+ 
+</details> 
+ 
+<details><summary> ⚡Lab Session->Lab 11: IO Delays</summary>  
+ 
+ 
