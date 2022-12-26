@@ -1194,20 +1194,27 @@ Can use this command to check the attribute is define on lib_cell/cell/pin
 
 Query the ports in the design  
 >get_ports clk  
+
 A collection of ports where name contains clk  
 >get_ports *clk* <- wildcard ‘*’ supported   
+
 All ports of design  
 >get_ports *  
+
 Filtering based on condition, input ports  
 >get_ports * -filter “direction==in”  
 > get_clocks * -filter ”filter>10”  
+
 Query the attribute  
 > get_attribute [get_clocks my_clk] period  
 > get_attribute [get_clocks my_clk] is_generated  
+
 Report all detaiks  
 >report_clocks my_clk  
+
 Listing all the cells across all the hierarchies in the design (physical and hier cells)  
 > get_cells * -hier  
+
 Check hier or phy  
 > get_attribute [get_cells u_combo_logic] is _hierarchical  
 
@@ -1229,13 +1236,37 @@ This is setting the clock network (skew+jitter)
 > -> post-cts only reflect jitter, skew calculate from clock network(physical build)  
 > -> so during post-cts Set_clock_uncertainty 0.2 MY_CLK (only jitter)  
 
-
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209570792-26dc7298-d8cc-4fc3-ad49-8b89328ef3e8.png">  
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209570810-da9d4267-c2e7-41fe-9840-492071c638b1.png">  
   
 </details> 
 
+<details><summary> ⚡Lab Session->Lab8: Loading design get_cells,get_ports,get_nets</summary>
  
- <details><summary> ⚡Lecture Session</summary>
+### *__Lab Session__*
  
- ### *__Lecture Session: Advanced Constraints,Specifying constraints through SD__*
+<img width="959" alt="image" src="https://user-images.githubusercontent.com/118953915/209571091-49bc92de-317f-45ac-a9c6-add7bab1dbb1.png">  
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209571106-a90b60f9-ca7f-4fd9-9f7c-b7b3256941c3.png">  
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209571128-23f16198-7709-4f99-8487-d3e4a2637166.png">  
+Here is the shecmatic:   
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209571172-5633ebf3-f60a-4648-9e2a-791ce3343492.png">  
+ 
+</details> 
+ 
+<details><summary> ⚡Lab Session->Lab9: get_pins, get_clocks, querying_clocks</summary>  
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209571954-d772211d-9d3c-41f9-9de7-d783a413c61b.png">  
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209571991-24633605-853d-400c-af7c-d6a6da3b3fb8.png">  
+ 
+</details> 
+ 
+<details><summary> ⚡Lab Session->Lab10-create_clock waveform</summary>
+ 
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209572086-eada38be-e6d0-4914-a924-488feac29e4f.png">  
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209572109-8c613e96-ed4a-4498-ae53-df8e4fae6327.png">  
+
+</details> 
+ 
+<details><summary> ⚡Lab Session->Lab 11-Clock network modelling-uncertainty,report_timing</summary>
+
  
 </details> 
