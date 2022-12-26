@@ -1307,6 +1307,42 @@ Create generated clock:
  
 </details> 
  
-<details><summary> ⚡Lab Session->Lab 11: IO Delays</summary>  
+<details><summary> ⚡Lecture Session</summary>
  
+### *__Lecture Session: SDC part4 vclk,max_latency, rise_fall IO delays__* 
+<img width="662" alt="image" src="https://user-images.githubusercontent.com/118953915/209574167-0f5d151e-7620-4167-8ff7-40726f0d06c3.png">
+<img width="656" alt="image" src="https://user-images.githubusercontent.com/118953915/209574183-43a07d86-0841-4000-b213-33bef60e0a9c.png">
+<img width="754" alt="image" src="https://user-images.githubusercontent.com/118953915/209574211-cde776cf-b4be-4f81-8a72-a738ef884e98.png">  
+
+If there is negedge flops:  
+<img width="749" alt="image" src="https://user-images.githubusercontent.com/118953915/209574233-01734396-57ee-47fc-9af2-57b298e595a9.png">
+<img width="754" alt="image" src="https://user-images.githubusercontent.com/118953915/209574252-65510875-11fd-4d17-8ecc-177432aa1dd7.png">  
+
+Comparison among two:  
+<img width="777" alt="image" src="https://user-images.githubusercontent.com/118953915/209574266-132a17a4-6aeb-4a37-8be8-8ba2a7908535.png">
+
+</details> 
  
+<details><summary> ⚡Lab Session->Lab15-part1 Set_Max_delay</summary>  
+ 
+Proceed with lab14_circuit.v:  
+<img width="748" alt="image" src="https://user-images.githubusercontent.com/118953915/209574707-0c3c8fe1-508d-4962-9bcc-2076290537cc.png">
+<img width="779" alt="image" src="https://user-images.githubusercontent.com/118953915/209574733-31ccda80-f4e7-4889-adda-f1e94d53c91f.png">  
+<img width="773" alt="image" src="https://user-images.githubusercontent.com/118953915/209574758-a0bc273d-d769-481c-810f-25edf09cc463.png">
+<img width="780" alt="image" src="https://user-images.githubusercontent.com/118953915/209574781-a60e4673-85d2-4de5-910a-0ad60ec6100c.png">  
+ 
+After compile_ultra, the tool will optimize:  
+<img width="779" alt="image" src="https://user-images.githubusercontent.com/118953915/209574800-2f9d8aea-8927-4c46-bc59-918eb57f4502.png">
+<img width="781" alt="image" src="https://user-images.githubusercontent.com/118953915/209574813-04e3da81-b2f1-4af0-8768-0f028ddefd46.png">
+ 
+</details> 
+ 
+<details><summary> ⚡Lab Session->Lab15-part2-VCLK</summary>  
+ 
+<img width="781" alt="image" src="https://user-images.githubusercontent.com/118953915/209575088-0eebc843-a1e6-40b9-b694-246c3b8054bf.png">
+<img width="779" alt="image" src="https://user-images.githubusercontent.com/118953915/209575124-7ec562ac-21f0-44d2-ba91-aacbc016085f.png">
+
+ After compile_ultra, the tool will optimize:  
+<img width="782" alt="image" src="https://user-images.githubusercontent.com/118953915/209575139-b0c9e1b8-e005-4fe3-aedf-6523f1d718e7.png">
+
+</details> 
