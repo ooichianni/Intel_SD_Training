@@ -8,6 +8,7 @@
 + **[ Day_5 : DFT ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_5)**
 + **[ Day_6 : Introduction to Logic Synthesis ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_6)**
 + **[ Day_7 : Basics of STA ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_7)**
++ **[ Day_8 : Advanced SDC Constraints ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_8)**
 
 #
 # Day_0 
@@ -1162,5 +1163,29 @@ Can use this command to check the attribute is define on lib_cell/cell/pin
 >list_attribute -app  
 <img width="600" alt="Picture39" src="https://user-images.githubusercontent.com/118953915/208932142-511112b0-3b52-423f-9882-42e5084fc515.png">    
 
-
+</details>
  
+#
+# Day_8 
+**⭐Advanced SDC Constraints**
+
+<details><summary>⚡Lecture Session </summary>
+
+### *__Lecture Session__*
+
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209568494-7961f190-6a56-42d8-887a-6decb87875e3.png">  
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209568568-2c3e52db-751a-4707-af6d-4d467c20db1e.png">  
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209568603-9f5dff2e-dd59-4b08-9a88-af401a21a3fa.png">  
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209568624-4aedd451-742d-4fe1-8cb3-d67c53deb758.png">  
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209568649-f5cd5ad5-22dd-44f2-92f8-48abc0876b67.png">  
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209568673-7bfb36dc-a60d-4af8-bd45-02f7c747ddcd.png">  
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209568705-a79fcf12-9a5f-438a-a3bf-d5ba3eec4013.png">  
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209568725-0827078d-5282-409b-adb6-9176b16a8e7e.png">  
+ 
+</details> 
+
+<details><summary> ⚡Lecture Session</summary>
+ 
+ ### *__Lecture Session: Advanced Constraints,Specifying constraints through SD__*
+ 
+</details> 
