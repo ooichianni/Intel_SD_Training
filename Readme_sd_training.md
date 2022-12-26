@@ -1311,6 +1311,7 @@ Create generated clock:
  
 ### *__Lecture Session: SDC part4 vclk,max_latency, rise_fall IO delays__* 
 <img width="662" alt="image" src="https://user-images.githubusercontent.com/118953915/209574167-0f5d151e-7620-4167-8ff7-40726f0d06c3.png">
+<img width="260" alt="image" src="https://user-images.githubusercontent.com/118953915/209576040-45c771a5-c27d-433b-88fb-c3cdf8f5a72f.png">
 <img width="656" alt="image" src="https://user-images.githubusercontent.com/118953915/209574183-43a07d86-0841-4000-b213-33bef60e0a9c.png">
 <img width="754" alt="image" src="https://user-images.githubusercontent.com/118953915/209574211-cde776cf-b4be-4f81-8a72-a738ef884e98.png">  
 
@@ -1323,7 +1324,7 @@ Comparison among two:
 
 </details> 
  
-<details><summary> ⚡Lab Session->Lab15-part1 Set_Max_delay</summary>  
+<details><summary> ⚡Lab Session->Lab14-part1 Set_Max_delay</summary>  
  
 Proceed with lab14_circuit.v:  
 <img width="748" alt="image" src="https://user-images.githubusercontent.com/118953915/209574707-0c3c8fe1-508d-4962-9bcc-2076290537cc.png">
