@@ -1175,16 +1175,66 @@ Can use this command to check the attribute is define on lib_cell/cell/pin
 
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209568494-7961f190-6a56-42d8-887a-6decb87875e3.png">  
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209568568-2c3e52db-751a-4707-af6d-4d467c20db1e.png">  
-<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209568603-9f5dff2e-dd59-4b08-9a88-af401a21a3fa.png">  
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209569443-fb1e68eb-b2ff-4f72-8bad-da0a44ad3a78.png">  
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209568624-4aedd451-742d-4fe1-8cb3-d67c53deb758.png">  
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209568649-f5cd5ad5-22dd-44f2-92f8-48abc0876b67.png">  
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209568673-7bfb36dc-a60d-4af8-bd45-02f7c747ddcd.png">  
-<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209568705-a79fcf12-9a5f-438a-a3bf-d5ba3eec4013.png">  
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209569702-e60ee098-d4c7-4b10-9b70-af557ca4d556.png">     
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209568725-0827078d-5282-409b-adb6-9176b16a8e7e.png">  
  
 </details> 
 
 <details><summary> ⚡Lecture Session</summary>
+ 
+### *__Lecture Session: Advanced Constraints,Specifying constraints through SD__*
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209569966-dd4c87a4-379d-4b0b-b728-16b072796a78.png"> 
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209570054-2f09a03e-fcf8-4172-8def-3f52348d1606.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209570156-e95e8cbc-cfae-43c1-baab-2e7365694f27.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209570233-3c1c6afe-9e7f-43fa-874b-b834e5a23caa.png">  
+
+Query the ports in the design  
+>get_ports clk  
+A collection of ports where name contains clk  
+>get_ports *clk* <- wildcard ‘*’ supported   
+All ports of design  
+>get_ports *  
+Filtering based on condition, input ports  
+>get_ports * -filter “direction==in”  
+> get_clocks * -filter ”filter>10”  
+Query the attribute  
+> get_attribute [get_clocks my_clk] period  
+> get_attribute [get_clocks my_clk] is_generated  
+Report all detaiks  
+>report_clocks my_clk  
+Listing all the cells across all the hierarchies in the design (physical and hier cells)  
+> get_cells * -hier  
+Check hier or phy  
+> get_attribute [get_cells u_combo_logic] is _hierarchical  
+
+![image](https://user-images.githubusercontent.com/118953915/209570336-0d297763-7d46-47f9-b299-a53352623736.png)
+
+Clock Distribution  
+(i) create clock  
+> create_clock -name <clock name> -per <clock period> [clock definition point]  
+>Eg: create_clock -name MY_CLK -per 5 [get_ports CLK]  
+ 
+💡 Clock must be created on the clock generators (pll,oscillators) or primary IO pins (for external clocks). Clocks should not be created on hierarchical pins   which are not clock generators  
+ 
+(ii) Bringing in the practicalities(latency,uncertainty) of clock network  
+This is for latency, modelling the clock delay in network  
+>set_clock_latency 3 MY_CLK  
+ 
+This is setting the clock network (skew+jitter)  
+>set_clock_uncertainty 0.5 MY_CLK   
+> -> post-cts only reflect jitter, skew calculate from clock network(physical build)  
+> -> so during post-cts Set_clock_uncertainty 0.2 MY_CLK (only jitter)  
+
+
+  
+</details> 
+
+ 
+ <details><summary> ⚡Lecture Session</summary>
  
  ### *__Lecture Session: Advanced Constraints,Specifying constraints through SD__*
  
