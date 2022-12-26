@@ -1259,14 +1259,21 @@ Here is the shecmatic:
  
 </details> 
  
-<details><summary> ⚡Lab Session->Lab10-create_clock waveform</summary>
+<details><summary> ⚡Lab Session->Lab10:create_clock waveform</summary>
  
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209572086-eada38be-e6d0-4914-a924-488feac29e4f.png">  
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209572109-8c613e96-ed4a-4498-ae53-df8e4fae6327.png">  
 
 </details> 
  
-<details><summary> ⚡Lab Session->Lab 11-Clock network modelling-uncertainty,report_timing</summary>
+<details><summary> ⚡Lab Session->Lab 11:Clock network modelling-uncertainty,report_timing</summary>
+
+<img width="922" alt="image" src="https://user-images.githubusercontent.com/118953915/209572351-262c65ff-3336-445b-b88d-fc2d8490750c.png">  
+Comparison:  
+<img width="935" alt="image" src="https://user-images.githubusercontent.com/118953915/209572368-7ee29d3f-d801-4886-8244-6adab301f409.png">  
+<img width="923" alt="image" src="https://user-images.githubusercontent.com/118953915/209572421-64fabf87-71db-4e75-bdd1-8b9d35c18b57.png">  
+<img width="932" alt="image" src="https://user-images.githubusercontent.com/118953915/209572602-bb4240a9-8818-41a5-a82a-6d45fcad2c09.png">
+
 
  
 </details> 
