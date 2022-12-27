@@ -1248,6 +1248,7 @@ This is setting the clock network (skew+jitter)
 <img width="959" alt="image" src="https://user-images.githubusercontent.com/118953915/209571091-49bc92de-317f-45ac-a9c6-add7bab1dbb1.png">  
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209571106-a90b60f9-ca7f-4fd9-9f7c-b7b3256941c3.png">  
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209571128-23f16198-7709-4f99-8487-d3e4a2637166.png">  
+ 
 Here is the shecmatic:   
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209571172-5633ebf3-f60a-4648-9e2a-791ce3343492.png">  
  
@@ -1281,7 +1282,7 @@ Set input delay:
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209572739-951b9405-4c60-4bdc-958e-008ecf9a4c85.png">
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209572775-e43d43e8-5540-49ae-9f86-c1cae3601217.png">
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209572786-40d550b1-1c6c-41c8-8a60-78919b8e308e.png">
-<img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209572802-09f3d90b-8ca0-4dfa-bbc0-56a0126c853c.png">  
+<img width="674" alt="image" src="https://user-images.githubusercontent.com/118953915/209603151-7ec7f33d-fdd9-4532-907f-8149970fc40a.png">  
 
 Set output delay:  
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209573377-48eb7f80-7faf-4428-80c0-b6e4067a2571.png">
