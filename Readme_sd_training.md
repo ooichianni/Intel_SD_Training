@@ -1515,6 +1515,7 @@ Check the timing for opt_check4:
  
 Here is the details on RUN1 without any constraints applied:
 >report_area  
+
 ![image](https://user-images.githubusercontent.com/118953915/209826233-0f21754c-8c17-4dd5-9ea2-a1a6456b7dfc.png)  
 Here is the schematic:  
 ![image](https://user-images.githubusercontent.com/118953915/209826276-1da7e51e-cf58-45a2-86e7-851537e3173c.png)  
@@ -1549,6 +1550,7 @@ Here is the schematic:
 Back to dff_const2.v:
 There is sequential constant optimization, now we want to disable it by following command:  
 > set compile_seqmap_propagate_constants false 
+
 ![image](https://user-images.githubusercontent.com/118953915/209828045-eed60ee1-204e-4fd2-9001-54ab38bf04fc.png)  
 
 For dff_consr4.v:
