@@ -1391,11 +1391,13 @@ The following limitations apply to the use of constraints and attributes in your
 -In general, use parallel_case when you know that only one case item is executed  
 -Under certain circumstances, you might not want to build a priority encoder to handle a case statement. You can use the parallel_case directive to force HDL Compiler to generate multiplexer logic instead  
 
-2.Retiming / Pipelining  
+2.Retiming/Pipelining  
 Registers stop glitches from propagating through combinational paths  
 -Pipelining is a technique that breaks combinational paths by inserting registers  
 -By reducing logic-level numbers between registers, pipelining can result in higher clock speed operations  
 However, pipelining increases the latency of a circuit in terms of the number of clock cycles to a first result    
+
+![image](https://user-images.githubusercontent.com/118953915/209823059-7b1d332e-1e59-4992-92af-8f4fe5bbb2ad.png)  
 
 Retiming as an algorithm allows shortening of critical paths  
 -After providing a proper timing constraint file (consisting of clock definitions, clock uncertainty modelling, io delays and load) and observing a scope of retiming, we can provide the DC switch compile_ultra –retime, to see the results  
@@ -1420,3 +1422,93 @@ Retiming as an algorithm allows shortening of critical paths
  
 -cell delay is a function of output load, which could impact internal path timing
 -Possible Solution: Provide a buffer, which drives the external load and decouples it from internal path  
+ 
+</details>  
+ 
+<details><summary> ⚡ Lecture session</summary>  
+
+**Combinational Optimization** 
+ 
+1.Optimization Goals:   
+Cost function based optimizations  
+->Optimization till the cost is met  
+->Over optimization of one goal will harm other goals  <- $\textcolor{green}{\text{optimal}}$   
+->goals for synthesis- meet $\textcolor{blue}{\text{timing}}$[IO delay, clock period, max_delay], meet $\textcolor{blue}{\text{area}}$, meet $\textcolor{blue}{\text{power}}$ (but all this 3 metrics of netlist will be contradictory)  
+Eg: fastercell to meet timing, but causing area and power increase  
+ 
+2.Combinational logic optimisation  
+-squeenzing the logic to get the most optimized design  
+->Area and power savings  
+-Constant propagation   
+->Direct Optimisation  
+-Boolean LogicOptisation  
+->K-Map  
+->Quine McKuskey  
+
+![image](https://user-images.githubusercontent.com/118953915/209823837-b56094f2-4ecd-48b3-a985-cfd2ae2ee9c5.png)   
+![image](https://user-images.githubusercontent.com/118953915/209823874-5d332bae-62fd-4f95-a0d4-0a0c6b2bc598.png)  
+![image](https://user-images.githubusercontent.com/118953915/209823902-2f24ade3-6a25-472b-8d8d-1b97267ca0fc.png)  
+![image](https://user-images.githubusercontent.com/118953915/209823936-f2a95b95-d061-4b66-bea2-7b8b18733ea9.png)  
+ 
+💡 All implementation decided by constraints, so need setup constraints properly so that tool able to pick up constraints and get the best optimized design 
+ 
+</details>  
+ 
+<details><summary> ⚡ Lecture session</summary>  
+
+**Sequential optimizations**  
+
+1.Sequential logic optimisation  
+For basic:  
+-Sequential constant propagation  
+-Retiming  
+-Unused flop removal  
+-clock gating  
+For advanced(not covered as part of lab):  
+-state optimisation  
+-sequential logic clonning (floorplan aware synthesis)  
+![image](https://user-images.githubusercontent.com/118953915/209824522-3f4b74f2-9461-4a1b-b2ec-a6df260e1009.png)  
+![image](https://user-images.githubusercontent.com/118953915/209824541-07272d7d-7545-4c3c-8925-6de583ad4125.png)  
+![image](https://user-images.githubusercontent.com/118953915/209824557-9d4bfb74-fb7d-40ac-a6a3-aec8c81dbea2.png)  
+![image](https://user-images.githubusercontent.com/118953915/209824576-cb4beb2e-4b0b-4262-9676-07b506a6236d.png)  
+Here is the command:   
+>compile_seqmap_propagate_constants TRUE  
+>compile_delete_unloaded_sequential_cells TRUE  
+>compile_register_replication TRUE  [advance-floorplan aware synthesis (for cloning registers, when there is few fanouts far away from reg, we can clone another reg to optimal routing  
+
+ </details>  
+
+<details><summary> ⚡Lab Session->Lab16: part1 Combinational optimizations</summary> 
+ 
+>read_verilog DC_WORKSHOP/verilog_files/opt_check.v  
+>report_timing  
+>link  
+>compile_ultra  
+> write -f ddc -out opt_check.ddc  
+>read_ddc opt_check.ddc < in design vision 
+                            
+![image](https://user-images.githubusercontent.com/118953915/209824823-ef4ccdd4-e571-4d8d-b926-b3d1dcb4778a.png)  
+![image](https://user-images.githubusercontent.com/118953915/209824869-dbc23996-5ef9-43e7-a6d2-a3f73e12b486.png)  
+                            
+For the rest 3 opt_check*
+>read_verilog DC_WORKSHOP/verilog_files/opt_check<>.v
+>link
+>compile
+>gui_start
+
+![image](https://user-images.githubusercontent.com/118953915/209825840-9b14c480-19a6-4443-9a88-1d46917bd75f.png)  
+![image](https://user-images.githubusercontent.com/118953915/209824948-41dc1392-e957-4fab-9c64-c3d68487a68a.png)  
+Check the timing for opt_check4:  
+![image](https://user-images.githubusercontent.com/118953915/209825121-e5c43f58-2d2e-4f42-822a-8668bcf85064.png)
+ 
+>get_lib_cells */sky130_fd_sc_hd__xnor2_*
+>size_cell U4 sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__xnor2_4  
+ 
+![image](https://user-images.githubusercontent.com/118953915/209825158-09992d37-9231-4736-b663-cb80feb80a9c.png)
+
+                          
+ </details>  
+<details><summary> ⚡Lab Session->Lab13: Generated_clocks</summary>  
+<details><summary> ⚡ Lecture session</summary>  
+ 
+ 
