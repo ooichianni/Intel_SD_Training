@@ -1509,7 +1509,7 @@ Check the timing for opt_check4:
                        
 </details>  
  
-<details><summary> ⚡Lab Session->Lab16: Part2: Resource sharing optimizations</summary> 
+<details><summary> ⚡Lab Session->Lab16: Part2 Resource sharing optimizations</summary> 
  
 ![image](https://user-images.githubusercontent.com/118953915/209826204-20d11d04-1deb-4d5a-acb0-086f7f9f435f.png)  
  
