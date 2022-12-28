@@ -1497,6 +1497,7 @@ For the rest 3 opt_check*
 >gui_start
 
 ![image](https://user-images.githubusercontent.com/118953915/209825840-9b14c480-19a6-4443-9a88-1d46917bd75f.png)  
+ 
 ![image](https://user-images.githubusercontent.com/118953915/209824948-41dc1392-e957-4fab-9c64-c3d68487a68a.png)  
 Check the timing for opt_check4:  
 ![image](https://user-images.githubusercontent.com/118953915/209825121-e5c43f58-2d2e-4f42-822a-8668bcf85064.png)
@@ -1505,9 +1506,37 @@ Check the timing for opt_check4:
 >size_cell U4 sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__xnor2_4  
  
 ![image](https://user-images.githubusercontent.com/118953915/209825158-09992d37-9231-4736-b663-cb80feb80a9c.png)
+                       
+</details>  
+ 
+<details><summary> ⚡Lab Session->Lab16: Part2: Resource sharing optimizations</summary> 
+ 
+![image](https://user-images.githubusercontent.com/118953915/209826204-20d11d04-1deb-4d5a-acb0-086f7f9f435f.png)  
+ 
+Here is the details on RUN1 without any constraints applied:
+>report_area  
+![image](https://user-images.githubusercontent.com/118953915/209826233-0f21754c-8c17-4dd5-9ea2-a1a6456b7dfc.png)  
+Here is the schematic:  
+![image](https://user-images.githubusercontent.com/118953915/209826276-1da7e51e-cf58-45a2-86e7-851537e3173c.png)  
+There is no constraints path, so need to  
+![image](https://user-images.githubusercontent.com/118953915/209826445-fbd5b41e-ab91-46cb-a94e-657204c0ce99.png)  
+![image](https://user-images.githubusercontent.com/118953915/209826485-5b19570a-29c8-4f4e-9db2-1fc81a0bda24.png)
 
-                          
- </details>  
+Here is the details on RUN2 with constraints applied:  
+![image](https://user-images.githubusercontent.com/118953915/209826664-12a745e8-62b5-466c-81e3-a1db753de00c.png)  
+![image](https://user-images.githubusercontent.com/118953915/209826686-8c51fb43-002b-49ff-9448-372f7c90f7c7.png)  
+ 
+Here is the details on RUN3 with constraints applied and area limit:
+![image](https://user-images.githubusercontent.com/118953915/209826708-1a8f75a3-b12d-47f5-b02b-5364b2ebe471.png)
+
+
+
+
+
+ 
+  </details>  
+
+<details><summary> ⚡Lab Session->Lab16: part1 Combinational optimizations</summary> 
 <details><summary> ⚡Lab Session->Lab13: Generated_clocks</summary>  
 <details><summary> ⚡ Lecture session</summary>  
  
