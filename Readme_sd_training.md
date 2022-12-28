@@ -1529,15 +1529,35 @@ Here is the details on RUN2 with constraints applied:
 Here is the details on RUN3 with constraints applied and area limit:
 ![image](https://user-images.githubusercontent.com/118953915/209826708-1a8f75a3-b12d-47f5-b02b-5364b2ebe471.png)
 
+</details>  
 
+<details><summary> ⚡Lab Session->Lab17: Sequential optimizations</summary>
+For dff_const1.v:   
+![image](https://user-images.githubusercontent.com/118953915/209827711-ae726792-c200-43b2-b721-ede3be263a24.png)  
+From the schematic, have notice that there is a cell:  
+![image](https://user-images.githubusercontent.com/118953915/209827758-355b358c-8c31-40be-a332-26a39d59bf54.png)
 
+For dff_const2.v:  
+![image](https://user-images.githubusercontent.com/118953915/209827853-29c0e662-f592-48f3-bf4d-8e0a02319be7.png)
 
+For dff_const3.v: 
+![image](https://user-images.githubusercontent.com/118953915/209827884-cd764bbc-9c37-4f2a-b7b6-8d6085744b69.png)  
+Here is the schematic:  
+![image](https://user-images.githubusercontent.com/118953915/209827952-bd4de3c8-fb4f-4b5f-bb6b-7a24168ad849.png)
 
+Back to dff_const2.v:
+There is sequential constant optimization, now we want to disable it by following command:  
+> set compile_seqmap_propagate_constants false 
+![image](https://user-images.githubusercontent.com/118953915/209828045-eed60ee1-204e-4fd2-9001-54ab38bf04fc.png)  
+
+For dff_consr4.v:
+![image](https://user-images.githubusercontent.com/118953915/209828077-ca5639d1-1f47-4192-b518-f1da6816ac48.png)
+
+For dff_const5.v:  
+![image](https://user-images.githubusercontent.com/118953915/209828116-c04c8feb-c203-4d29-a956-97e7e39c2554.png)
  
-  </details>  
+</details>   
 
-<details><summary> ⚡Lab Session->Lab16: part1 Combinational optimizations</summary> 
-<details><summary> ⚡Lab Session->Lab13: Generated_clocks</summary>  
 <details><summary> ⚡ Lecture session</summary>  
  
- 
+</details>   
