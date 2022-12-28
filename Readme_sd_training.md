@@ -1532,6 +1532,7 @@ Here is the details on RUN3 with constraints applied and area limit:
 </details>  
 
 <details><summary> ⚡Lab Session->Lab17: Sequential optimizations</summary>
+ 
 For dff_const1.v:   
 ![image](https://user-images.githubusercontent.com/118953915/209827711-ae726792-c200-43b2-b721-ede3be263a24.png)  
 From the schematic, have notice that there is a cell:  
