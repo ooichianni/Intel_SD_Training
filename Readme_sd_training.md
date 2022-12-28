@@ -1563,4 +1563,21 @@ For dff_const5.v:
 
 <details><summary> ⚡ Lecture session</summary>  
  
+**Special optimizations**  
+
+Register retiming:
+![image](https://user-images.githubusercontent.com/118953915/209842721-814884a8-435d-4e30-96a6-80b7e243141e.png)  
+ 
+Boundary optimization  
+![image](https://user-images.githubusercontent.com/118953915/209842747-331c4260-2313-47ad-a468-3f794742918f.png)  
+
+If want preserve, use following command:  
+>set_boundary_optimization <design> <true|false>
+>Eg: set_boundary_optimization <module_sub> <true|false>
+ 
+Multi-cycle paths  
+![image](https://user-images.githubusercontent.com/118953915/209842796-46525725-6253-46ad-b5b2-557bfaf6feeb.png)
+
+ False paths
+ 
 </details>   
