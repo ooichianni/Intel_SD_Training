@@ -9,6 +9,7 @@
 + **[ Day_6 : Introduction to Logic Synthesis ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_6)**
 + **[ Day_7 : Basics of STA ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_7)**
 + **[ Day_8 : Advanced SDC Constraints ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_8)**
++ **[ Day_9 : Optimization in synthesis ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_9)**
 
 #
 # Day_0 
@@ -1351,4 +1352,71 @@ After compile_ultra, the tool will optimize:
  
 </details> 
  
+#
+# Day_9 
+**⭐Optimization in synthesis**
 
+<details><summary> ⚡ Lecture Session </summary>
+
+### *__Lecture Session__*
+
+**Optimizations**
+
+✏️Recap  
+-Combinational Optimization is still very much Boolean optimization  
+-In DC, Querying makes job easier for manual cell replacement -> wildcard *  
+-Replication and reuse of logic can be done for resource sharing, always be cautioned about over-constraining, may lead to explosive area increase <- $\textcolor{green}{\text{must optimal}}$  
+-Sequential Optimization remains an exercise in timing plus Boolean optimization   
+-Explicit representation of tie cells to represent constant assignment is an addition here    
+-Also, sequential constant propagation can be limited via compile_seqmap_propagate_constants set as false    
+
+Synopsys Directives  
+1.Embedding Constraints and Attributes  
+Constraints and attributes, usually entered at the dc_shell prompt, can be embedded in your Verilog source code   
+Prefix the usual constraint or attribute statement with the Verilog comment characters //, and delimit the embedded statements with the compiler directives   
+> // synopsys dc_script_begin and // synopsys dc_script_end  
+
+The following limitations apply to the use of constraints and attributes in your design:  
+-Constraints and attributes declared outside a module apply to all subsequent modules declared in the file  
+-Constraints and attributes declared inside a module apply only to the enclosing module  
+-Any dc_shell scripts embedded in functions apply to the whole module  
+-Include in your dc_shell script only commands that set constraints and attributes. Do not use action commands such as compile, gen, and report  
+
+(i)Synopsys full_case  
+-When adding "full_case" or "parallel_case" directives to a case statement, the directives are added as a comment immediately following the case expression at the end of the case statement header and before any of the case items on subsequent lines of code  
+-From a synthesis tool perspective, a "full" case statement is a case statement in which every possible binary pattern is included as a case item in the case statement  
+-Synopsys parses all Verilog comments that start with "// synopsys ..." and interprets the "full_case" directive to mean that if a case statement is not "full" that the outputs are "don't care's" for all unspecified case items. If the case statement includes a case default, the "full_case" directive will be ignored  
+(ii)Synopsys parallel_case  
+-A "parallel" case statement is a case statement in which it is only possible to match a case expression to one and only one case item. If it is possible to find a case expression that would match more than one case item, the matching case items are called "overlapping" case items and the case statement is not "parallel.“
+-In general, use parallel_case when you know that only one case item is executed  
+-Under certain circumstances, you might not want to build a priority encoder to handle a case statement. You can use the parallel_case directive to force HDL Compiler to generate multiplexer logic instead  
+
+2.Retiming / Pipelining  
+Registers stop glitches from propagating through combinational paths  
+-Pipelining is a technique that breaks combinational paths by inserting registers  
+-By reducing logic-level numbers between registers, pipelining can result in higher clock speed operations  
+However, pipelining increases the latency of a circuit in terms of the number of clock cycles to a first result    
+
+Retiming as an algorithm allows shortening of critical paths  
+-After providing a proper timing constraint file (consisting of clock definitions, clock uncertainty modelling, io delays and load) and observing a scope of retiming, we can provide the DC switch compile_ultra –retime, to see the results  
+
+3.Boundary Optimization  
+-Set_boundary_optimization module_sub false  
+-It is helpful in ECOs  
+-> because if issue happen associate to submodule, thn we can find out the issue easily if there is no boundary optimization  
+
+4.Multi-Cycle and False Paths (revisited)  
+>Set_multicycle_path –setup 2 –to prod_reg[*]/D –through [all_inputs]  
+ 
+-Hold is always checked at 1 edge before setup, if not provided explicit instruction  
+-Setup will move by endpoints  
+-Whenever MCP is applied for setup, provide for hold as well  
+ 
+>set_multicycle_path –hold 0.5 –to prod_reg[*]/D –through [all_inputs]  
+>set_false_path –through <>  
+ 
+5.Isolation of ports  
+>set_isolate_ports –type buffer [get_ports Out_Y]  
+ 
+-cell delay is a function of output load, which could impact internal path timing
+-Possible Solution: Provide a buffer, which drives the external load and decouples it from internal path  
