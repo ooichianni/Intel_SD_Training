@@ -1584,9 +1584,24 @@ If want preserve, use following command:
 Multi-cycle paths  
 ![image](https://user-images.githubusercontent.com/118953915/209899444-5c4d537d-8b9c-462c-936e-cdcf6951f275.png)
 
- False paths
+False paths
+>set_false_path –from <> -to <>
+>set_false_path –through <>
  
-</details>   
+![image](https://user-images.githubusercontent.com/118953915/209915231-376b2a72-30f1-4c07-9523-61d6060234d2.png)  
+ 
+External Load vs Internal Loads  
+>set_isolated_ports -type buffer [get_potrs Out_Y]
+ 
+![image](https://user-images.githubusercontent.com/118953915/209915279-359f0e86-e108-4795-814a-20668eaf72ca.png)
+ 
+</details>    
+
+<details><summary> ⚡ Lecture session: How path are timed MCP </summary>  
+ 
+**How path are timed MCP** 
+
+ </details> 
  
  
  To be continue
