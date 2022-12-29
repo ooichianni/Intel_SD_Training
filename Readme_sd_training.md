@@ -989,7 +989,7 @@ Further try on:
 # Day_7 
 **⭐Basics of STA**
  
-<details><summary> ⚡ Lecture sessio: Introduction to course live session </summary>  
+<details><summary> ⚡ Lecture session: Introduction to course live session </summary>  
 
 SDC Constraints  
 Recap on Setup and Hold violations:  
@@ -1484,7 +1484,7 @@ Here is the command:
 
  </details>  
 
-<details><summary> Lab Session->Lab16: part1 Combinational optimizations</summary> 
+<details><summary> Lab Session->Lab16: Part1 Combinational optimizations</summary> 
  
 >read_verilog DC_WORKSHOP/verilog_files/opt_check.v  
 >report_timing  
