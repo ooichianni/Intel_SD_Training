@@ -390,6 +390,12 @@ Resource sharing
  > Can refer this link: https://slideplayer.com/slide/3480933/ 
  
  -removal of un-connected logic across boundaries , removal of double inverting logic across boundaries, propagation of constants to reduce logic  
+
+ </details> 
+ 
+<details><summary> ⚡Lecture Session: Combinational and sequential optmizations </summary>
+
+### *__Lecture Session__*
  
 **(A) Introduction to optimization**
 
