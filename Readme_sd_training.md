@@ -1559,8 +1559,8 @@ There is sequential constant optimization, now we want to disable it by followin
 
 ![image](https://user-images.githubusercontent.com/118953915/209828045-eed60ee1-204e-4fd2-9001-54ab38bf04fc.png)  
 
-For dff_consr4.v:
-![image](https://user-images.githubusercontent.com/118953915/209828077-ca5639d1-1f47-4192-b518-f1da6816ac48.png)
+For dff_consr4.v:  
+![image](https://user-images.githubusercontent.com/118953915/209896654-4eeca7ae-454c-4076-9fb2-368554b0dabd.png)
 
 For dff_const5.v:  
 ![image](https://user-images.githubusercontent.com/118953915/209828116-c04c8feb-c203-4d29-a956-97e7e39c2554.png)
