@@ -15,7 +15,7 @@
 # Day_0 
 **⭐System/Tool Setup Check & GitHub ID creation**
 
-<details><summary> ⚡ Lecture Session </summary>
+<details><summary> ⚡ Lecture Session: System/Tool Setup Check. GitHub ID creation - Live session </summary>
 
 ### *__Lecture Session__*
 
@@ -67,7 +67,7 @@ Here is the screenshot of lab final outputs:
 # Day_1   
 **⭐Introduction to Verilog RTL design and Synthesis**
 
-<details><summary> ⚡Lecture Session </summary>
+<details><summary> ⚡Lecture Session: Introduction to Verilog RTL design and Synthesis </summary>
  
 ### *__Lecture Session__*
 
@@ -108,7 +108,7 @@ vi tb_good_mux.v & vi good_mux.v (suppose is this command->gvim tb_good_mux.v -o
 testbench no primary input and output, but got design instantiate- UUT (Unit under test) or DUT (Design under test)
 
 </details>
-<details><summary> ⚡Lecture Session </summary>
+<details><summary> ⚡Lecture Session: Introduction to Yosys and Logic synthesis </summary>
  
 ### *__Lecture Session__*
 
@@ -171,7 +171,7 @@ Here is my nelist and logic diagram:
 # Day_2   
 **⭐Timing libs(QTMs/ETMs), hierarchical vs flat synthesis and efficient flop coding styles**
 
-<details><summary> ⚡Lecture Session </summary>
+<details><summary> ⚡Lecture Session: Introduction to course live session </summary>
 
 ### *__Lecture Session__*
 
@@ -363,7 +363,7 @@ Here is some special case:
 # Day_3 
 **⭐Combinational and sequenial optimizations**
 
-<details><summary> ⚡Lecture Session </summary>
+<details><summary> ⚡Lecture Session: Introduction to course live session </summary>
 
 ### *__Lecture Session__*
 
@@ -498,7 +498,7 @@ Remodified the file to look for 3 dff:
 #
 # Day_4 
 **⭐GLS, blocking vs non-blocking and Synthesis-Simulation mismatch**  
-<details><summary> ⚡Lecture Session </summary> 
+<details><summary> ⚡Lecture Session: GLS, blocking vs non-blocking and Synthesis-Simulation mismatch </summary> 
  
 ### *__Lecture Session__*
 
@@ -560,7 +560,7 @@ Another example, for blocking_caveat:
 #
 # Day_5 
 **⭐DFT**  
-<details><summary> ⚡Lecture Session </summary> 
+<details><summary> ⚡Lecture Session: DFT (Design for Testability) </summary> 
  
 ### *__Lecture Session__*
 
@@ -777,7 +777,7 @@ Here is the flow:
 # Day_6   
 **⭐Introduction to Logic Synthesis**  
 
-<details><summary> ⚡ Lecture Session </summary>  
+<details><summary> ⚡ Lecture Session: Introduction to Logic Synthesis </summary>  
 
 ### *__Lecture Session__*  
 
@@ -944,7 +944,7 @@ After invoke dc_shell, the target_library and link_library have been set automat
  
 </details>  
  
-<details><summary> ⚡ Lecture session</summary>  
+<details><summary> ⚡ Lecture session: TCL quick refresher</summary>  
  
 TCL quick refresher  
 -all dc internal command based on tcl only  
@@ -983,7 +983,7 @@ Further try on:
 # Day_7 
 **⭐Basics of STA**
  
-<details><summary> ⚡ Lecture session</summary>  
+<details><summary> ⚡ Lecture sessio: Introduction to course live session </summary>  
 
 SDC Constraints  
 Recap on Setup and Hold violations:  
@@ -1011,7 +1011,7 @@ Timing Arcs:
 
 </details> 
 
-<details><summary> ⚡ Lecture session</summary> 
+<details><summary> ⚡ Lecture session: Introduction to STA</summary> 
 
 *(A)Introduction to STA*  
 STA Basic-Static Timing Analysis  
@@ -1061,7 +1061,7 @@ Summary on delay constraints:
  
 </details> 
 
-<details><summary> ⚡Lab session-> Lab5: Timing Dot Libs</summary>
+<details><summary> Lab session-> Lab5: Timing Dot Libs</summary>
 
 This is the details in .lib:  
 > gvim /nfs/png/home/chiannio/training/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
@@ -1099,7 +1099,7 @@ cell_rise and cell_fall have separate LUT
 
 </details> 
 
-<details><summary> ⚡Lab session-> Lab6: Exploring dotLib</summary>
+<details><summary> Lab session-> Lab6: Exploring dotLib</summary>
  
 Here is the detail on unate and timing_type: 
 <img width="900" alt="Picture27" src="https://user-images.githubusercontent.com/118953915/208881145-87a4f08f-e105-40fe-a885-e70ba7d9f5f6.png">
@@ -1112,7 +1112,7 @@ Select latch from list:
 
  </details> 
 
-<details><summary> ⚡Lab session-> Lab7: Exploring dot.lib part2</summary>
+<details><summary> Lab session-> Lab7: Exploring dot.lib part2</summary>
  
 Show loaded library
 >list lib
@@ -1170,7 +1170,7 @@ Can use this command to check the attribute is define on lib_cell/cell/pin
 # Day_8 
 **⭐Advanced SDC Constraints**
 
-<details><summary>⚡Lecture Session </summary>
+<details><summary>⚡Lecture Session: Introduction to course live session </summary>
 
 ### *__Lecture Session__*
 
@@ -1185,7 +1185,7 @@ Can use this command to check the attribute is define on lib_cell/cell/pin
  
 </details> 
 
-<details><summary> ⚡Lecture Session</summary>
+<details><summary> ⚡Lecture Session: Advanced Constraints,Specifying constraints through SD </summary>
  
 ### *__Lecture Session: Advanced Constraints,Specifying constraints through SD__*
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209569966-dd4c87a4-379d-4b0b-b728-16b072796a78.png"> 
@@ -1242,7 +1242,7 @@ This is setting the clock network (skew+jitter)
   
 </details> 
 
-<details><summary> ⚡Lab Session->Lab8: Loading design get_cells,get_ports,get_nets</summary>
+<details><summary> Lab Session->Lab8: Loading design get_cells,get_ports,get_nets</summary>
  
 ### *__Lab Session__*
  
@@ -1255,20 +1255,20 @@ Here is the shecmatic:
  
 </details> 
  
-<details><summary> ⚡Lab Session->Lab9: get_pins, get_clocks, querying_clocks</summary>  
+<details><summary> Lab Session->Lab9: get_pins, get_clocks, querying_clocks</summary>  
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209571954-d772211d-9d3c-41f9-9de7-d783a413c61b.png">  
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209571991-24633605-853d-400c-af7c-d6a6da3b3fb8.png">  
  
 </details> 
  
-<details><summary> ⚡Lab Session->Lab10: create_clock waveform</summary>
+<details><summary> Lab Session->Lab10: create_clock waveform</summary>
  
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209572086-eada38be-e6d0-4914-a924-488feac29e4f.png">  
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209572109-8c613e96-ed4a-4498-ae53-df8e4fae6327.png">  
 
 </details> 
  
-<details><summary> ⚡Lab Session->Lab 11: Clock network modelling-uncertainty,report_timing</summary>
+<details><summary> Lab Session->Lab 11: Clock network modelling-uncertainty,report_timing</summary>
 
 <img width="922" alt="image" src="https://user-images.githubusercontent.com/118953915/209572351-262c65ff-3336-445b-b88d-fc2d8490750c.png">  
 Comparison:  
@@ -1278,7 +1278,7 @@ Comparison:
  
 </details> 
  
-<details><summary> ⚡Lab Session->Lab 12: IO Delays</summary>  
+<details><summary> Lab Session->Lab 12: IO Delays</summary>  
 Set input delay:  
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209572739-951b9405-4c60-4bdc-958e-008ecf9a4c85.png">
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209572775-e43d43e8-5540-49ae-9f86-c1cae3601217.png">
@@ -1291,7 +1291,7 @@ Set output delay:
 
 </details> 
 
-<details><summary> ⚡Lecture Session</summary>
+<details><summary> ⚡Lecture Session: Generated_clk</summary>
  
 ### *__Lecture Session: SDC Part3 generated_clk__*
  
@@ -1300,7 +1300,7 @@ Set output delay:
 
 </details> 
  
-<details><summary> ⚡Lab Session->Lab13: Generated_clocks</summary>  
+<details><summary> Lab Session->Lab13: Generated_clocks</summary>  
 Create generated clock:   
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209573793-b2b9ca82-29f1-46d2-82d8-88536b58732e.png">
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/118953915/209573810-82fcd486-5625-43e1-898f-191941db3408.png">
@@ -1309,9 +1309,9 @@ Create generated clock:
  
 </details> 
  
-<details><summary> ⚡Lecture Session</summary>
+<details><summary> ⚡Lecture Session: VCLK,max_latency, rise_fall IO delays </summary>
  
-### *__Lecture Session: SDC part4 vclk,max_latency, rise_fall IO delays__* 
+### *__Lecture Session: SDC part4 vclk, max_latency, rise_fall IO delays__* 
 <img width="662" alt="image" src="https://user-images.githubusercontent.com/118953915/209574167-0f5d151e-7620-4167-8ff7-40726f0d06c3.png">
 <img width="260" alt="image" src="https://user-images.githubusercontent.com/118953915/209576040-45c771a5-c27d-433b-88fb-c3cdf8f5a72f.png">
 <img width="656" alt="image" src="https://user-images.githubusercontent.com/118953915/209574183-43a07d86-0841-4000-b213-33bef60e0a9c.png">
@@ -1326,7 +1326,7 @@ Comparison among two:
 
 </details> 
  
-<details><summary> ⚡Lab Session->Lab14-part1 Set_Max_delay</summary>  
+<details><summary> Lab Session->Lab14-part1 Set_Max_delay</summary>  
  
 Proceed with lab14_circuit.v:  
 <img width="748" alt="image" src="https://user-images.githubusercontent.com/118953915/209574707-0c3c8fe1-508d-4962-9bcc-2076290537cc.png">
@@ -1340,7 +1340,7 @@ After compile_ultra, the tool will optimize:
  
 </details> 
  
-<details><summary> ⚡Lab Session->Lab15-part2-VCLK</summary>  
+<details><summary> Lab Session->Lab15-part2-VCLK</summary>  
  
 <img width="781" alt="image" src="https://user-images.githubusercontent.com/118953915/209575088-0eebc843-a1e6-40b9-b694-246c3b8054bf.png">
 <img width="779" alt="image" src="https://user-images.githubusercontent.com/118953915/209575124-7ec562ac-21f0-44d2-ba91-aacbc016085f.png">
@@ -1356,7 +1356,7 @@ After compile_ultra, the tool will optimize:
 # Day_9 
 **⭐Optimization in synthesis**
 
-<details><summary> ⚡ Lecture Session </summary>
+<details><summary> ⚡ Lecture Session: Introduction to course live session </summary>
 
 ### *__Lecture Session__*
 
@@ -1425,7 +1425,7 @@ Retiming as an algorithm allows shortening of critical paths
  
 </details>  
  
-<details><summary> ⚡ Lecture session</summary>  
+<details><summary> ⚡ Lecture session: Combinational Optimization</summary>  
 
 **Combinational Optimization** 
  
@@ -1454,7 +1454,7 @@ Eg: fastercell to meet timing, but causing area and power increase
  
 </details>  
  
-<details><summary> ⚡ Lecture session</summary>  
+<details><summary> ⚡ Lecture session: Sequential optimizations</summary>  
 
 **Sequential optimizations**  
 
@@ -1478,7 +1478,7 @@ Here is the command:
 
  </details>  
 
-<details><summary> ⚡Lab Session->Lab16: part1 Combinational optimizations</summary> 
+<details><summary> Lab Session->Lab16: part1 Combinational optimizations</summary> 
  
 >read_verilog DC_WORKSHOP/verilog_files/opt_check.v  
 >report_timing  
@@ -1509,7 +1509,7 @@ Check the timing for opt_check4:
                        
 </details>  
  
-<details><summary> ⚡Lab Session->Lab16: Part2 Resource sharing optimizations</summary> 
+<details><summary> Lab Session->Lab16: Part2 Resource sharing optimizations</summary> 
  
 ![image](https://user-images.githubusercontent.com/118953915/209826204-20d11d04-1deb-4d5a-acb0-086f7f9f435f.png)  
  
@@ -1532,7 +1532,7 @@ Here is the details on RUN3 with constraints applied and area limit:
 
 </details>  
 
-<details><summary> ⚡Lab Session->Lab17: Sequential optimizations</summary>
+<details><summary> Lab Session->Lab17: Sequential optimizations</summary>
  
 For dff_const1.v:   
 ![image](https://user-images.githubusercontent.com/118953915/209827711-ae726792-c200-43b2-b721-ede3be263a24.png)  
@@ -1561,7 +1561,7 @@ For dff_const5.v:
  
 </details>   
 
-<details><summary> ⚡ Lecture session</summary>  
+<details><summary> ⚡ Lecture session: Special optimization </summary>  
  
 **Special optimizations**  
 
