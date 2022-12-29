@@ -1582,7 +1582,7 @@ If want preserve, use following command:
 >Eg: set_boundary_optimization <module_sub> <true|false>
  
 Multi-cycle paths  
-![image](https://user-images.githubusercontent.com/118953915/209842796-46525725-6253-46ad-b5b2-557bfaf6feeb.png)
+![image](https://user-images.githubusercontent.com/118953915/209899444-5c4d537d-8b9c-462c-936e-cdcf6951f275.png)
 
  False paths
  
