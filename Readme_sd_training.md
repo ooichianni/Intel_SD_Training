@@ -191,7 +191,8 @@ MOSFETs-specifying the circuits physically and characterizing them electricity
 1. Here is the contents of .libs in this training   
 <img width="600" alt="Capture" src="https://user-images.githubusercontent.com/118953915/206341918-17e165df-0d95-4605-8fec-b283f48c8481.PNG">  
 <img width="600" alt="lab2a" src="https://user-images.githubusercontent.com/118953915/205808293-af4da4c9-ed20-4912-9573-98451b599ad3.PNG">  
-Enter ":syn of" to switch off highlighted word in vim
+
+ Enter ":syn of" to switch off highlighted word in vim
 
 (i)Name of library: sky130_fd_sc_hd_tt_025c_1v80      
 (ii)PVT (Process,Voltage,Temperature)  
@@ -207,20 +208,26 @@ we need to factor in all variation when we design circuit, so our library will b
 2. .lib is buckect of all std cell that avaiable  
 Containing different flavours of different cell & different flavours of same cell with different number of inputs   
 <img width="600" alt="lab2b" src="https://user-images.githubusercontent.com/118953915/205820406-e6b086cf-35ce-406f-bc61-35f58de851bb.PNG">  
-and each of them have different features, can open equivalent verilog model to see the details of gates by using command ":vsp ../my_lib/verilog_model/sky130_fd_sc_hd.v" 
+
+ and each of them have different features, can open equivalent verilog model to see the details of gates by using command ":vsp ../my_lib/verilog_model/sky130_fd_sc_hd.v" 
 File with <file>.pp.v is consisting power port information 
 <img width="600" alt="lab2c" src="https://user-images.githubusercontent.com/118953915/205829566-3b17871b-3a2c-4fa4-a6ad-0141246b6c7c.PNG">  
- we can see that there is
+
+we can see that there is
 The cell is having 5 inputs, so there will be 2^5=32 combinations. In the libs will state out all details for each combinations (Eg: Leakage power)   
 3. Inside the lib will also state out cell area, power port  
 <img width="300" alt="lab2d" src="https://user-images.githubusercontent.com/118953915/205839427-24e92d8b-0eb7-4ef8-9550-a420ad39d329.PNG">  
-Each of the cell pin have its own information: capacitance, transition, power associated to the pin  
+
+ Each of the cell pin have its own information: capacitance, transition, power associated to the pin  
 <img width="300" alt="lab2e" src="https://user-images.githubusercontent.com/118953915/205839432-e3914736-c691-48d9-af9c-80976b2b849e.PNG">  
+
  Besides power, the lib also will contains timing information  
 <img width="600" alt="lab2f" src="https://user-images.githubusercontent.com/118953915/205839439-f176fd34-4d19-479c-a2f3-c6ed72a9f1b0.PNG">  
-3. Here is the comparison on different flavours of same cell with different number of inputs  
+
+ 3. Here is the comparison on different flavours of same cell with different number of inputs  
  <img width="900" alt="lab2g" src="https://user-images.githubusercontent.com/118953915/205848330-ab153dd2-9ab3-4542-b802-6c6de19f6e45.PNG">  
--Smaller cell: More delay, Less area, Less power  
+
+ -Smaller cell: More delay, Less area, Less power  
 -Bigger cell: Less delay, More area, More power  
  
 💡Conclusion: 
@@ -238,12 +245,14 @@ Each of the cell pin have its own information: capacitance, transition, power as
 (iv) synth -top multiple_modules  
  <img width="500" alt="Capture" src="https://user-images.githubusercontent.com/118953915/206349270-59c806c7-a885-4519-8847-88b0f0a19142.PNG">  
  <img width="300" alt="lab2h" src="https://user-images.githubusercontent.com/118953915/206076867-a565dc90-74d4-432c-ad12-c028c85c5a47.PNG">  
+
 (v) linking deisgn to library  
  abc -liberty ../lib/sky*.lib    
-(v) show multiple_modules <- key in the top modules name      
+(vi) show multiple_modules <- key in the top modules name      
 Then will display out the hierarchy design -> not showing AND and OR gate, but only showing the u1 and u2, which is the instance of submodule 1 and 2   
  <img width="600" alt="lab2i" src="https://user-images.githubusercontent.com/118953915/205855372-92273978-5913-4f81-a92e-575f0ea3f9ff.PNG">  
-(vi) write_verilog -noattr multiple_modules_hier.v then !vim multiple_modules_hier.v  
+
+(vii) write_verilog -noattr multiple_modules_hier.v then !vim multiple_modules_hier.v  
   > Refer this link for learning DeMorgan's Theorems in boolean algebra:  https://www.allaboutcircuits.com/textbook/digital/chpt-7/demorgans-theorems/    
  
  My run:   
@@ -299,8 +308,10 @@ From the figure: [Right] it is a single netlist without any submodule inside the
 1. Here is all the FF, will check the behavioural simulation:  
 (i) iverilog dff_*.v tb_dff_*.v  ; ./a.out ; gtkwave <>.vcd    
 <img width="1000" alt="lab2r" src="https://user-images.githubusercontent.com/118953915/206105360-d43817af-6876-426b-9ba4-9542abc7ecc0.PNG">  
-(ii) Asyn reset  
+
+ (ii) Asyn reset  
 <img width="600" alt="lab2s" src="https://user-images.githubusercontent.com/118953915/206105370-b1ee39b8-fe08-4b3e-8e1c-72b83cf1113a.PNG">  
+ 
  - The output(q) will get trigger for each of the posedge clock    
  - If the async_reset is "1", the output(q) will directly change to "0" irrespective to clock edge  
  - The output(q) will remain "0" until the async_reset is toggle back to "0", then it will read in value from input(d) during posedge clock  
@@ -341,11 +352,14 @@ syncres: no set/reset pin on ff
 Here is some special case:  
 1. If looking at multiplexer:  
  <img width="600" alt="lab2za1" src="https://user-images.githubusercontent.com/118953915/206133157-cbc9abe7-19c8-400f-86f6-83da18aade6c.PNG">  
+ 
  (i) Explanation from training video:   
  <img width="600" alt="lab2za" src="https://user-images.githubusercontent.com/118953915/206132337-4969c59c-0cbb-48f9-99a7-da98f1b6a6c3.PNG">  
--When the number from the truth table convert to decimal value and times 2 and convert back to digital value, the pattern of output is the same for y[3:1] and then y[0]=0  
+
+ -When the number from the truth table convert to decimal value and times 2 and convert back to digital value, the pattern of output is the same for y[3:1] and then y[0]=0  
  (ii) Steps: yosys ; read_liberty -lib ../lib/sky*.lib ; read_verilog mult_2.v ; synth_top mul2 ; show  
  <img width="600" alt="lab2zb" src="https://user-images.githubusercontent.com/118953915/206185966-0bbfee96-fec1-49dc-a7d6-e43af9563009.PNG">  
+ 
  From the figure, we can see that there is no memories,no processor and no cell have been infferred. It is expected as show in (i), value y is from a and append with 1'b0.    
  Since there is no standard cell, 
  <img width="600" alt="lab2zc" src="https://user-images.githubusercontent.com/118953915/206187270-4f08db9e-bc3c-495c-ac67-d3746a534594.PNG">
