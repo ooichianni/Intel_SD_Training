@@ -361,16 +361,19 @@ Here is some special case:
  <img width="600" alt="lab2zb" src="https://user-images.githubusercontent.com/118953915/206185966-0bbfee96-fec1-49dc-a7d6-e43af9563009.PNG">  
  
  From the figure, we can see that there is no memories,no processor and no cell have been infferred. It is expected as show in (i), value y is from a and append with 1'b0.    
+ 
  Since there is no standard cell, 
  <img width="600" alt="lab2zc" src="https://user-images.githubusercontent.com/118953915/206187270-4f08db9e-bc3c-495c-ac67-d3746a534594.PNG">
 
 2. Another multiplexer:  
  Explanation from training video:   
 <img width="600" alt="lab2zd" src="https://user-images.githubusercontent.com/118953915/206198618-443bdc46-4601-4381-b3bf-5bc43ebf14f4.PNG">  
-  (i) Steps: yosys ; read_liberty -lib ../lib/sky*.lib ; read_verilog mult_8.v ; synth_top mul8 ; show  
+ 
+ (i) Steps: yosys ; read_liberty -lib ../lib/sky*.lib ; read_verilog mult_8.v ; synth_top mul8 ; show  
  Similar operation for mult_8 too  
  <img width="600" alt="lab2ze" src="https://user-images.githubusercontent.com/118953915/206199435-600e2f24-6ce4-4d7b-8380-211d5c1e2b7b.PNG">  
- 💡 No hardware required for the special case show above, only rewiring the signal will do. Not required any std cell to obtain the logic functionality 
+
+💡 No hardware required for the special case show above, only rewiring the signal will do. Not required any std cell to obtain the logic functionality 
 </details> 
  
 #
