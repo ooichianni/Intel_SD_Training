@@ -1736,3 +1736,43 @@ Need to constraints for hold path too, else will single cycle hold check:
 <details><summary> ⚡ Lecture Session:  - Live session </summary>
 
 ### *__Lecture Session__*
+
+ 1. Generating Timing Reports  
+-The delays associated with timing parameters are modelled on semiconductor device physics principles  
+-Transistor sizing, their type, and how they are connected to each other contributes to different cells, and in turn different cell delays  
+-Similarly, wires can be modelled in terms of Resistance and Capacitance, which in turn adds to the path delay. The path with the worst delay is the critical path  
+Generate timing report command and flags:  
+->report_timing  
+|-to {list of signals} | Inputs/flipflop outputs to these signals|  
+|-from {list of signals} | Flip-flop outputs/inputs to these signals|  
+|-through {list of pins} | Paths that go through these pins|    
+|-max_paths N | Specifies the number of paths to be reported per path group |  
+|-n_worst paths_per_endpoint| Specifies the number of paths to be reported per endpoint per path group|    
+  
+-DC makes a note of all paths (unateness: fall to rise, rise to fall, ...) and uses hat for timing path calculations, apart from the provided constraints    
+2.The difference between the clock signal’s arrival time (called data required time in the report) and the data signal’s arrival time (data arrival time) is called the slack:  
+> Slack = data required time - data arrival time  
+
+|Timing Check | Details | Formula|  
+|Setup Check| For your circuit to work at the specified cycle time, the clock signal’s rising edge should always arrive later (or at the same time) than your data signal |slack should be non-negative| Slack = data required time - data arrival time|     
+|Hold Check| You want your data to change (data arrival time) a hold-time after the clock signal’s rising edge (data required time) | slack to be non-negative| Slack = -(setup slack) = -(data required time - data arrival time) = data arrival time - data required time|    
+3. Command:  
+(i)check_design   
+->Checks for design consistency. E.g.: Will report a feedthrough, as we take out_clk in some of our examples directly from the defined clock ->list out warning/error  
+(ii)check_timing  
+->Checks for the specification of constraints, and also let us know if the provided constraints are enough. It might not specify proper endpoints to be constrained, that we need to justify  
+(iii)report_constraints  
+->provides us with a glimpse as to how our design is feasible in terms of electrical parameters such as power and capacitance <-power.area,timing  
+
+4. In digital electronics, the fan-out is the number of gate inputs driven by the output of another single logic gate  
+-Generally clock nets, reset, scan, enable nets are High Fanout Nets -> high capacitance causing delay  
+-A high fan-out corresponds to a very high capacitance load, which in turn translates to timing violation, because of a high transition time which adds up in the delay calculation  
+-set_max_capacitance helps in breaking or buffering the High fanout net  
+-> Eg: If there is 16 fanouts, can having 4 buffer where each of them drive 4 fanouts  
+
+✏️ Summary  
+-Constraints: clock, genclk (if any), vclk (if any), practicalities of the clock (Uncertainty and Latency), input, output delay, transition, load, set_max_capacitance, transition, etc  
+->Pre-CTS=jitter+skew, Post-CTS=jitter  
+-Synthesis Optimization Parameters: Boundary Optimization, Retiming, Constant propagation, unused flop removal, isolating ports, etc. <- can switch off  
+-Flow: read_verilog, provide dbs, source constraints, check_design, check_timing, compile or compile_ultra, report_constraints, report_area and report_timing, write  
+-QOR: Quality of Results, if you are meeting all your design constraints with good margins, the QOR is good  
