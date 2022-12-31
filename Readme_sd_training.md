@@ -1618,7 +1618,111 @@ External Load vs Internal Loads
  
 **How path are timed MCP** 
 
- </details> 
+![image](https://user-images.githubusercontent.com/118953915/210151529-04b364ed-7ef8-414a-b9fc-243c6f7aea50.png)
+Another situation:  
+![image](https://user-images.githubusercontent.com/118953915/210151539-10f309e6-ad0b-4242-8d5e-fc1e8b215f70.png)
+
+For multicycle path:  
+![image](https://user-images.githubusercontent.com/118953915/210151547-09e565ff-7c6f-45e9-a41b-dec00addb958.png)  
+>set_multicycle_path –setup 2 –from [all_inputs] –to (PROD_REG[*]/D) <- endpoint edge moved forward
+>set_multicycle_path –hold 1 –from [all_inputs] –to (PROD_REG[*]/D) <- launch edge moved forward
+
+![image](https://user-images.githubusercontent.com/118953915/210151553-c291bd39-8a3f-445a-aacc-768f84c8d55b.png)
+     
+</details> 
  
+<details><summary> Lab Session->Lab18-Boundary Optimization</summary> 
+
+ ✏️Recap:  
+ ![image](https://user-images.githubusercontent.com/118953915/210151623-f7304e91-3b4a-41ea-b397-51a70d0d750d.png)  
+For check_boundary.v:  
+![image](https://user-images.githubusercontent.com/118953915/210151628-4904485e-927e-492b-9e60-fd45fb586a72.png)
+
+>reset_design
+>read_verilog DC_WORKSHOP/verilog_files/check_boundary.v
+>link
+>compile_ultra
+>write -f ddc -out boundary.ddc
+>read_ddc boundary.ddc <- in design_vision
+
+![image](https://user-images.githubusercontent.com/118953915/210151634-d91c4365-83a4-4eba-a4ce-4325ea43cca4.png)
+> set_boundary_optimization u_im false  
+![image](https://user-images.githubusercontent.com/118953915/210151647-b76c635c-c2b5-48ab-87fe-94f6250788b1.png) 
+ 
+💡 Advantage: Optimized logic
+Disadvantage: If at latest stage need to perform function ECO, difficult to trace out the error, need consume more time to rerun the design too
+                      
+</details> 
+ 
+<details><summary> Lab Session->Lab19-Register retiming</summary> 
+
+![image](https://user-images.githubusercontent.com/118953915/210151664-ddcb72c3-d848-4bfc-96a0-ec696b3eb5e8.png)
+
+Set constraints:  
+![image](https://user-images.githubusercontent.com/118953915/210151681-789356b8-08f7-430b-af41-d64ba954f756.png)  
+
+Enable retiming-Partition huge combo logic – register retiming  
+>compile_ultra -retime
+ 
+![image](https://user-images.githubusercontent.com/118953915/210151688-3eaf28c8-f192-4a8c-b45a-6d9c8dd11866.png)  
+
+ > report_timing -from [all_inputs] -trans -cap -nosplit 
+ 
+![image](https://user-images.githubusercontent.com/118953915/210151693-10660168-260c-4b43-b6da-b0b3415169c3.png)
+ 
+</details> 
+ 
+<details><summary> Lab Session->Lab20-Isolating output ports</summary> 
+ 
+✏️Recap:
+Purpose: To prevent internal paths to fail because of external load by isolate the port by using buffer
+Buffer drives external load, internal paths are decoupled from output paths
+![image](https://user-images.githubusercontent.com/118953915/210151706-42ddf3b1-fab6-482a-bf8c-d70131f6a4c9.png)  
+ 
+Use back this check_boundary.v:  
+![image](https://user-images.githubusercontent.com/118953915/210151714-165748db-38c4-40a3-9737-c3e3ddaab75f.png)
+
+ Here is the detail of schematic:  
+![image](https://user-images.githubusercontent.com/118953915/210151719-b5c3e3c3-436a-43a0-9244-aeaafc59ce5b.png)
+ 
+>set_isolate_ports -type buffer [all_outputs]
+![image](https://user-images.githubusercontent.com/118953915/210151728-6f9c3285-bc55-4f0a-b676-56b459df6f3d.png)
+ 
+Set constraints:  
+![image](https://user-images.githubusercontent.com/118953915/210151734-078a5e7f-420a-43a1-8142-0225631becde.png)
+
+Checking timing reports:  
+Before isolating output ports:  
+![image](https://user-images.githubusercontent.com/118953915/210151740-2b45b147-9bbd-4883-89f3-26b26453acfb.png)  
+
+After isolating output ports:  
+![image](https://user-images.githubusercontent.com/118953915/210151747-1f256964-74ef-4c5b-8497-fdc1a7105a64.png)
+![image](https://user-images.githubusercontent.com/118953915/210151758-1ea8ea29-d294-428d-acb9-d9d30006f971.png)
+
+Set constraints:   
+![image](https://user-images.githubusercontent.com/118953915/210151768-45aba9ee-be89-4cb4-9238-da52ca57ff88.png)
+![image](https://user-images.githubusercontent.com/118953915/210151772-aa550e7a-b6e2-46c9-8010-6a329edaf9c4.png)
+
+> set_multicycle_path -setup 2 -to prod_reg[*]/D -from [all_inputs]  
+![image](https://user-images.githubusercontent.com/118953915/210151780-8c7e8aa1-ac1d-494a-ba6a-423779a02499.png)
+
+Need to reconstraints:  
+![image](https://user-images.githubusercontent.com/118953915/210151786-3219e145-9c5b-4dc2-9cce-62f13ef0f08d.png)
+![image](https://user-images.githubusercontent.com/118953915/210151793-b87d912d-afdf-4148-a69b-31fbe280aaff.png)
+
+Check for hold check timing:  
+![image](https://user-images.githubusercontent.com/118953915/210151802-b5099574-8577-4f8a-b45c-221a05ae4140.png)
+
+✏️Recap for hold check in MCP:
+![image](https://user-images.githubusercontent.com/118953915/210151809-0d7b0351-0039-4a97-88b5-28a152616d09.png)
+
+Need to constraints for hold path too, else will single cycle hold check:  
+>set_multicycle_path -hold 1 -from [all_inputs] -to prod_reg[*]/D <- * multiple bit register
+                                                                     
+![image](https://user-images.githubusercontent.com/118953915/210151815-9b98a043-3d9f-48f0-ae0a-e3a4cb2007e5.png)
+![image](https://user-images.githubusercontent.com/118953915/210151818-00a5208e-d2d6-4b82-9495-987ad7c56b19.png)
+
+</details> 
+
  
  To be continue
