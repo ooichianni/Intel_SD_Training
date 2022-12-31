@@ -10,6 +10,7 @@
 + **[ Day_7 : Basics of STA ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_7)**
 + **[ Day_8 : Advanced SDC Constraints ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_8)**
 + **[ Day_9 : Optimization in synthesis ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_9)**
++ **[ Day_10 : QOR ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_10)**
 
 #
 # Day_0 
@@ -1638,15 +1639,16 @@ For multicycle path:
 For check_boundary.v:  
 ![image](https://user-images.githubusercontent.com/118953915/210151628-4904485e-927e-492b-9e60-fd45fb586a72.png)
 
->reset_design
->read_verilog DC_WORKSHOP/verilog_files/check_boundary.v
->link
->compile_ultra
->write -f ddc -out boundary.ddc
->read_ddc boundary.ddc <- in design_vision
+>reset_design  
+>read_verilog DC_WORKSHOP/verilog_files/check_boundary.v  
+>link  
+>compile_ultra  
+>write -f ddc -out boundary.ddc  
+>read_ddc boundary.ddc <- in design_vision  
 
 ![image](https://user-images.githubusercontent.com/118953915/210151634-d91c4365-83a4-4eba-a4ce-4325ea43cca4.png)
 > set_boundary_optimization u_im false  
+ 
 ![image](https://user-images.githubusercontent.com/118953915/210151647-b76c635c-c2b5-48ab-87fe-94f6250788b1.png) 
  
 💡 Advantage: Optimized logic
@@ -1674,7 +1676,7 @@ Enable retiming-Partition huge combo logic – register retiming
  
 <details><summary> Lab Session->Lab20-Isolating output ports</summary> 
  
-✏️Recap:
+✏️Recap:  
 Purpose: To prevent internal paths to fail because of external load by isolate the port by using buffer
 Buffer drives external load, internal paths are decoupled from output paths
 ![image](https://user-images.githubusercontent.com/118953915/210151706-42ddf3b1-fab6-482a-bf8c-d70131f6a4c9.png)  
@@ -1682,14 +1684,15 @@ Buffer drives external load, internal paths are decoupled from output paths
 Use back this check_boundary.v:  
 ![image](https://user-images.githubusercontent.com/118953915/210151714-165748db-38c4-40a3-9737-c3e3ddaab75f.png)
 
- Here is the detail of schematic:  
+Here is the detail of schematic:  
 ![image](https://user-images.githubusercontent.com/118953915/210151719-b5c3e3c3-436a-43a0-9244-aeaafc59ce5b.png)
  
 >set_isolate_ports -type buffer [all_outputs]
+ 
 ![image](https://user-images.githubusercontent.com/118953915/210151728-6f9c3285-bc55-4f0a-b676-56b459df6f3d.png)
  
 Set constraints:  
-![image](https://user-images.githubusercontent.com/118953915/210151734-078a5e7f-420a-43a1-8142-0225631becde.png)
+>![image](https://user-images.githubusercontent.com/118953915/210151734-078a5e7f-420a-43a1-8142-0225631becde.png)
 
 Checking timing reports:  
 Before isolating output ports:  
@@ -1700,10 +1703,12 @@ After isolating output ports:
 ![image](https://user-images.githubusercontent.com/118953915/210151758-1ea8ea29-d294-428d-acb9-d9d30006f971.png)
 
 Set constraints:   
-![image](https://user-images.githubusercontent.com/118953915/210151768-45aba9ee-be89-4cb4-9238-da52ca57ff88.png)
+>![image](https://user-images.githubusercontent.com/118953915/210151768-45aba9ee-be89-4cb4-9238-da52ca57ff88.png)
+
 ![image](https://user-images.githubusercontent.com/118953915/210151772-aa550e7a-b6e2-46c9-8010-6a329edaf9c4.png)
 
 > set_multicycle_path -setup 2 -to prod_reg[*]/D -from [all_inputs]  
+
 ![image](https://user-images.githubusercontent.com/118953915/210151780-8c7e8aa1-ac1d-494a-ba6a-423779a02499.png)
 
 Need to reconstraints:  
@@ -1724,5 +1729,10 @@ Need to constraints for hold path too, else will single cycle hold check:
 
 </details> 
 
- 
- To be continue
+#
+# Day_10 
+**⭐QOR**
+
+<details><summary> ⚡ Lecture Session:  - Live session </summary>
+
+### *__Lecture Session__*
