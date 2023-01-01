@@ -10,7 +10,7 @@
 + **[ Day_7 : Basics of STA ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_7)**
 + **[ Day_8 : Advanced SDC Constraints ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_8)**
 + **[ Day_9 : Optimization in synthesis ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_9)**
-+ **[ Day_10 : QOR ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_10)**
++ **[ Day_10 : QOR ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_10)** 
 
 #
 # Day_0 
@@ -1350,7 +1350,7 @@ Comparison among two:
 
 </details> 
  
-<details><summary> Lab Session->Lab14-part1 Set_Max_delay</summary>  
+<details><summary> Lab Session->Lab14: part1 Set_Max_delay</summary>  
  
 Proceed with lab14_circuit.v:  
 <img width="748" alt="image" src="https://user-images.githubusercontent.com/118953915/209574707-0c3c8fe1-508d-4962-9bcc-2076290537cc.png">
@@ -1364,7 +1364,7 @@ After compile_ultra, the tool will optimize:
  
 </details> 
  
-<details><summary> Lab Session->Lab15-part2-VCLK</summary>  
+<details><summary> Lab Session->Lab15: part2-VCLK</summary>  
  
 <img width="781" alt="image" src="https://user-images.githubusercontent.com/118953915/209575088-0eebc843-a1e6-40b9-b694-246c3b8054bf.png">
 <img width="779" alt="image" src="https://user-images.githubusercontent.com/118953915/209575124-7ec562ac-21f0-44d2-ba91-aacbc016085f.png">
@@ -1632,7 +1632,7 @@ For multicycle path:
      
 </details> 
  
-<details><summary> Lab Session->Lab18-Boundary Optimization</summary> 
+<details><summary> Lab Session->Lab18: Boundary Optimization</summary> 
 
  ✏️Recap:  
  ![image](https://user-images.githubusercontent.com/118953915/210151623-f7304e91-3b4a-41ea-b397-51a70d0d750d.png)  
@@ -1656,7 +1656,7 @@ Disadvantage: If at latest stage need to perform function ECO, difficult to trac
                       
 </details> 
  
-<details><summary> Lab Session->Lab19-Register retiming</summary> 
+<details><summary> Lab Session->Lab19: Register retiming</summary> 
 
 ![image](https://user-images.githubusercontent.com/118953915/210151664-ddcb72c3-d848-4bfc-96a0-ec696b3eb5e8.png)
 
@@ -1674,7 +1674,7 @@ Enable retiming-Partition huge combo logic – register retiming
  
 </details> 
  
-<details><summary> Lab Session->Lab20-Isolating output ports</summary> 
+<details><summary> Lab Session->Lab20: Isolating output ports</summary> 
  
 ✏️Recap:  
 Purpose: To prevent internal paths to fail because of external load by isolate the port by using buffer
@@ -1733,11 +1733,11 @@ Need to constraints for hold path too, else will single cycle hold check:
 # Day_10 
 **⭐QOR**
 
-<details><summary> ⚡ Lecture Session: Checking Netlist Quality and Generating Reports - Live session </summary>
+<details><summary> ⚡ Lecture Session: Introduction to course live session</summary>
 
 **Checking Netlist Quality and Generating Reports**
 
- 1. Generating Timing Reports  
+1.Generating Timing Reports  
 -The delays associated with timing parameters are modelled on semiconductor device physics principles  
 -Transistor sizing, their type, and how they are connected to each other contributes to different cells, and in turn different cell delays  
 -Similarly, wires can be modelled in terms of Resistance and Capacitance, which in turn adds to the path delay. The path with the worst delay is the critical path  
@@ -1757,19 +1757,20 @@ Flag/Switch | Details |
 2.The difference between the clock signal’s arrival time (called data required time in the report) and the data signal’s arrival time (data arrival time) is called the slack:  
 > Slack = data required time - data arrival time  
 
-Timing Check | Details | Formula|  
-----|---|---|  
-Setup Check| For your circuit to work at the specified cycle time, the clock signal’s rising edge should always arrive later (or at the same time) than your data signal |slack should be non-negative| Slack = data required time - data arrival time|     
-Hold Check| You want your data to change (data arrival time) a hold-time after the clock signal’s rising edge (data required time) | slack to be non-negative| Slack = -(setup slack) = -(data required time - data arrival time) = data arrival time - data required time|    
+Timing Check | Details | Comments | Formula |  
+----|---|---|---|  
+Setup Check | For your circuit to work at the specified cycle time, the clock signal’s rising edge should always arrive later (or at the same time) than your data signal |  slack should be non-negative| Slack = data required time - data arrival time  |      
+Hold Check | You want your data to change (data arrival time) a hold-time after the clock signal’s rising edge (data required time) | slack to be non-negative| Slack = -(setup slack) = -(data required time - data arrival time) = data arrival time - data required time |    
  
-3. Command:  
+3.Command:  
 (i)check_design   
 ->Checks for design consistency. E.g.: Will report a feedthrough, as we take out_clk in some of our examples directly from the defined clock ->list out warning/error  
 (ii)check_timing  
 ->Checks for the specification of constraints, and also let us know if the provided constraints are enough. It might not specify proper endpoints to be constrained, that we need to justify  
 (iii)report_constraints  
-->provides us with a glimpse as to how our design is feasible in terms of electrical parameters such as power and capacitance <-power.area,timing  
-4. In digital electronics, the fan-out is the number of gate inputs driven by the output of another single logic gate  
+->provides us with a glimpse as to how our design is feasible in terms of electrical parameters such as power and capacitance <-power.area,timing 
+                                                                                                                                                  
+4.In digital electronics, the fan-out is the number of gate inputs driven by the output of another single logic gate  
 -Generally clock nets, reset, scan, enable nets are High Fanout Nets -> high capacitance causing delay  
 -A high fan-out corresponds to a very high capacitance load, which in turn translates to timing violation, because of a high transition time which adds up in the delay calculation  
 -set_max_capacitance helps in breaking or buffering the High fanout net  
@@ -1781,3 +1782,81 @@ Hold Check| You want your data to change (data arrival time) a hold-time after t
 -Synthesis Optimization Parameters: Boundary Optimization, Retiming, Constant propagation, unused flop removal, isolating ports, etc. <- can switch off  
 -Flow: read_verilog, provide dbs, source constraints, check_design, check_timing, compile or compile_ultra, report_constraints, report_area and report_timing, write  
 -QOR: Quality of Results, if you are meeting all your design constraints with good margins, the QOR is good  
+
+5.Synopsys DC User Guide Flow:                                      
+![image](https://user-images.githubusercontent.com/118953915/210175540-f79c9c19-e6de-4f47-b6f9-a1a01c4cb87e.png)  
+Some command details:  
+-set_wire_load_model- Sets  the  wire_load_attach_name  attribute  on  designs, ports, hierarchical cells of current design, for selecting a wire  load model to use in calculating wire capacitance
+-set_propagated_clock- Specifies  propagated  (rather  than  ideal)  clock  latency for listed objects
+
+                                                                                                                                         
+**Findings on QTM/ETM:**     
+1.Timing Models:  
+-If we want to perform static timing analysis on a chip using PrimeTime, every leaf cell must have a timing model  
+For static timing purposes, a leaf cell can be a simple macro cell (NAND, flops,...) or a complex block (RAM, microprocessor,...)  
+-In Flat full chip timing analysis we need to read gate level netlist along with SPEF/SDF, timing libraries and constraints.Using this approach designers should wait till all blocks completion prior to performing full chip timing  
+-Hierarchical STA flow allows you to partition different blocks using timing models which should completely model the full input/output timing characteristics without requiring the complete netlist of the block and Do not model every path in the block  
+-Internal register to register paths are generally discarded, as these paths can be analyzed at the block level using the complete gate-level netlist  
+->Hierarchical STA flow has several benefits. Hierarchical STA reduces runtime and memory usage compared to flat STA. The actual run time savings depend on the design complexity  
+
+Types of Timing Model:  
+(i)ETM Extracted Timing Models  
+(ii)ILM Interface Logic Models  
+(iii)QTM Quick Timing Model  
+
+2.ETM (Extracted Timing Models)  
+-The Extracted Timing Model (ETM) is an abstraction of the block using sequential and combinational timing arcs. NLDM lookup tables are extracted for each of the timing arcs whose delay is a function of input transitions and output loads, which makes the ETM usable with different input transition times and different output loads  
+-Using ETMs to abstract the timing model of a complex block or IP hides the detailed design implementation information  
+This usage model is ideal for IP providers  
+(i) Block based model (lib)  
+(ii) Contents of block are hidden 
+(iii) Original netlist replaced by model containing timing arcs for block interfaces  
+(iv) NLDM lookup tables are extracted for each of the timing arcs  
+(v) These arcs whose delay are a function of input transition and output load. This makes ETM usable with different input transition times and different output loads  
+(vi) Multiple modes per model  
+(vii) Single PVT per model  
+
+-Used for implementation (not sign-off) of IP models. Here the content are protected because the model contains abstracted timing information, without any netlist information  
+ 
+Here is the ETM model Illustration:
+![image](https://user-images.githubusercontent.com/118953915/210175632-13706b44-e4e1-43cd-8abc-52e2cdc450c6.png)  
+ 
+3.QTM (Quick Timing Models)  
+In the early stages of the design cycle, if a block not yet have a netlist, we can use a quick timing model to describe its initial timing. Later in the cycle, we can replace each quick timing model with a netlist block to obtain more accurate timing  
+
+</details> 
+
+<details><summary> ⚡ Lecture Session: Report timing</summary>
+
+**Report timing**  
+ 
+1.Generating Timing reports  
+>report_timing -from DDF_A/clk  
+>report_timing -from DDF_A/clk -to DDF_A/d  
+>report_timing -fall_from DDF_A/clk  
+>report_timing -rise_from DDF_b/clk  
+
+For report_timing-The default setting for delay_type is max  
+>report_timing -delay_type min -to DDF_C/d  
+>report_timing -delay_type min -through INV/a  
+>report_timing -delay_type max -through AND/b  
+>report_timing -rise_from DDF_b/clk -delay_type max -nets -cap -trans -sig 4  
+ 
+2.Propagation delay  
+For INV:  
+![image](https://user-images.githubusercontent.com/118953915/210175697-54a7febc-93ac-44e2-8cb1-1b27ef7e2dc4.png)  
+ 
+For NAND:   
+![image](https://user-images.githubusercontent.com/118953915/210175705-0a49567b-3664-4f29-8c47-94536e9a344c.png)
+
+Here is the examples:   
+![image](https://user-images.githubusercontent.com/118953915/210175710-e759d269-ee32-4806-9fad-64825a2de3f4.png)  
+ 
+![image](https://user-images.githubusercontent.com/118953915/210175721-51aa668f-654d-4bbe-893e-20edc432fdc9.png)  
+
+![image](https://user-images.githubusercontent.com/118953915/210175727-66f04e67-2d2b-475e-9730-400f64279709.png)
+
+</details> 
+ 
+<details><summary> Lab Session->Lab20: Isolating output ports</summary>  
+ 
