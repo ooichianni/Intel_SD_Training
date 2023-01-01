@@ -1858,5 +1858,17 @@ Here is the examples:
 
 </details> 
  
-<details><summary> Lab Session->Lab20: Isolating output ports</summary>  
+<details><summary> Lab Session->Lab21: Report timing ports</summary> 
+
+For lab8_circuit_modified:  
+![image](https://user-images.githubusercontent.com/118953915/210176177-7bc75567-783a-4bc5-93a5-fe5b4c936589.png)  
+![image](https://user-images.githubusercontent.com/118953915/210176184-70414402-37d0-4942-aa85-bcc52e343be7.png)
+![image](https://user-images.githubusercontent.com/118953915/210176192-04eeb015-fbcf-4f92-9022-d18576035862.png)
+Now compare both situation:   
+![image](https://user-images.githubusercontent.com/118953915/210176198-ff8c0c5c-6d4d-4979-b8d6-df075c8f6820.png)
+![image](https://user-images.githubusercontent.com/118953915/210176201-36a8d368-feae-4e62-8240-a828413e897c.png)  
+![image](https://user-images.githubusercontent.com/118953915/210176216-934b2d19-1604-4791-96f5-b83a3482a1e3.png)
+![image](https://user-images.githubusercontent.com/118953915/210176220-bbb12ceb-95f0-43c4-98b3-16c2d5e200a5.png)
+![image](https://user-images.githubusercontent.com/118953915/210176223-7c59ffcc-aaf8-418b-9b49-7e661d8036a0.png)
  
+</details> 
