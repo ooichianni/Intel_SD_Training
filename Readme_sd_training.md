@@ -1625,7 +1625,7 @@ Another situation:
 
 For multicycle path:  
 ![image](https://user-images.githubusercontent.com/118953915/210151547-09e565ff-7c6f-45e9-a41b-dec00addb958.png)  
->set_multicycle_path –setup 2 –from [all_inputs] –to (PROD_REG[*]/D) <- endpoint edge moved forward
+>set_multicycle_path –setup 2 –from [all_inputs] –to (PROD_REG[*]/D) <- endpoint edge moved forward  
 >set_multicycle_path –hold 1 –from [all_inputs] –to (PROD_REG[*]/D) <- launch edge moved forward
 
 ![image](https://user-images.githubusercontent.com/118953915/210151553-c291bd39-8a3f-445a-aacc-768f84c8d55b.png)
