@@ -232,8 +232,10 @@ The cell is having 5 inputs, so there will be 2^5=32 combinations. In the libs w
 -Bigger cell: Less delay, More area, More power  
  
 💡Conclusion: 
- -Pros of Bigger cell: wider transisteor == faster/small delay  
- -Pros of Smaller cell: small area == small power comsume
+ 
+-Pros of Bigger cell: wider transisteor == faster/small delay      
+-Pros of Smaller cell: small area == small power comsume
+ 
 </details>
 <details><summary> Lab Session -> Lab5: Hierarchical vs Flat Synthesis  </summary>
  
