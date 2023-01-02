@@ -1789,8 +1789,12 @@ Some command details:
 -set_wire_load_model- Sets  the  wire_load_attach_name  attribute  on  designs, ports, hierarchical cells of current design, for selecting a wire  load model to use in calculating wire capacitance
 -set_propagated_clock- Specifies  propagated  (rather  than  ideal)  clock  latency for listed objects
 
-                                                                                                                                         
+</details>
+
+<details><summary> Findings on QTM/ETM </summary>
+
 **Findings on QTM/ETM:**     
+ 
 1.Timing Models:  
 -If we want to perform static timing analysis on a chip using PrimeTime, every leaf cell must have a timing model  
 For static timing purposes, a leaf cell can be a simple macro cell (NAND, flops,...) or a complex block (RAM, microprocessor,...)  
@@ -1824,6 +1828,8 @@ Here is the ETM model Illustration:
 3.QTM (Quick Timing Models)  
 In the early stages of the design cycle, if a block not yet have a netlist, we can use a quick timing model to describe its initial timing. Later in the cycle, we can replace each quick timing model with a netlist block to obtain more accurate timing  
 
+>Can refer here for more detials: http://mantravlsi.blogspot.com/2014/06/timing-models-etm-qtm-ilm.html
+ 
 </details> 
 
 <details><summary> ⚡ Lecture Session: Report timing</summary>
@@ -1871,4 +1877,68 @@ Now compare both situation:
 ![image](https://user-images.githubusercontent.com/118953915/210176220-bbb12ceb-95f0-43c4-98b3-16c2d5e200a5.png)
 ![image](https://user-images.githubusercontent.com/118953915/210176223-7c59ffcc-aaf8-418b-9b49-7e661d8036a0.png)
  
+</details> 
+
+<details><summary> Lab Session->Lab22: Lab check_timing, check_design, set_max_capacitance, HFN </summary> 
+ 
+No look for utility inside DC tool to check whether we load design correctly and set constraints correctly  
+>read_verilog DC_WORKSHOP/verilog_files/lab8_circuit_modified.v  
+>link  
+>check_design  
+
+![image](https://user-images.githubusercontent.com/118953915/210192723-d058ffd9-7ede-4ce7-ab95-7c8f8469537b.png)  
+
+Next. without source in constraints  
+>compilte_ultra  
+>check_timing <-check design whether have proper constraints or not 
+                     
+![image](https://user-images.githubusercontent.com/118953915/210192747-05d13bac-595b-4892-9d2d-8b06c824f4c3.png)  
+
+Another command:  
+>report_constraints  
+
+![image](https://user-images.githubusercontent.com/118953915/210192758-740f6add-a861-4d3c-a05b-c04eb4b0d5b5.png)
+
+Now source in constraints and recheck  
+> source lab8_cons.tcl  
+> check_timing  
+
+![image](https://user-images.githubusercontent.com/118953915/210192777-140ca4c8-8173-4658-a45a-49f785d9dd4f.png)
+
+>report_constraints  
+
+![image](https://user-images.githubusercontent.com/118953915/210192786-1f2f2b2c-48de-46ba-8ac6-bd935bd6965c.png)
+
+For mux_generate.v:  
+![image](https://user-images.githubusercontent.com/118953915/210192909-711fc80a-e211-462c-931d-303180c6c692.png)
+![image](https://user-images.githubusercontent.com/118953915/210192914-53833a13-1682-471b-9962-8f4f4f747d37.png)
+![image](https://user-images.githubusercontent.com/118953915/210192917-8c21b68d-ba27-47ca-954b-c95d4040383b.png)
+
+Reduce capacitance:  
+> set_max_capacitance 0.025 [current_design]  
+To check which constraint are violating:  
+> report_constraints -all_violators  
+
+![image](https://user-images.githubusercontent.com/118953915/210192924-892e4891-a99a-4ede-8798-315b42d8f5ea.png)
+![image](https://user-images.githubusercontent.com/118953915/210192929-8042352a-88bb-4102-b24d-9e074aff8a4c.png)
+![image](https://user-images.githubusercontent.com/118953915/210192932-bef04735-1c6f-40d6-a22c-1284c0195b97.png)
+
+High fanout net (HFN)- Huge fanout==net huge loaded  
+Here is the example:  
+![image](https://user-images.githubusercontent.com/118953915/210192943-5431086d-96ee-4c71-bebe-633f827f8778.png)
+![image](https://user-images.githubusercontent.com/118953915/210192944-56025912-73e7-4e38-a069-fb917128960f.png)
+
+Here is the schematic:  
+![image](https://user-images.githubusercontent.com/118953915/210192956-6bf1f6f8-7026-43fc-8f9c-9afad46a26b8.png)  
+![image](https://user-images.githubusercontent.com/118953915/210192962-13423fdf-7dbe-4b07-828f-f8b84cbb1a08.png)
+![image](https://user-images.githubusercontent.com/118953915/210192967-27061082-5616-480a-ae97-3c045a104b5e.png)
+![image](https://user-images.githubusercontent.com/118953915/210192973-a167d3e6-ddb6-4018-99b0-eda2bb35fe10.png)
+![image](https://user-images.githubusercontent.com/118953915/210192977-aee9b1a6-b1eb-4555-be80-7a5751d98b84.png)
+💡 Use this 2 commands to break/buffer the high fanout net (HFN): set_max_capacitance & set_max_transition
+-> else DC tool will take from lib limit, the value is set to around 1.5 which is huge (will not violate, sub-optimal)
+
+✏️ Summarizing:
+
+![image](https://user-images.githubusercontent.com/118953915/210193022-05e1ec3f-25fb-4442-ba5d-610c685d5dde.png)
+
 </details> 
