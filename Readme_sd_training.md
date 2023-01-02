@@ -1769,7 +1769,7 @@ Hold Check | You want your data to change (data arrival time) a hold-time after 
 ->Checks for the specification of constraints, and also let us know if the provided constraints are enough. It might not specify proper endpoints to be constrained, that we need to justify  
 (iii)report_constraints  
 ->provides us with a glimpse as to how our design is feasible in terms of electrical parameters such as power and capacitance <-power.area,timing 
-                                                                                                                                                  
+                                                   
 4.In digital electronics, the fan-out is the number of gate inputs driven by the output of another single logic gate  
 -Generally clock nets, reset, scan, enable nets are High Fanout Nets -> high capacitance causing delay  
 -A high fan-out corresponds to a very high capacitance load, which in turn translates to timing violation, because of a high transition time which adds up in the delay calculation  
@@ -1868,7 +1868,7 @@ Here is the examples:
 
 For lab8_circuit_modified:  
 ![image](https://user-images.githubusercontent.com/118953915/210176177-7bc75567-783a-4bc5-93a5-fe5b4c936589.png)  
-![image](https://user-images.githubusercontent.com/118953915/210176184-70414402-37d0-4942-aa85-bcc52e343be7.png)
+![image](https://user-images.githubusercontent.com/118953915/210193109-756f983c-41d4-4f99-a474-389dc67fa593.png)
 ![image](https://user-images.githubusercontent.com/118953915/210176192-04eeb015-fbcf-4f92-9022-d18576035862.png)
 Now compare both situation:   
 ![image](https://user-images.githubusercontent.com/118953915/210176198-ff8c0c5c-6d4d-4979-b8d6-df075c8f6820.png)
