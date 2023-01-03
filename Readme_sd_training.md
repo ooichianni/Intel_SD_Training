@@ -1954,7 +1954,7 @@ Here is the schematic:
 
 ### *__Lecture Session__*
 
-SoC:A system on a chip or system-on-chip is an integrated circuit that integrates most or all components of a computer or other electronic system  
+$\textcolor{blue}{\text{SoC}}$: A system on a chip or system-on-chip is an integrated circuit that integrates most or all components of a computer or other electronic system  
 
 1. What is SoC and Why SoC?  
 - SoC is a single-die chip that has some different IP cores on it. These IPs could vary from microprocessors (completely digital) to 5G broadband modems (completely analog)  
@@ -1994,7 +1994,7 @@ Additional:
 >Can refer for more details: https://www.youtube.com/watch?v=bor0qLifjz4  
 
 7. Introduction to BabySoC & BabySoC Components  
-- VSDBabySoC is a small chip yet powerful RISCV-based SoC   
+- $\textcolor{blue}{\text{VSDBabySoC}}$ is a small chip yet powerful RISCV-based SoC   
 - The main purpose of designing such a small SoC is to test three open-source IP cores together for the first time and calibrate the analog part of it   
 - VSDBabySoC contains one RVMYTH microprocessor, an 8x-PLL to generate a stable clock, and a 10-bit DAC to communicate with other analog devices  
 
@@ -2002,12 +2002,12 @@ Figure from training video:
 ![image](https://user-images.githubusercontent.com/118953915/210402959-aeb6bb29-8e92-4e2e-b3e3-23ebdd5a342a.png)  
 >Can refer this github for more details: https://github.com/manili/VSDBabySoC/blob/main/README.md#vsdbabysoc-modeling  
 
-- RVMYTH: RVMYTH core is a simple RISCV-based CPU  
-- -RISC-V is an instruction set architecture (ISA) rooted in reduced instruction set computer (RISC) principles  
+- $\textcolor{blue}{\text{RVMYTH}}$: RVMYTH core is a simple RISCV-based CPU  
+- -$\textcolor{blue}{\text{RISC-V}}$ is an instruction set architecture (ISA) rooted in reduced instruction set computer (RISC) principles  
 - -An Instruction Set Architecture (ISA) is part of the abstract model of a computer that defines how the CPU is controlled by the software  
 - -A reduced instruction set computer (RISC) is a computer designed to simplify the individual instructions given to the computer to accomplish tasks  
 
-RISC  
+$\textcolor{blue}{\text{RISC}}$  
 - RISC processor has ‘instruction sets’ that are simple and have simple ‘addressing modes’. A RISC style instruction engages “one word” in memory. Execution of the RISC instructions are faster and take one clock cycle per instruction  
 - RISC processor is implemented using the hardwired control unit. The hardwired control unit produces control signals which regulate the working of processors hardware. RISC architecture emphasizes on using the registers rather than memory  
 ![image](https://user-images.githubusercontent.com/118953915/210403010-0beaf654-99a9-4d3a-875c-2f166ce3f91f.png)  
@@ -2017,18 +2017,18 @@ RISC Instruction Sets
 - RISC instructions operate on processor registers only  
 - The instructions that have arithmetic and logic operation should have their operand either in the processor register or should be given directly in the instruction. This is because the registers are the ‘fastest’ available memory source  
 - The registers are physically small and are placed on the same chip where the ALU and the control unit are placed on the processor  
-- Example of RISC instruction sets:   
+>Example of RISC instruction sets:   
 >The Load instruction loads the operand present in memory to the processor register  
 >Load R2, A // load the operand present at memory location A to the processor register R2  
  
 >Can refer here for more details on ISA: https://binaryterms.com/risc-processor.html  
  
-PLL  
+ $\textcolor{blue}{\text{PLL}}$  
 - A phase-locked loop (PLL) is a control system that generates an output signal whose phase is related to the phase of an input signal   
 - PLLs are widely used for synchronization purposes, including clock generation and distribution  
 >Can refer here for more information: https://github.com/bharath19-gs/avsdpll28nm/  
 
-DAC
+ $\textcolor{blue}{\text{DAC}}$
 - A digital-to-analog converter or DAC is a system that converts a digital signal into an analog signal. Converts a digital input signal into an analog output signal from a number of binary inputs into a single output). In general, the number of binary inputs of a DAC will be a power of two  
 - DACs are widely used in modern communication systems enabling the generation of digitally-defined transmission signals
 - There are two types of DACs :Weighted Resistor DAC & R-2R Ladder DAC  
