@@ -2000,7 +2000,7 @@ Additional:
 
 Figure from training video:  
 ![image](https://user-images.githubusercontent.com/118953915/210402959-aeb6bb29-8e92-4e2e-b3e3-23ebdd5a342a.png)  
->Can refer this github for more details: https://github.com/manili/VSDBabySoC/blob/main/README.md#vsdbabysoc-modeling  
+>Can refer this github for more details: https://github.com/manili/VSDBabySoC/blob/main/README.md#introduction-to-the-vsdbabysoc   
 
 - $\textcolor{blue}{\text{RVMYTH}}$: RVMYTH core is a simple RISCV-based CPU  
   - $\textcolor{blue}{\text{RISC-V}}$ is an instruction set architecture (ISA) rooted in reduced instruction set computer (RISC) principles  
@@ -2048,6 +2048,6 @@ RISC Instruction Sets
 - So, we have got 3 main elements (IP cores) and a wrapper as an SoC and of-course there would be also a testbench module out there  
 - -> Complete Physical Design Flow of VSDBabySoC [consisting of RVMYTH (Digital block), PLL & DAC(Analog blocks) ] 
 
-Refer this github for modelling details: https://github.com/manili/VSDBabySoC/blob/main/README.md#vsdbabysoc-modeling  
+>Refer this github for modelling details: https://github.com/manili/VSDBabySoC/blob/main/README.md#vsdbabysoc-modeling  
  
 </details>
