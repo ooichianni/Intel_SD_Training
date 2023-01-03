@@ -1980,7 +1980,7 @@ $\textcolor{blue}{\text{SoC}}$: A system on a chip or system-on-chip is an integ
 
 Additional: 
 - A peripheral is any computing device or equipment that is part of the computer but doesn't perform any core computing process. It is an externally or internally connected device that adds up or complements the host computer's capabilities or functionality in some form (keyboard, mouse)  
-- A universal asynchronous receiver-transmitter (UART) is a computer hardware device for asynchronous serial communication in which the data format and transmission speeds are configurable. It sends data bits one by one, from the least significant to the most significant, framed by start and stop bits so that precise timing is handled by the communication channel  
+- A universal asynchronous receiver-transmitter ( $\textcolor{blue}{\text{UART}}$ ) is a computer hardware device for asynchronous serial communication in which the data format and transmission speeds are configurable. It sends data bits one by one, from the least significant to the most significant, framed by start and stop bits so that precise timing is handled by the communication channel  
 
 5. SoC Design Flow  
 ![image](https://user-images.githubusercontent.com/118953915/210402906-616d374c-3345-401b-8344-c0ea1d29546f.png)  
@@ -2025,13 +2025,19 @@ RISC Instruction Sets
  
  $\textcolor{blue}{\text{PLL}}$  
 - A phase-locked loop (PLL) is a control system that generates an output signal whose phase is related to the phase of an input signal   
-- PLLs are widely used for synchronization purposes, including clock generation and distribution  
+- PLL are widely used for synchronization purposes, including clock generation and distribution   
+- PLL is an electronic circuit with a voltage or voltage-driven oscillator that constantly adjusts to match the frequency of an input signal  
+- PLLs are used to generate, stabilize, modulate, demodulate, filter or recover a signal from a "noisy" communications channel where data has been interrupted  
+- The main goal of a PLL is to synchronize the output oscillator signal with a reference signal. Even if the two signals have the same frequency, their peaks and troughs may not occur in the same place. Simply put, they do not reach the same point on the waveform at the same time  
+- Phase difference-this is measured as the angle between the signals. For signals with varying frequencies, the phase difference between them will always vary, which means that one signal will lag or lead the other by a varying amount   
 >Can refer here for more information: https://github.com/bharath19-gs/avsdpll28nm/  
 
  $\textcolor{blue}{\text{DAC}}$
 - A digital-to-analog converter or DAC is a system that converts a digital signal into an analog signal. Converts a digital input signal into an analog output signal from a number of binary inputs into a single output). In general, the number of binary inputs of a DAC will be a power of two  
 - DACs are widely used in modern communication systems enabling the generation of digitally-defined transmission signals
-- There are two types of DACs :Weighted Resistor DAC & R-2R Ladder DAC  
+- There are two types of DACs :Weighted Resistor DAC & R-2R Ladder DAC:  
+  - The R-2R ladder DAC constructed as a binary-weighted DAC that uses a repeating cascaded structure of resistor values R and 2R. This improves the precision due to the relative ease of producing equal valued-matched resistors (or current sources)  
+
 >Can refer here for more information: https://github.com/Devipriya1921/avsddac28nm  
 
 8. Introduction to Modelling  
