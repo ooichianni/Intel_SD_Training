@@ -11,6 +11,7 @@
 + **[ Day_8 : Advanced SDC Constraints ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_8)**
 + **[ Day_9 : Optimization in synthesis ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_9)**
 + **[ Day_10 : QOR ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_10)** 
++ **[ Day_11 : Introduction to the BabySoC ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_11)** 
 
 #
 # Day_0 
@@ -1944,3 +1945,13 @@ Here is the schematic:
 ![image](https://user-images.githubusercontent.com/118953915/210193022-05e1ec3f-25fb-4442-ba5d-610c685d5dde.png)
 
 </details> 
+
+#
+# Day_11 
+**⭐ Introduction to the BabySoC**
+
+<details><summary> ⚡ Lecture Session: Introduction to the BabySoC - Live session </summary>
+
+### *__Lecture Session__*
+
+</details>
