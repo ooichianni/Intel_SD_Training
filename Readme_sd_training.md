@@ -2030,7 +2030,7 @@ RISC Instruction Sets
 - PLLs are used to generate, stabilize, modulate, demodulate, filter or recover a signal from a "noisy" communications channel where data has been interrupted  
 - The main goal of a PLL is to synchronize the output oscillator signal with a reference signal. Even if the two signals have the same frequency, their peaks and troughs may not occur in the same place. Simply put, they do not reach the same point on the waveform at the same time  
 - Phase difference-this is measured as the angle between the signals. For signals with varying frequencies, the phase difference between them will always vary, which means that one signal will lag or lead the other by a varying amount   
->Can refer here for more information: https://github.com/bharath19-gs/avsdpll28nm/  
+>Can refer here for more information: https://github.com/bharath19-gs/avsdpll28nm/#pll    
 
  $\textcolor{blue}{\text{DAC}}$
 - A digital-to-analog converter or DAC is a system that converts a digital signal into an analog signal. Converts a digital input signal into an analog output signal from a number of binary inputs into a single output). In general, the number of binary inputs of a DAC will be a power of two  
@@ -2039,7 +2039,7 @@ RISC Instruction Sets
   - A weighted resistor DAC produces an analog output, which is almost equal to the digital (binary) input by using binary weighted resistors in the inverting adder circuit. In short, a binary weighted resistor DAC is called as weighted resistor DAC  
   - The R-2R ladder DAC constructed as a binary-weighted DAC that uses a repeating cascaded structure of resistor values R and 2R. This improves the precision due to the relative ease of producing equal valued-matched resistors (or current sources)  
 
->Can refer here for more information: https://github.com/Devipriya1921/avsddac28nm  
+>Can refer here for more information: https://github.com/Devipriya1921/avsddac28nm#introduction    
 
 8. Introduction to Modelling  
 - Some initial input signals will be fed into BabySoC module that make the pll start generating the proper CLK for the circuit
