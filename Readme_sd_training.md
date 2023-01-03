@@ -2003,9 +2003,9 @@ Figure from training video:
 >Can refer this github for more details: https://github.com/manili/VSDBabySoC/blob/main/README.md#vsdbabysoc-modeling  
 
 - $\textcolor{blue}{\text{RVMYTH}}$: RVMYTH core is a simple RISCV-based CPU  
-- -$\textcolor{blue}{\text{RISC-V}}$ is an instruction set architecture (ISA) rooted in reduced instruction set computer (RISC) principles  
-- -An Instruction Set Architecture (ISA) is part of the abstract model of a computer that defines how the CPU is controlled by the software  
-- -A reduced instruction set computer (RISC) is a computer designed to simplify the individual instructions given to the computer to accomplish tasks  
+  - $\textcolor{blue}{\text{RISC-V}}$ is an instruction set architecture (ISA) rooted in reduced instruction set computer (RISC) principles  
+  - An Instruction Set Architecture (ISA) is part of the abstract model of a computer that defines how the CPU is controlled by the software  
+  - A reduced instruction set computer (RISC) is a computer designed to simplify the individual instructions given to the computer to accomplish tasks  
 
 $\textcolor{blue}{\text{RISC}}$  
 - RISC processor has ‘instruction sets’ that are simple and have simple ‘addressing modes’. A RISC style instruction engages “one word” in memory. Execution of the RISC instructions are faster and take one clock cycle per instruction  
