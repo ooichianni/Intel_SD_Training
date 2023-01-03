@@ -1950,7 +1950,7 @@ Here is the schematic:
 # Day_11 
 **⭐ Introduction to the BabySoC**
 
-<details><summary> ⚡ Lecture Session: Introduction to the BabySoC - Live session </summary>
+<details><summary> ⚡ Lecture Session: Introduction to the BabySoC </summary>
 
 ### *__Lecture Session__*
 
@@ -2046,5 +2046,8 @@ RISC Instruction Sets
 - The clock signal will make the rvmyth to execute instructions in its imem. As a result, the register r17 will be filled with some values cycle by cycle  
 - These values are used by dac core to provide the final output signal named OUT  
 - So, we have got 3 main elements (IP cores) and a wrapper as an SoC and of-course there would be also a testbench module out there  
+- -> Complete Physical Design Flow of VSDBabySoC [consisting of RVMYTH (Digital block), PLL & DAC(Analog blocks) ] 
 
+Refer this github for modelling details: https://github.com/manili/VSDBabySoC/blob/main/README.md#vsdbabysoc-modeling  
+ 
 </details>
