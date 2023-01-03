@@ -2035,7 +2035,8 @@ RISC Instruction Sets
  $\textcolor{blue}{\text{DAC}}$
 - A digital-to-analog converter or DAC is a system that converts a digital signal into an analog signal. Converts a digital input signal into an analog output signal from a number of binary inputs into a single output). In general, the number of binary inputs of a DAC will be a power of two  
 - DACs are widely used in modern communication systems enabling the generation of digitally-defined transmission signals
-- There are two types of DACs :Weighted Resistor DAC & R-2R Ladder DAC:  
+- There are two types of DACs: Weighted Resistor DAC & R-2R Ladder DAC:  
+  - A weighted resistor DAC produces an analog output, which is almost equal to the digital (binary) input by using binary weighted resistors in the inverting adder circuit. In short, a binary weighted resistor DAC is called as weighted resistor DAC  
   - The R-2R ladder DAC constructed as a binary-weighted DAC that uses a repeating cascaded structure of resistor values R and 2R. This improves the precision due to the relative ease of producing equal valued-matched resistors (or current sources)  
 
 >Can refer here for more information: https://github.com/Devipriya1921/avsddac28nm  
