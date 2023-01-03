@@ -1954,4 +1954,90 @@ Here is the schematic:
 
 ### *__Lecture Session__*
 
+SoC:A system on a chip or system-on-chip is an integrated circuit that integrates most or all components of a computer or other electronic system  
+
+1. What is SoC and Why SoC?  
+- SoC is a single-die chip that has some different IP cores on it. These IPs could vary from microprocessors (completely digital) to 5G broadband modems (completely analog)  
+- The design of a system on chip usually includes a central processing unit, memory, ports for input and outputs, secondary storage devices, and peripheral interfaces such as Timers, etc  
+- Depending upon the requirement it can also consist of a digital or analog signal processing system or a floating-point unit  
+- SoC with equivalent functionality will have increased performance and reduced power consumption as well as a smaller semiconductor die area  
+
+2. Typical structure of Snapdragon SoC  
+![image](https://user-images.githubusercontent.com/118953915/210402865-7f35f2d6-b2d4-4ec3-8f24-d6c95a8c8ea8.png)  
+- A Central Processing Unit (CPU) is electronic machinery that carries out instructions from programs that allows a computer or other device to perform its tasks  
+- The graphics processing unit (GPU) in your device helps handle graphics-related work like graphics, effects, and videos  
+- Digital Signal Processors (DSP) take real-world signals like voice, audio, video, temperature, pressure, or position that have been digitized and then mathematically manipulate them  
+
+ 3. Types of SoC  
+(i) SoCs built around a microcontroller   
+(ii)SoCs built around a microprocessor, often found in cell phones (Oppo Reno: snapdragon)    
+(iii)Specialized application-specific integrated circuit SoCs designed for specific applications that do not fit into the above two categories    
+ 
+4. SoC Structure  
+- An SoC consists of hardware functional units, including microprocessors that run software code, as well as a communications subsystem to connect, control, direct and interface between these functional modules  
+- Functional components: Processor Cores (multi core), Memory(RAM,ROM), Interfaces, Digital Signal Processor (decoding images), decoder and encoder (interacting information, converting into code), others  
+- Intermodule communication: Bus-Based Communication, Network on a chip  
+
+Additional: 
+- A peripheral is any computing device or equipment that is part of the computer but doesn't perform any core computing process. It is an externally or internally connected device that adds up or complements the host computer's capabilities or functionality in some form (keyboard, mouse)  
+- A universal asynchronous receiver-transmitter (UART) is a computer hardware device for asynchronous serial communication in which the data format and transmission speeds are configurable. It sends data bits one by one, from the least significant to the most significant, framed by start and stop bits so that precise timing is handled by the communication channel  
+
+5. SoC Design Flow  
+![image](https://user-images.githubusercontent.com/118953915/210402906-616d374c-3345-401b-8344-c0ea1d29546f.png)  
+ 
+6. How are Microchips made?
+- The microchip manufacturing process involves hundreds of steps and can take up to four months from design to mass production  
+- Silicon is a semiconductor. This means that it can conduct electricity and also act as an insulator. To allow it to become conductive, small quantities of specific atoms are added as impurities to the wafer. These impurity atoms must have a number of outer electrons that is either one more or one less than that of silicon  
+- Steps: Making wafers->Masking->Etching->Doping->Testing->Packaging  
+  
+>Can refer for more details: https://www.infineon.com/cms/en/product/promopages/how-a-chip-is-made-video/  
+>Can refer for more details: https://www.youtube.com/watch?v=bor0qLifjz4  
+
+7. Introduction to BabySoC & BabySoC Components  
+- VSDBabySoC is a small chip yet powerful RISCV-based SoC   
+- The main purpose of designing such a small SoC is to test three open-source IP cores together for the first time and calibrate the analog part of it   
+- VSDBabySoC contains one RVMYTH microprocessor, an 8x-PLL to generate a stable clock, and a 10-bit DAC to communicate with other analog devices  
+
+Figure from training video:  
+![image](https://user-images.githubusercontent.com/118953915/210402959-aeb6bb29-8e92-4e2e-b3e3-23ebdd5a342a.png)  
+>Can refer this github for more details: https://github.com/manili/VSDBabySoC/blob/main/README.md#vsdbabysoc-modeling  
+
+- RVMYTH: RVMYTH core is a simple RISCV-based CPU  
+- -RISC-V is an instruction set architecture (ISA) rooted in reduced instruction set computer (RISC) principles  
+- -An Instruction Set Architecture (ISA) is part of the abstract model of a computer that defines how the CPU is controlled by the software  
+- -A reduced instruction set computer (RISC) is a computer designed to simplify the individual instructions given to the computer to accomplish tasks  
+
+RISC  
+- RISC processor has ‘instruction sets’ that are simple and have simple ‘addressing modes’. A RISC style instruction engages “one word” in memory. Execution of the RISC instructions are faster and take one clock cycle per instruction  
+- RISC processor is implemented using the hardwired control unit. The hardwired control unit produces control signals which regulate the working of processors hardware. RISC architecture emphasizes on using the registers rather than memory  
+![image](https://user-images.githubusercontent.com/118953915/210403010-0beaf654-99a9-4d3a-875c-2f166ce3f91f.png)  
+  
+RISC Instruction Sets  
+- RISC instructions are simple and are of fixed size. Each RISC instruction engages a single memory word   
+- RISC instructions operate on processor registers only  
+- The instructions that have arithmetic and logic operation should have their operand either in the processor register or should be given directly in the instruction. This is because the registers are the ‘fastest’ available memory source  
+- The registers are physically small and are placed on the same chip where the ALU and the control unit are placed on the processor  
+- Example of RISC instruction sets:   
+>The Load instruction loads the operand present in memory to the processor register  
+>Load R2, A // load the operand present at memory location A to the processor register R2  
+ 
+>Can refer here for more details on ISA: https://binaryterms.com/risc-processor.html  
+ 
+PLL  
+- A phase-locked loop (PLL) is a control system that generates an output signal whose phase is related to the phase of an input signal   
+- PLLs are widely used for synchronization purposes, including clock generation and distribution  
+>Can refer here for more information: https://github.com/bharath19-gs/avsdpll28nm/  
+
+DAC
+- A digital-to-analog converter or DAC is a system that converts a digital signal into an analog signal. Converts a digital input signal into an analog output signal from a number of binary inputs into a single output). In general, the number of binary inputs of a DAC will be a power of two  
+- DACs are widely used in modern communication systems enabling the generation of digitally-defined transmission signals
+- There are two types of DACs :Weighted Resistor DAC & R-2R Ladder DAC  
+>Can refer here for more information: https://github.com/Devipriya1921/avsddac28nm  
+
+8. Introduction to Modelling  
+- Some initial input signals will be fed into BabySoC module that make the pll start generatingtheproper CLK for the circuit
+- The clock signal will make the rvmyth to execute instructions in its imem. As a result, theregisterr17 will be filled with some values cycle by cycle  
+- These values are used by dac core to provide the final output signal named OUT  
+- So, we have got 3 main elements (IP cores) and a wrapper as an SoC and of-course therewouldbealso a testbench module out there  
+
 </details>
