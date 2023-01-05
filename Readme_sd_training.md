@@ -2213,6 +2213,7 @@ Here is the waveform:
 >File copy from: https://github.com/vsdip/rvmyth_avsddac_interface/tree/main/iverilog/Pre-synthesis  
 
 - In both of the .v file having data type: real  
+![image](https://user-images.githubusercontent.com/118953915/210855614-15839cd1-ba53-49e5-9694-f852e8fa12f2.png)  
 A real data type is a data type used in a computer program to represent an approximation of a real number. Because the real numbers are not countable, computers cannot represent them exactly using a finite amount of information. Most often, a computer will use a rational approximation to a real number.  
 ![image](https://user-images.githubusercontent.com/118953915/210846453-ae262ecb-de0b-46bd-9f3c-b6e85036c142.png)  
 -Both file using for DAC is picking from pre_synthesis, both file is not synthesizable since consists mixture of analog   
@@ -2225,19 +2226,29 @@ Here is the waveform:
 In another form:  
 <img width="747" alt="image" src="https://user-images.githubusercontent.com/118953915/210847250-abc40467-52d4-410f-8fb2-3ececab117ca.png">
 
+![image](https://user-images.githubusercontent.com/118953915/210854798-610ca33c-adbd-41d8-bc78-743bfbab8862.png)  
+>DAC Calculator: https://www.rfwireless-world.com/calculators/n-bit-DAC-resolution-calculator.html
+
 (C) For modelling PLL (analog):   
-![image](https://user-images.githubusercontent.com/118953915/210847374-86a83d33-4ba8-4c1f-87b8-62f6b03ec3e8.png)  
+![image](https://user-images.githubusercontent.com/118953915/210847374-86a83d33-4ba8-4c1f-87b8-62f6b03ec3e8.png) 
+From reference github:   
+![image](https://user-images.githubusercontent.com/118953915/210856650-80f9570a-7e0c-4a61-a8f3-ea11686fce4b.png)
+<img width="554" alt="image" src="https://user-images.githubusercontent.com/118953915/210857236-a39b70d2-7e5d-42a9-bc0b-8052a64b58de.png">  
+ 
 Here is the waveform:  
 ![image](https://user-images.githubusercontent.com/118953915/210847407-48136ca5-5911-462a-b215-760d4d572fa4.png)  
 
 (D) For DAC and RVMYTH:
 -> Again required to remove “wire” infront of real  
 ![image](https://user-images.githubusercontent.com/118953915/210847617-2af19b57-1583-4347-83e5-d4f4097dffc1.png)
+After modified:  
+<img width="581" alt="image" src="https://user-images.githubusercontent.com/118953915/210858533-8c4e69a6-ff5f-4de0-81f2-297f65a816c1.png">  
 
 Here is the run:  
 ![image](https://user-images.githubusercontent.com/118953915/210848237-cff3610e-b712-40c2-933e-3d32e6616642.png)  
 
 Here is the waveform:  
+->The clock signal will make the rvmyth (RISCV based processor) to execute instructions and some values are generated, these values are used by DAC core to provide the final output signal named OUT  
 ![image](https://user-images.githubusercontent.com/118953915/210849719-9b9e603f-fb55-4a29-83a5-b685bdf2eb1f.png)
 In another form:  
 ![image](https://user-images.githubusercontent.com/118953915/210849760-6a067b68-4ffe-47c0-81ee-8bbfe61d8561.png)   
@@ -2247,4 +2258,40 @@ In another form:
 >vcs vsdbabysoc.v testbench.v -sverilog +lint=TFIPC-L  
 ![image](https://user-images.githubusercontent.com/118953915/210848508-3b1e80bc-4cd0-4689-b815-f31c0fe687a1.png)
 
+Here is both the .v:  
+<img width="482" alt="image" src="https://user-images.githubusercontent.com/118953915/210859177-dd03fa26-79e3-4b0b-8b53-e5c949e8de2f.png">
+![image](https://user-images.githubusercontent.com/118953915/210860045-05fd6e4a-e565-4506-87dc-f9eb44afbe03.png)  
 
+Here is the waveform:  
+![image](https://user-images.githubusercontent.com/118953915/210860675-0fe20132-af5a-44e7-9a06-50a1f90a1920.png)  
+
+✏️ Recap introduction from Day-11:  
+VSDBabySoC contains one RVMYTH microprocessor, an 8x-PLL to generate a stable clock, and a 10-bit DAC to communicate with other analog devices  
+Some initial input signals will be fed into BabySoC module that make the pll start generatingtheproper CLK for the circuit  
+- The clock signal will make the rvmyth to execute instructions in its imem. As a result, theregisterr17 will be filled with some values cycle by cycle  
+- These values are used by dac core to provide the final output signal named OUT  
+- So, we have got 3 main elements (IP cores) and a wrapper as an SoC and a testbench module  
+
+For debug in interactuve mode:   
+> vcs -lca -debug_access+all -full64 mythcore_test.v tb_mythcore_test.v
+> ./simv -gui &
+
+![image](https://user-images.githubusercontent.com/118953915/210861208-ff26a42f-bb29-41be-b7c6-544612eebade.png)  
+
+</details>
+
+<details><summary> Lab Session-> Assignment: Simulation of basic circuit using VCS </summary>  
+
+**Design Half Adder**
+-> The Half Adder is a type of combinational logic circuit that adds two of the 1-bit binary digits. It generates carry and sum of both the inputs.  
+ 
+In order to dump out .vcd file, must add in these 2 lines in testbench file:
+![image](https://user-images.githubusercontent.com/118953915/210861666-647eaf7a-62b3-4231-aef6-70fd30e477aa.png)
+
+Here is the details:  
+<img width="461" alt="image" src="https://user-images.githubusercontent.com/118953915/210864005-705a79c1-e3b7-4534-a7c2-ee517e99400f.png">
+
+Here is the waveform:
+![image](https://user-images.githubusercontent.com/118953915/210861791-50350a7d-5386-4fa5-b83e-f63822cd2248.png)
+
+</details>
