@@ -12,6 +12,7 @@
 + **[ Day_9 : Optimization in synthesis ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_9)**
 + **[ Day_10 : QOR ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_10)** 
 + **[ Day_11 : Introduction to the BabySoC ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_11)** 
++ **[ Day_12 : BabySoC Modelling ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_12)**
 
 #
 # Day_0 
@@ -2051,3 +2052,142 @@ RISC Instruction Sets
 >Refer this github for modelling details: https://github.com/manili/VSDBabySoC/blob/main/README.md#vsdbabysoc-modeling  
  
 </details>
+
+#
+# Day_12 
+**⭐BabySoC Modelling**
+
+<details><summary> ⚡ Lecture Session: BabySoC Modelling - Live session </summary>
+
+### *__Lecture Session__*  
+✏️ Recap on SoC  
+- SoC is a single-die chip that has some different IP cores on it. These IPs could vary from microprocessors (completely digital) to 5G broadband modems (completely analog)  
+- SoC with equivalent functionality will have increased performance and reduced power consumption as well as a smaller semiconductor die area  
+
+1. What does modelling mean?  
+- $\textcolor{blue}{\text{Modelling and simulation}}$ is the use of a physical or logical representation of a given system to generate data and help determine decisions or make predictions about the system  
+- Models are representations that can aid in defining, analyzing, and communicating a set of concepts  
+- Modelling and simulation is widely used in the VLSI domain <- prevent lost  
+
+$\textcolor{blue}{\text{Purpose of modelling}}$ :  
+System models are specifically developed to  
+-support analysis, specification <- meet spec  
+- design <- make sense  
+-verification <- functionality  
+-and validation of a system <-dft  
+-to communicate certain information <- ensure no glitch   
+
+2. Modelling of the VSDBaby SoC  
+- Going to model and simulate the VSDBabySoC, model the 3 main IP cores: RVMYTH modelling, PLL modelling, DAC modelling  
+- Some initial input signals will be fed into VSDBabySoC module,that will get the PLL start generating the proper CLK for the circuit  
+- The clock signal will make the rvmyth (RISCV based processor) to execute instructions and some values are generated, these values are used by DAC core to provide the final output signal named OUT  
+- So we have 3 main elements (IP cores) and a wrapper as an SoC and of-course there would be also a testbench module out there  
+- RVMYTH (Digital block), PLL & DAC(Analog blocks)  
+
+$\textcolor{blue}{\text{RVMYTH}}$ - Risc-V based MYTH (Microprocessor for You in Thirty Hours)  
+-RISC stands for Reduced instruction set computer  
+-RISC-V(pronounced “risk-five”) ISA is defined as a base integer ISA, which must be present in any implementation, plus optional extensions to the base ISA  
+-Each base integer instruction set is characterized by the width of the integer registers and the corresponding size of the address space and by the number of integer registers. There are two primary base integer variants, RV32I and RV64I  
+
+Additional:  
+- A program counter (PC) is a register in a computer processor that contains the address (location) of the instruction being executed at the current time. As each instruction gets fetched, the program counter increases its stored value by 1  
+- An arithmetic logic unit (ALU) is a combinational digital circuit that performs arithmetic and bitwise operations on integer binary numbers  
+
+To improve the performance of a CPU we have two options:   
+(i) Improve the hardware by introducing faster circuits   
+(ii) Arrange the hardware such that more than one operation can be performed at the same time   
+Since there is a limit on the speed of hardware and the cost of faster circuits is quite high, we have to adopt the 2nd option   
+
+$\textcolor{blue}{\text{Pipelined}}$  
+- Pipelining is a process of arrangement of hardware elements of the CPU such that its overall performance is increased. Simultaneous execution of more than one instruction takes place in a pipelined processor  
+
+->6 Cycle Pipeline Stages RISC processor has 6 stage instruction pipeline to execute all the instructions in the RISC instruction set   
+
+Following are the stages of the RISC pipeline with their respective operations:  
+Stage | Step | Detail |  
+--- | --- | --- |   
+1 | Program counter | A register in a computer processor that contains the address (location) of the instruction being executed at the current time |  
+2 | Instruction Fetch | The CPU reads instructions from the address in the memory whose value is present in the program counter|  
+3 | Instruction Decode | Instruction is decoded and the register file is accessed to get the values from the registers used in the instruction|  
+4 | Memory Access | In this stage, memory operands are read and written from/to the memory that is present in the instruction|  
+5 | Instruction Execute | ALU operations are performed |  
+6 | Write Back | In this stage, computed/fetched value is written back to the register present in the instructions or internal memory |  
+
+A $\textcolor{blue}{\text{phase-locked loop (PLL)}}$  is an electronic circuit with a voltage or voltage-driven oscillator that constantly adjusts to match the frequency of an input signal   PLLs are used to generate, stabilize, modulate, demodulate etc  
+Why do we need a PLL for our SoC?  
+Clock generated-Quartz crystal oscillator (off chip oscillator for 100Mhz and below)  
+
+Why off-chip clocks can’t be used all the time?  
+-The clock will be a supply for a lot of blocks on the chip, it will have delays due to long wires caused by RC (if used only one clock source) - also reasons like clock jitter  
+-Some blocks/IP might need 200Mhzs and some might need 100Mhz (each point is different frequencies just on one small chip)  
+-A concept of ppm(clock accuracy) comes in, whenever quartz is acquired, it comes with a x ppm error  
+What is this parts per million (ppm) error?   
+For example:  20ppm quartz used in watches, this translates as 20/1e6 (2e-5) which  gives an error over a day of 86400 * 2e-5 = 1.73 seconds delay per day, so in a month it loses 30 x1.72 = 51 seconds or 1 minute a month  
+So in terms of a chip, the mishap cause due to very small error for microseconds, but when the processor works at nanoseconds it can be a huge problem  
+So we need PLL used on SoC’s  
+-Main components: Phase detector, Loop filter, Voltage controlled oscillator (change based on voltage), Frequency divider (make sure we can use multiple frequency from each IPs)  
+
+![image](https://user-images.githubusercontent.com/118953915/210840409-fd848fdb-d540-4f56-9692-989ea9fe141f.png)  
+ The main goal of a PLL is to synchronize the output oscillator signal with a reference signal  
+->It will lock the phase (angle difference among 2 signals), then will decide the frequency and given to all the blocks on the chip   
+
+$\textcolor{blue}{\text{Digital-to-Analog Converter}}$  
+- A Digital to Analog Converter (DAC) converts a digital input signal into an analog output signal. 
+- The digital signal is represented with a binary code, which is a combination of bits 0 and 1. 
+DAC consists of a number of binary inputs and a single output.
+- In general, the number of binary inputs of a DAC will be a power of two.
+
+There are two types of DACs :
+$\textcolor{blue}{\text{Weighted Resistor DAC}}$   
+A weighted resistor DAC produces an analog output, which is almost equal to the digital (binary) input by using binary weighted resistors in the inverting adder circuit. In short, a binary weighted resistor DAC is called as weighted resistor DAC  
+-> Disadvantage: Will have a lot register on ship, more power consumption causing temperature increase then silicon can’t operate properly  
+
+$\textcolor{blue}{\text{R-2R Ladder DAC}}$   
+The R-2R Ladder DAC overcomes the disadvantages of a binary weighted resistor DAC. As the name suggests, R-2R Ladder DAC produces an analog output, which is almost equal to the digital (binary) input by using a R-2R ladder network in the inverting adder circuit  
+-> For VSDBabySoC will having 10-Bit DAC  
+>Can refer here for calculation details: https://www.electronics-tutorials.ws/combination/r-2r-dac.html
+
+3. Basic introduction to Synopsys VCS  
+- RVMYTH is a digital block, will use Verilog(HDL) for designing and checking functionality using a testbench  
+- Verilog can’t synthesis analog design We are going to simulate it using verilog itself, we will be using data-types such real
+- Goal is to be able to simulate “functionality” - to verify its logical correctness  
+- Will use verilog to model and use VCS to simulate  
+- VCS is a high-performance, high-capacity Verilog simulator that incorporates advanced, high-level abstraction verification technologies into a single open native platform  
+
+4. Modelling and simulating on VCS involves 2 main steps, namely:  
+(i) Compilation - VCS builds the instance hierarchy and generates a binary executable simv. This binary executable is later used for simulation  
+(ii) Simulation - During compilation, VCS generates a binary executable, simv. We can use simv to run the simulation  
+->There are 2 types mainly - Interactive mode and batch mode  
+
+- For modelling and simulation interactive mode is preferred
+- In interactive mode, we mean to say debug the design and so on. 
+- One down side is - the compilation will not be “optimized” 
+
+VCS has the following compile-time options for debug mode:   
+mode | details |  
+--- | --- |  
+-debug_pp| Gives best performance with the ability to generate the VPD/VCD file for post-process debug. It is the recommended option for postprocess debug|  
+-debug | Gives average performance and debug visibility/control i.e more visibility/control than –debug_pp and better performance than – debug_all |  
+-debug_access+all | Enable all debug capability|  
+-debug_all | Gives the most visibility/control and you can use this option typically for debugging with interactive simulation|  
+-debug_region=()(+) | Have better control over the performance of -debug_access. This option enables you to apply debugging capabilities to the desired portion of a design (DUT, cell, testbench (TB), standard package (OVM, UVM, VMM, and RAL), or encrypted instances (modules, programs, packages, interfaces))|  
+We will be debugging using tools like DVE: Discovery Visualization Environment  
+>Can refer this manual: https://classes.engineering.wustl.edu/ese461/Tutorial/synopsys_vcs_tutorial.pdf  
+
+Tips on modelling your design  
+(i) Avoid race Conditions - can use VCS race detection tool  
+(ii) Use an optimized Testbench for debugging your design  
+(iii) Creating models that simulate faster  
+(iv) Case statement behaviour ->Don’t use 3-to-1 mux need lots of power , can use case statement  
+
+</details>
+
+ 
+For modelling RVMYTH(RISC-V):  
+>git clone https://github.com/kunalg123/rvmyth/  
+>cd rvmyth
+>vcs mythcore_test.v tb_mythcore_test.v
+>./simv
+>dve  -full64 &
+>Go to file/File/Open Database” and select the “.vcd” file from the project folder
+>Add the required waveforms.
