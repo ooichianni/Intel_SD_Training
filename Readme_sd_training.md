@@ -2253,18 +2253,18 @@ Here is the waveform:
 In another form:  
 ![image](https://user-images.githubusercontent.com/118953915/210849760-6a067b68-4ffe-47c0-81ee-8bbfe61d8561.png)   
 
-(D) For vsdbabysoc.v  
+(E) For vsdbabysoc.v  
 >Can use this command to trace which port not defined
 >vcs vsdbabysoc.v testbench.v -sverilog +lint=TFIPC-L  
 ![image](https://user-images.githubusercontent.com/118953915/210848508-3b1e80bc-4cd0-4689-b815-f31c0fe687a1.png)
 
 Here is both the .v:  
-<img width="482" alt="image" src="https://user-images.githubusercontent.com/118953915/210859177-dd03fa26-79e3-4b0b-8b53-e5c949e8de2f.png">
 ![image](https://user-images.githubusercontent.com/118953915/210860045-05fd6e4a-e565-4506-87dc-f9eb44afbe03.png)  
 
 Here is the waveform:  
 ![image](https://user-images.githubusercontent.com/118953915/210860675-0fe20132-af5a-44e7-9a06-50a1f90a1920.png)  
 
+ 
 ✏️ Recap introduction from Day-11:  
 VSDBabySoC contains one RVMYTH microprocessor, an 8x-PLL to generate a stable clock, and a 10-bit DAC to communicate with other analog devices  
 Some initial input signals will be fed into BabySoC module that make the pll start generatingtheproper CLK for the circuit  
@@ -2285,13 +2285,18 @@ For debug in interactuve mode:
 **Design Half Adder**
 -> The Half Adder is a type of combinational logic circuit that adds two of the 1-bit binary digits. It generates carry and sum of both the inputs.  
  
-In order to dump out .vcd file, must add in these 2 lines in testbench file:
+In order to dump out .vcd file, must add in these 2 lines in testbench file:  
 ![image](https://user-images.githubusercontent.com/118953915/210861666-647eaf7a-62b3-4231-aef6-70fd30e477aa.png)
 
 Here is the details:  
-<img width="461" alt="image" src="https://user-images.githubusercontent.com/118953915/210864005-705a79c1-e3b7-4534-a7c2-ee517e99400f.png">
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/118953915/210864005-705a79c1-e3b7-4534-a7c2-ee517e99400f.png">
 
+Here is the run:  
+<img width="375" alt="image" src="https://user-images.githubusercontent.com/118953915/210866640-5770f7ba-f195-4904-8b54-bc4ed5e3ddd7.png">  
+ 
 Here is the waveform:
-![image](https://user-images.githubusercontent.com/118953915/210861791-50350a7d-5386-4fa5-b83e-f63822cd2248.png)
+![image](https://user-images.githubusercontent.com/118953915/210866410-4dbe6147-cf50-40f3-bd1b-f4b26eeb6073.png)
+
+<Need further debug to extend the scale, currently only able to generate out 3 set of outputs>
 
 </details>
