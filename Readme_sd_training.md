@@ -2066,16 +2066,16 @@ RISC Instruction Sets
 
 1. What does modelling mean?  
 - $\textcolor{blue}{\text{Modelling and simulation}}$ is the use of a physical or logical representation of a given system to generate data and help determine decisions or make predictions about the system  
-- Models are representations that can aid in defining, analyzing, and communicating a set of concepts  
-- Modelling and simulation is widely used in the VLSI domain <- prevent lost  
+  - Models are representations that can aid in defining, analyzing, and communicating a set of concepts  
+  - Modelling and simulation is widely used in the VLSI domain <- prevent lost  
 
-$\textcolor{blue}{\text{Purpose of modelling}}$ :  
-System models are specifically developed to  
--support analysis, specification <- meet spec  
-- design <- make sense  
--verification <- functionality  
--and validation of a system <-dft  
--to communicate certain information <- ensure no glitch   
+- $\textcolor{blue}{\text{Purpose of modelling}}$ :  
+- System models are specifically developed to  
+  -support analysis, specification <- meet spec  
+  - design <- make sense  
+  - verification <- functionality  
+  - validation of a system <-dft  
+  - to communicate certain information <- ensure no glitch   
 
 2. Modelling of the VSDBaby SoC  
 - Going to model and simulate the VSDBabySoC, model the 3 main IP cores: RVMYTH modelling, PLL modelling, DAC modelling  
@@ -2085,9 +2085,9 @@ System models are specifically developed to
 - RVMYTH (Digital block), PLL & DAC(Analog blocks)  
 
 $\textcolor{blue}{\text{RVMYTH}}$ - Risc-V based MYTH (Microprocessor for You in Thirty Hours)  
--RISC stands for Reduced instruction set computer  
--RISC-V(pronounced “risk-five”) ISA is defined as a base integer ISA, which must be present in any implementation, plus optional extensions to the base ISA  
--Each base integer instruction set is characterized by the width of the integer registers and the corresponding size of the address space and by the number of integer registers. There are two primary base integer variants, RV32I and RV64I  
+- RISC stands for Reduced instruction set computer  
+- RISC-V(pronounced “risk-five”) ISA is defined as a base integer ISA, which must be present in any implementation, plus optional extensions to the base ISA  
+- Each base integer instruction set is characterized by the width of the integer registers and the corresponding size of the address space and by the number of integer registers. There are two primary base integer variants, RV32I and RV64I  
 
 Additional:  
 - A program counter (PC) is a register in a computer processor that contains the address (location) of the instruction being executed at the current time. As each instruction gets fetched, the program counter increases its stored value by 1  
@@ -2102,7 +2102,6 @@ $\textcolor{blue}{\text{Pipelined}}$
 - Pipelining is a process of arrangement of hardware elements of the CPU such that its overall performance is increased. Simultaneous execution of more than one instruction takes place in a pipelined processor  
 
 ->6 Cycle Pipeline Stages RISC processor has 6 stage instruction pipeline to execute all the instructions in the RISC instruction set   
-
 Following are the stages of the RISC pipeline with their respective operations:  
 Stage | Step | Detail |  
 --- | --- | --- |   
@@ -2121,10 +2120,11 @@ Why off-chip clocks can’t be used all the time?
 -The clock will be a supply for a lot of blocks on the chip, it will have delays due to long wires caused by RC (if used only one clock source) - also reasons like clock jitter  
 -Some blocks/IP might need 200Mhzs and some might need 100Mhz (each point is different frequencies just on one small chip)  
 -A concept of ppm(clock accuracy) comes in, whenever quartz is acquired, it comes with a x ppm error  
-What is this parts per million (ppm) error?   
-For example:  20ppm quartz used in watches, this translates as 20/1e6 (2e-5) which  gives an error over a day of 86400 * 2e-5 = 1.73 seconds delay per day, so in a month it loses 30 x1.72 = 51 seconds or 1 minute a month  
-So in terms of a chip, the mishap cause due to very small error for microseconds, but when the processor works at nanoseconds it can be a huge problem  
-So we need PLL used on SoC’s  
+>What is this parts per million (ppm) error?   
+>For example:  20ppm quartz used in watches, this translates as 20/1e6 (2e-5) which  gives an error over a day of 86400 * 2e-5 = 1.73 seconds delay per day, so in a month it loses 30 x1.72 = 51 seconds or 1 minute a month  
+>So in terms of a chip, the mishap cause due to very small error for microseconds, but when the processor works at nanoseconds it can be a huge problem  
+>So we need PLL used on SoC’s  
+
 -Main components: Phase detector, Loop filter, Voltage controlled oscillator (change based on voltage), Frequency divider (make sure we can use multiple frequency from each IPs)  
 
 ![image](https://user-images.githubusercontent.com/118953915/210840409-fd848fdb-d540-4f56-9692-989ea9fe141f.png)  
@@ -2145,7 +2145,7 @@ A weighted resistor DAC produces an analog output, which is almost equal to the 
 $\textcolor{blue}{\text{R-2R Ladder DAC}}$   
 The R-2R Ladder DAC overcomes the disadvantages of a binary weighted resistor DAC. As the name suggests, R-2R Ladder DAC produces an analog output, which is almost equal to the digital (binary) input by using a R-2R ladder network in the inverting adder circuit  
 -> For VSDBabySoC will having 10-Bit DAC  
->Can refer here for calculation details: https://www.electronics-tutorials.ws/combination/r-2r-dac.html
+>Can refer here for calculation details: https://www.electronics-tutorials.ws/combination/r-2r-dac.html  
 
 3. Basic introduction to Synopsys VCS  
 - RVMYTH is a digital block, will use Verilog(HDL) for designing and checking functionality using a testbench  
