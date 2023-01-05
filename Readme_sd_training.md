@@ -2171,6 +2171,7 @@ mode | details |
 -debug_access+all | Enable all debug capability|  
 -debug_all | Gives the most visibility/control and you can use this option typically for debugging with interactive simulation|  
 -debug_region=()(+) | Have better control over the performance of -debug_access. This option enables you to apply debugging capabilities to the desired portion of a design (DUT, cell, testbench (TB), standard package (OVM, UVM, VMM, and RAL), or encrypted instances (modules, programs, packages, interfaces))|  
+ 
 We will be debugging using tools like DVE: Discovery Visualization Environment  
 >Can refer this manual: https://classes.engineering.wustl.edu/ese461/Tutorial/synopsys_vcs_tutorial.pdf  
 
@@ -2182,12 +2183,68 @@ Tips on modelling your design
 
 </details>
 
+<details><summary> Lab Session-> BabySoC Modeling </summary>  
  
-For modelling RVMYTH(RISC-V):  
->git clone https://github.com/kunalg123/rvmyth/  
->cd rvmyth
->vcs mythcore_test.v tb_mythcore_test.v
->./simv
->dve  -full64 &
->Go to file/File/Open Database” and select the “.vcd” file from the project folder
->Add the required waveforms.
+(A) For modelling RVMYTH(RISC-V):  
+>git clone https://github.com/kunalg123/rvmyth/    
+>cd rvmyth  
+>vcs mythcore_test.v tb_mythcore_test.v  
+>./simv  
+>dve  -full64 &  <- must use -full64
+>In order to open waveform:  
+>Go to file/File/Open Database” and select the “.vcd” file from the project folder  
+>Drag the required signal and select "Add to waves"    
+
+>gvim mythcore_test.v tb_mythcore_test.v -o 
+![image](https://user-images.githubusercontent.com/118953915/210846014-a8721ee6-1c50-4d22-aa1a-64ff64e43af8.png)    
+
+Here is the run:  
+![image](https://user-images.githubusercontent.com/118953915/210846157-9bd1d84f-4fb2-41f9-8d42-b75d239a9d2a.png)
+  
+Here is the waveform:
+10-bit digital codes observed at the output of rvmyth   
+![image](https://user-images.githubusercontent.com/118953915/210846231-02564977-6319-44a6-86bd-eff21c7cc696.png)   
+ 
+(B) For modelling DAC(analog):      
+> csh  
+> vcs avsddac.v avsddac_tb_test.v -sverilog <- required -sverilog  
+> ./simv  
+> dve -full64 &  
+>File copy from: https://github.com/vsdip/rvmyth_avsddac_interface/tree/main/iverilog/Pre-synthesis  
+
+- In both of the .v file having data type: real  
+A real data type is a data type used in a computer program to represent an approximation of a real number. Because the real numbers are not countable, computers cannot represent them exactly using a finite amount of information. Most often, a computer will use a rational approximation to a real number.  
+![image](https://user-images.githubusercontent.com/118953915/210846453-ae262ecb-de0b-46bd-9f3c-b6e85036c142.png)  
+-Both file using for DAC is picking from pre_synthesis, both file is not synthesizable since consists mixture of analog   
+
+must use -sverilog  
+![image](https://user-images.githubusercontent.com/118953915/210846596-d143c8dd-a376-421c-b0f9-b07eaefe9b5f.png)
+
+Here is the waveform:  
+![image](https://user-images.githubusercontent.com/118953915/210846638-3eae8ab3-5bc6-4d39-99ec-08e75f31f982.png)
+In another form:  
+<img width="747" alt="image" src="https://user-images.githubusercontent.com/118953915/210847250-abc40467-52d4-410f-8fb2-3ececab117ca.png">
+
+(C) For modelling PLL (analog):   
+![image](https://user-images.githubusercontent.com/118953915/210847374-86a83d33-4ba8-4c1f-87b8-62f6b03ec3e8.png)  
+Here is the waveform:  
+![image](https://user-images.githubusercontent.com/118953915/210847407-48136ca5-5911-462a-b215-760d4d572fa4.png)  
+
+(D) For DAC and RVMYTH:
+-> Again required to remove “wire” infront of real  
+![image](https://user-images.githubusercontent.com/118953915/210847617-2af19b57-1583-4347-83e5-d4f4097dffc1.png)
+
+Here is the run:  
+![image](https://user-images.githubusercontent.com/118953915/210848237-cff3610e-b712-40c2-933e-3d32e6616642.png)  
+
+Here is the waveform:  
+![image](https://user-images.githubusercontent.com/118953915/210849719-9b9e603f-fb55-4a29-83a5-b685bdf2eb1f.png)
+In another form:  
+![image](https://user-images.githubusercontent.com/118953915/210849760-6a067b68-4ffe-47c0-81ee-8bbfe61d8561.png)   
+
+(D) For vsdbabysoc.v  
+>Can use this command to trace which port not defined
+>vcs vsdbabysoc.v testbench.v -sverilog +lint=TFIPC-L  
+![image](https://user-images.githubusercontent.com/118953915/210848508-3b1e80bc-4cd0-4689-b815-f31c0fe687a1.png)
+
+
