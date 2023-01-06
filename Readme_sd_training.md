@@ -13,6 +13,7 @@
 + **[ Day_10 : QOR ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_10)** 
 + **[ Day_11 : Introduction to the BabySoC ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_11)** 
 + **[ Day_12 : BabySoC Modelling ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_12)**
++ **[ Day_13 : Post-synthesis simulation ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_13)**
 
 #
 # Day_0 
@@ -2232,7 +2233,9 @@ In another form:
 (C) For modelling PLL (analog):   
 ![image](https://user-images.githubusercontent.com/118953915/210847374-86a83d33-4ba8-4c1f-87b8-62f6b03ec3e8.png) 
 From reference github:   
-![image](https://user-images.githubusercontent.com/118953915/210856650-80f9570a-7e0c-4a61-a8f3-ea11686fce4b.png)
+![image](https://user-images.githubusercontent.com/118953915/210856650-80f9570a-7e0c-4a61-a8f3-ea11686fce4b.png)  
+>Can refer this github for more deatils: https://github.com/vsdip/rvmyth_avsdpll_interface  
+
 <img width="554" alt="image" src="https://user-images.githubusercontent.com/118953915/210857236-a39b70d2-7e5d-42a9-bc0b-8052a64b58de.png">  
  
 Here is the waveform:  
@@ -2301,3 +2304,12 @@ Here is the waveform:
 <Need further debug to extend the scale, currently only able to generate out 3 set of outputs>
 
 </details>
+
+#
+# Day_13 
+**⭐Post-synthesis simulation**
+
+<details><summary> ⚡ Lecture Session: Post-synthesis simulation - Live session </summary>
+
+### *__Lecture Session__*
+
