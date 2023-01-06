@@ -2294,8 +2294,9 @@ Here is the details:
 Here is the run:  
 <img width="375" alt="image" src="https://user-images.githubusercontent.com/118953915/210866640-5770f7ba-f195-4904-8b54-bc4ed5e3ddd7.png">  
  
-Here is the waveform:
-![image](https://user-images.githubusercontent.com/118953915/210866410-4dbe6147-cf50-40f3-bd1b-f4b26eeb6073.png)
+Here is the waveform:  
+<img width="424" alt="image" src="https://user-images.githubusercontent.com/118953915/210917368-4fb9c8c5-61c5-4d7a-8815-9ed2b0bbd872.png">
+
 
 <Need further debug to extend the scale, currently only able to generate out 3 set of outputs>
 
