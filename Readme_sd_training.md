@@ -2270,8 +2270,8 @@ Here is the waveform:
  
 ✏️ Recap introduction from Day-11:  
 VSDBabySoC contains one RVMYTH microprocessor, an 8x-PLL to generate a stable clock, and a 10-bit DAC to communicate with other analog devices  
-Some initial input signals will be fed into BabySoC module that make the pll start generatingtheproper CLK for the circuit  
-- The clock signal will make the rvmyth to execute instructions in its imem. As a result, theregisterr17 will be filled with some values cycle by cycle  
+Some initial input signals will be fed into BabySoC module that make the pll start generating the proper CLK for the circuit  
+- The clock signal will make the rvmyth to execute instructions in its imem. As a result, the register r17 will be filled with some values cycle by cycle  
 - These values are used by dac core to provide the final output signal named OUT  
 - So, we have got 3 main elements (IP cores) and a wrapper as an SoC and a testbench module  
 
