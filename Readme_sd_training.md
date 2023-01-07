@@ -2226,7 +2226,7 @@ must use -sverilog
 Here is the waveform:  
 ![image](https://user-images.githubusercontent.com/118953915/210846638-3eae8ab3-5bc6-4d39-99ec-08e75f31f982.png)
 In another form:  
-<img width="747" alt="image" src="https://user-images.githubusercontent.com/118953915/210847250-abc40467-52d4-410f-8fb2-3ececab117ca.png">
+<img width="780" alt="image" src="https://user-images.githubusercontent.com/118953915/210847250-abc40467-52d4-410f-8fb2-3ececab117ca.png">
 
 ![image](https://user-images.githubusercontent.com/118953915/210854798-610ca33c-adbd-41d8-bc78-743bfbab8862.png)  
 >DAC Calculator: https://www.rfwireless-world.com/calculators/n-bit-DAC-resolution-calculator.html
@@ -2292,7 +2292,8 @@ For debug in interactuve mode:
 
 <details><summary> Lab Session-> Assignment: Simulation of basic circuit using VCS </summary>  
 
-**Design Half Adder**
+ 
+**Design Half Adder**  
 -> The Half Adder is a type of combinational logic circuit that adds two of the 1-bit binary digits. It generates carry and sum of both the inputs.  
  
 In order to dump out .vcd file, must add in these 2 lines in testbench file:  
