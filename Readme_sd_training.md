@@ -2197,6 +2197,7 @@ Tips on modelling your design
 >Drag the required signal and select "Add to waves"    
 
 >gvim mythcore_test.v tb_mythcore_test.v -o 
+ 
 ![image](https://user-images.githubusercontent.com/118953915/210846014-a8721ee6-1c50-4d22-aa1a-64ff64e43af8.png)    
 
 Here is the run:  
@@ -2256,7 +2257,13 @@ Here is the waveform:
 In another form:  
 ![image](https://user-images.githubusercontent.com/118953915/210849760-6a067b68-4ffe-47c0-81ee-8bbfe61d8561.png)   
 
-(E) For vsdbabysoc.v  
+(E) For PLL and RVMYTH:  
+<img width="786" alt="image" src="https://user-images.githubusercontent.com/118953915/211161562-49059e7a-7665-42b7-8f17-16fc4d945c83.png">
+
+Here is the waveform:    
+<img width="786" alt="image" src="https://user-images.githubusercontent.com/118953915/211161611-f8f29244-f2eb-4852-8eb1-948bbde00ec3.png">  
+
+(F) For vsdbabysoc.v  
 >Can use this command to trace which port not defined
 >vcs vsdbabysoc.v testbench.v -sverilog +lint=TFIPC-L  
 ![image](https://user-images.githubusercontent.com/118953915/210848508-3b1e80bc-4cd0-4689-b815-f31c0fe687a1.png)
