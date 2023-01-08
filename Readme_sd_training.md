@@ -2228,8 +2228,11 @@ Here is the waveform:
 In another form:  
 <img width="780" alt="image" src="https://user-images.githubusercontent.com/118953915/210847250-abc40467-52d4-410f-8fb2-3ececab117ca.png">
 
-![image](https://user-images.githubusercontent.com/118953915/210854798-610ca33c-adbd-41d8-bc78-743bfbab8862.png)  
->DAC Calculator: https://www.rfwireless-world.com/calculators/n-bit-DAC-resolution-calculator.html
+Verlidate result:  
+<img width="394" alt="image" src="https://user-images.githubusercontent.com/118953915/211198023-2fa228c8-2311-4720-b107-11d84b820e87.png">  
+<img width="290" alt="image" src="https://user-images.githubusercontent.com/118953915/211197981-eeb1c31a-9dc5-4c88-b7ea-f19b88e3662f.png">  
+>Hex to Binary Converter: https://www.rapidtables.com/convert/number/hex-to-binary.html  
+>DAC Calculator: https://www.rfwireless-world.com/calculators/8-bit-and-10-bit-DAC-calculator.html  
 
 (C) For modelling PLL (analog):   
 ![image](https://user-images.githubusercontent.com/118953915/210847374-86a83d33-4ba8-4c1f-87b8-62f6b03ec3e8.png) 
