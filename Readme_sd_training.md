@@ -2328,7 +2328,8 @@ Here is the waveform:
 -> Modelled and simulated the IP cores in VSDBabySoC (for checking its functionality, not checking timing…)
 
  
-Here is synthesizable and non- synthesizable constructs in verilog:
+1. Here is synthesizable and non- synthesizable constructs in verilog:
+ 
 Verilog Constructs | Used for | Synthesizable Construct |
 ---|---|---|
 module|The code inside the module and the endmodule consists of the declarations and functionality of the design | Yes |
@@ -2345,14 +2346,14 @@ parameter| Used to make the design more generic| Yes|
 time| Not supported for the synthesis| No|  
  
  
-Pre-synthesis vs post-synthesis  
+2. Pre-synthesis vs post-synthesis  
 - Pre-synthesis simulation is done according to the logic you have designed for and written -> $\textcolor{blue}{\text{only functionality}}$  
 - Post synthesis simulation / ‘gate level simulation’ is done after synthesis considering each and every gate delays into account. reports the violations in $\textcolor{blue}{\text{both functionality and timing}}$    
 - This also show’s the mismatches we are likely to get due to wrong usage of operators and inference of latches  
 - Eg: using ‘X’(simulator terms/ synthesizer terms) - ‘Unknown’/“Don’t care”<- not a good practice  
 
                                                                                
-Post-synthesis 
+3. Post-synthesis 
 -> GLS(Gate Level Simulations)
 - The term "gate level" refers to the netlist view of a circuit, usually produced by logic synthesis. 
 - So while RTL simulation is pre-synthesis, GLS is post-synthesis. 
@@ -2360,8 +2361,8 @@ Post-synthesis
 - RTL simulation is a zero delay environment and events generally occur on the active clock edge. GLS can be zero delay also, but is more often used in unit delay or full timing mode. 
 - GLS is used to boost the confidence regarding implementation of a design and can help verify dynamic circuit behaviour, which cannot be verified accurately by static methods. It is a significant step in the verification process.
 
--> We will be using synopsys’s DC shell(Design Compiler) to synthesize the netlist  
-Design Compiler® RTL synthesis solution enables users to meet today's design challenges with concurrent $\textcolor{orange}{\text{optimization of timing, area, power and test}}$  
+4. We will be using synopsys’s DC shell(Design Compiler) to synthesize the netlist  
+-Design Compiler® RTL synthesis solution enables users to meet today's design challenges with concurrent $\textcolor{orange}{\text{optimization of timing, area, power and test}}$  
  
 </details>
 
