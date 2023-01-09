@@ -2402,13 +2402,90 @@ Tools only able to read in .db files, use this tool: synopsys’s lc_shell (Libr
 
 
 **2. Pre-synthsis:**  
-(A) For rvmyth_avsddac.v (Combination of mythcore_test.v and avsddac.v)    
-> read_verilog mod_rvmyth_avsddac.v  
+(A) For rvmyth_avsddac.v (Combination of mythcore_test.v, avsddac.v and etc):     
+Here is the content on part of the .v:
+![image](https://user-images.githubusercontent.com/118953915/211384188-21b506e3-46b1-4208-a3a7-b5ad932b30f7.png)
+Error during read in $itor, need to remove since dc synthesis only read in digital value, same for "real" also need to remove 
 
+> read_verilog mod_rvmyth_avsddac.v <- default command  
+ 
+If using above command, the clk_gate will become top module                                   
+![image](https://user-images.githubusercontent.com/118953915/211384718-b220ec0b-045f-4184-b2fc-9975784ab42a.png)
 
+So we need to use following command:  
+>read_file {mod_rvmyth_avsddac.v mod_avsddac.v mod_mythcore_test.v clk_gate.v} -autoread -format verilog -top rvmyth_avsddac <- must mentioned top  
+                                                                                                                                
+Then must make sure there is no error  
+![image](https://user-images.githubusercontent.com/118953915/211384785-cef84fdf-cc1b-4355-86a3-5a3c8ac2f2ab.png)
+
+Check current_design:     
+![image](https://user-images.githubusercontent.com/118953915/211384819-a21dde47-b377-4ed3-9a34-960464fc6ad9.png)
+
+> Linking to the library:  link                                                                                                                                   
+![image](https://user-images.githubusercontent.com/118953915/211384845-58d0fdbc-c3db-4f70-9041-967f476220ab.png)
+                                                                                                 > Let the tool to compilt the design: compile 
+ 
+![image](https://user-images.githubusercontent.com/118953915/211384883-10839ec7-5c2d-4849-9b6c-383a65e8dc6c.png)
+
+ Done compile:  
+![image](https://user-images.githubusercontent.com/118953915/211384948-6e79c524-cf96-4ec1-8d81-2974a41dda92.png)
+
+**Checking design** -- before constraints  
+ <img width="900" alt="image" src="https://user-images.githubusercontent.com/118953915/211385551-f757dc4b-c3bd-4438-888b-5892a4c31aee.png">
+
+**Need to apply constraints to resolve above violations** - will constraints later on in vsdbabysoc.v  
+ 
+> Write out netlist: write -f verilog -out  mod_rvmyth_avsddac_net1.v  
+ 
+![image](https://user-images.githubusercontent.com/118953915/211385615-5176c31d-865f-478c-a003-ab7101a09ebb.png)  
+
+ (B) For rvmyth_pll.v (Combination of mythcore_test.v, avsd_pll_1v8.v and etc)  
+Here is the content on part of the .v:  
+![image](https://user-images.githubusercontent.com/118953915/211385664-0b9231ab-7b21-4369-9430-5753152c63e7.png)  
+There is error on $realtime, need to change to $time  
+->If time scale is 10ns, $realtime returns 1.6 and $time has to return an integer, so that gets rounded up to 2  
+>Can refer here for more information on real_time vs time: https://verificationacademy.com/forums/systemverilog/time-vs-realtime  
+
+After modified can proceed read_verilog:  
+>read_file {mod_avsd_pll_1v8.v mod_mythcore_test.v clk_gate.v mod_rvmyth_pll.v } -autoread -format verilog -top rvmyth_pll_interface  
+![image](https://user-images.githubusercontent.com/118953915/211385806-3fb1d410-f143-44f3-b7ce-04630de38e68.png)
+ 
+Checking:   
+![image](https://user-images.githubusercontent.com/118953915/211385837-2a253350-b464-4478-816c-64ddfa6cc2cb.png)
+
+**Need to apply constraints to resolve above violations** - will constraints later on in vsdbabysoc.v  
+
+> Write out netlist: write -f verilog -out  mod_rvmyth_pll__net.v -hierarchy  
+![image](https://user-images.githubusercontent.com/118953915/211385978-1b6cf095-fac7-429c-bdba-2cbeed7085a6.png)  
+
+ 
+(C) For vsdbabysoc.v (Combination of mythcore_test.v, avsd_pll_1v8.v, avsddac.v and etc)  
+
+Here is the content on part of the .v:  
+
+![image](https://user-images.githubusercontent.com/118953915/211386078-6bd41f18-6937-4914-accb-709c8963b793.png)
+
+> read_file { mod_mythcore_test.v mod_avsd_pll_1v8.v mod_avsddac.v clk_gate.v  mod_vsdbabysoc.v} -autoread -format verilog -top vsdbabysoc  
+ 
+![image](https://user-images.githubusercontent.com/118953915/211386130-a8eb78d9-634a-4a4a-acbd-8049b60ea452.png)
+ 
+> link  
+> compile  
+ 
+![image](https://user-images.githubusercontent.com/118953915/211386168-f3531b8a-16fb-4b91-aa8c-c24009ff75de.png)
+
+**Checking design** -- before constraints
+ <img width="900" alt="image" src="https://user-images.githubusercontent.com/118953915/211386646-00dc9287-894d-47ec-8e3d-ba8f3552030d.png">
+
+ **Need to apply constraints to resolve above violations** 
+ 
+> write -f verilog -out  mod_vsdbabysoc_net.v -hierarchy 
+ 
+ ![image](https://user-images.githubusercontent.com/118953915/211386762-e01509a0-3121-425a-87a4-0263522621a5.png)
+
+Comparison among pre and post
 
 </details>
-
 
 To be continue
 
