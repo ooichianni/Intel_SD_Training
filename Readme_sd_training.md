@@ -2368,5 +2368,44 @@ time| Not supported for the synthesis| No|
 
 <details><summary> Lab Session-> Assignment: Synthesize using DC </summary>    
 
+**Convert .lib-> .db**  
+Tools only able to read in .db files, use this tool: synopsys’s lc_shell (Library Compiler) to convert .lib to .db  
+-> Purpose of .lib (liberty) - provide timing of whole design
+
+(i) Convert avsddac.lib:      
+> Invoke lc_shell:  lc_shell  
+> Read library: read_lib avsddac.lib   
  
+![image](https://user-images.githubusercontent.com/118953915/211346546-21a74ed8-fbd3-4a1c-8e91-4dee305e2818.png)  
+
+>Write into .db format: write_lib avsddac -f db -o avsddac.db    
+>If the program is successfully reading your commend, it will returns 1  
+![image](https://user-images.githubusercontent.com/118953915/211346762-7b34764d-f650-4318-b922-42b0531d818e.png)  
+
+(ii) Convert avsdpll.lib:  
+> lc_shell  
+> read_lib avsdpll.lib  
+> write_lib avsdpll -format db -output avsdpll.db  
+
+ ![image](https://user-images.githubusercontent.com/118953915/211348132-45be070a-034c-4535-8c46-4632a657986b.png)  
+
+> All libs and verilog codes taken from several training github:   
+> https://github.com/manili/VSDBabySoC/tree/main/src/lib   
+> git clone https://github.com/vsdip/rvmyth_avsddac_interface.git  
+
+(iii) After done convert:
+> gvim ~/.synopsys_dc.setup
+
+![image](https://user-images.githubusercontent.com/118953915/211348284-5e7689b0-5414-4d93-aba1-4766de091d4b.png)  
+Exit and reenter dc_shell to double comfirm:    
+![image](https://user-images.githubusercontent.com/118953915/211348441-4713500e-ec6b-475d-bed8-853150d0b0ea.png)
+
+**Pre-synthsis:**  
+(A) For rvmyth_avsddac.v (Combination of mythcore_test.v and avsddac.v)    
+> read_verilog mod_rvmyth_avsddac.v  
+
+
+
 </details>
+
+
