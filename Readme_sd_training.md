@@ -2421,9 +2421,10 @@ Then must make sure there is no error
 Check current_design:     
 ![image](https://user-images.githubusercontent.com/118953915/211384819-a21dde47-b377-4ed3-9a34-960464fc6ad9.png)
 
-> Linking to the library:  link                                                                                                                                   
+> Linking to the library:  link   
+ 
 ![image](https://user-images.githubusercontent.com/118953915/211384845-58d0fdbc-c3db-4f70-9041-967f476220ab.png)
-                                                                                                 > Let the tool to compilt the design: compile 
+                                                                                                 > Let the tool to compile the design: compile 
  
 ![image](https://user-images.githubusercontent.com/118953915/211384883-10839ec7-5c2d-4849-9b6c-383a65e8dc6c.png)
 
@@ -2450,7 +2451,7 @@ After modified can proceed read_verilog:
 >read_file {mod_avsd_pll_1v8.v mod_mythcore_test.v clk_gate.v mod_rvmyth_pll.v } -autoread -format verilog -top rvmyth_pll_interface  
 ![image](https://user-images.githubusercontent.com/118953915/211385806-3fb1d410-f143-44f3-b7ce-04630de38e68.png)
  
-Checking:   
+Checking current_design:   
 ![image](https://user-images.githubusercontent.com/118953915/211385837-2a253350-b464-4478-816c-64ddfa6cc2cb.png)
 
 **Need to apply constraints to resolve above violations** - will constraints later on in vsdbabysoc.v  
@@ -2477,13 +2478,13 @@ Here is the content on part of the .v:
 **Checking design** -- before constraints
  <img width="900" alt="image" src="https://user-images.githubusercontent.com/118953915/211386646-00dc9287-894d-47ec-8e3d-ba8f3552030d.png">
 
- **Need to apply constraints to resolve above violations** 
+ **Need to apply constraints to resolve above violations** ---- to be continue  
  
 > write -f verilog -out  mod_vsdbabysoc_net.v -hierarchy 
  
  ![image](https://user-images.githubusercontent.com/118953915/211386762-e01509a0-3121-425a-87a4-0263522621a5.png)
 
-Comparison among pre and post
+**Comparison among pre and post** --- to be continue  
 
 </details>
 
