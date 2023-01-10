@@ -2482,7 +2482,8 @@ Here is the content on part of the .v:
  
 > write -f verilog -out  mod_vsdbabysoc_net.v -hierarchy 
  
- ![image](https://user-images.githubusercontent.com/118953915/211386762-e01509a0-3121-425a-87a4-0263522621a5.png)
+<img width="900" alt="image" src="https://user-images.githubusercontent.com/118953915/211439735-27c7b4dd-6f70-4627-af7f-ac7fd374244f.png">
+
 
 **Comparison among pre and post** --- to be continue  
 
