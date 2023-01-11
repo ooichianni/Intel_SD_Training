@@ -2505,12 +2505,8 @@ Save netlist:
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/118953915/211854971-4e000827-5967-401b-a3f4-4ef207b63af0.png">
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/118953915/211857045-c4ea55f2-7ed0-4767-ac9e-804aafbf30f2.png">
 
-
- 
-
 </details>
 
-To be continue  
  
 #
 # Day_14 
@@ -2537,5 +2533,20 @@ PVT Graphs
 
 >Can refer this link for more detail: https://www.physicaldesign4u.com/2020/07/pvt-process-voltage-temperature.html  
 
-
 </details>
+
+<details><summary> Lab Session-> PVT coners </summary>
+
+WNS -> Worst Negative Slack  
+TNS -> Total Negative Slack = Sum of the negative slack paths  
+WHS -> Worst Hold Slack  
+THS -> Total Hold Slack = Sum of the negative hold slack path  
+
+WNS is the difference between the clock period and the delay between a pair of registers. A positive worst case setup time slack means the constraint is met and a negative slack means that the longest path has a path delay longer than the clock period of the circuit.  
+
+
+Different PVT corners WNS, WHS, TNS & THS values:    
+<img width="900" alt="image" src="https://user-images.githubusercontent.com/118953915/211889414-dba22892-0238-4ea5-912c-b9c02128842e.png">  
+<img width="900" alt="image" src="https://user-images.githubusercontent.com/118953915/211890175-d4d49255-004f-4786-be3b-9ca3ff15e7c7.png">  
+
+ </details> 
