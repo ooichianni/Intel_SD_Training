@@ -14,6 +14,7 @@
 + **[ Day_11 : Introduction to the BabySoC ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_11)** 
 + **[ Day_12 : BabySoC Modelling ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_12)**
 + **[ Day_13 : Post-synthesis simulation ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_13)**
++ **[ Day_14 : Synopsys DC and timing analysis ](https://github.com/ChianNi/Intel_SD_Training/blob/main/Readme_sd_training.md#day_14)**
 
 #
 # Day_0 
@@ -2489,5 +2490,32 @@ Here is the content on part of the .v:
 
 </details>
 
-To be continue
+To be continue  
+ 
+#
+# Day_14 
+**⭐Synopsys DC and timing analysis**
 
+<details><summary> ⚡ Lecture Session: Synopsys DC and timing analysis - Live session </summary>
+
+### *__Lecture Session__*
+
+$\textcolor{blue}{\text{PVT}}$ (Process, Voltage and Temperature)  
+- Integrated circuits are designed in such a way that they can function in a wide variety of temperatures and voltages, rather than a single temperature and voltage   
+- In order to make our chip to work after fabrication in all the possible conditions, we simulate it at different corners of process, voltage and temperature  
+- These conditions are called corners. All these three parameters directly affect the delay of the cell  
+
+Details on PVT:  
+- Process: There are millions of transistors on the single-chipas we are going to lower nodes and all the transistors in a chipcannot havethesame properties. Process variation is the deviation inparametersofthe transistor during the fabrication. 
+- Voltage: As we are going to the lower nodes the supply voltage for a chip is also going to less. Let’s say the chip is operating at 1.2V. So, there are chances that at certain instances of time this voltage may vary. 
+- Temperature: When a chip is operating, the temperature can vary throughout the chip. This is due to the power dissipation in the MOS-transistors.
+
+PVT Graphs  
+![image](https://user-images.githubusercontent.com/118953915/211713906-9b607536-3fdf-4bc9-b529-f6f9cfc2f3cd.png)  
+💡  Best case scenario (quick process): High voltage & low temperature  
+      Worst case scenario (slow process):  Low voltage & high temperature  
+
+>Can refer this link for more detail: https://www.physicaldesign4u.com/2020/07/pvt-process-voltage-temperature.html  
+
+
+</details>
