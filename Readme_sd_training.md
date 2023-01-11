@@ -2542,10 +2542,13 @@ WNS -> Worst Negative Slack
 TNS -> Total Negative Slack = Sum of the negative slack paths  
 WHS -> Worst Hold Slack  
 THS -> Total Hold Slack = Sum of the negative hold slack path  
-- WNS is the difference between the clock period and the delay between a pair of registers. A positive worst case setup time slack means the constraint is met and a negative slack means that the longest path has a path delay longer than the clock period of the circuit.  
+-WNS is the difference between the clock period and the delay between a pair of registers. A positive worst case setup time slack means the constraint is met and a negative slack means that the longest path has a path delay longer than the clock period of the circuit.  
 
+ 
 1. Converting .lib into .db for tool to pick up:  
-Facing some error during read_lib, need to temporary remove those line  
+> read_lib ; write_lib  
+ 
+Facing some error during read_lib, need to temporary remove those lines  
 <img width="621" alt="image" src="https://user-images.githubusercontent.com/118953915/211892499-2f3455d7-c6c6-49f9-a83b-43706587f08c.png">
 
 2. After done converting into .db, required to set them separately in target_library and link_library
