@@ -2402,7 +2402,10 @@ Tools only able to read in .db files, use this tool: synopsys’s lc_shell (Libr
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/118953915/211351474-b25346b5-1cc9-490b-a55d-e518c67fd06d.png">
 
 
+ #
+ 
 **2. Pre-synthsis:**  
+
 (A) For rvmyth_avsddac.v (Combination of mythcore_test.v, avsddac.v and etc):     
 Here is the content on part of the .v:
 ![image](https://user-images.githubusercontent.com/118953915/211384188-21b506e3-46b1-4208-a3a7-b5ad932b30f7.png)
@@ -2446,6 +2449,8 @@ Check current_design:
  
 ![image](https://user-images.githubusercontent.com/118953915/211385615-5176c31d-865f-478c-a003-ab7101a09ebb.png)  
 
+ #
+ 
  (B) For rvmyth_pll.v (Combination of mythcore_test.v, avsd_pll_1v8.v and etc)  
 Here is the content on part of the .v:  
 ![image](https://user-images.githubusercontent.com/118953915/211385664-0b9231ab-7b21-4369-9430-5753152c63e7.png)  
@@ -2465,10 +2470,12 @@ Checking current_design:
 > Write out netlist: write -f verilog -out  mod_rvmyth_pll__net.v -hierarchy  
 ![image](https://user-images.githubusercontent.com/118953915/211385978-1b6cf095-fac7-429c-bdba-2cbeed7085a6.png)  
 
- 
-(C) For vsdbabysoc.v (Combination of mythcore_test.v, avsd_pll_1v8.v, avsddac.v and etc)  
 
-Here is the content on part of the .v:  
+ #
+ 
+(C) $\textcolor{purple}{\text{For vsdbabysoc.v}}$ (Combination of mythcore_test.v, avsd_pll_1v8.v, avsddac.v and etc)  
+
+Here is part of the detials in .v:  
 
 ![image](https://user-images.githubusercontent.com/118953915/211386078-6bd41f18-6937-4914-accb-709c8963b793.png)
 
@@ -2481,14 +2488,22 @@ Here is the content on part of the .v:
  
 ![image](https://user-images.githubusercontent.com/118953915/211386168-f3531b8a-16fb-4b91-aa8c-c24009ff75de.png)
 
-**Checking design** -- before constraints
- <img width="900" alt="image" src="https://user-images.githubusercontent.com/118953915/211386646-00dc9287-894d-47ec-8e3d-ba8f3552030d.png">
+**Checking design** -- Before constraints  
+<img width="1000" alt="image" src="https://user-images.githubusercontent.com/118953915/211816144-5cf3c40b-2a49-4f0d-bf4e-1ea1320cc685.png">
 
- **Need to apply constraints to resolve above violations** ---- to be continue  
+🛠️ Need to apply constraints for tool to read in  
+
+**Checking design** -- After apply constraints and compile_ultra  
+<img width="1000" alt="image" src="https://user-images.githubusercontent.com/118953915/211816455-7526f594-722f-4fad-944f-b8c0722a5f1d.png">
  
+Here is the details on constraints:  
+<img width="1000" alt="image" src="https://user-images.githubusercontent.com/118953915/211826450-e73e0241-e132-4ec0-9dee-636e18c8fb58.png">
+
+Save netlist: 
 > write -f verilog -out  mod_vsdbabysoc_net.v -hierarchy 
  
-<img width="900" alt="image" src="https://user-images.githubusercontent.com/118953915/211439735-27c7b4dd-6f70-4627-af7f-ac7fd374244f.png">
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/118953915/211827314-cfb0914f-a16a-4250-94a1-a1c765e1517d.png">
+
 
 
 **Comparison among pre and post** --- to be continue  
