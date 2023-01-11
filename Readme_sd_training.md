@@ -2537,6 +2537,7 @@ PVT Graphs
 
 <details><summary> Lab Session-> PVT coners </summary>
 
+📝 Details:   
 WNS -> Worst Negative Slack  
 TNS -> Total Negative Slack = Sum of the negative slack paths  
 WHS -> Worst Hold Slack  
@@ -2544,6 +2545,14 @@ THS -> Total Hold Slack = Sum of the negative hold slack path
 
 WNS is the difference between the clock period and the delay between a pair of registers. A positive worst case setup time slack means the constraint is met and a negative slack means that the longest path has a path delay longer than the clock period of the circuit.  
 
+Conerting .lib into .db for tool to pick up:  
+Facing some error during read_lib, need to temporary remove those line  
+<img width="621" alt="image" src="https://user-images.githubusercontent.com/118953915/211892499-2f3455d7-c6c6-49f9-a83b-43706587f08c.png">
+
+After done converting into .db, required to set them separately in target_library and link_library
+> Eg: sky130_fd_sc_hd__ff_100C_1v65.db
+set target_library { /nfs/site/disks/png_mip_gen6p9ddr_0042/chiannio/trainning/rvmyth/day14/timing_libs/sky130_fd_sc_hd__ff_100C_1v65.db /nfs/site/disks/png_mip_gen6p9ddr_0042/chiannio/trainning/rvmyth/day14/timing_libs/avsdpll.db /nfs/site/disks/png_mip_gen6p9ddr_0042/chiannio/trainning/rvmyth/day14/timing_libs/avsddac.db }
+set link_library { * /nfs/site/disks/png_mip_gen6p9ddr_0042/chiannio/trainning/rvmyth/day14/timing_libs/sky130_fd_sc_hd__ff_100C_1v65.db /nfs/site/disks/png_mip_gen6p9ddr_0042/chiannio/trainning/rvmyth/day14/timing_libs/avsdpll.db /nfs/site/disks/png_mip_gen6p9ddr_0042/chiannio/trainning/rvmyth/day14/timing_libs/avsddac.db }
 
 Different PVT corners WNS, WHS, TNS & THS values:    
 <img width="900" alt="image" src="https://user-images.githubusercontent.com/118953915/211889414-dba22892-0238-4ea5-912c-b9c02128842e.png">  
