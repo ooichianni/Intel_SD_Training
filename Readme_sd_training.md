@@ -2506,7 +2506,7 @@ $\textcolor{blue}{\text{PVT}}$ (Process, Voltage and Temperature)
 - These conditions are called corners. All these three parameters directly affect the delay of the cell  
 
 Details on PVT:  
-- Process: There are millions of transistors on the single-chipas we are going to lower nodes and all the transistors in a chipcannot havethesame properties. Process variation is the deviation inparametersofthe transistor during the fabrication. 
+- Process: There are millions of transistors on the single-chipas we are going to lower nodes and all the transistors in a chipcannot havethesame properties. Process variation is the deviation inparametersofthe transistor during the fabrication. (Eg of factors: UV lights, manufacturing defect, ...)
 - Voltage: As we are going to the lower nodes the supply voltage for a chip is also going to less. Let’s say the chip is operating at 1.2V. So, there are chances that at certain instances of time this voltage may vary. 
 - Temperature: When a chip is operating, the temperature can vary throughout the chip. This is due to the power dissipation in the MOS-transistors.
 
