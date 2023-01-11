@@ -2415,8 +2415,12 @@ If using above command, the clk_gate will become top module
 
 So we need to use following command:  
 >read_file {mod_rvmyth_avsddac.v mod_avsddac.v mod_mythcore_test.v clk_gate.v} -autoread -format verilog -top rvmyth_avsddac <- must mentioned top  
+
+-The read_file command has more options than the read_verilog command    
+-The -autoread option is required for the files to be compiled in the correct order. In addition, the top module of the design is specified  
+                                                                                                                               
                                                                                                                                 
-Then must make sure there is no error  
+Must make sure there is no error  
 ![image](https://user-images.githubusercontent.com/118953915/211384785-cef84fdf-cc1b-4355-86a3-5a3c8ac2f2ab.png)
 
 Check current_design:     
@@ -2425,7 +2429,8 @@ Check current_design:
 > Linking to the library:  link   
  
 ![image](https://user-images.githubusercontent.com/118953915/211384845-58d0fdbc-c3db-4f70-9041-967f476220ab.png)
-                                                                                                 > Let the tool to compile the design: compile 
+
+ > Let the tool to compile the design: compile 
  
 ![image](https://user-images.githubusercontent.com/118953915/211384883-10839ec7-5c2d-4849-9b6c-383a65e8dc6c.png)
 
@@ -2506,9 +2511,9 @@ $\textcolor{blue}{\text{PVT}}$ (Process, Voltage and Temperature)
 - These conditions are called corners. All these three parameters directly affect the delay of the cell  
 
 Details on PVT:  
-- Process: There are millions of transistors on the single-chipas we are going to lower nodes and all the transistors in a chipcannot havethesame properties. Process variation is the deviation inparametersofthe transistor during the fabrication. (Eg of factors: UV lights, manufacturing defect, ...)
-- Voltage: As we are going to the lower nodes the supply voltage for a chip is also going to less. Let’s say the chip is operating at 1.2V. So, there are chances that at certain instances of time this voltage may vary. 
-- Temperature: When a chip is operating, the temperature can vary throughout the chip. This is due to the power dissipation in the MOS-transistors.
+- Process: There are millions of transistors on the single-chipas we are going to lower nodes and all the transistors in a chipcannot havethesame properties. Process variation is the deviation inparametersofthe transistor during the fabrication. (Eg of factors: UV lights, manufacturing defect)
+- Voltage: As we are going to the lower nodes the supply voltage for a chip is also going to less. Let’s say the chip is operating at 1.2V. So, there are chances that at certain instances of time this voltage may vary. (Eg of factors: IR drop caused by the current flow over power grid network, suuply noise caused by parasitic inductance in combination with resistance and capacitance)
+- Temperature: When a chip is operating, the temperature can vary throughout the chip. This is due to the power dissipation in the MOS-transistors. (Eg of factors: transistor density & switching)
 
 PVT Graphs  
 ![image](https://user-images.githubusercontent.com/118953915/211713906-9b607536-3fdf-4bc9-b529-f6f9cfc2f3cd.png)  
