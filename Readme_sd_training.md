@@ -2500,13 +2500,13 @@ Here is the details on constraints:
 <img width="1000" alt="image" src="https://user-images.githubusercontent.com/118953915/211826450-e73e0241-e132-4ec0-9dee-636e18c8fb58.png">
 
 Save netlist: 
-> write -f verilog -out  mod_vsdbabysoc_net.v -hierarchy 
+> write -f verilog -out mod_vsdbabysoc_net.v -hierarchy <- need to include in hierarchy
+
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/118953915/211854971-4e000827-5967-401b-a3f4-4ef207b63af0.png">
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/118953915/211857045-c4ea55f2-7ed0-4767-ac9e-804aafbf30f2.png">
+
+
  
-<img width="800" alt="image" src="https://user-images.githubusercontent.com/118953915/211827314-cfb0914f-a16a-4250-94a1-a1c765e1517d.png">
-
-
-
-**Comparison among pre and post** --- to be continue  
 
 </details>
 
